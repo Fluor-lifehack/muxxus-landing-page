@@ -1,0 +1,169 @@
+"use client";
+
+import Link from "next/link";
+import ImageComponent from "@/components/tools/ImageComponent";
+import { ActionBtnType } from "@/types";
+import { convertWithBr } from "@/lib/helper/converter";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { useRef, useEffect, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import hasCharAnim from "@/lib/animation/hasCharAnim";
+import hasFadeAnim from "@/lib/animation/hasFadeAnim";
+import hasWordAnim from "@/lib/animation/hasWordAnim";
+
+type Props = {
+  title: string;
+  description: string;
+  address: string;
+  bg_video: string;
+  action_btn: ActionBtnType;
+};
+
+const DesignHero = ({
+  title,
+  description,
+  address,
+  bg_video,
+  action_btn,
+}: Props) => {
+  const containerRef = useRef<HTMLDivElement>(null!);
+
+  useGSAP(
+    () => {
+      hasFadeAnim();
+      hasCharAnim();
+      hasWordAnim();
+    },
+    { scope: containerRef }
+  );
+
+  // Slider state
+  const images = [
+    "/assets/imgs/muxxus/hero/img1.png",
+    "/assets/imgs/muxxus/hero/img2.png",
+    "/assets/imgs/muxxus/hero/img3.png"
+  ];
+  const [current, setCurrent] = useState(0);
+  const SLIDE_DURATION = 4500; // ms
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, SLIDE_DURATION);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const [email, setEmail] = useState("");
+  const [acceptNewsletter, setAcceptNewsletter] = useState(true);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!acceptNewsletter) return;
+    // Remplace par l'action souhaitée
+    console.log("Email submitted:", email);
+  };
+
+  return (
+    <section
+      className="bg-background-fixed relative min-h-screen flex items-center justify-center overflow-hidden"
+      ref={containerRef}
+    >
+      <div className="absolute w-full h-full top-0 left-0 z-0">
+        <video
+          className="w-full h-full object-cover"
+          src={bg_video}
+          autoPlay
+          loop
+          muted
+        ></video>
+        <div className="absolute w-full h-full bg-black top-0 left-0 opacity-80 mix-blend-multiply"></div>
+      </div>
+      <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-between px-4 max-w-7xl mx-auto">
+        {/* Texte à gauche */}
+        <div className="flex-1 flex flex-col items-start justify-center text-left py-16">
+          <h1
+            className="has_char_anim text-white text-xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight mb-6 max-w-3xl"
+            data-translateX="150"
+            data-delay=".45"
+          >
+            {title}
+          </h1>
+          <p
+            className="has_word_anim text-white font-beatricetrial text-base sm:text-lg md:text-lg max-w-md mb-8"
+            data-duration="1"
+            data-translateX="50"
+            data-delay=".30"
+          >
+            {description}
+          </p>
+          {/* Champ email + bouton Get started */}
+          <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-md flex flex-col gap-2 mt-2 items-start"
+          >
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="newsletter"
+                checked={acceptNewsletter}
+                onChange={e => setAcceptNewsletter(e.target.checked)}
+                required
+                className="accent-black w-4 h-4 mr-2"
+              />
+              <label htmlFor="newsletter" className="text-xs text-white select-none cursor-pointer">
+                I agree to receive the newsletter
+              </label>
+            </div>
+            <div className="w-full flex gap-2">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-full bg-white/90 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary transition shadow"
+              />
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 transition whitespace-nowrap"
+              >
+                Get started
+              </button>
+            </div>
+          </form>
+        </div>
+        {/* Slider d'images à droite */}
+        <div className="flex-1 flex items-center justify-center w-full lg:w-auto mt-12 lg:mt-0">
+          <div className="relative w-[750px] h-[750px] flex items-center justify-center overflow-hidden">
+            {images.map((img, idx) => (
+              <div
+                key={img + idx}
+                className={`absolute top-0 left-1/2 -translate-x-1/2 rounded-2xl shadow-lg transition-all duration-700 w-[600px] h-[600px] flex items-start justify-center overflow-hidden ${
+                  idx === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'
+                }`}
+              >
+                {/* Progress bar */}
+                <div className="absolute top-0 left-0 w-full h-2 bg-black/20 z-20">
+                  <div
+                    className="h-full bg-white/80 transition-all"
+                    style={{
+                      width: idx === current ? '100%' : '0%',
+                      transition: idx === current ? `width ${SLIDE_DURATION}ms linear` : 'none',
+                    }}
+                  />
+                </div>
+                <ImageComponent
+                  src={img}
+                  alt={`slide-${idx}`}
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DesignHero;
