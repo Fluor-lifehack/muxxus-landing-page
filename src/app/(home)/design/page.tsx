@@ -13,6 +13,7 @@ import DesignTeam from "@/components/team/design/DesignTeam";
 import DesignImage2 from "@/components/image/DesignImage2";
 import DesignBlog from "@/components/blog/design/DesignBlog";
 import SeoData from "@/components/tools/SeoData";
+import StatMuxxus from "@/components/muxxus/StatMuxxus";
 
 const Design = () => {
   const { data: hero } = getMainPage("/heros/design-hero.mdx");
@@ -30,6 +31,7 @@ const Design = () => {
   const { data: image2 } = getMainPage("/image/design-image2.mdx");
   const { data: blog } = getMainPage("/blogs/design/_main.mdx");
   const blogs = getAllPages("/blogs/design");
+  const { data: statFact } = getMainPage("/funFact/muxxus-stat.mdx");
 
   return (
     <main>
@@ -40,9 +42,11 @@ const Design = () => {
       />
       <DesignHero {...hero} />
       <DesignTextSlider sliderItems={data} />
+      <StatMuxxus {...statFact}/>
       <DesignAbout {...about} />
       <DesignImage {...image} />
       <DesignService {...service} services={services} />
+
       <DesignWork {...workMain} projects={works} />
       <DesignTestimonial {...testimonial} />
       <DesignAward {...award} />

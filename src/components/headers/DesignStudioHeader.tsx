@@ -28,7 +28,7 @@ const DesignStudioHeader = () => {
           "flex h-[100px] items-center gap-[20px] relative justify-between"
         }
       >
-        <Logo light={isLight} />
+        <Logo light={isLight} customWidth={150} customHeight={110} />
         <div className="pos-center hidden xl:block">
           <Menu />
         </div>
