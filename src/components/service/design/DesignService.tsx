@@ -161,7 +161,7 @@ const DesignService = ({
       </div>
 
       {/* Pricing Section */}
-      <div className="mt-20">
+      {/* <div className="mt-20">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Nos Tarifs</h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -174,7 +174,7 @@ const DesignService = ({
             <PricingCard key={index} card={card} />
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

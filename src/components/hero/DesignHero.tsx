@@ -45,6 +45,8 @@ const DesignHero = ({
   ];
   const [current, setCurrent] = useState(0);
   const SLIDE_DURATION = 4500; // ms
+  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -136,20 +138,10 @@ const DesignHero = ({
             {images.map((img, idx) => (
               <div
                 key={img + idx}
-                className={`absolute top-0 left-1/2 -translate-x-1/2 rounded-2xl shadow-lg transition-all duration-700 w-[600px] h-[600px] flex items-start justify-center overflow-hidden ${
+                className={`absolute top-0 left-1/2 -translate-x-1/2 rounded-2xl transition-all duration-700 w-[600px] h-[600px] flex items-start justify-center overflow-hidden ${
                   idx === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'
                 }`}
               >
-                {/* Progress bar */}
-                <div className="absolute top-0 left-0 w-full h-2 bg-black/20 z-20">
-                  <div
-                    className="h-full bg-white/80 transition-all"
-                    style={{
-                      width: idx === current ? '100%' : '0%',
-                      transition: idx === current ? `width ${SLIDE_DURATION}ms linear` : 'none',
-                    }}
-                  />
-                </div>
                 <ImageComponent
                   src={img}
                   alt={`slide-${idx}`}
@@ -158,7 +150,25 @@ const DesignHero = ({
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
+
             ))}
+            
+            {/* Progress bar - Dots avec point actif étiré (permanente) */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30">
+              <div className="flex items-center justify-center gap-2">
+                {images.map((_, dotIdx) => (
+                  <div
+                    key={dotIdx}
+                    className={`rounded-full transition-all duration-300 ${
+                      dotIdx === current 
+                        ? 'bg-white w-4 h-1.5 scale-110' // Point actif étiré et plus grand
+                        : 'bg-white/40 w-1.5 h-1.5 scale-100' // Points inactifs normaux
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

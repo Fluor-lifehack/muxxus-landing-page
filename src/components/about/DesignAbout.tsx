@@ -8,6 +8,7 @@ import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import { useGSAP } from "@gsap/react";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import hasCharAnim from "@/lib/animation/hasCharAnim";
+import ButtonFlip from "../elements/button/ButtonFlip";
 
 type Props = {
   title: string;
@@ -75,11 +76,16 @@ const DesignAbout = ({
                     data-fade-offset="50"
                     data-ease="bounce"
                   >
-                    <CircleFillButton
+                    {/* <CircleFillButton
                       text={action_btn.label}
                       href={action_btn.link}
                       className="bg-[#091249] design-btn-hover text-text-fixed hover:text-text-2 !font-normal text-white hover:text-white"
-                    />
+                    /> */}
+                      <ButtonFlip 
+                        btnText={action_btn.label.replace(/<br\s*\/?>/gi, ' ').trim()}
+                        link={action_btn.link}
+                        className="border-primary text-primary hover:bg-primary hover:text-white"
+                      />
                   </div>
                 </div>
               </div>
