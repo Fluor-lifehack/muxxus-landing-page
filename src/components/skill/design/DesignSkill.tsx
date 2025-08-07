@@ -28,6 +28,124 @@ const DesignSkill = ({ title, description, skills }: Props) => {
   const [active, setActive] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null!);
 
+  // Données des cartes pour chaque service
+  const cardsData = {
+    0: { // Business Accounts
+      cards: [
+        {
+          title: "Global Accounts",
+          description: "Open local currency accounts to receive funds in 20+ currencies",
+          icon: "globe",
+          color: "blue"
+        },
+        {
+          title: "FX & Transfers", 
+          description: "Make global transfers to 200+ countries at interbank rates",
+          icon: "transfer",
+          color: "green"
+        },
+        {
+          title: "Corporate Cards",
+          description: "Issue multi-currency corporate cards instantly",
+          icon: "card",
+          color: "purple"
+        },
+        {
+          title: "Integrations",
+          description: "Connect Airwallex to other popular software platforms",
+          icon: "integration",
+          color: "orange"
+        }
+      ]
+    },
+    1: { // Spend
+      cards: [
+        {
+          title: "Smart Cards",
+          description: "Control spending with smart cards and automated approvals",
+          icon: "card",
+          color: "blue"
+        },
+        {
+          title: "Analytics",
+          description: "Track spending with detailed analytics and insights",
+          icon: "chart",
+          color: "green"
+        },
+        {
+          title: "Approvals",
+          description: "Automated approval workflows for expense management",
+          icon: "check",
+          color: "purple"
+        },
+        {
+          title: "Reporting",
+          description: "Comprehensive reporting and expense tracking",
+          icon: "report",
+          color: "orange"
+        }
+      ]
+    },
+    2: { // Payments
+      cards: [
+        {
+          title: "Global Network",
+          description: "Send and receive payments globally with competitive rates",
+          icon: "network",
+          color: "blue"
+        },
+        {
+          title: "Instant Settlement",
+          description: "Real-time settlement for faster payment processing",
+          icon: "clock",
+          color: "green"
+        },
+        {
+          title: "Multi-Currency",
+          description: "Support for multiple currencies and exchange rates",
+          icon: "currency",
+          color: "purple"
+        },
+        {
+          title: "Security",
+          description: "Enterprise-grade security for all payment transactions",
+          icon: "shield",
+          color: "orange"
+        }
+      ]
+    },
+    3: { // Platform APIs
+      cards: [
+        {
+          title: "REST APIs",
+          description: "Powerful REST APIs for seamless integration",
+          icon: "api",
+          color: "blue"
+        },
+        {
+          title: "SDKs",
+          description: "Comprehensive SDKs for multiple programming languages",
+          icon: "code",
+          color: "green"
+        },
+        {
+          title: "Webhooks",
+          description: "Real-time notifications via webhooks",
+          icon: "webhook",
+          color: "purple"
+        },
+        {
+          title: "Documentation",
+          description: "Comprehensive documentation and developer resources",
+          icon: "docs",
+          color: "orange"
+        }
+      ]
+    }
+  };
+
+  const currentCards = cardsData[active as keyof typeof cardsData]?.cards || cardsData[0].cards;
+
   useGSAP(
     () => {
       hasFadeAnim();
@@ -56,7 +174,7 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                 {skills.map((skill, index) => (
                   <li
                     className={cn(
-                      "has_fade_anim first:mt-0 mt-5 transition-all duration-300 ease-in-out",
+                      "has_fade_anim first:mt-0 mt-8 transition-all duration-300 ease-in-out",
                       index === active && "nav-link-before border-l-4 border-black -ml-[18px] pl-[18px] relative z-10"
                     )}
                     key={index}
@@ -71,19 +189,24 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                 data-fade-offset="0"
                 data-delay="0.45"
               >
-                <ImageComponent
-                  src={skills[active].img_main}
-                  width={660}
-                  height={465}
-                  alt="img-main"
-                />
-                <ImageComponent
-                  src={skills[active].img_small}
-                  width={330}
-                  height={230}
-                  alt="img-small"
-                  className="absolute top-0 start-0 max-w-[740px] ms-[auto]"
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {currentCards.map((card, index) => (
+                    <div key={index} className="bg-white rounded-xl p-8 transition-all duration-500 ease-in-out">
+                      <ImageComponent
+                        src={skills[active].img_main}
+                        width={400}
+                        height={250}
+                        alt={card.title.toLowerCase().replace(/\s+/g, '-')}
+                        className="rounded-lg transition-all duration-500 ease-in-out mb-6 w-full h-48 object-cover"
+                      />
+                      <h3 className="text-xl font-semibold text-gray-900 mb-4">{card.title}</h3>
+                      <p className="text-gray-600 mb-6">{card.description}</p>
+                      <button className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200">
+                        Learn more →
+                      </button>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
