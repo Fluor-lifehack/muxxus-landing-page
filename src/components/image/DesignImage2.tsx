@@ -14,7 +14,7 @@ const DesignImage2 = ({ image }: Props) => {
           height={950}
           alt="section image2"
           dataSpeed={0.8}
-          className="w-full"
+          className="w-full max-h-[800px] object-cover"
         />
       </div>
     </div>

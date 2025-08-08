@@ -12,7 +12,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 type Props = {
-  footerNav: {
+  footerNav?: {
     id: number;
     title: string;
     children?: {
@@ -44,12 +44,71 @@ const MuxxusFooter = ({ footerNav }: Props) => {
     { scope: containerRef }
   );
 
+  // Navigation inspirée d'Airwallex
+  const airwallexNavigation = [
+    {
+      title: "Products",
+      links: [
+        { name: "Business Accounts", href: "/products/business-accounts" },
+        { name: "Spend", href: "/products/spend" },
+        { name: "Payments", href: "/products/payments" },
+        { name: "Platform APIs", href: "/products/platform-apis" },
+        { name: "FX & Transfers", href: "/products/fx-transfers" },
+        { name: "Corporate Cards", href: "/products/corporate-cards" },
+      ]
+    },
+    {
+      title: "Solutions",
+      links: [
+        { name: "E-commerce", href: "/solutions/ecommerce" },
+        { name: "Marketplaces", href: "/solutions/marketplaces" },
+        { name: "Travel", href: "/solutions/travel" },
+        { name: "SaaS", href: "/solutions/saas" },
+        { name: "Fintech", href: "/solutions/fintech" },
+        { name: "Enterprise", href: "/solutions/enterprise" },
+      ]
+    },
+    {
+      title: "Developers",
+      links: [
+        { name: "Documentation", href: "/developers/docs" },
+        { name: "API Reference", href: "/developers/api" },
+        { name: "SDKs", href: "/developers/sdks" },
+        { name: "Webhooks", href: "/developers/webhooks" },
+        { name: "Status", href: "/developers/status" },
+        { name: "Support", href: "/developers/support" },
+      ]
+    },
+    {
+      title: "Company",
+      links: [
+        { name: "About", href: "/about" },
+        { name: "Careers", href: "/careers" },
+        { name: "Press", href: "/press" },
+        { name: "Partners", href: "/partners" },
+        { name: "Contact", href: "/contact" },
+        { name: "Blog", href: "/blog" },
+      ]
+    },
+    {
+      title: "Support",
+      links: [
+        { name: "Help Center", href: "/support" },
+        { name: "Contact Support", href: "/support/contact" },
+        { name: "Status", href: "/status" },
+        { name: "Security", href: "/security" },
+        { name: "Compliance", href: "/compliance" },
+        { name: "Trust Center", href: "/trust" },
+      ]
+    }
+  ];
+
   return (
     <footer className="bg-gray-900" ref={containerRef}>
       <div className="container2">
         {/* Section principale */}
         <div className="py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
             {/* Logo et description */}
             <div className="lg:col-span-2">
               <Logo
@@ -77,20 +136,20 @@ const MuxxusFooter = ({ footerNav }: Props) => {
               </div>
             </div>
 
-            {/* Navigation */}
-            {footerNav?.map((item) => (
-              <div key={item.id} className="has_fade_anim">
+            {/* Navigation inspirée d'Airwallex */}
+            {airwallexNavigation.map((section, index) => (
+              <div key={index} className="has_fade_anim">
                 <h3 className="text-white font-semibold text-lg mb-4">
-                  {item.title}
+                  {section.title}
                 </h3>
                 <ul className="space-y-3">
-                  {item.children?.map((child, index) => (
-                    <li key={index}>
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
                       <Link
-                        href={child.path}
+                        href={link.href}
                         className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
                       >
-                        {child.name}
+                        {link.name}
                       </Link>
                     </li>
                   ))}
@@ -151,6 +210,12 @@ const MuxxusFooter = ({ footerNav }: Props) => {
               </Link>
               <Link href="/security" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
                 Security
+              </Link>
+              <Link href="/compliance" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                Compliance
+              </Link>
+              <Link href="/trust" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                Trust Center
               </Link>
             </div>
           </div>

@@ -9,6 +9,30 @@ import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import { cn } from "@/lib/utils";
 
+// Composant Skeleton adaptatif pour les cartes
+const CardSkeleton = ({ card }: { card: any }) => (
+  <div className="bg-white rounded-xl p-8 animate-pulse">
+    {/* Image skeleton - même dimensions que l'image réelle */}
+    <div className="w-full h-48 bg-gray-200 rounded-lg mb-6"></div>
+    
+    {/* Titre skeleton - adapté à la longueur du titre */}
+    <div 
+      className="h-6 bg-gray-200 rounded mb-4"
+      style={{ width: `${Math.min(card.title.length * 8, 200)}px` }}
+    ></div>
+    
+    {/* Description skeleton - lignes adaptées à la longueur */}
+    <div className="space-y-2 mb-6">
+      <div className="h-4 bg-gray-200 rounded w-full"></div>
+      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+      <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+    </div>
+    
+    {/* Bouton skeleton */}
+    <div className="h-4 bg-gray-200 rounded w-24"></div>
+  </div>
+);
+
 type Props = {
   title: string;
   description: string;
@@ -26,6 +50,7 @@ type Props = {
 
 const DesignSkill = ({ title, description, skills }: Props) => {
   const [active, setActive] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null!);
 
   // Données des cartes pour chaque service
@@ -146,6 +171,19 @@ const DesignSkill = ({ title, description, skills }: Props) => {
 
   const currentCards = cardsData[active as keyof typeof cardsData]?.cards || cardsData[0].cards;
 
+  // Fonction pour changer de service avec loading
+  const handleServiceChange = (index: number) => {
+    if (index === active) return;
+    
+    setIsLoading(true);
+    setActive(index);
+    
+    // Simuler un délai de chargement
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+  };
+
   useGSAP(
     () => {
       hasFadeAnim();
@@ -178,7 +216,7 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                       index === active && "nav-link-before border-l-4 border-black -ml-[18px] pl-[18px] relative z-10"
                     )}
                     key={index}
-                    onClick={() => setActive(index)}
+                    onClick={() => handleServiceChange(index)}
                   >
                     <DesignSkillCard {...skill} active={index === active} />
                   </li>
@@ -190,22 +228,30 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                 data-delay="0.45"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {currentCards.map((card, index) => (
-                    <div key={index} className="bg-white rounded-xl p-8 transition-all duration-500 ease-in-out">
-                      <ImageComponent
-                        src={skills[active].img_main}
-                        width={400}
-                        height={250}
-                        alt={card.title.toLowerCase().replace(/\s+/g, '-')}
-                        className="rounded-lg transition-all duration-[2000ms] ease-in-out mb-6 w-full h-48 object-cover"
-                      />
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">{card.title}</h3>
-                      <p className="text-gray-600 mb-6">{card.description}</p>
-                      <button className="text-gray-900 hover:text-gray-800 font-medium transition-colors duration-200">
-                        Learn more →
-                      </button>
-                    </div>
-                  ))}
+                  {isLoading ? (
+                    // Afficher les skeletons adaptatifs pendant le chargement
+                    currentCards.map((card, index) => (
+                      <CardSkeleton key={index} card={card} />
+                    ))
+                  ) : (
+                    // Afficher les vraies cartes
+                    currentCards.map((card, index) => (
+                      <div key={index} className="bg-white rounded-xl p-8 transition-all duration-500 ease-in-out">
+                        <ImageComponent
+                          src={skills[active].img_main}
+                          width={400}
+                          height={250}
+                          alt={card.title.toLowerCase().replace(/\s+/g, '-')}
+                          className="rounded-lg transition-all duration-[2000ms] ease-in-out mb-6 w-full h-48 object-cover"
+                        />
+                        <h3 className="text-xl font-semibold text-gray-900 mb-4">{card.title}</h3>
+                        <p className="text-gray-600 mb-6">{card.description}</p>
+                        <button className="text-gray-900 hover:text-gray-800 font-medium transition-colors duration-200">
+                          Learn more →
+                        </button>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
             </div>
