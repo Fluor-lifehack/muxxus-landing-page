@@ -4,9 +4,10 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
-import Link from "next/link";
 import Image from "next/image";
 import WebSectionTItle from "@/components/sectionTitle/WebSectionTItle";
+import MuxxusButton from "@/components/elements/button/MuxxusButton";
+
 type Props = {
   contactTitle: string;
   btn_text: string;
@@ -41,18 +42,14 @@ const WebContactBanner = ({ contactTitle, btn_text, shape }: Props) => {
             className="has_text_mov_anim font-normal leading-[.94] text-text-fixed-2 mx-auto max-w-[450px] lg:max-w-[580px] xl:max-w-[730px] 2xl:max-w-[830px]"
           />
           <div className="has_fade_anim text-center mt-[14px] lg:mt-6 uppercase">
-            <Link
+            <MuxxusButton
               href="/contact-bold"
-              className="wc-btn-underline btn-text-flip text-text-fixed-2 gap-[10px] pb-1 text-[14px] leading-none"
+              variant="muxxus"
+              size="lg"
+              className="text-[14px] uppercase"
             >
-              <span data-text={btn_text}>{btn_text}</span>
-              <Image
-                src="/assets/imgs/icon/arrow-right-half-light.png"
-                width={21}
-                height={7}
-                alt="icon-img"
-              />
-            </Link>
+              {btn_text}
+            </MuxxusButton>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import VideoModal from "../tools/VideoModal";
 import { Button } from "../ui/button";
 import hasWordAnim from "@/lib/animation/hasWordAnim";
+import MuxxusButton from "../elements/button/MuxxusButton";
 
 const WebHero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,12 +53,12 @@ const WebHero = () => {
             <div className="md:mt-[50px]">
               <h1 className="has_fade_anim uppercase text-[80px] xl:text-[110px] 2xl:text-[190px] leading-[0.76]">
                 We are Skilled in{" "}
-                <span className="text-[24px] 2xl:text-[42px] text-text leading-[0.83] font-semibold inline-block relative pb-2.5 2xl:pb-[27px] -translate-y-[17px] 2xl:-translate-y-[36px] before:absolute before:content-[''] before:w-full before:h-px before:bg-[var(--theme)] before:bottom-0 before:start-0 after:absolute after:content-[''] after:w-full after:h-px after:bg-[var(--theme)] after:bottom-1 after:start-0">
+                <span className="text-[24px] 2xl:text-[42px] text-text leading-[0.83] font-semibold inline-block relative pb-2.5 2xl:pb-[27px] -translate-y-[17px] 2xl:-translate-y-[36px] before:absolute before:content-[''] before:w-full before:h-px before:bg-blue-600 before:bottom-0 before:start-0 after:absolute after:content-[''] after:w-full after:h-px after:bg-blue-600 after:bottom-1 after:start-0">
                   Web <br />
                   Design
                 </span>{" "}
                 and{" "}
-                <span className="text-lg 2xl:text-[30px] text-text leading-[0.66] lowercase font-normal w-[70px] 2xl:w-[120px] h-[70px] 2xl:h-[120px] bg-theme inline-flex items-center pt-[9px] 2xl:pt-[19px] rounded-[24px] 2xl:rounded-[47px] rotate-180 [writing-mode:vertical-lr]">
+                <span className="text-lg 2xl:text-[30px] text-text leading-[0.66] lowercase font-normal w-[70px] 2xl:w-[120px] h-[70px] 2xl:h-[120px] bg-blue-600 inline-flex items-center pt-[9px] 2xl:pt-[19px] rounded-[24px] 2xl:rounded-[47px] rotate-180 [writing-mode:vertical-lr]">
                   development
                 </span>
                 <span
@@ -102,19 +103,14 @@ const WebHero = () => {
                 </p>
 
                 <div className="mt-[48px] has_fade_anim">
-                  <Link
+                  <MuxxusButton
                     href="/contact-bold"
-                    className="btn-text-flip wc-btn-underline text-sm uppercase inline-flex items-center gap-2.5"
+                    variant="muxxus"
+                    size="lg"
+                    className="text-sm uppercase"
                   >
-                    <span data-text="get started now">get started now</span>
-                    <ImageComponent
-                      src="/assets/imgs/icon/arrow-right-half.png"
-                      darkSrc="/assets/imgs/icon/arrow-right-half-light.png"
-                      width={21}
-                      height={7}
-                      alt="arrow icon"
-                    />
-                  </Link>
+                    get started now
+                  </MuxxusButton>
                 </div>
               </div>
             </div>
@@ -135,7 +131,7 @@ const WebHero = () => {
                   <div className="flex items-center gap-3">
                     <Button
                       onClick={() => setIsOpen(!isOpen)}
-                      className="wc-btn-circle !w-[100px] !h-[100px] !border-[5px] !border-background !bg-background-2 !text-text-2 "
+                      className="wc-btn-circle !w-[100px] !h-[100px] !border-[5px] !border-background !bg-blue-600 !text-white hover:bg-blue-700"
                     >
                       <FaPlay />
                     </Button>
@@ -199,7 +195,7 @@ const WebHero = () => {
                   </div>
 
                   <p className="text-lg mt-[15px] leading-tight">
-                    <span className="underline text-text">We have 18k+</span>{" "}
+                    <span className="underline text-gray-900">We have 18k+</span>{" "}
                     customers <br />
                     world-wide
                   </p>

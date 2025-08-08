@@ -8,6 +8,14 @@ export const colors = {
     contrast: '#ffffff'
   },
   
+  // Couleurs de Muxxus (basées sur le footer)
+  muxxus: {
+    blue: '#111827', // gray-900 (couleur du footer)
+    blueLight: '#1f2937', // gray-800
+    blueDark: '#030712', // gray-950
+    blueHover: '#1f2937', // gray-800
+  },
+  
   // Couleurs de sécurité (pour le thème Muxxus)
   security: {
     primary: '#1e293b', // slate-800
@@ -55,6 +63,11 @@ export const colors = {
       hover: '#121212',
       hoverText: '#ffffff',
     },
+    muxxus: {
+      bg: '#111827', // gray-900
+      text: '#ffffff',
+      hover: '#1f2937', // gray-800
+    },
     security: {
       bg: '#1e293b',
       text: '#ffffff',
@@ -67,8 +80,10 @@ export const colors = {
 export const buttonClasses = {
   primary: 'bg-gray-900 text-white hover:bg-gray-800 transition-colors duration-200',
   secondary: 'bg-transparent text-gray-900 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200',
+  muxxus: 'bg-gray-900 text-white hover:bg-gray-800 transition-colors duration-200',
   security: 'bg-slate-800 text-white hover:bg-slate-700 transition-colors duration-200',
   outline: 'bg-transparent text-gray-900 border border-gray-300 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors duration-200',
+  muxxusOutline: 'bg-transparent text-gray-900 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200',
 };
 
 export const textClasses = {
@@ -76,6 +91,8 @@ export const textClasses = {
   body: 'text-gray-600 dark:text-gray-300',
   muted: 'text-gray-500 dark:text-gray-400',
   light: 'text-white',
+  muxxus: 'text-gray-900',
+  muxxusHover: 'text-gray-800',
 };
 
 export const backgroundClasses = {
@@ -83,4 +100,6 @@ export const backgroundClasses = {
   secondary: 'bg-gray-50 dark:bg-gray-800',
   dark: 'bg-gray-900',
   light: 'bg-white',
+  muxxus: 'bg-gray-900',
+  muxxusLight: 'bg-gray-50',
 };

@@ -201,7 +201,7 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                       />
                       <h3 className="text-xl font-semibold text-gray-900 mb-4">{card.title}</h3>
                       <p className="text-gray-600 mb-6">{card.description}</p>
-                      <button className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200">
+                      <button className="text-gray-900 hover:text-gray-800 font-medium transition-colors duration-200">
                         Learn more →
                       </button>
                     </div>

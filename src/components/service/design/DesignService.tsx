@@ -63,7 +63,7 @@ const DesignService = ({
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <span className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-4 block">
+            <span className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4 block">
               {sub_title}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -154,7 +154,7 @@ const DesignService = ({
             <ButtonFlip
               btnText={action_btn.label.replace(/<br\s*\/?>/gi, ' ').trim()}
               link={action_btn.link}
-              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+              className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
             />
           </div>
         </div>

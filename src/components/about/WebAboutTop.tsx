@@ -1,7 +1,7 @@
 import WebSectionTItle from "@/components/sectionTitle/WebSectionTItle";
 import ImageComponent from "@/components/tools/ImageComponent";
 import { ActionBtnType } from "@/types";
-import CircleFillButton from "@/components/elements/button/CircleFillButton";
+import MuxxusButton from "@/components/elements/button/MuxxusButton";
 
 type Props = {
   title: string;
@@ -44,7 +44,7 @@ const WebAboutTop = ({
         />
       </div>
       <div className=" mb-[15px] sm:mb-[-26px] lg:mb-[-32px] 2xl:mb-[-40px]">
-        <span className=" has_fade_anim text-[16px] leading-none font-bold uppercase inline-block">
+        <span className=" has_fade_anim text-[16px] leading-none font-bold uppercase inline-block text-gray-900">
           {subTitle}
         </span>
       </div>
@@ -67,7 +67,7 @@ const WebAboutTop = ({
             />
           </div>
           <div className=" flex gap-[11px] mt-[18px]">
-            <h3 className=" text-[24px] leading-[30px] !font-semibold [writing-mode:vertical-lr] rotate-180 tracking-[.13em] uppercase">
+            <h3 className=" text-[24px] leading-[30px] !font-semibold [writing-mode:vertical-lr] rotate-180 tracking-[.13em] uppercase text-gray-900">
               {total_clients}
             </h3>
             <p className=" text-[16px] leading-[20px] max-w-[100px]">
@@ -85,10 +85,13 @@ const WebAboutTop = ({
             data-ease="bounce"
           >
             <div className=" btn-move">
-              <CircleFillButton
+              <MuxxusButton
                 href={action_btn.link}
-                text={action_btn.label}
-              />
+                variant="muxxus"
+                size="lg"
+              >
+                {action_btn.label}
+              </MuxxusButton>
             </div>
           </div>
         </div>

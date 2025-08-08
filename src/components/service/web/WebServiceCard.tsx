@@ -13,8 +13,8 @@ const WebServiceCard = ({ data, slug }: TServiceType) => {
   return (
     <div className="has_fade_anim first:border-t">
       <Link href={`/service/web/${slug}`}>
-        <div className="border-b border-border py-[24px] xl:py-[44px] grid gap-y-5 gap-x-[60px] grid-cols-[auto] sm:grid-cols-[100px,1fr,100px] xl:grid-cols-[160px,1fr,100px] ">
-          <span className="text-[22px] xl:text-[30px] font-semibold font-teko">
+        <div className="border-b border-border py-[24px] xl:py-[44px] grid gap-y-5 gap-x-[60px] grid-cols-[auto] sm:grid-cols-[100px,1fr,100px] xl:grid-cols-[160px,1fr,100px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+          <span className="text-[22px] xl:text-[30px] font-semibold font-teko text-gray-900">
             {formatSerialNumber(id)}.
           </span>
           <div className="grid gap-y-5 gap-x-[60px] grid-cols-[auto] lg:grid-cols-[210px,1fr] xl:grid-cols-[300px,1fr] 2xl:grid-cols-[360px,1fr]">
@@ -27,7 +27,7 @@ const WebServiceCard = ({ data, slug }: TServiceType) => {
               <div className="mt-[18px]">
                 <ul>
                   {features.slice(0, 3).map((feature, i) => (
-                    <li className="text-[18px] leading-[1.41]" key={i}>
+                    <li className="text-[18px] leading-[1.41] text-gray-900" key={i}>
                       + {feature}
                     </li>
                   ))}
@@ -35,12 +35,13 @@ const WebServiceCard = ({ data, slug }: TServiceType) => {
               </div>
             </div>
           </div>
-          <div className="w-[88px] h-[115px] border border-border rounded-[44px] inline-flex justify-center items-center">
+          <div className="w-[88px] h-[115px] border border-gray-900 rounded-[44px] inline-flex justify-center items-center bg-gray-50 dark:bg-gray-800">
             <ImageComponent
               src={typeof icon === "object" ? icon?.light : icon}
               darkSrc={typeof icon === "object" ? icon?.dark : icon}
               width={45}
               height={45}
+              className="filter brightness-0 invert"
             />
           </div>
         </div>

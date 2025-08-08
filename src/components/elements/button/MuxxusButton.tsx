@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import { buttonClasses } from "@/config/colors";
 
-type ButtonVariant = 'primary' | 'secondary' | 'security' | 'outline';
+type ButtonVariant = 'primary' | 'secondary' | 'security' | 'outline' | 'muxxus' | 'muxxusOutline';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 type Props = {
@@ -46,6 +46,8 @@ const MuxxusButton = ({
     secondary: buttonClasses.secondary,
     security: buttonClasses.security,
     outline: buttonClasses.outline,
+    muxxus: buttonClasses.muxxus,
+    muxxusOutline: buttonClasses.muxxusOutline,
   };
 
   const classes = cn(
