@@ -17,6 +17,7 @@ import StatMuxxus from "@/components/muxxus/StatMuxxus";
 import DesignSkill from "@/components/skill/design/DesignSkill";
 import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
 import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
+import MuxxusContactBanner from "@/components/banner/MuxxusContactBanner";
 
 
 const Design = () => {
@@ -51,7 +52,9 @@ const Design = () => {
       <DesignTextSlider sliderItems={data} />
       <StatMuxxus {...statFact}/>
       <DesignAbout {...about} />
-      <DesignImage {...image} />
+      {/* <DesignImage {...image} /> */}
+      <DesignImage2 {...image} />
+
       <DesignService {...service} services={services} />
 
       <DesignSkill {...skill} />
@@ -59,12 +62,12 @@ const Design = () => {
       {/* <DesignWork {...workMain} projects={works} /> */}
       <MuxxusFeature {...feature} />
       <MuxxusWork works={works} />
+      {/* <MuxxusContactBanner contactTitle="Ready to get started?" btn_text="Contact Us" /> */}
 
-      <DesignTestimonial {...testimonial} />
-      <DesignAward {...award} />
-      <DesignTeam teamMembers={teamMembers} {...team} />
-      <DesignImage2 {...image2} />
-      <DesignBlog blogs={blogs} {...blog} />
+      {/* <DesignTestimonial {...testimonial} /> */}
+      {/* <DesignAward {...award} /> */}
+      {/* <DesignTeam teamMembers={teamMembers} {...team} /> */}
+      {/* <DesignBlog blogs={blogs} {...blog} /> */}
     </main>
   );
 };

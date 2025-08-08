@@ -1,7 +1,8 @@
 import React from "react";
 import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
-import Footer2 from "@/components/footer/Footer2";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
 import DesignStudioHeader from "@/components/headers/DesignStudioHeader";
@@ -20,10 +21,12 @@ const Layout = ({
         <div id="smooth-content">
           <DesignStudioHeader />
           <div>{children}</div>
-          <Footer2
-            data={navigation.footer2}
-            TitleclassName="2xl:text-[120px]"
-          />
+          
+          {/* Newsletter Section */}
+          <MuxxusNewsletter />
+          
+          {/* MuxxusFooter - Footer personnalisé */}
+          <MuxxusFooter footerNav={navigation.footer1} />
         </div>
       </div>
     </div>

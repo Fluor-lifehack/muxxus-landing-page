@@ -23,7 +23,7 @@ const EmailInput = ({ className, iconClassName }: Props) => {
     <form onSubmit={handleSubmit} className="mt-[38px]">
       <div
         className={cn(
-          " bg-[#202020] rounded-[20px] flex gap-[10px] items-center py-[18px] px-[25px] xl:p-[25px] ",
+          "rounded-[20px] flex gap-[10px] items-center py-[18px] px-[25px] xl:p-[25px]",
           className
         )}
       >
@@ -32,7 +32,7 @@ const EmailInput = ({ className, iconClassName }: Props) => {
         </span>
         <input
           type="email"
-          className="text-[14px] text-text-fixed-3  focus:outline-none bg-[#202020] w-full border-0"
+          className="text-[14px] text-text-fixed-3 focus:outline-none w-full border-0 bg-transparent"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
