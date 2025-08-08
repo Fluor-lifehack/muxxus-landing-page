@@ -108,7 +108,7 @@ const MuxxusFooter = ({ footerNav }: Props) => {
       <div className="container2">
         {/* Section principale */}
         <div className="py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-12">
             {/* Logo et description */}
             <div className="lg:col-span-2">
               <Logo
@@ -136,7 +136,7 @@ const MuxxusFooter = ({ footerNav }: Props) => {
               </div>
             </div>
 
-            {/* Navigation inspirée d'Airwallex */}
+            {/* Navigation inspirée d'Airwallex - 5 colonnes sur la même ligne */}
             {airwallexNavigation.map((section, index) => (
               <div key={index} className="has_fade_anim">
                 <h3 className="text-white font-semibold text-lg mb-4">
