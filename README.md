@@ -1,36 +1,167 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Airwallex Landing Page
 
-## Getting Started
+Une application web moderne reproduisant le design et la structure du site Airwallex, transformée à partir d'un template existant.
 
-First, run the development server:
+## 🚀 Fonctionnalités
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Navigation
+
+- **Menu principal** avec dropdown plein écran reproduisant exactement le design d'Airwallex
+- **4 sections principales** : Products, Solutions, Developers, Company
+- **Navigation mobile** avec menu latéral responsive
+- **Tous les liens** sont fonctionnels et connectés à des pages dédiées
+
+### Design
+
+- **Header moderne** avec logo, navigation et boutons "Log in" / "See a demo"
+- **Dropdown menus** qui prennent toute la largeur de l'écran
+- **Sections du bas** reproduisant les cartes Wallet, Corporate Cards et Integrations
+- **Design responsive** optimisé pour tous les appareils
+
+### Pages créées
+
+- **50+ pages** générées automatiquement pour couvrir tous les éléments du menu
+- **Pages principales** : Business Accounts, Spend, Payments, Solutions, Developers, Company
+- **Pages spécialisées** : API documentation, case studies, support, etc.
+- **Structure cohérente** avec header, contenu et footer sur toutes les pages
+
+## 📁 Structure du projet
+
+```
+src/
+├── app/                    # Pages Next.js (50+ pages)
+│   ├── business-accounts/  # Comptes business
+│   ├── spend/             # Gestion des dépenses
+│   ├── payments/          # Solutions de paiement
+│   ├── solutions/         # Solutions par industrie
+│   ├── developers/        # Documentation développeur
+│   ├── company/           # Pages entreprise
+│   └── ...
+├── components/
+│   ├── headers/           # Header principal
+│   ├── menu/              # Navigation et dropdown
+│   ├── elements/          # Composants réutilisables
+│   └── ...
+└── config/
+    ├── navigation.json    # Structure de navigation
+    └── pages-config.json  # Configuration des pages
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies utilisées
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 14** avec App Router
+- **TypeScript** pour la sécurité des types
+- **Tailwind CSS** pour le styling
+- **React Icons** pour les icônes
+- **Radix UI** pour les composants d'interface
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Composants principaux
 
-## Learn More
+### Menu et Navigation
 
-To learn more about Next.js, take a look at the following resources:
+- `DesignStudioHeader.tsx` - Header principal avec navigation
+- `Menu.tsx` - Menu dropdown plein écran
+- `SideNavModal.tsx` - Menu mobile
+- `LeftSubmenu.tsx` - Sous-menus latéraux
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Sections spéciales
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `BottomSection.tsx` - Section du bas avec Wallet, Cards, Integrations
+- `WalletSection.tsx` - Affichage du portefeuille multi-devises
+- `CorporateCardsSection.tsx` - Cartes d'entreprise
+- `IntegrationsSection.tsx` - Intégrations tierces
 
-## Deploy on Vercel
+### Pages générées
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Toutes les pages utilisent un template cohérent
+- Hero sections avec gradients
+- Sections de fonctionnalités
+- Design responsive
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Installation et démarrage
+
+```bash
+# Installer les dépendances
+npm install
+
+# Démarrer le serveur de développement
+npm run dev
+
+# Ouvrir http://localhost:3000
+```
+
+## 📝 Génération automatique des pages
+
+Le projet inclut un script pour générer automatiquement toutes les pages :
+
+```bash
+# Générer toutes les pages manquantes
+node scripts/generate-pages.js
+```
+
+## 🎯 Fonctionnalités reproduites
+
+### Menu Products
+
+- Business Accounts (Global Accounts, FX & Transfers)
+- Spend (Corporate Cards, Expense Management, Bill Pay)
+- Payments (Checkout, Plugins, Links)
+- Platform APIs (Connected Accounts, Accounts, Payments, etc.)
+- Use Cases (Banking as a Service, Global Treasury, etc.)
+
+### Menu Solutions
+
+- Solutions par industrie (Travel, eCommerce, Software, etc.)
+- Solutions spécialisées (SaaS, Fintech, Professional Services, etc.)
+
+### Menu Developers
+
+- Documentation produit
+- Référence API
+- Liens rapides vers toutes les APIs
+
+### Menu Company
+
+- À propos d'Airwallex
+- Carrières
+- Ressources (Blog, Newsroom, FAQ, Support)
+- Études de cas
+
+## 🔧 Personnalisation
+
+### Modifier la navigation
+
+Éditez `src/config/navigation.json` pour modifier la structure du menu.
+
+### Ajouter de nouvelles pages
+
+1. Ajoutez la configuration dans `src/config/pages-config.json`
+2. Exécutez `node scripts/generate-pages.js`
+
+### Modifier le design
+
+- Les styles sont dans les composants avec Tailwind CSS
+- Les couleurs principales : purple-600, gray-900, etc.
+- Design system cohérent avec Airwallex
+
+## 📱 Responsive Design
+
+- **Desktop** : Menu dropdown plein écran
+- **Tablet** : Adaptation automatique
+- **Mobile** : Menu latéral avec accordéon
+
+## 🎨 Design System
+
+- **Couleurs** : Purple (#9333ea), Gray (#111827), White
+- **Typographie** : Inter, hiérarchie claire
+- **Espacement** : Système cohérent avec Tailwind
+- **Animations** : Transitions fluides
+
+## 📄 Licence
+
+Ce projet est créé à des fins éducatives et de démonstration.
+
+{
+"email": "brokertestuser@mechanicspedia.com",
+"password": "Je suis dev2022@"
+}

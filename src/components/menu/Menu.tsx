@@ -12,6 +12,8 @@ import navigation from "@/config/navigation.json";
 import Link from "next/link";
 import clsx from "clsx";
 import LeftSubmenu from "../elements/leftSubmenu/LeftSubmenu";
+import FeaturedCard from "../elements/featuredCard/FeaturedCard";
+import MoreSection from "../elements/moreSection/MoreSection";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useDirection } from "@/context/app.context";
@@ -21,6 +23,30 @@ const menuData = navigation.header;
 type Props = {
   textColor?: string;
   className?: string;
+};
+
+// Type pour les éléments de menu avec les nouvelles propriétés
+type MenuItem = {
+  id: number;
+  name: string;
+  path: string;
+  hasChildren?: boolean;
+  children?: MenuItem[];
+  description?: string;
+  isHeading?: boolean;
+  isFeatured?: boolean;
+  icon?: string;
+  image?: string;
+  moreSection?: {
+    title: string;
+    links: { name: string; path: string }[];
+  };
+  featuredCard?: {
+    title: string;
+    description: string;
+    link: string;
+    image?: string;
+  };
 };
 
 const Menu = ({ textColor, className }: Props) => {
@@ -44,7 +70,7 @@ const Menu = ({ textColor, className }: Props) => {
   return (
     <NavigationMenu dir={direction as "rtl" | "ltr"}>
       <NavigationMenuList>
-        {menuData.map((menu) => (
+        {menuData.map((menu: MenuItem) => (
           <NavigationMenuItem key={menu.id} className={cn(className)}>
             {menu.hasChildren ? (
               <>
@@ -57,49 +83,100 @@ const Menu = ({ textColor, className }: Props) => {
                   {menu.name}
                 </NavigationMenuTrigger>
                 {menu.children && menu.children.length && (
-                  <NavigationMenuContent className="border-0 bg-[#232529] transition-none">
-                    <NavigationMenuList
-                      className={clsx(
-                        "py-[18px] px-0  w-[240px] gap-4 grid grid-cols-1",
-                        menu.id === 1 && "w-[500px] grid grid-cols-2"
-                      )}
-                    >
-                      {menu.children.map((childMenu, j) => (
-                        <NavigationMenuItem
-                          key={childMenu.id}
-                          className="px-[25px] relative  ease-in transition-all duration-300 transform hover:scale-105"
-                          onMouseEnter={() => handleMouseEnter(childMenu.id)}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          <NavigationMenuLink
-                            asChild
-                            className="px-0 relative "
-                          >
-                            <>
-                              <Link
-                                className="text-text-fixed-3 px-0 flex justify-between hover:text-text-fixed-2"
-                                href={childMenu.path}
-                              >
-                                {childMenu.name}
-                                {childMenu.hasChildren && (
-                                  <>
-                                    {direction === "rtl" ? (
-                                      <ChevronLeft className="text-text-fixed-3 hover:text-text-fixed-2" />
-                                    ) : (
-                                      <ChevronRight className="text-text-fixed-3 hover:text-text-fixed-2" />
+                  <NavigationMenuContent className="border-0 bg-white shadow-lg transition-none w-screen left-0">
+                    <div className="max-w-7xl mx-auto px-8 py-12">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        {/* Colonne principale */}
+                        <div className="space-y-8">
+                          {menu.children.map((childMenu: MenuItem, j) => (
+                            <div
+                              key={childMenu.id}
+                              className={clsx(
+                                "relative",
+                                childMenu.isHeading && "border-b border-gray-200 pb-4 mb-6"
+                              )}
+                              onMouseEnter={() => handleMouseEnter(childMenu.id)}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                              {childMenu.isHeading ? (
+                                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                                  {childMenu.name}
+                                </div>
+                              ) : childMenu.isFeatured ? (
+                                <div className="w-full">
+                                  <FeaturedCard
+                                    title={childMenu.name}
+                                    description={childMenu.description || ""}
+                                    link={childMenu.path}
+                                    image={childMenu.image}
+                                    className="w-full"
+                                  />
+                                </div>
+                              ) : (
+                                <div className="group">
+                                  <Link
+                                    className="flex items-center justify-between text-gray-700 hover:text-gray-900 transition-colors"
+                                    href={childMenu.path}
+                                  >
+                                    <div className="flex items-center space-x-3">
+                                      {childMenu.icon && (
+                                        <span className="text-lg">{childMenu.icon}</span>
+                                      )}
+                                      <div>
+                                        <div className="font-medium">{childMenu.name}</div>
+                                        {childMenu.description && (
+                                          <div className="text-sm text-gray-500 mt-1">
+                                            {childMenu.description}
+                                          </div>
+                                        )}
+                                      </div>
+                                    </div>
+                                    {childMenu.hasChildren && (
+                                      <>
+                                        {direction === "rtl" ? (
+                                          <ChevronLeft className="text-gray-400 group-hover:text-gray-600" />
+                                        ) : (
+                                          <ChevronRight className="text-gray-400 group-hover:text-gray-600" />
+                                        )}
+                                      </>
                                     )}
-                                  </>
-                                )}
-                              </Link>
-                              {childMenu.hasChildren &&
-                                hoveredChildMenuId === childMenu.id && (
-                                  <LeftSubmenu submenuData={childMenu} />
-                                )}
-                            </>
-                          </NavigationMenuLink>
-                        </NavigationMenuItem>
-                      ))}
-                    </NavigationMenuList>
+                                  </Link>
+                                  {childMenu.hasChildren &&
+                                    hoveredChildMenuId === childMenu.id && (
+                                      <LeftSubmenu submenuData={childMenu} />
+                                    )}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Colonne droite - More Section et Featured Card */}
+                        <div className="space-y-8">
+                          {menu.moreSection && (
+                            <MoreSection
+                              title={menu.moreSection.title}
+                              links={menu.moreSection.links}
+                            />
+                          )}
+                          
+                          {menu.featuredCard && (
+                            <div>
+                              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                                FEATURED
+                              </h3>
+                              <FeaturedCard
+                                title={menu.featuredCard.title}
+                                description={menu.featuredCard.description}
+                                link={menu.featuredCard.link}
+                                image={menu.featuredCard.image}
+                                className="w-full"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   </NavigationMenuContent>
                 )}
               </>
