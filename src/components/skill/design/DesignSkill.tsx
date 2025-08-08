@@ -197,7 +197,7 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                         width={400}
                         height={250}
                         alt={card.title.toLowerCase().replace(/\s+/g, '-')}
-                        className="rounded-lg transition-all duration-500 ease-in-out mb-6 w-full h-48 object-cover"
+                        className="rounded-lg transition-all duration-[2000ms] ease-in-out mb-6 w-full h-48 object-cover"
                       />
                       <h3 className="text-xl font-semibold text-gray-900 mb-4">{card.title}</h3>
                       <p className="text-gray-600 mb-6">{card.description}</p>

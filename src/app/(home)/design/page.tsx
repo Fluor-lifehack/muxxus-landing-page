@@ -15,6 +15,8 @@ import DesignBlog from "@/components/blog/design/DesignBlog";
 import SeoData from "@/components/tools/SeoData";
 import StatMuxxus from "@/components/muxxus/StatMuxxus";
 import DesignSkill from "@/components/skill/design/DesignSkill";
+import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
+import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
 
 
 const Design = () => {
@@ -35,6 +37,8 @@ const Design = () => {
   const blogs = getAllPages("/blogs/design");
   const { data: statFact } = getMainPage("/funFact/muxxus-stat.mdx");
   const { data: skill } = getMainPage("/skill/design-skill.mdx");
+  const { data: feature } = getMainPage("/features/web-features.mdx");
+
 
   return (
     <main>
@@ -52,7 +56,10 @@ const Design = () => {
 
       <DesignSkill {...skill} />
 
-      <DesignWork {...workMain} projects={works} />
+      {/* <DesignWork {...workMain} projects={works} /> */}
+      <MuxxusFeature {...feature} />
+      <MuxxusWork works={works} />
+
       <DesignTestimonial {...testimonial} />
       <DesignAward {...award} />
       <DesignTeam teamMembers={teamMembers} {...team} />
