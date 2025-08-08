@@ -2,192 +2,416 @@
   "header": [
     {
       "id": 1,
-      "name": "Demos",
+      "name": "Products",
       "path": "#",
       "hasChildren": true,
       "children": [
         {
           "id": 1,
-          "name": "Branding Agency",
-          "path": "/branding"
+          "name": "Business Accounts",
+          "path": "/business-accounts",
+          "icon": "💎",
+          "hasChildren": true,
+          "children": [
+            {
+              "id": 1,
+              "name": "Global Accounts",
+              "path": "/business-accounts/global",
+              "description": "Multi-currency accounts to receive funds"
+            },
+            {
+              "id": 2,
+              "name": "FX & Transfers",
+              "path": "/business-accounts/fx-transfers",
+              "description": "High-speed international transfers"
+            }
+          ]
         },
         {
           "id": 2,
-          "name": "Web Agency",
-          "path": "/web"
+          "name": "Spend",
+          "path": "/spend",
+          "icon": "🎵",
+          "hasChildren": true,
+          "children": [
+            {
+              "id": 1,
+              "name": "Corporate Cards",
+              "path": "/spend/corporate-cards",
+              "description": "Multi-currency company & employee cards"
+            },
+            {
+              "id": 2,
+              "name": "Expense Management",
+              "path": "/spend/expense-management",
+              "description": "Expenses & reimbursement management"
+            },
+            {
+              "id": 3,
+              "name": "Bill Pay",
+              "path": "/spend/bill-pay",
+              "description": "Automated accounts payable management"
+            }
+          ]
         },
         {
           "id": 3,
-          "name": "Seo Agency",
-          "path": "/seo"
+          "name": "Payments",
+          "path": "/payments",
+          "icon": "[]",
+          "hasChildren": true,
+          "children": [
+            {
+              "id": 1,
+              "name": "Checkout",
+              "path": "/payments/checkout",
+              "description": "Conversion-optimised prebuilt payment form"
+            },
+            {
+              "id": 2,
+              "name": "Payment Plugins",
+              "path": "/payments/plugins",
+              "description": "Integrations with eCommerce platforms"
+            },
+            {
+              "id": 3,
+              "name": "Payment Links",
+              "path": "/payments/links",
+              "description": "No-code payment acceptance"
+            }
+          ]
         },
         {
           "id": 4,
-          "name": "Design Agency",
-          "path": "/design"
+          "name": "Platform APIs and Embedded Finance",
+          "path": "/platform-apis",
+          "icon": "⚪",
+          "hasChildren": true,
+          "children": [
+            {
+              "id": 1,
+              "name": "Connected Accounts",
+              "path": "/platform-apis/connected-accounts",
+              "description": "Programmatic account creation & onboarding"
+            },
+            {
+              "id": 2,
+              "name": "Accounts",
+              "path": "/platform-apis/accounts",
+              "description": "Multi-currency account management, at scale"
+            },
+            {
+              "id": 3,
+              "name": "Payments",
+              "path": "/platform-apis/payments",
+              "description": "Global multi-currency payment acceptance"
+            },
+            {
+              "id": 4,
+              "name": "Transactional FX",
+              "path": "/platform-apis/transactional-fx",
+              "description": "Interbank FX rates & currency management"
+            },
+            {
+              "id": 5,
+              "name": "Payouts",
+              "path": "/platform-apis/payouts",
+              "description": "Programmatic, cost-effective global payouts"
+            },
+            {
+              "id": 6,
+              "name": "Issuing",
+              "path": "/platform-apis/issuing",
+              "description": "Global card issuance for a variety of use cases"
+            }
+          ]
         },
         {
           "id": 5,
-          "name": "Video Agency",
-          "path": "/video"
+          "name": "USE CASES",
+          "path": "#",
+          "isHeading": true
         },
         {
           "id": 6,
-          "name": "AI Agency",
-          "path": "/ai-agency"
+          "name": "Banking as a Service",
+          "path": "/use-cases/banking-as-service",
+          "description": "Full featured services"
         },
         {
           "id": 7,
-          "name": "Marketing Agency",
-          "path": "/marketing"
+          "name": "Global Treasury",
+          "path": "/use-cases/global-treasury",
+          "description": "Manage global funds"
+        },
+        {
+          "id": 8,
+          "name": "Payments for Platforms",
+          "path": "/use-cases/payments-for-platforms",
+          "description": "Embed payments"
+        }
+      ],
+      "moreSection": {
+        "title": "MORE",
+        "links": [
+          {
+            "name": "Integrations",
+            "path": "/integrations"
+          },
+          {
+            "name": "Product tour",
+            "path": "/product-tour"
+          }
+        ]
+      },
+      "featuredCard": {
+        "title": "Explore Airwallex Business Accounts",
+        "description": "All-in-one business accounts to manage your finances globally",
+        "link": "/business-accounts",
+        "image": "/assets/imgs/works/img-s-9.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Solutions",
+      "path": "#",
+      "hasChildren": true,
+      "children": [
+        {
+          "id": 1,
+          "name": "INDUSTRIES",
+          "path": "#",
+          "isHeading": true
+        },
+        {
+          "id": 2,
+          "name": "Travel",
+          "path": "/solutions/travel",
+          "description": "Agencies, tour operators, hospitality"
+        },
+        {
+          "id": 3,
+          "name": "eCommerce and retail",
+          "path": "/solutions/ecommerce-retail",
+          "description": "Online and in-store retail"
+        },
+        {
+          "id": 4,
+          "name": "Software and technology",
+          "path": "/solutions/software-technology",
+          "description": "B2B and B2C software"
+        },
+        {
+          "id": 5,
+          "name": "Wholesale and trade",
+          "path": "/solutions/wholesale-trade",
+          "description": "Wholesalers, manufacturing, logistics"
+        },
+        {
+          "id": 6,
+          "name": "Marketplaces",
+          "path": "/solutions/marketplaces",
+          "description": "Goods and services marketplaces"
+        },
+        {
+          "id": 7,
+          "name": "SaaS platforms",
+          "path": "/solutions/saas-platforms",
+          "description": "Integrated SaaS offerings"
+        },
+        {
+          "id": 8,
+          "name": "Fintechs and financial services",
+          "path": "/solutions/fintechs-financial-services",
+          "description": "Fintechs, lending, banks"
+        },
+        {
+          "id": 9,
+          "name": "Professional services",
+          "path": "/solutions/professional-services",
+          "description": "People-based businesses"
+        },
+        {
+          "id": 10,
+          "name": "Digital and creator",
+          "path": "/solutions/digital-creator",
+          "description": "Social, streaming, creator economy"
         }
       ]
     },
     {
-      "id": 2,
-      "name": "About",
-      "path": "/about"
-    },
-    {
       "id": 3,
-      "name": "Portfolio",
+      "name": "Developers",
       "path": "#",
       "hasChildren": true,
       "children": [
         {
           "id": 1,
-          "name": "Portfolio Carousel",
-          "path": "/portfolio/carousel"
+          "name": "DOCS & API REFERENCES",
+          "path": "#",
+          "isHeading": true
         },
         {
           "id": 2,
-          "name": "Portfolio Material",
-          "path": "/portfolio/material"
+          "name": "Product Documentation",
+          "path": "/developers/docs",
+          "description": "Review detailed product information to get the most from your integration"
         },
         {
           "id": 3,
-          "name": "Portfolio Slicer",
-          "path": "/portfolio/slicer"
+          "name": "API Reference",
+          "path": "/developers/api",
+          "description": "Explore the full flexibility and power of our Airwallex API"
         },
         {
           "id": 4,
-          "name": "Portfolio Spring",
-          "path": "/portfolio/spring"
+          "name": "QUICK LINKS",
+          "path": "#",
+          "isHeading": true
+        },
+        {
+          "id": 5,
+          "name": "Connected Accounts",
+          "path": "/developers/connected-accounts",
+          "description": "Programmatic account creation and onboarding"
+        },
+        {
+          "id": 6,
+          "name": "Accounts",
+          "path": "/developers/accounts",
+          "description": "Multi-currency account management, at scale"
+        },
+        {
+          "id": 7,
+          "name": "Payments",
+          "path": "/developers/payments",
+          "description": "Accept multi-currency payments globally"
+        },
+        {
+          "id": 8,
+          "name": "Transactional FX",
+          "path": "/developers/transactional-fx",
+          "description": "Interbank FX rates and transaction services"
+        },
+        {
+          "id": 9,
+          "name": "Payouts",
+          "path": "/developers/payouts",
+          "description": "Make fast and cost-effective payouts"
+        },
+        {
+          "id": 10,
+          "name": "Issuing",
+          "path": "/developers/issuing",
+          "description": "Create multi-currency cards"
+        },
+        {
+          "id": 11,
+          "name": "Banking as a Service",
+          "path": "/developers/banking-as-service",
+          "description": "Offer full-featured financial products"
+        },
+        {
+          "id": 12,
+          "name": "Global Treasury",
+          "path": "/developers/global-treasury",
+          "description": "Collect, store, and disburse funds globally"
+        },
+        {
+          "id": 13,
+          "name": "Payments for Platforms",
+          "path": "/developers/payments-for-platforms",
+          "description": "Integrate end-to-end payments"
         }
       ]
     },
     {
       "id": 4,
-      "name": "Pages",
+      "name": "Company",
       "path": "#",
       "hasChildren": true,
       "children": [
         {
           "id": 1,
-          "name": "Service Pages",
+          "name": "ABOUT AIRWALLEX",
           "path": "#",
-          "hasChildren": true,
-          "children": [
-            {
-              "id": 1,
-              "name": "Services",
-              "path": "/service"
-            },
-            {
-              "id": 2,
-              "name": "Service Details",
-              "path": "/service/interaction-design"
-            }
-          ]
+          "isHeading": true
         },
         {
           "id": 2,
-          "name": "Project Pages",
-          "path": "#",
-          "hasChildren": true,
-          "children": [
-            {
-              "id": 1,
-              "name": "Project",
-              "path": "/work"
-            },
-            {
-              "id": 2,
-              "name": "Project Details",
-              "path": "/work/victoria_kinko"
-            }
-          ]
+          "name": "Who we are",
+          "path": "/company/who-we-are",
+          "description": "A snapshot of Airwallex"
         },
         {
           "id": 3,
-          "name": "Team Pages",
-          "path": "#",
-          "hasChildren": true,
-          "children": [
-            {
-              "id": 1,
-              "name": "Team",
-              "path": "/team"
-            },
-            {
-              "id": 2,
-              "name": "Team Details",
-              "path": "/team/kamal-abraham"
-            }
-          ]
+          "name": "Operating principles",
+          "path": "/company/operating-principles",
+          "description": "What matters to us"
         },
         {
           "id": 4,
-          "name": "Career Pages",
+          "name": "JOIN US",
           "path": "#",
-          "hasChildren": true,
-          "children": [
-            {
-              "id": 1,
-              "name": "Career",
-              "path": "/career"
-            },
-            {
-              "id": 2,
-              "name": "Career Details",
-              "path": "/career/frontend-developer"
-            }
-          ]
+          "isHeading": true
         },
         {
           "id": 5,
-          "name": "Faq",
-          "path": "/faq"
+          "name": "Careers",
+          "path": "/career",
+          "description": "Come join us! We're hiring"
         },
         {
           "id": 6,
-          "name": "404 Page",
-          "path": "/404"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Blog",
-      "path": "#",
-      "hasChildren": true,
-      "children": [
-        {
-          "id": 1,
-          "name": "Blog",
-          "path": "/blog"
+          "name": "Partnership program",
+          "path": "/company/partnership-program",
+          "description": "Explore and join our partnership program"
         },
         {
-          "id": 2,
-          "name": "Blog Details",
-          "path": "/blog/building-quality"
+          "id": 7,
+          "name": "RESOURCES",
+          "path": "#",
+          "isHeading": true
+        },
+        {
+          "id": 8,
+          "name": "Blog",
+          "path": "/blog",
+          "description": "Industry and product insights"
+        },
+        {
+          "id": 9,
+          "name": "Newsroom",
+          "path": "/company/newsroom",
+          "description": "Latest news on Airwallex"
+        },
+        {
+          "id": 10,
+          "name": "FAQ",
+          "path": "/faq",
+          "description": "Answers to common questions"
+        },
+        {
+          "id": 11,
+          "name": "Support",
+          "path": "/support",
+          "description": "Connect with our team"
+        },
+        {
+          "id": 12,
+          "name": "FEATURED STORY",
+          "path": "#",
+          "isHeading": true
+        },
+        {
+          "id": 13,
+          "name": "How Authentic Vacations saved $10k a month on FX with Airwallex",
+          "path": "/case-studies/authentic-vacations",
+          "description": "Learn more",
+          "isFeatured": true,
+          "image": "/assets/imgs/works/img-s-24.jpg"
         }
       ]
-    },
-    {
-      "id": 6,
-      "name": "Contact",
-      "path": "/contact"
     }
   ],
   "footer1": [
@@ -284,7 +508,7 @@
   ],
   "footer2": {
     "title": "{Get started} <br> now",
-    "subtitle": "If you would like to work with us or just want to get in touch, we’d love to hear from you!",
+    "subtitle": "If you would like to work with us or just want to get in touch, we'd love to hear from you!",
     "locationData": [
       {
         "id": 1,
