@@ -6,7 +6,10 @@ import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import Link from "next/link";
 import Logo from "@/components/elements/logo/Logo";
+import MuxxusButton from "@/components/elements/button/MuxxusButton";
 import siteConfig from "@/config/siteConfig.json";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 type Props = {
   footerNav: {
@@ -22,6 +25,16 @@ type Props = {
 const MuxxusFooter = ({ footerNav }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const { footer_info, social, site_info } = siteConfig;
+  const { theme } = useTheme();
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      setIsLight(true);
+    } else {
+      setIsLight(false);
+    }
+  }, [theme]);
 
   useGSAP(
     () => {
@@ -40,13 +53,12 @@ const MuxxusFooter = ({ footerNav }: Props) => {
             {/* Logo et description */}
             <div className="lg:col-span-2">
               <Logo
-                light={true}
-                url={site_info?.logo_light_2}
-                customWidth={140}
-                customHeight={40}
+                light={isLight}
+                customWidth={150}
+                customHeight={110}
                 className="mb-6"
               />
-              <p className="text-gray-400 text-lg leading-relaxed max-w-md mb-8">
+              <p className="text-gray-300 text-lg leading-relaxed max-w-md mb-8">
                 Secure your business with enterprise-grade protection. 
                 Trusted by companies worldwide for their most critical data.
               </p>
@@ -76,7 +88,7 @@ const MuxxusFooter = ({ footerNav }: Props) => {
                     <li key={index}>
                       <Link
                         href={child.path}
-                        className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                        className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
                       >
                         {child.name}
                       </Link>
@@ -94,22 +106,25 @@ const MuxxusFooter = ({ footerNav }: Props) => {
             <h2 className="text-white text-3xl lg:text-4xl font-bold mb-4 has_text_mov_anim">
               Ready to secure your business?
             </h2>
-            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
               Get started with enterprise-grade security solutions designed for modern businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
+              <MuxxusButton
                 href="/contact"
-                className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                variant="primary"
+                size="lg"
               >
                 Get Started
-              </Link>
-              <Link
+              </MuxxusButton>
+              <MuxxusButton
                 href="/contact"
-                className="border border-gray-600 text-white px-8 py-3 rounded-lg font-semibold hover:border-white transition-colors duration-200"
+                variant="outline"
+                size="lg"
+                className="text-white border-white hover:bg-white hover:text-gray-900"
               >
                 Contact Sales
-              </Link>
+              </MuxxusButton>
             </div>
           </div>
         </div>
