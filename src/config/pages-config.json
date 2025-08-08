@@ -1,0 +1,219 @@
+{
+  "pages": [
+    {
+      "path": "/business-accounts/fx-transfers",
+      "title": "FX & Transfers",
+      "description": "High-speed international transfers with competitive exchange rates."
+    },
+    {
+      "path": "/spend/expense-management",
+      "title": "Expense Management",
+      "description": "Automated expenses & reimbursement management for your business."
+    },
+    {
+      "path": "/spend/bill-pay",
+      "title": "Bill Pay",
+      "description": "Automated accounts payable management solution."
+    },
+    {
+      "path": "/payments/checkout",
+      "title": "Checkout",
+      "description": "Conversion-optimised prebuilt payment form."
+    },
+    {
+      "path": "/payments/plugins",
+      "title": "Payment Plugins",
+      "description": "Integrations with eCommerce platforms."
+    },
+    {
+      "path": "/payments/links",
+      "title": "Payment Links",
+      "description": "No-code payment acceptance solution."
+    },
+    {
+      "path": "/platform-apis",
+      "title": "Platform APIs",
+      "description": "Embedded finance solutions for your platform."
+    },
+    {
+      "path": "/platform-apis/connected-accounts",
+      "title": "Connected Accounts",
+      "description": "Programmatic account creation & onboarding."
+    },
+    {
+      "path": "/platform-apis/accounts",
+      "title": "Accounts API",
+      "description": "Multi-currency account management, at scale."
+    },
+    {
+      "path": "/platform-apis/payments",
+      "title": "Payments API",
+      "description": "Global multi-currency payment acceptance."
+    },
+    {
+      "path": "/platform-apis/transactional-fx",
+      "title": "Transactional FX",
+      "description": "Interbank FX rates & currency management."
+    },
+    {
+      "path": "/platform-apis/payouts",
+      "title": "Payouts API",
+      "description": "Programmatic, cost-effective global payouts."
+    },
+    {
+      "path": "/platform-apis/issuing",
+      "title": "Issuing API",
+      "description": "Global card issuance for a variety of use cases."
+    },
+    {
+      "path": "/use-cases/banking-as-service",
+      "title": "Banking as a Service",
+      "description": "Full featured banking services for your platform."
+    },
+    {
+      "path": "/use-cases/global-treasury",
+      "title": "Global Treasury",
+      "description": "Manage global funds efficiently."
+    },
+    {
+      "path": "/use-cases/payments-for-platforms",
+      "title": "Payments for Platforms",
+      "description": "Embed payments into your platform."
+    },
+    {
+      "path": "/integrations",
+      "title": "Integrations",
+      "description": "Connect Airwallex to your favorite tools and platforms."
+    },
+    {
+      "path": "/product-tour",
+      "title": "Product Tour",
+      "description": "Take a guided tour of our platform and features."
+    },
+    {
+      "path": "/solutions/ecommerce-retail",
+      "title": "eCommerce & Retail Solutions",
+      "description": "Financial solutions for online and in-store retail businesses."
+    },
+    {
+      "path": "/solutions/software-technology",
+      "title": "Software & Technology Solutions",
+      "description": "Financial infrastructure for B2B and B2C software companies."
+    },
+    {
+      "path": "/solutions/wholesale-trade",
+      "title": "Wholesale & Trade Solutions",
+      "description": "Financial solutions for wholesalers, manufacturing, and logistics."
+    },
+    {
+      "path": "/solutions/marketplaces",
+      "title": "Marketplace Solutions",
+      "description": "Financial infrastructure for goods and services marketplaces."
+    },
+    {
+      "path": "/solutions/saas-platforms",
+      "title": "SaaS Platform Solutions",
+      "description": "Integrated SaaS offerings with embedded finance."
+    },
+    {
+      "path": "/solutions/fintechs-financial-services",
+      "title": "Fintech & Financial Services",
+      "description": "Solutions for fintechs, lending, and banks."
+    },
+    {
+      "path": "/solutions/professional-services",
+      "title": "Professional Services",
+      "description": "Financial solutions for people-based businesses."
+    },
+    {
+      "path": "/solutions/digital-creator",
+      "title": "Digital & Creator Solutions",
+      "description": "Financial infrastructure for social, streaming, and creator economy."
+    },
+    {
+      "path": "/developers/docs",
+      "title": "Product Documentation",
+      "description": "Review detailed product information to get the most from your integration."
+    },
+    {
+      "path": "/developers/api",
+      "title": "API Reference",
+      "description": "Explore the full flexibility and power of our Airwallex API."
+    },
+    {
+      "path": "/developers/connected-accounts",
+      "title": "Connected Accounts API",
+      "description": "Programmatic account creation and onboarding."
+    },
+    {
+      "path": "/developers/accounts",
+      "title": "Accounts API",
+      "description": "Multi-currency account management, at scale."
+    },
+    {
+      "path": "/developers/payments",
+      "title": "Payments API",
+      "description": "Accept multi-currency payments globally."
+    },
+    {
+      "path": "/developers/transactional-fx",
+      "title": "Transactional FX API",
+      "description": "Interbank FX rates and transaction services."
+    },
+    {
+      "path": "/developers/payouts",
+      "title": "Payouts API",
+      "description": "Make fast and cost-effective payouts."
+    },
+    {
+      "path": "/developers/issuing",
+      "title": "Issuing API",
+      "description": "Create multi-currency cards."
+    },
+    {
+      "path": "/developers/banking-as-service",
+      "title": "Banking as a Service API",
+      "description": "Offer full-featured financial products."
+    },
+    {
+      "path": "/developers/global-treasury",
+      "title": "Global Treasury API",
+      "description": "Collect, store, and disburse funds globally."
+    },
+    {
+      "path": "/developers/payments-for-platforms",
+      "title": "Payments for Platforms API",
+      "description": "Integrate end-to-end payments."
+    },
+    {
+      "path": "/company/who-we-are",
+      "title": "Who We Are",
+      "description": "A snapshot of Airwallex and our mission."
+    },
+    {
+      "path": "/company/operating-principles",
+      "title": "Operating Principles",
+      "description": "What matters to us and how we operate."
+    },
+    {
+      "path": "/company/partnership-program",
+      "title": "Partnership Program",
+      "description": "Explore and join our partnership program."
+    },
+    {
+      "path": "/company/newsroom",
+      "title": "Newsroom",
+      "description": "Latest news and updates from Airwallex."
+    },
+    {
+      "path": "/support",
+      "title": "Support",
+      "description": "Connect with our team for help and assistance."
+    },
+    {
+      "path": "/case-studies/authentic-vacations",
+      "title": "Authentic Vacations Case Study",
+      "description": "How Authentic Vacations saved $10k a month on FX with Airwallex."
+    }
+  ]
+} 
