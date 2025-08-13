@@ -86,27 +86,31 @@ const MuxxusService = ({
                           {service.description}
                         </p>
                         
-                        <div className="mt-[18px]">
-                          <ul className="space-y-2">
-                            {service.features.slice(0, 3).map((feature, i) => (
-                              <li key={i} className="text-[18px] leading-[1.41] text-gray-900">
-                                + {feature}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                        {service.features && service.features.length > 0 && (
+                          <div className="mt-[18px]">
+                            <ul className="space-y-2">
+                              {service.features.slice(0, 3).map((feature, i) => (
+                                <li key={i} className="text-[18px] leading-[1.41] text-gray-900">
+                                  + {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     </div>
                     
-                    <div className="w-[88px] h-[115px] border border-gray-900 rounded-[44px] inline-flex justify-center items-center bg-gray-50 dark:bg-gray-800">
-                      <ImageComponent
-                        src={service.icon.light}
-                        darkSrc={service.icon.dark}
-                        width={45}
-                        height={45}
-                        className="filter brightness-0 invert"
-                      />
-                    </div>
+                    {service.icon && (
+                      <div className="w-[88px] h-[115px] border border-gray-900 rounded-[44px] inline-flex justify-center items-center bg-gray-50 dark:bg-gray-800">
+                        <ImageComponent
+                          src={service.icon.light || service.icon.dark || "/assets/imgs/icon/icon-s-24.png"}
+                          darkSrc={service.icon.dark || service.icon.light || "/assets/imgs/icon/icon-s-24.png"}
+                          width={45}
+                          height={45}
+                          className="filter brightness-0 invert"
+                        />
+                      </div>
+                    )}
                   </div>
                 </Link>
               </div>

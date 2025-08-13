@@ -18,6 +18,11 @@ import DesignSkill from "@/components/skill/design/DesignSkill";
 import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
 import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
 import MuxxusContactBanner from "@/components/banner/MuxxusContactBanner";
+import MarketingImage from "@/components/image/MarketingImage";
+import SeoImage from "@/components/image/SeoImage";
+import WebImage from '@/components/image/WebImage';
+import BrandingImage from '@/components/image/BrandingImage';
+import FineImageSection from '@/components/image/FineImageSection';
 
 
 const Design = () => {
@@ -60,6 +65,16 @@ const Design = () => {
       <DesignSkill {...skill} />
 
       {/* <DesignWork {...workMain} projects={works} /> */}
+      {/* <MarketingImage {...image} />
+      <DesignImage2 {...image} />
+
+      <WebImage {...image} /> */}
+
+      <FineImageSection {...image} />
+
+      {/* <MarketingImage {...image} />
+      <MarketingImage {...image} /> */}
+
       <MuxxusFeature {...feature} />
       <MuxxusWork works={works} />
       {/* <MuxxusContactBanner contactTitle="Ready to get started?" btn_text="Contact Us" /> */}

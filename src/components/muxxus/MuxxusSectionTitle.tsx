@@ -39,13 +39,13 @@ const MuxxusSectionTitle = ({
     <div ref={containerRef} className={cn("has_text_mov_anim", alignClasses[align], className)}>
       {subtitle && (
         <div className="mb-4">
-          <span className="text-[16px] leading-none font-bold uppercase inline-block text-gray-900">
+          <span className="text-[16px] leading-none font-bold uppercase inline-block">
             {subtitle}
           </span>
         </div>
       )}
       
-      <h2 className="text-[42px] xl:text-[52px] 2xl:text-[62px] leading-[0.88] font-bold text-gray-900 dark:text-white mb-6">
+      <h2 className="text-[42px] xl:text-[52px] 2xl:text-[62px] leading-[0.88] font-bold mb-6">
         {title}
       </h2>
       

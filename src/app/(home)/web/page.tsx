@@ -47,7 +47,7 @@ const page = () => {
         shapeImage="/assets/imgs/shape/img-s-65.png"
       />
       <WebAbout data={{ ...about }} />
-      <WebFeature {...feature} />
+      <WebFeature {...feature} image={image} />
       <WebSkill {...skill} />
       <WebEnterPrise {...enterprise} />
       <WebWork works={works} />

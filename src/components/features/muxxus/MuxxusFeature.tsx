@@ -2,8 +2,8 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import WebSectionTItle from "@/components/sectionTitle/WebSectionTItle";
-import WebFeatureCard from "@/components/features/web/WebFeatureCard";
+import MuxxusSectionTitle from "@/components/muxxus/MuxxusSectionTitle";
+import MuxxusFeatureCard from "@/components/features/muxxus/MuxxusFeatureCard";
 import ImageComponent from "@/components/tools/ImageComponent";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
@@ -40,7 +40,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <WebSectionTItle
+            <MuxxusSectionTitle
               title={title}
               className="has_text_move_anim max-w-[460px] lg:max-w-[460px] xl:max-w-[730px] lg:mx-auto text-white"
             />
@@ -54,7 +54,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
           <div className="mt-[53px] xl:mt-[73px] overflow-hidden">
             <div className="grid sm:grid-cols-2 md:grid-cols-3 mx-[-30px] xl:mx-[-80px] 2xl:mx-[-100px]">
               {features.map((feature, index) => (
-                <WebFeatureCard key={index} {...feature} />
+                <MuxxusFeatureCard key={index} {...feature} />
               ))}
             </div>
           </div>

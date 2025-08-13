@@ -150,13 +150,13 @@ const DesignService = ({
           </div>
 
           {/* CTA Section */}
-          <div className="text-center">
+          {/* <div className="text-center">
             <ButtonFlip
               btnText={action_btn.label.replace(/<br\s*\/?>/gi, ' ').trim()}
               link={action_btn.link}
               className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
