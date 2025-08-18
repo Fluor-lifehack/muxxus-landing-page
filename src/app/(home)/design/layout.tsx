@@ -17,10 +17,13 @@ const Layout = ({
       <ScrollSmootherComponent />
       <ToolsComponent />
       <ScrollTop />
+      
+      {/* Header fixe en dehors du ScrollSmoother */}
+      <DesignStudioHeader />
+      
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <DesignStudioHeader />
-          <div>{children}</div>
+          <div className="pt-16">{children}</div>
           
           {/* Newsletter Section */}
           <MuxxusNewsletter />

@@ -16,7 +16,11 @@ import SeoData from "@/components/tools/SeoData";
 import StatMuxxus from "@/components/muxxus/StatMuxxus";
 import DesignSkill from "@/components/skill/design/DesignSkill";
 import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
+import DesignProcess from "@/components/process/DesignProcess";
 import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
+import DesignPortfolioGallery from "@/components/portfolio/DesignPortfolioGallery";
+import CreativeTeamShowcase from "@/components/team/CreativeTeamShowcase";
+import DesignToolsTechnologies from "@/components/tools/DesignToolsTechnologies";
 import MuxxusContactBanner from "@/components/banner/MuxxusContactBanner";
 import MarketingImage from "@/components/image/MarketingImage";
 import SeoImage from "@/components/image/SeoImage";
@@ -43,7 +47,11 @@ const Design = () => {
   const blogs = getAllPages("/blogs/design");
   const { data: statFact } = getMainPage("/funFact/muxxus-stat.mdx");
   const { data: skill } = getMainPage("/skill/design-skill.mdx");
+  const { data: designProcess } = getMainPage("/process/design-process.mdx");
   const { data: feature } = getMainPage("/features/web-features.mdx");
+  const { data: portfolio } = getMainPage("/portfolio/design-portfolio.mdx");
+  const { data: creativeTeam } = getMainPage("/team/creative-team.mdx");
+  const { data: toolsTech } = getMainPage("/tools/design-tools-tech.mdx");
 
 
   return (
@@ -75,7 +83,22 @@ const Design = () => {
       {/* <MarketingImage {...image} />
       <MarketingImage {...image} /> */}
 
-      <MuxxusFeature {...feature} />
+      {/* Section avec les deux composants côte à côte */}
+      <div className="grid lg:grid-cols-2 gap-8">
+        <DesignProcess {...designProcess} />
+        <MuxxusFeature {...feature} />
+      </div>
+
+      {/* Portfolio Gallery */}
+      <DesignPortfolioGallery {...portfolio} />
+
+      {/* Équipe Créative */}
+      {/* <CreativeTeamShowcase {...creativeTeam} /> */}
+
+      {/* Outils et Technologies */}
+      {/* <DesignToolsTechnologies {...toolsTech} /> */}
+
+      
       <MuxxusWork works={works} />
       {/* <MuxxusContactBanner contactTitle="Ready to get started?" btn_text="Contact Us" /> */}
 

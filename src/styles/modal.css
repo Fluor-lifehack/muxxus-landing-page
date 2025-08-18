@@ -1,0 +1,86 @@
+/* Modal centrage parfait */
+.modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1rem;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* Centrage forcé du modal */
+.modal-overlay::before {
+  content: '' !important;
+  display: block !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.modal-content {
+  position: relative !important;
+  background: #121212 !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.1) !important;
+  max-width: 42rem !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  transform: scale(1) !important;
+  transition: all 0.3s ease !important;
+  z-index: 10000 !important;
+  align-self: center !important;
+  justify-self: center !important;
+}
+
+/* Animation d'entrée */
+.modal-overlay {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: calc(100vw - 2rem) !important;
+    margin: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal-content {
+    max-width: calc(100vw - 1rem) !important;
+    margin: 0.5rem !important;
+  }
+}

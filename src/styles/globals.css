@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import modal styles */
+@import './modal.css';
+
 
 @layer base {
   :root {
