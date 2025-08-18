@@ -5,7 +5,7 @@ import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
-import AirwallexStyleHeader from "@/components/headers/AirwallexStyleHeader";
+import MuxxusHeader from "@/components/headers/MuxxusHeader";
 
 const Layout = ({
   children,
@@ -19,7 +19,7 @@ const Layout = ({
       <ScrollTop />
       
                    {/* Header fixe en dehors du ScrollSmoother */}
-             <AirwallexStyleHeader />
+             <MuxxusHeader />
       
       <div id="smooth-wrapper">
         <div id="smooth-content">
