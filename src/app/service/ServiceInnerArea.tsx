@@ -46,15 +46,17 @@ const ServiceInnerArea = ({ title, description, services }: Props) => {
                 <ServiceInnerCard service={item} />
               </div>
             ))}
+            {/* Image LBS alignée avec les colonnes */}
+            <div className="has_fade_anim" data-delay={0.6}>
+              <div className="px-[30px] xl:px-[70px] flex items-center justify-center">
+                <img
+                  src="/assets/imgs/muxxus/lbs-business-accounts.png"
+                  alt="LBS Business Accounts Services"
+                  className="w-[200px] h-[300px] object-cover rounded-2xl shadow-2xl"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        {/* Image LBS après les cartes */}
-        <div className="mt-16 flex justify-center">
-          <img
-            src="/assets/imgs/muxxus/lbs-business-accounts.png"
-            alt="LBS Business Accounts Services"
-            className="w-[400px] h-[600px] object-cover rounded-2xl shadow-2xl"
-          />
         </div>
       </div>
     </div>
