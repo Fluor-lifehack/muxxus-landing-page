@@ -31,7 +31,7 @@ const ServiceInnerArea = ({ title, description, services }: Props) => {
         <div className="pb-[57px] grid items-center lg:grid-cols-[1fr_420px]">
           <h2
             className="font-normal inner-section-title has_text_mov_anim"
-            dangerouslySetInnerHTML={convertWithBr(title)}
+            dangerouslySetInnerHTML={{ __html: title }}
           />
           <p className="text has_fade_anim">{description}</p>
         </div>
@@ -47,6 +47,14 @@ const ServiceInnerArea = ({ title, description, services }: Props) => {
               </div>
             ))}
           </div>
+        </div>
+        {/* Image LBS après les cartes */}
+        <div className="mt-16 flex justify-center">
+          <img
+            src="/assets/imgs/muxxus/lbs-business-accounts.png"
+            alt="LBS Business Accounts Services"
+            className="w-[400px] h-[600px] object-cover rounded-2xl shadow-2xl"
+          />
         </div>
       </div>
     </div>

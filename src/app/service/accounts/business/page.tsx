@@ -43,27 +43,24 @@ const BusinessAccountsServicePage = () => {
     features: [
       {
         icon: "/assets/imgs/icon/icon-s-1.png",
-        title: "Multi-Currency<br/>Accounts",
-        description: "Hold and manage 50+ currencies in a single account with real-time exchange rates",
-        benefits: ["Instant currency conversion", "No hidden fees", "Competitive FX rates"]
+        title: "Global<br/>Accounts",
+        description: "Open accounts in 50+ currencies and manage your global finances from one platform",
+        benefits: ["Instant account creation", "Real-time balance updates", "Multi-currency support"],
+        url: "accounts/global"
       },
       {
         icon: "/assets/imgs/icon/icon-s-2.png",
-        title: "Global<br/>Payments",
+        title: "FX &<br/>Transfers",
         description: "Send and receive payments to 200+ countries with instant settlement",
-        benefits: ["Real-time processing", "Low transfer fees", "Global compliance"]
+        benefits: ["Real-time processing", "Low transfer fees", "Global compliance"],
+        url: "accounts/fx-transfers"
       },
       {
         icon: "/assets/imgs/icon/icon-s-10.png",
-        title: "Business<br/>Cards",
-        description: "Issue corporate cards for your team with spend controls and analytics",
-        benefits: ["Virtual & physical cards", "Spend limits", "Real-time tracking"]
-      },
-      {
-        icon: "/assets/imgs/icon/icon-s-11.png",
-        title: "API<br/>Integration",
-        description: "Connect seamlessly with your existing business tools and workflows",
-        benefits: ["RESTful APIs", "Webhooks", "SDK libraries"]
+        title: "Multi-currency<br/>Accounts",
+        description: "Hold and manage 50+ currencies in a single account with real-time exchange rates",
+        benefits: ["Instant currency conversion", "No hidden fees", "Competitive FX rates"],
+        url: "accounts/multi-currency"
       }
     ],
     stats: [
@@ -212,7 +209,7 @@ const BusinessAccountsServicePage = () => {
               faq_title: "",
               faqs: []
             },
-            slug: feature.title.toLowerCase().replace(/\s+/g, '-'),
+            slug: feature.url || `/service/accounts/${feature.title.toLowerCase().replace(/\s+/g, '-')}`,
             content: feature.description
           }))}
         />
