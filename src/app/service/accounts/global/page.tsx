@@ -12,45 +12,45 @@ export default function GlobalAccountsPage() {
   // Static service data for Global Accounts
   const service = {
     slug: "global-accounts",
-    data: {
-      draft: false,
-      id: 1,
+        data: {
+          draft: false,
+          id: 1,
       title: "Global Accounts",
-      icon: "/assets/imgs/icon/icon-s-3-light.png",
-      bg_video: "/assets/video/video.mp4",
-      image: "/assets/imgs/gallery/img-sd-89.png",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
       description: "Multi-currency business accounts for global operations. Open accounts in 50+ currencies across 200+ countries with local banking infrastructure.",
       contactTitle: "Ready to open your global account?",
       btn_text: "Get Started",
-      features: [
-        "Multi-currency support",
-        "Global compliance",
+          features: [
+            "Multi-currency support",
+            "Global compliance",
         "Local banking infrastructure",
         "Real-time operations",
-        "API integration",
+            "API integration",
         "24/7 support"
       ],
       faq_title: "Frequently Asked Questions",
-      faqs: [
-        {
-          question: "How quickly can I open a global account?",
-          answer: "Standard accounts can be opened within 24-48 hours, while instant accounts provide same-day activation. Premium and enterprise accounts may take 3-5 business days for enhanced due diligence."
-        },
-        {
-          question: "What currencies are supported?",
-          answer: "We support 50+ major currencies including USD, EUR, GBP, JPY, CAD, AUD, CHF, and many emerging market currencies. New currencies are added regularly based on business demand."
-        },
-        {
-          question: "Are there monthly maintenance fees?",
-          answer: "Standard accounts have a minimal monthly fee of $25, Premium accounts cost $99/month, and Enterprise accounts have custom pricing. All fees are transparent with no hidden charges."
-        },
-        {
-          question: "How secure are global accounts?",
-          answer: "All accounts are protected by bank-level security including 256-bit encryption, multi-factor authentication, real-time fraud monitoring, and compliance with international banking standards."
-        },
-        {
-          question: "Can I integrate with my existing systems?",
-          answer: "Yes, all account tiers offer API access. Premium and Enterprise accounts include advanced integration features, webhooks, and dedicated technical support for seamless system integration."
+    faqs: [
+      {
+        question: "How quickly can I open a global account?",
+        answer: "Standard accounts can be opened within 24-48 hours, while instant accounts provide same-day activation. Premium and enterprise accounts may take 3-5 business days for enhanced due diligence."
+      },
+      {
+        question: "What currencies are supported?",
+        answer: "We support 50+ major currencies including USD, EUR, GBP, JPY, CAD, AUD, CHF, and many emerging market currencies. New currencies are added regularly based on business demand."
+      },
+      {
+        question: "Are there monthly maintenance fees?",
+        answer: "Standard accounts have a minimal monthly fee of $25, Premium accounts cost $99/month, and Enterprise accounts have custom pricing. All fees are transparent with no hidden charges."
+      },
+      {
+        question: "How secure are global accounts?",
+        answer: "All accounts are protected by bank-level security including 256-bit encryption, multi-factor authentication, real-time fraud monitoring, and compliance with international banking standards."
+      },
+      {
+        question: "Can I integrate with my existing systems?",
+        answer: "Yes, all account tiers offer API access. Premium and Enterprise accounts include advanced integration features, webhooks, and dedicated technical support for seamless system integration."
         }
       ],
       meta: {

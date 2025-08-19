@@ -106,44 +106,49 @@ export default function MuxxusHeader() {
                         onMouseEnter={() => handleMouseEnter(item.name)}
                         onMouseLeave={() => handleMouseLeave(item.name)}
                       >
-                        <div className="max-w-7xl mx-auto px-8 py-12">
+                        <div className="max-w-7xl mx-auto px-2 py-2">
                           {/* Header Section */}
-                          <div className="mb-10 text-center">
-                            <h2 className="text-3xl font-bold text-gray-900 mb-3">{item.name}</h2>
-                            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                          <div className="mb-2 text-center">
+                            <h2 className="text-lg font-bold text-gray-900 mb-1">{item.name}</h2>
+                            <p className="text-xs text-gray-600 max-w-2xl mx-auto">
                               Complete solutions for your business needs
                             </p>
                           </div>
 
                           {/* Content Grid */}
-                          <div className="grid grid-cols-5 gap-10">
+                          <div className="grid grid-cols-5 gap-2">
                             {/* Colonne gauche - Catégories */}
                             <div className="col-span-4">
-                              <div className="space-y-8">
-                                {item.children?.map((category) => (
-                                  <div key={category.id} className="border-b border-gray-100 pb-6 last:border-b-0">
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                                      {category.name}
-                                    </h3>
-                                    <div className="grid grid-cols-2 gap-6">
-                                      {('children' in category && category.children) ? category.children.map((product) => (
-                                        <a
-                                          key={product.id}
-                                          href={product.path}
-                                          className="group block p-4 rounded-lg border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50"
-                                        >
-                                          <h4 className="text-base font-semibold text-gray-900 group-hover:text-blue-600 mb-2">
-                                            {product.name}
-                                          </h4>
-                                          <p className="text-sm text-gray-600 group-hover:text-gray-700 leading-relaxed">
+                              <div className="space-y-2">
+                                {item.children?.filter(category => 
+                                  'children' in category && 
+                                  category.children && 
+                                  category.children.length > 0
+                                ).map((category) => (
+                                  <div key={category.id} className="pb-1 last:pb-0">
+                                    <div className="flex items-center gap-2 mb-1">
+                                      <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span>
+                                      <h3 className="text-sm font-semibold text-gray-900">
+                                        {category.name}
+                                      </h3>
+                                    </div>
+                                    <div className="h-px bg-gray-200 mb-2"></div>
+                                    <div className="grid grid-cols-2 gap-1">
+                                      {('children' in category && category.children) && category.children.map((product) => (
+                                        <div key={product.id} className="p-1 rounded bg-white">
+                                          <a
+                                            href={product.path}
+                                            className="group block"
+                                          >
+                                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600 mb-0.5">
+                                              {product.name}
+                                            </h4>
+                                          </a>
+                                          <p className="text-xs text-gray-600 leading-tight">
                                             {product.description}
                                           </p>
-                                        </a>
-                                      )) : (
-                                        <div className="col-span-2 text-center text-gray-500 py-4">
-                                          No sub-items available
                                         </div>
-                                      )}
+                                      ))}
                                     </div>
                                   </div>
                                 ))}
@@ -152,21 +157,21 @@ export default function MuxxusHeader() {
 
                             {/* Colonne droite - Section Image (réduite) */}
                             <div className="col-span-1">
-                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 h-full flex flex-col justify-center border border-gray-100">
-                                <div className="text-center mb-3">
-                                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-2">
-                                    <span className="text-lg">💼</span>
+                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded p-1 h-full flex flex-col justify-center">
+                                <div className="text-center mb-1">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-indigo-600 rounded flex items-center justify-center mx-auto mb-0.5">
+                                    <span className="text-xs">💼</span>
                                   </div>
-                                  <h3 className="text-sm font-bold text-gray-900 mb-2">
+                                  <h3 className="text-xs font-bold text-gray-900 mb-0.5">
                                     {item.name}
                                   </h3>
-                                  <p className="text-xs text-gray-600 leading-relaxed">
+                                  <p className="text-xs text-gray-600 leading-tight">
                                     Get Started
                                   </p>
                                 </div>
                                 <button
                                   onClick={handleModalOpen}
-                                  className="w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105"
+                                  className="w-full px-1 py-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold rounded hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105"
                                 >
                                   Start
                                 </button>
