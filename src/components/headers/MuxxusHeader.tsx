@@ -162,7 +162,7 @@ export default function MuxxusHeader() {
                             </div>
 
                             {/* Colonne droite - Section Image (étendue) */}
-                            <div className="col-span-1 w-full ml-4">
+                            <div className="col-span-1 w-full">
                               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded p-3 h-full flex flex-col justify-center border-l-2 border-gray-200 w-full">
                                 <div className="text-center mb-3">
                                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3">
