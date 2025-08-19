@@ -99,60 +99,59 @@ export default function MuxxusHeader() {
                       </a>
                     )}
 
-                    {/* Mega Menu - Nouveau design avec layout en colonnes */}
+                    {/* Mega Menu - Design simple et naturel */}
                     {item.hasChildren && activeDropdown === item.name && (
                       <div
-                        className="fixed top-[64px] left-0 w-screen bg-white border-t border-gray-200/50 shadow-2xl z-[9999]"
+                        className="fixed top-[64px] left-0 w-screen bg-white border-t border-gray-200 z-[9999]"
                         onMouseEnter={() => handleMouseEnter(item.name)}
                         onMouseLeave={() => handleMouseLeave(item.name)}
                       >
-                        <div className="max-w-7xl mx-auto px-2 py-2">
-                          {/* Header Section */}
-                          <div className="mb-2 text-center">
-                            <h2 className="text-lg font-bold text-gray-900 mb-1">{item.name}</h2>
-                            <p className="text-xs text-gray-600 max-w-2xl mx-auto">
-                              Complete solutions for your business needs
+                        <div className="max-w-7xl mx-auto px-8 py-6">
+                          {/* Header Section - Simple */}
+                          <div className="mb-6 text-center">
+                            <h2 className="text-xl font-semibold text-gray-900 mb-2">{item.name}</h2>
+                            <p className="text-gray-600">
+                              Tools and services for your business
                             </p>
                           </div>
 
                           {/* Content Grid */}
-                          <div className="grid grid-cols-5 gap-4">
-                            {/* Colonne gauche - Catégories */}
+                          <div className="grid grid-cols-5 gap-6">
+                            {/* Colonne gauche - Catégories simples */}
                             <div className="col-span-4">
-                              <div className="space-y-4">
+                              <div className="space-y-6">
                                 {item.children?.filter(category => 
                                   'children' in category && 
                                   category.children && 
                                   category.children.length > 0
                                 ).map((category) => (
-                                  <div key={category.id} className="pb-2 last:pb-0">
-                                    <div className="flex items-center gap-2 mb-2">
+                                  <div key={category.id} className="pb-4 last:pb-0">
+                                    <div className="flex items-center gap-2 mb-3">
                                       <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span>
                                       <a href={category.path} className="group">
-                                        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600">
+                                        <h3 className="text-base font-medium text-gray-900 group-hover:text-blue-600">
                                           {category.name}
                                         </h3>
                                       </a>
-                                      <span className="text-blue-500">›</span>
+                                      <span className="text-blue-600">›</span>
                                     </div>
-                                    <div className="h-px bg-gray-200 mb-3"></div>
-                                    <div className="grid grid-cols-3 gap-2">
+                                    <div className="grid grid-cols-3 gap-3">
                                       {('children' in category && category.children) && category.children.map((product) => (
-                                        <div key={product.id} className="p-2 rounded bg-white">
+                                        <div key={product.id}>
                                           <a
                                             href={product.path}
-                                            className="group block"
+                                            className="block p-3 hover:bg-gray-50 rounded"
                                           >
                                             <div className="flex items-center gap-1 mb-1">
-                                              <h4 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600">
+                                              <h4 className="text-sm font-medium text-gray-900">
                                                 {product.name}
                                               </h4>
-                                              <span className="text-blue-500 text-xs">›</span>
+                                              <span className="text-blue-600 text-xs">›</span>
                                             </div>
+                                            <p className="text-xs text-gray-600">
+                                              {product.description}
+                                            </p>
                                           </a>
-                                          <p className="text-xs text-gray-600 leading-tight">
-                                            {product.description}
-                                          </p>
                                         </div>
                                       ))}
                                     </div>
@@ -161,26 +160,23 @@ export default function MuxxusHeader() {
                               </div>
                             </div>
 
-                            {/* Colonne droite - Section Image (étendue) */}
-                            <div className="col-span-1 w-full">
-                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded p-3 h-full flex flex-col justify-center border-l-2 border-gray-200 w-full">
-                                <div className="text-center mb-3">
-                                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                                    <span className="text-2xl">💼</span>
+                            {/* Colonne droite - Section simple */}
+                            <div className="col-span-1">
+                              <div className="bg-gray-50 p-4 rounded">
+                                <div className="text-center">
+                                  <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center mx-auto mb-3">
+                                    <span className="text-white text-lg">💼</span>
                                   </div>
-                                  <h3 className="text-sm font-bold text-gray-900 mb-2">
-                                    {item.name}
+                                  <h3 className="text-sm font-medium text-gray-900 mb-2">
+                                    Need help?
                                   </h3>
-                                  <p className="text-xs text-gray-600 leading-tight mb-4">
-                                    Get Started
-                                  </p>
+                                  <button
+                                    onClick={handleModalOpen}
+                                    className="w-full px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
+                                  >
+                                    Contact us
+                                  </button>
                                 </div>
-                                <button
-                                  onClick={handleModalOpen}
-                                  className="w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105"
-                                >
-                                  Start
-                                </button>
                               </div>
                             </div>
                           </div>
