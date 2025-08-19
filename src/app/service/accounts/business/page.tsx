@@ -12,6 +12,7 @@ import ButtonFlip from "@/components/elements/button/ButtonFlip";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import ImageComponent from "@/components/tools/ImageComponent";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
+import Image from "next/image";
 
 const BusinessAccountsServicePage = () => {
   // Récupération des données depuis les fichiers MDX
@@ -131,9 +132,11 @@ const BusinessAccountsServicePage = () => {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <img
+              <Image
                 src={muxxusBusinessAccounts.hero.image}
                 alt="Muxxus Business Accounts"
+                width={630}
+                height={820}
                 className="w-[630px] h-[820px] object-cover rounded-2xl shadow-2xl"
               />
             </div>
@@ -186,6 +189,29 @@ const BusinessAccountsServicePage = () => {
                   <p className="text-gray-600">{useCase.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Image Section */}
+        <section className="py-20 bg-white">
+          <div className="container2">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Built for Modern Business
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our platform is designed to scale with your business needs
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/assets/imgs/muxxus/business-platform-overview.png"
+                alt="Muxxus Business Platform Overview"
+                width={800}
+                height={500}
+                className="w-full max-w-2xl h-auto rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </section>
