@@ -19,7 +19,7 @@ const Layout = ({
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <BindBtnMoveEffect />
-          <InnerHeader1 />
+          
           <div>{children}</div>
           <Footer4 footerNav={navigation.footer4} />
         </div>

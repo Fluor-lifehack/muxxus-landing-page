@@ -1,72 +1,131 @@
-import DesignStudioHeader from "@/components/headers/DesignStudioHeader";
-import BottomSection from "@/components/elements/bottomSection/BottomSection";
+import { notFound } from "next/navigation";
+import DesignService from "@/components/service/design/DesignService";
+import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 
 export default function GlobalAccountsPage() {
+  // Real data structure for DesignService component
+  const serviceData = {
+    title: "Global Accounts",
+    description: "Multi-currency business accounts for global operations. Manage your international business finances with ease and efficiency.",
+    sub_title: "International Business Banking",
+    action_btn: {
+      enable: true,
+      label: "Open Account",
+      link: "/contact"
+    },
+    services: [
+      {
+        slug: "global-accounts-standard",
+        data: {
+          draft: false,
+          id: 1,
+          title: "Standard Global Account",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Essential global banking with multi-currency support and basic international features.",
+          contactTitle: "Open standard account",
+          btn_text: "Get Started",
+          features: [
+            "Multi-currency support",
+            "International transfers",
+            "Basic reporting",
+            "Mobile banking"
+          ],
+          faq_title: "Standard features",
+          faqs: []
+        },
+        content: ""
+      },
+      {
+        slug: "global-accounts-premium",
+        data: {
+          draft: false,
+          id: 2,
+          title: "Premium Global Account",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Advanced global banking with enhanced features, better rates, and priority support.",
+          contactTitle: "Upgrade to premium",
+          btn_text: "Upgrade Now",
+          features: [
+            "Better exchange rates",
+            "Priority support",
+            "Advanced analytics",
+            "Custom limits"
+          ],
+          faq_title: "Premium features",
+          faqs: []
+        },
+        content: ""
+      },
+      {
+        slug: "global-accounts-enterprise",
+        data: {
+          draft: false,
+          id: 3,
+          title: "Enterprise Solutions",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Custom enterprise solutions with dedicated support, custom limits, and API integration.",
+          contactTitle: "Enterprise consultation",
+          btn_text: "Contact Sales",
+          features: [
+            "Custom limits",
+            "API integration",
+            "Dedicated support",
+            "White-label options"
+          ],
+          faq_title: "Enterprise features",
+          faqs: []
+        },
+        content: ""
+      },
+      {
+        slug: "global-accounts-multi",
+        data: {
+          draft: false,
+          id: 4,
+          title: "Multi-Entity Management",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Manage multiple business entities and subsidiaries from a single global banking platform.",
+          contactTitle: "Multi-entity setup",
+          btn_text: "Setup Now",
+          features: [
+            "Multi-entity support",
+            "Consolidated reporting",
+            "Inter-company transfers",
+            "Centralized control"
+          ],
+          faq_title: "Multi-entity features",
+          faqs: []
+        },
+        content: ""
+      }
+    ]
+  };
+
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: "Business Accounts", href: "/business-accounts" },
+    { label: "Global Accounts", isActive: true },
+  ];
+
   return (
-    <main className="min-h-screen bg-white">
-      <DesignStudioHeader />
-      
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Global Accounts
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Multi-currency accounts to receive funds from anywhere in the world.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-purple-600 text-white px-8 py-3 rounded-md font-medium hover:bg-purple-700 transition-colors">
-              Get Started
-            </button>
-            <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors">
-              View Pricing
-            </button>
-          </div>
+    <main>
+      {/* Breadcrumb Navigation - Sticky */}
+      <div className="sticky top-20 lg:top-24 z-50 bg-white border-b border-gray-200 shadow-lg py-4">
+        <div className="max-w-7xl mx-auto px-4">
+          <BreadcrumbNav items={breadcrumbItems} />
         </div>
-      </section>
+      </div>
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why choose Global Accounts?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Access to 50+ currencies, instant account creation, and global compliance.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌍</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">50+ Currencies</h3>
-              <p className="text-gray-600">Support for major and emerging market currencies.</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Instant Setup</h3>
-              <p className="text-gray-600">Create accounts in minutes, not days.</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🛡️</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Global Compliance</h3>
-              <p className="text-gray-600">Built-in compliance for international business.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <BottomSection />
+      <DesignService {...serviceData} />
     </main>
   );
 } 

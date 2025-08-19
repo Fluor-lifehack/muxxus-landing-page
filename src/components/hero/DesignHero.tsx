@@ -83,7 +83,7 @@ const DesignHero = ({
         <div className="flex-1 flex flex-col items-start justify-center text-left py-16">
           <h1
             className="has_char_anim text-white text-xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight mb-6 max-w-3xl"
-            data-translateX="150"
+            data-translatex="150"
             data-delay=".45"
           >
             {title}
@@ -91,7 +91,7 @@ const DesignHero = ({
           <p
             className="has_word_anim text-white font-beatricetrial text-base sm:text-lg md:text-lg max-w-md mb-8"
             data-duration="1"
-            data-translateX="50"
+            data-translatex="50"
             data-delay=".30"
           >
             {description}

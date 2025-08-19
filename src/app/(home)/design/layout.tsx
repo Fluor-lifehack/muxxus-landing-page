@@ -19,7 +19,7 @@ const Layout = ({
       <ScrollTop />
       
                    {/* Header fixe en dehors du ScrollSmoother */}
-             <MuxxusHeader />
+             
       
       <div id="smooth-wrapper">
         <div id="smooth-content">

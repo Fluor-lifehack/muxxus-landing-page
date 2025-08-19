@@ -15,7 +15,7 @@ const Layout = ({
       <ScrollTop />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <BrandingHeader maxWidth="!max-w-[1850px]" onlyDark />
+          
           <div>{children}</div>
         </div>
       </div>

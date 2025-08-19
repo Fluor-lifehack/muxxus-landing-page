@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Logo from "@/components/elements/logo/Logo";
 import GetStartedModal from "@/components/modals/GetStartedModal";
 import Link from "next/link";
@@ -23,7 +23,10 @@ const MuxxusHeader = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isInMegaMenu, setIsInMegaMenu] = useState(false);
+  
+  // Refs for better event handling
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const timeoutRefs = useRef<{ [key: string]: NodeJS.Timeout | null }>({});
 
   // Scroll effect
   useEffect(() => {
@@ -34,52 +37,82 @@ const MuxxusHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      Object.values(timeoutRefs.current).forEach(timeout => {
+        if (timeout) clearTimeout(timeout);
+      });
+    };
+  }, []);
+
   // Navigation data
   const navigationItems = [
     {
       name: "Products",
       hasDropdown: true,
+      href: "/products",
       items: [
         {
           title: "Business Accounts",
           description: "Multi-currency accounts for global business",
           href: "/business-accounts",
           icon: Building2,
-          features: ["Global Accounts", "FX & Transfers", "Multi-currency"],
+          features: [
+            { title: "Global Accounts", href: "/service/design/business-accounts" },
+            { title: "FX & Transfers", href: "/service/design/fx-transfers" },
+            { title: "Multi-currency", href: "/business-accounts" },
+          ],
         },
         {
           title: "Spend Management",
           description: "Corporate cards and expense management",
           href: "/spend",
           icon: CreditCard,
-          features: ["Corporate Cards", "Expense Management", "Bill Pay"],
+          features: [
+            { title: "Corporate Cards", href: "/spend/corporate-cards" },
+            { title: "Expense Management", href: "/service/seo/expense-management" },
+            { title: "Bill Pay", href: "/spend/bill-pay" },
+          ],
         },
         {
           title: "Payments",
           description: "Accept payments globally with ease",
           href: "/payments",
           icon: Zap,
-          features: ["Checkout", "Payment Links", "Plugins"],
+          features: [
+            { title: "Global Payments", href: "/service/video/global-payments" },
+            { title: "Payment Links", href: "/service/web/payment-links" },
+            { title: "Plugins", href: "/service/branding/plugins" },
+          ],
         },
       ],
     },
     {
       name: "Solutions",
       hasDropdown: true,
+      href: "/solutions",
       items: [
         {
           title: "E-commerce",
           description: "Built for online businesses",
-          href: "/solutions/ecommerce",
+          href: "/solutions/ecommerce-retail",
           icon: Users,
-          features: ["Marketplaces", "Retail", "Digital Creators"],
+          features: [
+            { title: "Marketplaces", href: "/solutions/marketplaces" },
+            { title: "Retail", href: "/solutions/ecommerce-retail" },
+            { title: "Digital Creators", href: "/service/marketing/digital-creators" },
+          ],
         },
         {
           title: "Fintech",
           description: "Financial services innovation",
-          href: "/solutions/fintech",
+          href: "/solutions/fintechs-financial-services",
           icon: Shield,
-          features: ["Banking as a Service", "Embedded Finance"],
+          features: [
+            { title: "Banking as a Service", href: "/service/ai/banking-as-service" },
+            { title: "Embedded Finance", href: "/platform-apis" },
+          ],
         },
       ],
     },
@@ -89,24 +122,30 @@ const MuxxusHeader = () => {
 
   // Event handlers
   const handleDropdownToggle = (itemName: string) => {
-    if (navigationItems.find(item => item.name === itemName)?.hasDropdown) {
-      setActiveDropdown(activeDropdown === itemName ? null : itemName);
-    }
-  };
-
-  const handleDropdownOpen = (itemName: string) => {
-    const item = navigationItems.find(item => item.name === itemName);
-    if (item?.hasDropdown) {
+    if (activeDropdown === itemName) {
+      setActiveDropdown(null);
+    } else {
       setActiveDropdown(itemName);
     }
   };
 
-  const handleDropdownClose = () => {
-    setTimeout(() => {
-      if (!isInMegaMenu) {
-        setActiveDropdown(null);
-      }
-    }, 500);
+  const handleMouseEnter = (itemName: string) => {
+    // Clear any existing timeout
+    if (timeoutRefs.current[itemName]) {
+      clearTimeout(timeoutRefs.current[itemName]);
+      timeoutRefs.current[itemName] = null;
+    }
+    
+    if (navigationItems.find(item => item.name === itemName)?.hasDropdown) {
+      setActiveDropdown(itemName);
+    }
+  };
+
+  const handleMouseLeave = (itemName: string) => {
+    // Set timeout to close dropdown
+    timeoutRefs.current[itemName] = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
   };
 
   const handleModalOpen = () => {
@@ -134,8 +173,16 @@ const MuxxusHeader = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-2">
               {navigationItems.map((item) => (
-                <div key={item.name} className="relative group">
-                  <div className="relative">
+                <div 
+                  key={item.name} 
+                  className="relative"
+                  ref={(el) => {
+                    if (el) dropdownRefs.current[item.name] = el;
+                  }}
+                  onMouseEnter={() => handleMouseEnter(item.name)}
+                  onMouseLeave={() => handleMouseLeave(item.name)}
+                >
+                  {item.hasDropdown ? (
                     <button
                       className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                         activeDropdown === item.name
@@ -143,45 +190,29 @@ const MuxxusHeader = () => {
                           : "text-gray-700 hover:text-gray-900"
                       }`}
                       onClick={() => handleDropdownToggle(item.name)}
-                      onMouseEnter={() => handleDropdownOpen(item.name)}
-                      onMouseLeave={handleDropdownClose}
                     >
                       <span>{item.name}</span>
-                      {item.hasDropdown && (
-                        <ChevronDown
-                          className={`w-4 h-4 transition-transform ${
-                            activeDropdown === item.name ? "rotate-180" : ""
-                          }`}
-                        />
-                      )}
-                    </button>
-                    
-                    {/* Clickable link overlay for items with href */}
-                    {item.href && (
-                      <Link
-                        href={item.href}
-                        className="absolute inset-0 z-10"
-                        aria-label={`Go to ${item.name} page`}
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${
+                          activeDropdown === item.name ? "rotate-180" : ""
+                        }`}
                       />
-                    )}
-                  </div>
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href!}
+                      className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                    >
+                      <span>{item.name}</span>
+                    </Link>
+                  )}
 
                   {/* Mega Menu */}
                   {item.hasDropdown && activeDropdown === item.name && (
                     <div
-                      className="fixed top-20 left-0 right-0 w-full bg-white border-t border-gray-200 shadow-xl z-[9999]"
-                      onMouseEnter={() => {
-                        setIsInMegaMenu(true);
-                        setActiveDropdown(item.name);
-                      }}
-                      onMouseLeave={() => {
-                        setIsInMegaMenu(false);
-                        setTimeout(() => {
-                          if (!isInMegaMenu) {
-                            setActiveDropdown(null);
-                          }
-                        }, 300);
-                      }}
+                      className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen bg-white border-t border-gray-200 shadow-xl z-[9999]"
+                      onMouseEnter={() => handleMouseEnter(item.name)}
+                      onMouseLeave={() => handleMouseLeave(item.name)}
                     >
                       <div className="max-w-7xl mx-auto px-8 py-10">
                         {/* Header Section */}
@@ -196,42 +227,47 @@ const MuxxusHeader = () => {
                           <div className="col-span-2">
                             <div className="grid grid-cols-2 gap-6">
                               {item.items?.map((subItem) => (
-                                                              <Link
-                                key={subItem.title}
-                                href={subItem.href}
-                                className="group block p-5 rounded-xl border border-transparent hover:border-gray-200 hover:shadow-md transition-all duration-200 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 cursor-pointer relative z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                              >
-                                {/* Icône et titre */}
-                                <div className="flex items-start space-x-4 mb-4">
-                                  <div className="p-3 rounded-lg bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                                    <subItem.icon className="w-6 h-6" />
+                                <Link
+                                  key={subItem.title}
+                                  href={subItem.href}
+                                  className="group block p-5 rounded-xl border border-transparent hover:border-gray-200 hover:shadow-md transition-all duration-200 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                >
+                                  {/* Icône et titre */}
+                                  <div className="flex items-start space-x-4 mb-4">
+                                    <div className="p-3 rounded-lg bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                      <subItem.icon className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                      <h3 className="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
+                                        {subItem.title}
+                                      </h3>
+                                      <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                                        {subItem.description}
+                                      </p>
+                                    </div>
                                   </div>
-                                  <div>
-                                    <h3 className="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
-                                      {subItem.title}
-                                    </h3>
-                                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
-                                      {subItem.description}
-                                    </p>
+
+                                  {/* Features List */}
+                                  <ul className="text-xs text-gray-600 space-y-1">
+                                    {subItem.features.map((feature) => (
+                                      <li key={feature.title} className="flex items-center">
+                                        <span className="mr-2 text-blue-500">•</span>
+                                        <Link
+                                          href={feature.href}
+                                          className="text-blue-600 hover:underline"
+                                        >
+                                          {feature.title}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+
+                                  {/* Learn More Link */}
+                                  <div className="mt-4 flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700">
+                                    <span>Learn more</span>
+                                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                                   </div>
-                                </div>
-
-                                {/* Features List */}
-                                <ul className="text-xs text-gray-600 space-y-1">
-                                  {subItem.features.map((feature) => (
-                                    <li key={feature} className="flex items-center">
-                                      <span className="mr-2 text-blue-500">•</span>
-                                      {feature}
-                                    </li>
-                                  ))}
-                                </ul>
-
-                                {/* Learn More Link */}
-                                <div className="mt-4 flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700 cursor-pointer">
-                                  <span>Learn more</span>
-                                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                                </div>
-                              </Link>
+                                </Link>
                               ))}
                             </div>
                           </div>

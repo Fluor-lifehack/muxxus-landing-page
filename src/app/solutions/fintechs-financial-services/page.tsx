@@ -1,11 +1,9 @@
-import DesignStudioHeader from "@/components/headers/DesignStudioHeader";
 import BottomSection from "@/components/elements/bottomSection/BottomSection";
 
 export default function FintechFinancialServicesPage() {
   return (
     <main className="min-h-screen bg-white">
-      <DesignStudioHeader />
-      
+            
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-8 text-center">

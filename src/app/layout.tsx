@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "@/styles/main.css";
 import Provider from "@/provider";
+import MuxxusHeader from "@/components/headers/MuxxusHeader";
 
 export default function RootLayout({
   children,
@@ -23,7 +24,10 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <Provider>
           <div className="has-smooth" id="has_smooth"></div>
-          {children}
+          <MuxxusHeader />
+          <main className="pt-20 lg:pt-24">
+            {children}
+          </main>
         </Provider>
       </body>
     </html>

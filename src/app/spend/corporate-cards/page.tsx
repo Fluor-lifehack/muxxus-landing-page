@@ -1,72 +1,127 @@
-import DesignStudioHeader from "@/components/headers/DesignStudioHeader";
-import BottomSection from "@/components/elements/bottomSection/BottomSection";
+import { notFound } from "next/navigation";
+import MarketingService from "@/components/service/marketing/MarketingService";
+import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 
 export default function CorporateCardsPage() {
+  // Real data structure for MarketingService component
+  const serviceData = {
+    title: "Corporate Cards",
+    subtitle: "Spend Management",
+    meta_text: "Streamline your business expenses with smart corporate cards",
+    description: "Comprehensive corporate card solutions with automated expense tracking, real-time controls, and seamless integration for modern businesses.",
+    services: [
+      {
+        slug: "corporate-cards-standard",
+        data: {
+          draft: false,
+          id: 1,
+          title: "Standard Corporate Cards",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Essential corporate cards with basic expense tracking and standard spending limits for small teams.",
+          contactTitle: "Get standard cards",
+          btn_text: "Apply Now",
+          features: [
+            "Basic expense tracking",
+            "Standard spending limits",
+            "Email support",
+            "Mobile app access"
+          ],
+          faq_title: "Standard features",
+          faqs: []
+        },
+        content: ""
+      },
+      {
+        slug: "corporate-cards-premium",
+        data: {
+          draft: false,
+          id: 2,
+          title: "Premium Corporate Cards",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Advanced corporate cards with enhanced controls, better rewards, and priority support for growing businesses.",
+          contactTitle: "Upgrade to premium",
+          btn_text: "Upgrade Now",
+          features: [
+            "Advanced controls",
+            "Better rewards",
+            "Priority support",
+            "Custom limits"
+          ],
+          faq_title: "Premium features",
+          faqs: []
+        },
+        content: ""
+      },
+      {
+        slug: "corporate-cards-enterprise",
+        data: {
+          draft: false,
+          id: 3,
+          title: "Enterprise Solutions",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Custom enterprise solutions with unlimited cards, advanced analytics, and dedicated account management.",
+          contactTitle: "Enterprise consultation",
+          btn_text: "Contact Sales",
+          features: [
+            "Unlimited cards",
+            "Advanced analytics",
+            "Dedicated support",
+            "Custom integrations"
+          ],
+          faq_title: "Enterprise features",
+          faqs: []
+        },
+        content: ""
+      },
+      {
+        slug: "corporate-cards-virtual",
+        data: {
+          draft: false,
+          id: 4,
+          title: "Virtual Cards",
+          icon: "/assets/imgs/icon/icon-s-3-light.png",
+          bg_video: "/assets/video/video.mp4",
+          image: "/assets/imgs/gallery/img-sd-89.png",
+          description: "Instant virtual cards for online purchases, subscriptions, and temporary spending with real-time controls.",
+          contactTitle: "Get virtual cards",
+          btn_text: "Create Now",
+          features: [
+            "Instant creation",
+            "Real-time controls",
+            "Online optimized",
+            "Temporary limits"
+          ],
+          faq_title: "Virtual features",
+          faqs: []
+        },
+        content: ""
+      }
+    ]
+  };
+
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: "Spend Management", href: "/spend" },
+    { label: "Corporate Cards", isActive: true },
+  ];
+
   return (
-    <main className="min-h-screen bg-white">
-      <DesignStudioHeader />
-      
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Corporate Cards
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Multi-currency company & employee cards with instant issuance.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-purple-600 text-white px-8 py-3 rounded-md font-medium hover:bg-purple-700 transition-colors">
-              Issue Cards
-            </button>
-            <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors">
-              View Pricing
-            </button>
-          </div>
+    <main>
+      {/* Breadcrumb Navigation - Sticky */}
+      <div className="sticky top-20 lg:top-24 z-50 bg-white border-b border-gray-200 shadow-lg py-4">
+        <div className="max-w-7xl mx-auto px-4">
+          <BreadcrumbNav items={breadcrumbItems} />
         </div>
-      </section>
+      </div>
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Instant card issuance for your business
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Issue virtual and physical cards instantly for your team.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Instant Issuance</h3>
-              <p className="text-gray-600">Virtual cards ready in seconds, physical cards in days.</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌍</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Multi-Currency</h3>
-              <p className="text-gray-600">Spend in 50+ currencies with real-time FX rates.</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Secure & Compliant</h3>
-              <p className="text-gray-600">Built-in security and compliance features.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <BottomSection />
+      <MarketingService {...serviceData} />
     </main>
   );
 } 

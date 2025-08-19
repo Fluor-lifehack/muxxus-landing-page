@@ -19,7 +19,7 @@ const Layout = ({
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="khand-inner">
-            <VideoProductionHeader />
+            
             <div>{children}</div>
             <Footer5 footerNav={navigation.footer4} />
           </div>
