@@ -4,6 +4,7 @@ import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaCreditCard, FaShieldAlt, FaUsers, FaChartLine } from "react-icons/fa";
 import Link from "next/link";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 const CorporateCardsPage = () => {
   const features = [
@@ -136,6 +137,9 @@ const CorporateCardsPage = () => {
           />
         </div>
       </section>
+
+      {/* Footer */}
+      <MuxxusFooter />
     </main>
   );
 };

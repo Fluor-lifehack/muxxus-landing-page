@@ -6,6 +6,7 @@ import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
 import ServiceDetailsFaq from "@/app/service/ServiceDetailsFaq";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 export default function SpendManagementPage() {
   // Static service data for Spend Management
@@ -512,6 +513,9 @@ All features are built with enterprise-grade security:
         <ContactBanner contactTitle={contactTitle} btn_text={btn_text} />
         <PricingArea {...pricingData.pricing} />
       </div>
+
+      {/* Footer */}
+      <MuxxusFooter />
     </main>
   );
 }

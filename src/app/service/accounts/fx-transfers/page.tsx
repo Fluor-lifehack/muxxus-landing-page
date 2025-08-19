@@ -1,132 +1,100 @@
 import Image from "next/image";
-import ServiceDetails from "@/app/service/ServiceDetails";
-import ClientArea from "@/components/clients/ClientArea";
-import PricingArea from "@/components/pricing/PricingArea";
-import ContactBanner from "@/components/banner/ContactBanner";
-import ServiceDetailsFaq from "@/components/service/ServiceDetailsFaq";
-import BreadcrumbNav from "@/components/elements/BreadcrumbNav";
+import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaArrowRight, FaGlobe, FaShieldAlt, FaClock, FaCreditCard, FaExchangeAlt } from "react-icons/fa";
-import Link from "next/link";
+import { FaExchangeAlt, FaGlobe, FaShieldAlt, FaClock, FaChartLine, FaUsers, FaBuilding } from "react-icons/fa";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
-const FXTransfersPage = () => {
-  const service = {
-    title: "FX & Transfers",
-    subtitle: "High-speed international transfers with competitive rates",
-    description: "Send money globally with lightning speed and the best exchange rates. Our FX & Transfers service provides instant international payments with transparent pricing and real-time tracking.",
-    features: [
-      {
-        icon: FaExchangeAlt,
-        title: "Competitive Rates",
-        description: "Get interbank exchange rates with minimal markup"
-      },
-      {
-        icon: FaGlobe,
-        title: "Global Coverage",
-        description: "Send to 200+ countries in 50+ currencies"
-      },
-      {
-        icon: FaClock,
-        title: "Instant Transfers",
-        description: "Most transfers complete within minutes"
-      },
-      {
-        icon: FaShieldAlt,
-        title: "Secure & Compliant",
-        description: "Bank-grade security with full regulatory compliance"
-      }
-    ],
-    faqs: [
-      {
-        question: "How fast are international transfers?",
-        answer: "Most transfers complete within 2-24 hours, with many completing in minutes for major corridors."
-      },
-      {
-        question: "What are the exchange rates?",
-        answer: "We offer interbank rates with minimal markup, typically 0.1-0.5% above the mid-market rate."
-      },
-      {
-        question: "Are there transfer limits?",
-        answer: "Limits vary by account type and compliance requirements. Contact us for specific limits."
-      },
-      {
-        question: "How do I track my transfer?",
-        answer: "All transfers come with real-time tracking and instant notifications at each stage."
-      }
-    ],
-    pricing: {
-      title: "Transparent FX Pricing",
-      subtitle: "No hidden fees, competitive rates",
-      plans: [
-        {
-          name: "Standard",
-          price: "0.5%",
-          features: ["Standard processing", "2-24 hour delivery", "Email support", "Basic tracking"]
-        },
-        {
-          name: "Priority",
-          price: "0.3%",
-          features: ["Faster processing", "1-4 hour delivery", "Priority support", "Advanced tracking"]
-        },
-        {
-          name: "Enterprise",
-          price: "0.1%",
-          features: ["Instant processing", "Minutes delivery", "Dedicated support", "Custom solutions"]
-        }
-      ]
+const FxTransfersPage = () => {
+  const features = [
+    {
+      icon: FaGlobe,
+      title: "Global Coverage",
+      description: "Transfer funds to 150+ countries with competitive exchange rates"
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Secure Transfers",
+      description: "Bank-grade security and compliance for all international transfers"
+    },
+    {
+      icon: FaClock,
+      title: "Fast Processing",
+      description: "Most transfers complete within 1-2 business days"
+    },
+    {
+      icon: FaChartLine,
+      title: "Real-time Rates",
+      description: "Get live FX rates and lock in the best prices"
     }
-  };
+  ];
+
+  const faqs = [
+    {
+      question: "How long do international transfers take?",
+      answer: "Most transfers complete within 1-2 business days, depending on the destination country and banking system."
+    },
+    {
+      question: "What are the fees for FX transfers?",
+      answer: "Our fees are transparent and competitive. You'll see the exact cost before confirming any transfer."
+    },
+    {
+      question: "Can I set up recurring transfers?",
+      answer: "Yes, you can schedule regular international transfers to automate your global payments."
+    },
+    {
+      question: "What currencies do you support?",
+      answer: "We support 50+ major currencies including USD, EUR, GBP, JPY, AUD, CAD, and many more."
+    }
+  ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-blue-100 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <BreadcrumbNav 
               items={[
-                { name: "Home", path: "/" },
-                { name: "Products", path: "#" },
-                { name: "Business Accounts", path: "/business-accounts" },
-                { name: "FX & Transfers", path: "/service/accounts/fx-transfers" }
+                { label: "Home", href: "/" },
+                { label: "Business Accounts", href: "/business-accounts" },
+                { label: "FX & Transfers", href: "/service/accounts/fx-transfers", isActive: true }
               ]} 
             />
             <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
-              {service.title}
+              FX & International Transfers
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              {service.description}
+              Send money globally with competitive exchange rates, fast processing, 
+              and bank-grade security. Manage your international payments efficiently.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CircleFillButton 
-                text="Start Transfer" 
+                text="Get Started" 
                 href="/contact"
-                className="bg-green-600 hover:bg-green-700"
+                className="bg-blue-600 hover:bg-blue-700"
               />
               <CircleFillButton 
                 text="View Rates" 
-                href="#pricing"
-                variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-50"
+                href="#"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
+      {/* Features */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <DesignSectionTitle 
-            title="Why Choose Our FX & Transfers?"
-            subtitle="Built for speed, efficiency, and cost-effectiveness"
+            title="Why Choose Muxxus for FX Transfers"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-            {service.features.map((feature, index) => (
-              <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-8 h-8 text-green-600" />
+            {features.map((feature, index) => (
+              <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <feature.icon className="w-8 h-8 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -136,25 +104,83 @@ const FXTransfersPage = () => {
         </div>
       </section>
 
-      {/* Service Details */}
-      <ServiceDetails {...service} />
+      {/* How It Works */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">How FX Transfers Work</h2>
+            <p className="text-lg text-gray-600">Simple steps to send money internationally</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-white">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Set Up Transfer</h3>
+              <p className="text-gray-600">Enter recipient details, amount, and select your preferred currency</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-white">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Lock in Rate</h3>
+              <p className="text-gray-600">Get real-time exchange rates and confirm your transfer</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-white">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Track & Complete</h3>
+              <p className="text-gray-600">Monitor your transfer status and receive confirmation</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
-      <ServiceDetailsFaq faqs={service.faqs} faqTitle="Frequently Asked Questions" />
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-600">Get answers to common questions about FX transfers</p>
+          </div>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Client Area */}
-      <ClientArea />
+      {/* CTA Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Start Transferring?</h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Join thousands of businesses using Muxxus for their international payment needs
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CircleFillButton 
+              text="Open Account" 
+              href="/contact"
+              className="bg-blue-600 hover:bg-blue-700"
+            />
+            <CircleFillButton 
+              text="Contact Sales" 
+              href="/contact"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+            />
+          </div>
+        </div>
+      </section>
 
-      {/* Pricing Section */}
-      <PricingArea {...service.pricing} />
-
-      {/* Contact Banner */}
-      <ContactBanner 
-        contactTitle="Ready to Start Transferring?"
-        btn_text="Get Started Today"
-      />
+      {/* Footer */}
+      <MuxxusFooter />
     </main>
   );
 };
 
-export default FXTransfersPage;
+export default FxTransfersPage;

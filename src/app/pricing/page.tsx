@@ -3,6 +3,7 @@ import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaCheck, FaStar, FaRocket, FaBuilding, FaGlobe, FaShield, FaChartLine, FaUsers } from "react-icons/fa";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 const PricingPage = () => {
   const pricingPlans = [
@@ -287,6 +288,9 @@ const PricingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <MuxxusFooter />
     </main>
   );
 };

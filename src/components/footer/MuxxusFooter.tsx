@@ -44,17 +44,17 @@ const MuxxusFooter = ({ footerNav }: Props) => {
     { scope: containerRef }
   );
 
-  // Navigation inspirée d'Airwallex
-  const airwallexNavigation = [
+  // Navigation réaliste inspirée d'Airwallex mais adaptée à Muxxus
+  const muxxusNavigation = [
     {
       title: "Products",
       links: [
-        { name: "Business Accounts", href: "/products/business-accounts" },
-        { name: "Spend", href: "/products/spend" },
-        { name: "Payments", href: "/products/payments" },
-        { name: "Platform APIs", href: "/products/platform-apis" },
-        { name: "FX & Transfers", href: "/products/fx-transfers" },
-        { name: "Corporate Cards", href: "/products/corporate-cards" },
+        { name: "Business Accounts", href: "/business-accounts" },
+        { name: "Spend Management", href: "/service/spend-management" },
+        { name: "FX & Transfers", href: "/service/accounts/fx-transfers" },
+        { name: "Corporate Cards", href: "/service/spend-management/corporate-cards" },
+        { name: "Bill Pay", href: "/service/spend-management/bill-pay" },
+        { name: "Platform APIs", href: "/platform-apis" },
       ]
     },
     {
@@ -82,9 +82,9 @@ const MuxxusFooter = ({ footerNav }: Props) => {
     {
       title: "Company",
       links: [
-        { name: "About", href: "/about" },
-        { name: "Careers", href: "/careers" },
-        { name: "Press", href: "/press" },
+        { name: "About", href: "/company/who-we-are" },
+        { name: "Careers", href: "/career" },
+        { name: "Press", href: "/company/newsroom" },
         { name: "Partners", href: "/partners" },
         { name: "Contact", href: "/contact" },
         { name: "Blog", href: "/blog" },
@@ -94,7 +94,7 @@ const MuxxusFooter = ({ footerNav }: Props) => {
       title: "Support",
       links: [
         { name: "Help Center", href: "/support" },
-        { name: "Contact Support", href: "/support/contact" },
+        { name: "Contact Support", href: "/contact" },
         { name: "Status", href: "/status" },
         { name: "Security", href: "/security" },
         { name: "Compliance", href: "/compliance" },
@@ -104,28 +104,27 @@ const MuxxusFooter = ({ footerNav }: Props) => {
   ];
 
   return (
-    <footer className="bg-gray-900" ref={containerRef}>
-      <div className="container2">
-        {/* Section principale */}
-        <div className="py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-12">
-            {/* Logo et description */}
-            <div className="lg:col-span-2">
-              <Logo
-                light={isLight}
-                customWidth={150}
-                customHeight={110}
-                className="mb-6"
-              />
-              <p className="text-gray-300 text-lg leading-relaxed max-w-md mb-8">
-                Secure your business with enterprise-grade protection. 
-                Trusted by companies worldwide for their most critical data.
+    <footer className="bg-gray-900 text-white" ref={containerRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top Section */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-12">
+            {/* Logo and Description */}
+            <div className="lg:col-span-1">
+              <div className="mb-6">
+                <Logo />
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Global financial infrastructure for modern businesses. 
+                Multi-currency accounts, payments, and FX solutions that scale with you.
               </p>
               <div className="flex space-x-4">
-                {social?.map((item, i) => (
+                {social?.map((item, index) => (
                   <Link
-                    key={i}
-                    href={item.link || "#"}
+                    key={index}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -136,10 +135,10 @@ const MuxxusFooter = ({ footerNav }: Props) => {
               </div>
             </div>
 
-            {/* Navigation inspirée d'Airwallex - 5 colonnes sur la même ligne */}
-            {airwallexNavigation.map((section, index) => (
+            {/* Navigation - 5 colonnes sur la même ligne */}
+            {muxxusNavigation.map((section, index) => (
               <div key={index} className="has_fade_anim">
-                <h3 className="text-white font-semibold text-lg mb-4">
+                <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wide">
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
@@ -147,7 +146,7 @@ const MuxxusFooter = ({ footerNav }: Props) => {
                     <li key={linkIndex}>
                       <Link
                         href={link.href}
-                        className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+                        className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                       >
                         {link.name}
                       </Link>
@@ -162,11 +161,11 @@ const MuxxusFooter = ({ footerNav }: Props) => {
         {/* Section CTA */}
         <div className="border-t border-gray-800 py-12">
           <div className="text-center">
-            <h2 className="text-white text-3xl lg:text-4xl font-bold mb-4 has_text_mov_anim">
-              Ready to secure your business?
+            <h2 className="text-white text-2xl lg:text-3xl font-semibold mb-4 has_text_mov_anim">
+              Ready to go global?
             </h2>
-            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Get started with enterprise-grade security solutions designed for modern businesses.
+            <p className="text-gray-400 text-base mb-8 max-w-2xl mx-auto">
+              Join thousands of businesses using Muxxus to manage their global finances.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MuxxusButton
@@ -191,30 +190,23 @@ const MuxxusFooter = ({ footerNav }: Props) => {
         {/* Copyright */}
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              {footer_info?.copyright?.label}{" "}
-              <Link
-                href={footer_info?.copyright?.link || "#"}
-                target="_blank"
-                className="text-white hover:text-gray-300 transition-colors duration-200"
-              >
-                {footer_info?.copyright?.company}
-              </Link>
+            <p className="text-gray-500 text-sm">
+              © 2024 Muxxus Financial Services Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+              <Link href="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+              <Link href="/terms" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
                 Terms of Service
               </Link>
-              <Link href="/security" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+              <Link href="/security" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
                 Security
               </Link>
-              <Link href="/compliance" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+              <Link href="/compliance" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
                 Compliance
               </Link>
-              <Link href="/trust" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+              <Link href="/trust" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
                 Trust Center
               </Link>
             </div>

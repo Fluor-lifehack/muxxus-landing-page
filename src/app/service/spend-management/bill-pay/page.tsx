@@ -2,8 +2,9 @@ import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaReceipt, FaShieldAlt, FaClock, FaChartLine, FaAutomation } from "react-icons/fa";
+import { FaReceipt, FaShieldAlt, FaClock, FaChartLine, FaRobot } from "react-icons/fa";
 import Link from "next/link";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 const BillPayPage = () => {
   const features = [
@@ -13,7 +14,7 @@ const BillPayPage = () => {
       description: "Automatically process and pay bills with smart approval workflows"
     },
     {
-      icon: FaAutomation,
+      icon: FaRobot,
       title: "Smart Automation",
       description: "Set up recurring payments and automatic bill scheduling"
     },
@@ -136,6 +137,9 @@ const BillPayPage = () => {
           />
         </div>
       </section>
+
+      {/* Footer */}
+      <MuxxusFooter />
     </main>
   );
 };

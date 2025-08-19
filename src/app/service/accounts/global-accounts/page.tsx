@@ -12,6 +12,7 @@ import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaArrowRight, FaGlobe, FaShieldAlt, FaClock, FaCreditCard } from "react-icons/fa";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import Link from "next/link";
 
 export default function GlobalAccountsPage() {
@@ -74,6 +75,9 @@ export default function GlobalAccountsPage() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <MuxxusFooter />
     </main>
   );
 }

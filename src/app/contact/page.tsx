@@ -4,6 +4,7 @@ import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaGlobe, FaHeadset } from "react-icons/fa";
 import Link from "next/link";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 const ContactPage = () => {
   const contactMethods = [
@@ -125,7 +126,7 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
-            <p className="text-lg text-gray-600">Tell us about your business needs and we'll get back to you quickly</p>
+            <p className="text-lg text-gray-600">Tell us about your business needs and we&apos;ll get back to you quickly</p>
           </div>
           <form className="bg-white p-8 rounded-xl shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -257,7 +258,7 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
           <p className="text-lg text-gray-600 mb-8">
-            Let's discuss how Muxxus can help your business go global
+            Let&apos;s discuss how Muxxus can help your business go global
           </p>
           <CircleFillButton 
             text="Schedule a Consultation" 
@@ -266,6 +267,9 @@ const ContactPage = () => {
           />
         </div>
       </section>
+
+      {/* Footer */}
+      <MuxxusFooter />
     </main>
   );
 };
