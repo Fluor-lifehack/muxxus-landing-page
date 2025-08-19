@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import DesignService from "@/components/service/design/DesignService";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 
-export default function FXTransfersServicePage() {
+export default function MultiCurrencyServicePage() {
   // Real data structure for DesignService component
   const serviceData = {
     title: "FX & Transfers",
@@ -112,8 +112,8 @@ export default function FXTransfersServicePage() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Design", href: "/service/design" },
-    { label: "FX & Transfers", isActive: true },
+    { label: "Accounts", href: "/service/accounts" },
+    { label: "Multi-currency", isActive: true },
   ];
 
   return (

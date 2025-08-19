@@ -15,6 +15,7 @@ import {
   Shield,
   Users,
   ArrowRight,
+  Search,
 } from "lucide-react";
 
 const MuxxusHeader = () => {
@@ -56,12 +57,13 @@ const MuxxusHeader = () => {
         {
           title: "Business Accounts",
           description: "Multi-currency accounts for global business",
-          href: "/business-accounts",
+          href: "/service/accounts/business",
+          // href: "/service/business-accounts",
           icon: Building2,
           features: [
-            { title: "Global Accounts", href: "/service/design/business-accounts" },
-            { title: "FX & Transfers", href: "/service/design/fx-transfers" },
-            { title: "Multi-currency", href: "/business-accounts" },
+            { title: "Global Accounts", href: "/service/accounts/global" },
+            { title: "FX & Transfers", href: "/service/accounts/fx-transfers" },
+            { title: "Multi-currency", href: "/service/accounts/multi" },
           ],
         },
         {
@@ -159,10 +161,10 @@ const MuxxusHeader = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-blue-100 shadow-lg"
-            : "bg-white/90 backdrop-blur-sm border-b border-transparent"
+            ? "bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-2xl"
+            : "bg-white/80 backdrop-blur-lg border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -171,7 +173,7 @@ const MuxxusHeader = () => {
             <Logo light={false} customWidth={120} customHeight={50} />
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2">
+            <nav className="hidden lg:flex items-center space-x-1">
               {navigationItems.map((item) => (
                 <div 
                   key={item.name} 
@@ -184,16 +186,16 @@ const MuxxusHeader = () => {
                 >
                   {item.hasDropdown ? (
                     <button
-                      className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      className={`flex items-center space-x-1 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                         activeDropdown === item.name
-                          ? "text-blue-600"
-                          : "text-gray-700 hover:text-blue-600"
+                          ? "text-blue-600 bg-blue-50"
+                          : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                       }`}
                       onClick={() => handleDropdownToggle(item.name)}
                     >
                       <span>{item.name}</span>
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
+                        className={`w-4 h-4 transition-transform duration-300 ${
                           activeDropdown === item.name ? "rotate-180" : ""
                         }`}
                       />
@@ -201,7 +203,7 @@ const MuxxusHeader = () => {
                   ) : (
                     <Link
                       href={item.href!}
-                      className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                      className="flex items-center space-x-1 px-4 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all duration-300"
                     >
                       <span>{item.name}</span>
                     </Link>
@@ -210,19 +212,19 @@ const MuxxusHeader = () => {
                   {/* Mega Menu */}
                   {item.hasDropdown && activeDropdown === item.name && (
                     <div
-                      className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen bg-white border-t border-blue-100 shadow-xl z-[9999]"
+                      className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen bg-white/95 backdrop-blur-xl border-t border-gray-200/50 shadow-2xl z-[9999]"
                       onMouseEnter={() => handleMouseEnter(item.name)}
                       onMouseLeave={() => handleMouseLeave(item.name)}
                     >
-                      <div className="max-w-7xl mx-auto px-8 py-10">
+                      <div className="max-w-7xl mx-auto px-8 py-12">
                         {/* Header Section */}
-                        <div className="mb-8">
-                          <h2 className="text-2xl font-bold text-blue-600 mb-2">{item.name}</h2>
-                          <p className="text-gray-600">Discover our comprehensive solutions</p>
+                        <div className="mb-10 text-center">
+                          <h2 className="text-3xl font-bold text-gray-900 mb-3">{item.name}</h2>
+                          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Discover our comprehensive solutions designed to scale your business globally</p>
                         </div>
 
                         {/* Content Grid - Items + Image */}
-                        <div className="grid grid-cols-3 gap-8">
+                        <div className="grid grid-cols-3 gap-10">
                           {/* Left Column - Menu Items */}
                           <div className="col-span-2">
                             <div className="grid grid-cols-2 gap-6">
@@ -230,31 +232,31 @@ const MuxxusHeader = () => {
                                 <Link
                                   key={subItem.title}
                                   href={subItem.href}
-                                  className="group block p-5 rounded-xl border border-transparent hover:border-blue-200 hover:shadow-md transition-all duration-200 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                  className="group block p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                                 >
                                   {/* Icône et titre */}
-                                  <div className="flex items-start space-x-4 mb-4">
-                                    <div className="p-3 rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                  <div className="flex items-start space-x-4 mb-5">
+                                    <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 text-blue-600 group-hover:from-blue-100 group-hover:to-indigo-100 transition-all duration-300">
                                       <subItem.icon className="w-6 h-6" />
                                     </div>
                                     <div>
-                                      <h3 className="text-base font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                                         {subItem.title}
                                       </h3>
-                                      <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                                      <p className="text-sm text-gray-500 mt-2 leading-relaxed">
                                         {subItem.description}
                                       </p>
                                     </div>
                                   </div>
 
                                   {/* Features List */}
-                                  <ul className="text-xs text-gray-600 space-y-1">
+                                  <ul className="text-sm text-gray-600 space-y-2 mb-4">
                                     {subItem.features.map((feature) => (
                                       <li key={feature.title} className="flex items-center">
-                                        <span className="mr-2 text-blue-600">•</span>
+                                        <span className="mr-3 text-blue-500 font-bold">•</span>
                                         <Link
                                           href={feature.href}
-                                          className="text-blue-600 hover:text-blue-700 hover:underline"
+                                          className="text-blue-600 hover:text-blue-700 hover:underline transition-colors"
                                         >
                                           {feature.title}
                                         </Link>
@@ -263,9 +265,9 @@ const MuxxusHeader = () => {
                                   </ul>
 
                                   {/* Learn More Link */}
-                                  <div className="mt-4 flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700">
+                                  <div className="flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700">
                                     <span>Learn more</span>
-                                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                                   </div>
                                 </Link>
                               ))}
@@ -274,22 +276,22 @@ const MuxxusHeader = () => {
 
                           {/* Right Column - Featured Image */}
                           <div className="col-span-1">
-                            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 h-full flex flex-col justify-center">
+                            <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 h-full flex flex-col justify-center border border-gray-100">
                               <div className="text-center">
-                                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                  <div className="w-8 h-8 text-white font-bold text-xl">
+                                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                                  <div className="w-10 h-10 text-white font-bold text-2xl">
                                     {item.name.charAt(0)}
                                   </div>
                                 </div>
-                                <h3 className="text-lg font-semibold text-blue-600 mb-2">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">
                                   {item.name} Solutions
                                 </h3>
-                                <p className="text-sm text-gray-600 mb-4">
-                                  Transform your business with our cutting-edge {item.name.toLowerCase()} services
+                                <p className="text-gray-600 mb-6 leading-relaxed">
+                                  Transform your business with our cutting-edge {item.name.toLowerCase()} services and global reach
                                 </p>
                                 <button
                                   onClick={handleModalOpen}
-                                  className="w-full px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                                 >
                                   Get Started
                                 </button>
@@ -299,17 +301,17 @@ const MuxxusHeader = () => {
                         </div>
 
                         {/* Bottom CTA Section */}
-                        <div className="mt-8 pt-6 border-t border-blue-100">
+                        <div className="mt-10 pt-8 border-t border-gray-200/50">
                           <div className="flex justify-between items-center">
                             <div>
-                              <p className="text-sm text-gray-600">Need help choosing?</p>
-                              <p className="text-base font-medium text-blue-600">Our experts are here to guide you</p>
+                              <p className="text-sm text-gray-500 mb-1">Need help choosing?</p>
+                              <p className="text-lg font-semibold text-gray-900">Our experts are here to guide you</p>
                             </div>
-                            <div className="flex space-x-3">
-                              <button className="px-4 py-2 border border-blue-200 text-blue-700 text-sm font-medium rounded-md hover:bg-blue-50 transition-colors">
+                            <div className="flex space-x-4">
+                              <button className="px-6 py-3 border border-gray-300 text-gray-700 text-sm font-medium rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-300">
                                 Contact Sales
                               </button>
-                              <button className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">
+                              <button className="px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
                                 Schedule Demo
                               </button>
                             </div>
@@ -324,8 +326,13 @@ const MuxxusHeader = () => {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
+              {/* Search Button */}
+              <button className="hidden lg:flex items-center justify-center w-10 h-10 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-all duration-300">
+                <Search className="w-5 h-5" />
+              </button>
+
               {/* Language Selector */}
-              <button className="hidden lg:flex items-center space-x-2 text-sm text-gray-700 hover:text-blue-600 transition-colors">
+              <button className="hidden lg:flex items-center space-x-2 px-3 py-2 rounded-xl text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all duration-300">
                 <Globe className="w-4 h-4" />
                 <span>EN</span>
               </button>
@@ -333,18 +340,18 @@ const MuxxusHeader = () => {
               {/* CTA Buttons */}
               <button
                 onClick={handleModalOpen}
-                className="hidden lg:inline-flex px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 transition shadow-md hover:shadow-lg"
+                className="hidden lg:inline-flex px-6 py-2.5 text-sm font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Get Started
               </button>
-              <button className="hidden lg:inline-flex px-4 py-2 text-sm font-medium border border-blue-200 text-blue-700 rounded-md hover:bg-blue-50 transition">
+              <button className="hidden lg:inline-flex px-6 py-2.5 text-sm font-semibold border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-300">
                 Contact Sales
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={handleMobileMenuToggle}
-                className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                className="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
               >
                 {isMobileMenuOpen ? (
                   <X className="w-6 h-6" />
