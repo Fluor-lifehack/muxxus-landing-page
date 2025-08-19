@@ -8,7 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import SectionTitle from "../sectionTitle/SectionTitle";
+import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import {
   FacebookShareButton,
   InstapaperShareButton,
