@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import ServiceInnerCard from "@/components/service/ServiceInnerCard";
+import ServiceInnerCard from "./ServiceInnerCard";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";

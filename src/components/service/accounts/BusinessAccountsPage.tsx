@@ -1,19 +1,23 @@
-"use client";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { ActionBtnType, TServiceType } from "@/types";
+import { ActionBtnType } from "@/types";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import hasFadeAnim from "@/lib/animation/hasFadeAnim";
+
+type SimpleServiceType = {
+  data: {
+    id: number;
+    title: string;
+  };
+  slug: string;
+};
 
 type Props = {
   title: string;
   description: string;
   sub_title: string;
   action_btn: ActionBtnType;
-  services: TServiceType[];
+  services: SimpleServiceType[];
 };
 
 const BusinessAccountsPage = ({
@@ -23,17 +27,8 @@ const BusinessAccountsPage = ({
   action_btn,
   services,
 }: Props) => {
-  const containerRef = useRef<HTMLDivElement>(null!);
-
-  useGSAP(
-    () => {
-      hasFadeAnim();
-    },
-    { scope: containerRef }
-  );
-
   return (
-    <section ref={containerRef}>
+    <section>
       <div className="inner-container">
         <div className="main-section-spacing">
           <div className="grid gap-y-[35px] gap-x-[60px] xl:grid-cols-[auto_880px]">
@@ -51,7 +46,7 @@ const BusinessAccountsPage = ({
                 >
                   {services.map((service, index) => (
                     <Link
-                      href={`/service/design/${service.slug}`}
+                      href={`/business-accounts/${service.slug}`}
                       key={service.data.id}
                       className="border-b border-background-2 md:[&:nth-child(2)]:border-t first:border-t"
                     >

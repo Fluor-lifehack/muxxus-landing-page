@@ -5,8 +5,8 @@ import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
-import ImageComponent from "../tools/ImageComponent";
-import InnerSectionTitle from "../sectionTitle/InnerSectionTitle";
+import ImageComponent from "@/components/tools/ImageComponent";
+import InnerSectionTitle from "@/components/sectionTitle/InnerSectionTitle";
 
 type Props = {
   title: string;
