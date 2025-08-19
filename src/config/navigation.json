@@ -9,47 +9,41 @@
         {
           "id": 1,
           "name": "Business Accounts",
-          "path": "/business-accounts",
+          "path": "/service/accounts/business",
           "icon": "💎",
           "hasChildren": true,
           "children": [
             {
               "id": 1,
               "name": "Global Accounts",
-              "path": "/business-accounts/global",
+              "path": "/service/accounts/global",
               "description": "Multi-currency accounts to receive funds"
             },
             {
               "id": 2,
               "name": "FX & Transfers",
-              "path": "/business-accounts/fx-transfers",
+              "path": "/service/accounts/fx-transfers",
               "description": "High-speed international transfers"
             }
           ]
         },
         {
           "id": 2,
-          "name": "Spend",
-          "path": "/spend",
-          "icon": "🎵",
+          "name": "Spend Management",
+          "path": "/service/spend-management",
+          "icon": "💳",
           "hasChildren": true,
           "children": [
             {
               "id": 1,
               "name": "Corporate Cards",
-              "path": "/spend/corporate-cards",
+              "path": "/service/spend-management/corporate-cards",
               "description": "Multi-currency company & employee cards"
             },
             {
               "id": 2,
-              "name": "Expense Management",
-              "path": "/spend/expense-management",
-              "description": "Expenses & reimbursement management"
-            },
-            {
-              "id": 3,
               "name": "Bill Pay",
-              "path": "/spend/bill-pay",
+              "path": "/service/spend-management/bill-pay",
               "description": "Automated accounts payable management"
             }
           ]

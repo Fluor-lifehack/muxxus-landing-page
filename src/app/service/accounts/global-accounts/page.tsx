@@ -11,7 +11,7 @@ import ServiceDetailsFaq from "@/app/service/ServiceDetailsFaq";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaArrowRightLong, FaGlobe, FaShieldAlt, FaClock, FaCreditCard } from "react-icons/fa";
+import { FaArrowRight, FaGlobe, FaShieldAlt, FaClock, FaCreditCard } from "react-icons/fa";
 import Link from "next/link";
 
 export default function GlobalAccountsPage() {

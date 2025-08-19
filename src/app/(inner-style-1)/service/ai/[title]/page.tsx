@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getAllPages } from "@/lib/helper/contentConverter";
 import { getMainPage } from "@/lib/helper/contentConverter";
 import MDXContent from "@/components/tools/MDXContent";
-import ServiceDetails from "@/components/service/ServiceDetails";
+import ServiceDetails from "@/app/service/ServiceDetails";
 import ClientArea from "@/components/clients/ClientArea";
 import PricingArea from "@/components/pricing/PricingArea";
 import SeoData from "@/components/tools/SeoData";
