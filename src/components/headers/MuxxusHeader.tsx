@@ -116,33 +116,39 @@ export default function MuxxusHeader() {
                           </div>
 
                           {/* Content Grid */}
-                          <div className="grid grid-cols-5 gap-2">
+                          <div className="grid grid-cols-5 gap-4">
                             {/* Colonne gauche - Catégories */}
                             <div className="col-span-4">
-                              <div className="space-y-2">
+                              <div className="space-y-4">
                                 {item.children?.filter(category => 
                                   'children' in category && 
                                   category.children && 
                                   category.children.length > 0
                                 ).map((category) => (
-                                  <div key={category.id} className="pb-1 last:pb-0">
-                                    <div className="flex items-center gap-2 mb-1">
+                                  <div key={category.id} className="pb-2 last:pb-0">
+                                    <div className="flex items-center gap-2 mb-2">
                                       <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span>
-                                      <h3 className="text-sm font-semibold text-gray-900">
-                                        {category.name}
-                                      </h3>
+                                      <a href={category.path} className="group">
+                                        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600">
+                                          {category.name}
+                                        </h3>
+                                      </a>
+                                      <span className="text-blue-500">›</span>
                                     </div>
-                                    <div className="h-px bg-gray-200 mb-2"></div>
-                                    <div className="grid grid-cols-2 gap-1">
+                                    <div className="h-px bg-gray-200 mb-3"></div>
+                                    <div className="grid grid-cols-3 gap-2">
                                       {('children' in category && category.children) && category.children.map((product) => (
-                                        <div key={product.id} className="p-1 rounded bg-white">
+                                        <div key={product.id} className="p-2 rounded bg-white">
                                           <a
                                             href={product.path}
                                             className="group block"
                                           >
-                                            <h4 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600 mb-0.5">
-                                              {product.name}
-                                            </h4>
+                                            <div className="flex items-center gap-1 mb-1">
+                                              <h4 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600">
+                                                {product.name}
+                                              </h4>
+                                              <span className="text-blue-500 text-xs">›</span>
+                                            </div>
                                           </a>
                                           <p className="text-xs text-gray-600 leading-tight">
                                             {product.description}
@@ -155,23 +161,23 @@ export default function MuxxusHeader() {
                               </div>
                             </div>
 
-                            {/* Colonne droite - Section Image (réduite) */}
-                            <div className="col-span-1">
-                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded p-1 h-full flex flex-col justify-center">
-                                <div className="text-center mb-1">
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-indigo-600 rounded flex items-center justify-center mx-auto mb-0.5">
-                                    <span className="text-xs">💼</span>
+                            {/* Colonne droite - Section Image (étendue) */}
+                            <div className="col-span-1 w-full ml-4">
+                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded p-3 h-full flex flex-col justify-center border-l-2 border-gray-200 w-full">
+                                <div className="text-center mb-3">
+                                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                    <span className="text-2xl">💼</span>
                                   </div>
-                                  <h3 className="text-xs font-bold text-gray-900 mb-0.5">
+                                  <h3 className="text-sm font-bold text-gray-900 mb-2">
                                     {item.name}
                                   </h3>
-                                  <p className="text-xs text-gray-600 leading-tight">
+                                  <p className="text-xs text-gray-600 leading-tight mb-4">
                                     Get Started
                                   </p>
                                 </div>
                                 <button
                                   onClick={handleModalOpen}
-                                  className="w-full px-1 py-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold rounded hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105"
+                                  className="w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105"
                                 >
                                   Start
                                 </button>
