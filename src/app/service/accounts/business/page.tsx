@@ -142,7 +142,8 @@ const BusinessAccountsServicePage = () => {
             </div>
           </div>
         </section>
-
+ {/* Client Slider */}
+ <ClientSlider clients={clients?.brands} />
         {/* Stats Section */}
         <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
           <div className="container2">
@@ -192,6 +193,8 @@ const BusinessAccountsServicePage = () => {
             </div>
           </div>
         </section>
+
+       
 
         {/* Image Section */}
         <section className="py-20 bg-white">
