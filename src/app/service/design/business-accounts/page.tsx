@@ -6,7 +6,8 @@ import { Building2, Globe, CreditCard, Zap } from "lucide-react";
 
 export default function BusinessAccountsPage() {
   const breadcrumbItems = [
-    { label: "Products", href: "/products" },
+    { label: "Services", href: "/service" },
+    { label: "Design", href: "/service/design" },
     { label: "Business Accounts", isActive: true }
   ];
 
@@ -48,7 +49,7 @@ export default function BusinessAccountsPage() {
         title="Business Accounts"
         description="Multi-currency accounts for global business operations"
         items={secondaryNavItems}
-        currentPath="/business-accounts"
+        currentPath="/service/design/business-accounts"
       />
 
       {/* Hero Section */}
@@ -118,4 +119,4 @@ export default function BusinessAccountsPage() {
       <MuxxusFooter />
     </main>
   );
-} 
+}

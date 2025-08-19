@@ -161,8 +161,8 @@ const MuxxusHeader = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
           isScrolled
-            ? "bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm"
-            : "bg-white/80 backdrop-blur-sm"
+            ? "bg-white/95 backdrop-blur-md border-b border-blue-100 shadow-lg"
+            : "bg-white/90 backdrop-blur-sm border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -186,8 +186,8 @@ const MuxxusHeader = () => {
                     <button
                       className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                         activeDropdown === item.name
-                          ? "text-gray-900"
-                          : "text-gray-700 hover:text-gray-900"
+                          ? "text-blue-600"
+                          : "text-gray-700 hover:text-blue-600"
                       }`}
                       onClick={() => handleDropdownToggle(item.name)}
                     >
@@ -201,7 +201,7 @@ const MuxxusHeader = () => {
                   ) : (
                     <Link
                       href={item.href!}
-                      className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                      className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
                     >
                       <span>{item.name}</span>
                     </Link>
@@ -210,14 +210,14 @@ const MuxxusHeader = () => {
                   {/* Mega Menu */}
                   {item.hasDropdown && activeDropdown === item.name && (
                     <div
-                      className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen bg-white border-t border-gray-200 shadow-xl z-[9999]"
+                      className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen bg-white border-t border-blue-100 shadow-xl z-[9999]"
                       onMouseEnter={() => handleMouseEnter(item.name)}
                       onMouseLeave={() => handleMouseLeave(item.name)}
                     >
                       <div className="max-w-7xl mx-auto px-8 py-10">
                         {/* Header Section */}
                         <div className="mb-8">
-                          <h2 className="text-2xl font-bold text-gray-900 mb-2">{item.name}</h2>
+                          <h2 className="text-2xl font-bold text-blue-600 mb-2">{item.name}</h2>
                           <p className="text-gray-600">Discover our comprehensive solutions</p>
                         </div>
 
@@ -230,15 +230,15 @@ const MuxxusHeader = () => {
                                 <Link
                                   key={subItem.title}
                                   href={subItem.href}
-                                  className="group block p-5 rounded-xl border border-transparent hover:border-gray-200 hover:shadow-md transition-all duration-200 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                  className="group block p-5 rounded-xl border border-transparent hover:border-blue-200 hover:shadow-md transition-all duration-200 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                                 >
                                   {/* Icône et titre */}
                                   <div className="flex items-start space-x-4 mb-4">
-                                    <div className="p-3 rounded-lg bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                    <div className="p-3 rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                                       <subItem.icon className="w-6 h-6" />
                                     </div>
                                     <div>
-                                      <h3 className="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
+                                      <h3 className="text-base font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
                                         {subItem.title}
                                       </h3>
                                       <p className="text-sm text-gray-500 mt-1 leading-relaxed">
@@ -251,10 +251,10 @@ const MuxxusHeader = () => {
                                   <ul className="text-xs text-gray-600 space-y-1">
                                     {subItem.features.map((feature) => (
                                       <li key={feature.title} className="flex items-center">
-                                        <span className="mr-2 text-blue-500">•</span>
+                                        <span className="mr-2 text-blue-600">•</span>
                                         <Link
                                           href={feature.href}
-                                          className="text-blue-600 hover:underline"
+                                          className="text-blue-600 hover:text-blue-700 hover:underline"
                                         >
                                           {feature.title}
                                         </Link>
@@ -274,14 +274,14 @@ const MuxxusHeader = () => {
 
                           {/* Right Column - Featured Image */}
                           <div className="col-span-1">
-                            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6 h-full flex flex-col justify-center">
+                            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 h-full flex flex-col justify-center">
                               <div className="text-center">
                                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                   <div className="w-8 h-8 text-white font-bold text-xl">
                                     {item.name.charAt(0)}
                                   </div>
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                                <h3 className="text-lg font-semibold text-blue-600 mb-2">
                                   {item.name} Solutions
                                 </h3>
                                 <p className="text-sm text-gray-600 mb-4">
@@ -289,7 +289,7 @@ const MuxxusHeader = () => {
                                 </p>
                                 <button
                                   onClick={handleModalOpen}
-                                  className="w-full px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
+                                  className="w-full px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
                                 >
                                   Get Started
                                 </button>
@@ -299,17 +299,17 @@ const MuxxusHeader = () => {
                         </div>
 
                         {/* Bottom CTA Section */}
-                        <div className="mt-8 pt-6 border-t border-gray-200">
+                        <div className="mt-8 pt-6 border-t border-blue-100">
                           <div className="flex justify-between items-center">
                             <div>
                               <p className="text-sm text-gray-600">Need help choosing?</p>
-                              <p className="text-base font-medium text-gray-900">Our experts are here to guide you</p>
+                              <p className="text-base font-medium text-blue-600">Our experts are here to guide you</p>
                             </div>
                             <div className="flex space-x-3">
-                              <button className="px-4 py-2 border border-gray-200 text-gray-800 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
+                              <button className="px-4 py-2 border border-blue-200 text-blue-700 text-sm font-medium rounded-md hover:bg-blue-50 transition-colors">
                                 Contact Sales
                               </button>
-                              <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">
+                              <button className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">
                                 Schedule Demo
                               </button>
                             </div>
@@ -325,7 +325,7 @@ const MuxxusHeader = () => {
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
               {/* Language Selector */}
-              <button className="hidden lg:flex items-center space-x-2 text-sm text-gray-700 hover:text-gray-900">
+              <button className="hidden lg:flex items-center space-x-2 text-sm text-gray-700 hover:text-blue-600 transition-colors">
                 <Globe className="w-4 h-4" />
                 <span>EN</span>
               </button>
@@ -333,18 +333,18 @@ const MuxxusHeader = () => {
               {/* CTA Buttons */}
               <button
                 onClick={handleModalOpen}
-                className="hidden lg:inline-flex px-4 py-2 text-sm font-medium bg-black text-white rounded-md hover:bg-gray-800 transition"
+                className="hidden lg:inline-flex px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 transition shadow-md hover:shadow-lg"
               >
                 Get Started
               </button>
-              <button className="hidden lg:inline-flex px-4 py-2 text-sm font-medium border border-gray-200 rounded-md hover:bg-gray-50 transition">
+              <button className="hidden lg:inline-flex px-4 py-2 text-sm font-medium border border-blue-200 text-blue-700 rounded-md hover:bg-blue-50 transition">
                 Contact Sales
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={handleMobileMenuToggle}
-                className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-900/10"
+                className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
               >
                 {isMobileMenuOpen ? (
                   <X className="w-6 h-6" />
