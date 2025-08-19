@@ -1,131 +1,160 @@
-import { notFound } from "next/navigation";
-import DesignService from "@/components/service/design/DesignService";
-import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
+import Image from "next/image";
+import ServiceDetails from "@/app/service/ServiceDetails";
+import ClientArea from "@/components/clients/ClientArea";
+import PricingArea from "@/components/pricing/PricingArea";
+import ContactBanner from "@/components/banner/ContactBanner";
+import ServiceDetailsFaq from "@/components/service/ServiceDetailsFaq";
+import BreadcrumbNav from "@/components/elements/BreadcrumbNav";
+import CircleFillButton from "@/components/elements/button/CircleFillButton";
+import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
+import { FaArrowRight, FaGlobe, FaShieldAlt, FaClock, FaCreditCard, FaExchangeAlt } from "react-icons/fa";
+import Link from "next/link";
 
-export default function FXTransfersServicePage() {
-  // Real data structure for DesignService component
-  const serviceData = {
+const FXTransfersPage = () => {
+  const service = {
     title: "FX & Transfers",
-    description: "High-speed international transfers with competitive exchange rates. Send money globally in seconds with real-time FX rates.",
-    sub_title: "International Money Transfers",
-    action_btn: {
-      enable: true,
-      label: "Start Transfer",
-      link: "/contact"
-    },
-    services: [
+    subtitle: "High-speed international transfers with competitive rates",
+    description: "Send money globally with lightning speed and the best exchange rates. Our FX & Transfers service provides instant international payments with transparent pricing and real-time tracking.",
+    features: [
       {
-        slug: "fx-transfers-standard",
-        data: {
-          draft: false,
-          id: 1,
-          title: "Standard Transfers",
-          icon: "/assets/imgs/icon/icon-s-3-light.png",
-          bg_video: "/assets/video/video.mp4",
-          image: "/assets/imgs/gallery/img-sd-89.png",
-          description: "Standard international transfers with competitive rates and 1-2 business day processing.",
-          contactTitle: "Start your transfer journey",
-          btn_text: "Start Transfer",
-          features: [
-            "Real-time FX rates",
-            "Standard transfer times",
-            "50+ currencies",
-            "Competitive fees"
-          ],
-          faq_title: "Frequently asked questions",
-          faqs: []
-        },
-        content: ""
+        icon: FaExchangeAlt,
+        title: "Competitive Rates",
+        description: "Get interbank exchange rates with minimal markup"
       },
       {
-        slug: "fx-transfers-premium",
-        data: {
-          draft: false,
-          id: 2,
-          title: "Premium Transfers",
-          icon: "/assets/imgs/icon/icon-s-3-light.png",
-          bg_video: "/assets/video/video.mp4",
-          image: "/assets/imgs/gallery/img-sd-89.png",
-          description: "Premium transfers with faster processing, better rates, and priority support.",
-          contactTitle: "Upgrade to premium",
-          btn_text: "Upgrade Now",
-          features: [
-            "Faster processing",
-            "Better exchange rates",
-            "Priority support",
-            "Bulk transfer discounts"
-          ],
-          faq_title: "Premium features",
-          faqs: []
-        },
-        content: ""
+        icon: FaGlobe,
+        title: "Global Coverage",
+        description: "Send to 200+ countries in 50+ currencies"
       },
       {
-        slug: "fx-transfers-enterprise",
-        data: {
-          draft: false,
-          id: 3,
-          title: "Enterprise Solutions",
-          icon: "/assets/imgs/icon/icon-s-3-light.png",
-          bg_video: "/assets/video/video.mp4",
-          image: "/assets/imgs/gallery/img-sd-89.png",
-          description: "Custom enterprise solutions for large volume transfers with dedicated support and custom limits.",
-          contactTitle: "Enterprise consultation",
-          btn_text: "Contact Sales",
-          features: [
-            "Custom transfer limits",
-            "API integration",
-            "Dedicated support",
-            "White-label solutions"
-          ],
-          faq_title: "Enterprise features",
-          faqs: []
-        },
-        content: ""
+        icon: FaClock,
+        title: "Instant Transfers",
+        description: "Most transfers complete within minutes"
       },
       {
-        slug: "fx-transfers-express",
-        data: {
-          draft: false,
-          id: 4,
-          title: "Express Transfers",
-          icon: "/assets/imgs/icon/icon-s-3-light.png",
-          bg_video: "/assets/video/video.mp4",
-          image: "/assets/imgs/gallery/img-sd-89.png",
-          description: "Instant transfers for urgent payments with same-day processing and real-time tracking.",
-          contactTitle: "Express transfer setup",
-          btn_text: "Get Express",
-          features: [
-            "Same-day processing",
-            "Real-time tracking",
-            "Urgent payment support",
-            "Instant notifications"
-          ],
-          faq_title: "Express features",
-          faqs: []
-        },
-        content: ""
+        icon: FaShieldAlt,
+        title: "Secure & Compliant",
+        description: "Bank-grade security with full regulatory compliance"
       }
-    ]
+    ],
+    faqs: [
+      {
+        question: "How fast are international transfers?",
+        answer: "Most transfers complete within 2-24 hours, with many completing in minutes for major corridors."
+      },
+      {
+        question: "What are the exchange rates?",
+        answer: "We offer interbank rates with minimal markup, typically 0.1-0.5% above the mid-market rate."
+      },
+      {
+        question: "Are there transfer limits?",
+        answer: "Limits vary by account type and compliance requirements. Contact us for specific limits."
+      },
+      {
+        question: "How do I track my transfer?",
+        answer: "All transfers come with real-time tracking and instant notifications at each stage."
+      }
+    ],
+    pricing: {
+      title: "Transparent FX Pricing",
+      subtitle: "No hidden fees, competitive rates",
+      plans: [
+        {
+          name: "Standard",
+          price: "0.5%",
+          features: ["Standard processing", "2-24 hour delivery", "Email support", "Basic tracking"]
+        },
+        {
+          name: "Priority",
+          price: "0.3%",
+          features: ["Faster processing", "1-4 hour delivery", "Priority support", "Advanced tracking"]
+        },
+        {
+          name: "Enterprise",
+          price: "0.1%",
+          features: ["Instant processing", "Minutes delivery", "Dedicated support", "Custom solutions"]
+        }
+      ]
+    }
   };
 
-  const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Accounts", href: "/service/accounts" },
-    { label: "FX & Transfers", isActive: true },
-  ];
-
   return (
-    <main>
-      {/* Breadcrumb Navigation - Sticky */}
-      <div className="sticky top-20 lg:top-24 z-50 bg-white border-b border-gray-200 shadow-lg py-4">
-        <div className="max-w-7xl mx-auto px-4">
-          <BreadcrumbNav items={breadcrumbItems} />
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-green-50 to-blue-100 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <BreadcrumbNav 
+              items={[
+                { name: "Home", path: "/" },
+                { name: "Products", path: "#" },
+                { name: "Business Accounts", path: "/business-accounts" },
+                { name: "FX & Transfers", path: "/service/accounts/fx-transfers" }
+              ]} 
+            />
+            <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
+              {service.title}
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              {service.description}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CircleFillButton 
+                text="Start Transfer" 
+                href="/contact"
+                className="bg-green-600 hover:bg-green-700"
+              />
+              <CircleFillButton 
+                text="View Rates" 
+                href="#pricing"
+                variant="outline"
+                className="border-green-600 text-green-600 hover:bg-green-50"
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <DesignService {...serviceData} />
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <DesignSectionTitle 
+            title="Why Choose Our FX & Transfers?"
+            subtitle="Built for speed, efficiency, and cost-effectiveness"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+            {service.features.map((feature, index) => (
+              <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <feature.icon className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Details */}
+      <ServiceDetails {...service} />
+
+      {/* FAQ Section */}
+      <ServiceDetailsFaq faqs={service.faqs} faqTitle="Frequently Asked Questions" />
+
+      {/* Client Area */}
+      <ClientArea />
+
+      {/* Pricing Section */}
+      <PricingArea {...service.pricing} />
+
+      {/* Contact Banner */}
+      <ContactBanner 
+        contactTitle="Ready to Start Transferring?"
+        btn_text="Get Started Today"
+      />
     </main>
   );
-}
+};
+
+export default FXTransfersPage;

@@ -1,234 +1,178 @@
+import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
-import MuxxusFooter from "@/components/footer/MuxxusFooter";
-import MuxxusHeader from "@/components/headers/MuxxusHeader";
-import { Code, Zap, Shield, Users, Globe, Building2 } from "lucide-react";
+import CircleFillButton from "@/components/elements/button/CircleFillButton";
+import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
+import { FaCode, FaUsers, FaCreditCard, FaGlobe, FaChartLine, FaShieldAlt, FaCog } from "react-icons/fa";
+import Link from "next/link";
 
-export default function PlatformApisPage() {
-  const breadcrumbItems = [
-    { label: "Products", href: "/products" },
-    { label: "Platform APIs", isActive: true }
-  ];
-
-  const apiFeatures = [
+const PlatformAPIsPage = () => {
+  const apis = [
     {
-      title: "Embedded Finance",
-      description: "Integrate banking and payment services directly into your platform",
-      icon: Code,
-      features: ["Banking APIs", "Payment processing", "Account management", "Financial compliance"]
+      icon: FaUsers,
+      title: "Connected Accounts",
+      description: "Programmatic account creation & onboarding",
+      path: "/platform-apis/connected-accounts",
+      color: "from-blue-50 to-blue-100",
+      iconColor: "bg-blue-100 text-blue-600"
     },
     {
-      title: "Real-time Processing",
-      description: "Handle transactions and data updates in real-time",
-      icon: Zap,
-      features: ["Instant payments", "Live data sync", "Webhook support", "Event streaming"]
+      icon: FaCog,
+      title: "Accounts",
+      description: "Multi-currency account management, at scale",
+      path: "/platform-apis/accounts",
+      color: "from-green-50 to-green-100",
+      iconColor: "bg-green-100 text-green-600"
     },
     {
-      title: "Global Compliance",
-      description: "Built-in compliance for international operations",
-      icon: Shield,
-      features: ["KYC/AML", "GDPR compliance", "Regional regulations", "Audit trails"]
-    }
-  ];
-
-  const apiCategories = [
-    {
-      title: "Banking APIs",
-      description: "Create and manage bank accounts programmatically",
-      icon: Building2,
-      endpoints: ["Account creation", "Balance checking", "Transaction history", "Account settings"]
+      icon: FaCreditCard,
+      title: "Payments",
+      description: "Global multi-currency payment acceptance",
+      path: "/platform-apis/payments",
+      color: "from-purple-50 to-purple-100",
+      iconColor: "bg-purple-100 text-purple-600"
     },
     {
-      title: "Payment APIs",
-      description: "Process payments and transfers globally",
-      icon: Globe,
-      endpoints: ["Payment initiation", "FX conversion", "Settlement", "Refunds"]
+      icon: FaGlobe,
+      title: "Transactional FX",
+      description: "Interbank FX rates & currency management",
+      path: "/platform-apis/transactional-fx",
+      color: "from-orange-50 to-orange-100",
+      iconColor: "bg-orange-100 text-orange-600"
     },
     {
-      title: "Identity APIs",
-      description: "Verify and authenticate users securely",
-      icon: Users,
-      endpoints: ["Identity verification", "Document validation", "Risk assessment", "Fraud detection"]
+      icon: FaChartLine,
+      title: "Payouts",
+      description: "Programmatic, cost-effective global payouts",
+      path: "/platform-apis/payouts",
+      color: "from-red-50 to-red-100",
+      iconColor: "bg-red-100 text-red-600"
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Issuing",
+      description: "Global card issuance for a variety of use cases",
+      path: "/platform-apis/issuing",
+      color: "from-indigo-50 to-indigo-100",
+      iconColor: "bg-indigo-100 text-indigo-600"
     }
   ];
 
   return (
-    <>
-      {/* Muxxus Header */}
-      <MuxxusHeader />
-      
-      <main className="min-h-screen bg-white">
-        {/* Breadcrumb Navigation */}
-        <div className="bg-white border-b border-gray-200 py-4">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <BreadcrumbNav items={breadcrumbItems} />
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-gray-900 to-blue-900 py-20 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <BreadcrumbNav 
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Platform APIs", href: "/platform-apis", isActive: true }
+              ]} 
+            />
+            <h1 className="text-5xl font-bold mt-8 mb-6">
+              Platform APIs & Embedded Finance
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Build the future of financial services with our comprehensive APIs. Embed banking, payments, and financial infrastructure directly into your platform.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CircleFillButton 
+                text="Get Started" 
+                href="/contact"
+                className="bg-blue-600 hover:bg-blue-700"
+              />
+              <CircleFillButton 
+                text="View Documentation" 
+                href="/developers/docs"
+                className="border-white text-white hover:bg-white hover:text-gray-900"
+              />
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
-          <div className="max-w-7xl mx-auto px-8 text-center">
-            <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Code className="w-10 h-10 text-indigo-600" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Platform APIs
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Embed financial services into your platform with our comprehensive APIs. Build the future of embedded finance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-md font-medium hover:bg-indigo-700 transition-colors">
-                Get API Keys
-              </button>
-              <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors">
-                View Documentation
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Powerful API Features
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Everything you need to build embedded financial services into your platform.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {apiFeatures.map((feature, index) => {
-                const IconComponent = feature.icon;
-                return (
-                  <div key={index} className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="text-center mb-6">
-                      <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <IconComponent className="w-8 h-8 text-indigo-600" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                      <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
-                    </div>
-                    
-                    <ul className="space-y-3">
-                      {feature.features.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center text-sm text-gray-600">
-                          <Shield className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+      {/* APIs Grid */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <DesignSectionTitle 
+            title="Comprehensive API Suite"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            {apis.map((api, index) => (
+              <Link key={index} href={api.path} className="group">
+                <div className={`p-8 rounded-xl bg-gradient-to-br ${api.color} hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 border border-gray-100`}>
+                  <div className={`w-16 h-16 ${api.iconColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <api.icon className="w-8 h-8" />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* API Categories Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                API Categories
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Comprehensive APIs for every aspect of embedded finance.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {apiCategories.map((category, index) => {
-                const IconComponent = category.icon;
-                return (
-                  <div key={index} className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="text-center mb-6">
-                      <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <IconComponent className="w-8 h-8 text-blue-600" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{category.title}</h3>
-                      <p className="text-gray-600 text-sm mb-4">{category.description}</p>
-                    </div>
-                    
-                    <ul className="space-y-2">
-                      {category.endpoints.map((endpoint, endpointIndex) => (
-                        <li key={endpointIndex} className="text-sm text-gray-600 text-center">
-                          • {endpoint}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Why choose our Platform APIs?
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Built for developers and businesses that want to create innovative financial experiences.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-indigo-600" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    {api.title}
+                  </h3>
+                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
+                    {api.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Developer First</h3>
-                <p className="text-gray-600">Built by developers, for developers with comprehensive documentation.</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Platform APIs?</h2>
+            <p className="text-lg text-gray-600">Built for scale, security, and simplicity</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaCode className="w-8 h-8 text-blue-600" />
               </div>
-              
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-green-600" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Enterprise Ready</h3>
-                <p className="text-gray-600">Bank-level security and compliance for production applications.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Developer First</h3>
+              <p className="text-gray-600">Clean, intuitive APIs with comprehensive documentation and SDKs</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaShieldAlt className="w-8 h-8 text-green-600" />
               </div>
-              
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Global Scale</h3>
-                <p className="text-gray-600">Operate worldwide with local compliance and payment methods.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Enterprise Ready</h3>
+              <p className="text-gray-600">Bank-grade security, compliance, and 99.9% uptime SLA</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaGlobe className="w-8 h-8 text-purple-600" />
               </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Global Scale</h3>
+              <p className="text-gray-600">Operate in 190+ countries with 50+ currencies</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-indigo-50">
-          <div className="max-w-4xl mx-auto px-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Ready to start building?
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Get started with our APIs and build the future of embedded finance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-md font-medium hover:bg-indigo-700 transition-colors">
-                Get Started
-              </button>
-              <button className="border border-indigo-300 text-indigo-700 px-8 py-3 rounded-md font-medium hover:bg-indigo-50 transition-colors">
-                Contact Sales
-              </button>
-            </div>
+      {/* Integration Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Integrate?</h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Start building with our APIs today and transform your platform
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CircleFillButton 
+              text="Get API Keys" 
+              href="/contact"
+              className="bg-blue-600 hover:bg-blue-700"
+            />
+            <CircleFillButton 
+              text="View Documentation" 
+              href="/developers/docs"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+            />
           </div>
-        </section>
-
-        {/* Muxxus Footer */}
-        <MuxxusFooter />
-      </main>
-    </>
+        </div>
+      </section>
+    </main>
   );
-}
+};
+
+export default PlatformAPIsPage;
