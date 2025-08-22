@@ -1,110 +1,117 @@
-import { getMainPage } from "@/lib/helper/contentConverter";
+import { getMainPage, getAllPages } from "@/lib/helper/contentConverter";
 import DesignHero from "@/components/hero/DesignHero";
 import DesignTextSlider from "@/components/slider/design/DesignTextSlider";
 import DesignAbout from "@/components/about/DesignAbout";
 import BindBtnMoveEffect from "@/components/tools/BindBtnMoveEffect";
-import DesignImage from "@/components/image/DesignImage";
-import { getAllPages } from "@/lib/helper/contentConverter";
-import DesignService from "@/components/service/design/DesignService";
-import DesignWork from "@/components/work/design/DesignWork";
-import DesignTestimonial from "@/components/testimonial/design/DesignTestimonial";
-import DesignAward from "@/components/award/design/DesignAward";
-import DesignTeam from "@/components/team/design/DesignTeam";
 import DesignImage2 from "@/components/image/DesignImage2";
-import DesignBlog from "@/components/blog/design/DesignBlog";
-import SeoData from "@/components/tools/SeoData";
-import StatMuxxus from "@/components/muxxus/StatMuxxus";
+import DesignService from "@/components/service/design/DesignService";
 import DesignSkill from "@/components/skill/design/DesignSkill";
 import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
-import DesignProcess from "@/components/process/DesignProcess";
 import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
-
-import CreativeTeamShowcase from "@/components/team/CreativeTeamShowcase";
-import DesignToolsTechnologies from "@/components/tools/DesignToolsTechnologies";
-import MuxxusContactBanner from "@/components/banner/MuxxusContactBanner";
-import MarketingImage from "@/components/image/MarketingImage";
-import SeoImage from "@/components/image/SeoImage";
-import WebImage from '@/components/image/WebImage';
-import BrandingImage from '@/components/image/BrandingImage';
 import FineImageSection from '@/components/image/FineImageSection';
-
+import TeamCounterArea from "@/components/team/TeamCounterArea";
+import StatMuxxus from "@/components/muxxus/StatMuxxus";
+import SeoData from "@/components/tools/SeoData";
+import AiFeature from "@/components/features/ai/AiFeature";
+import SectionSpacing from "@/components/ui/section-spacing";
 
 const Design = () => {
+  // Récupération des données principales
   const { data: hero } = getMainPage("/heros/design-hero.mdx");
-  const { data } = getMainPage("/slider/design/text-slider.mdx");
+  const { data: sliderData } = getMainPage("/slider/design/text-slider.mdx");
   const { data: about } = getMainPage("/about/design-about.mdx");
   const { data: image } = getMainPage("/image/design-image.mdx");
   const { data: service } = getMainPage("/services/design/_main.mdx");
+  const { data: skill } = getMainPage("/skill/design-skill.mdx");
+  const { data: feature } = getMainPage("/features/web-features.mdx");
+  const { data: aiFeatures } = getMainPage("/features/design-ai-features.mdx");
+  const { data: statFact } = getMainPage("/funFact/muxxus-stat.mdx");
+  const { data: counterArea } = getMainPage("/team/design/counter-area.mdx");
+
+  // Récupération des collections
   const services = getAllPages("/services/design");
   const works = getAllPages("/works/design");
-  const { data: workMain } = getMainPage("/works/design/_main.mdx");
-  const { data: testimonial } = getMainPage("/testimonial/design-testimonial.mdx");
-  const { data: award } = getMainPage("/award/design-award.mdx");
-  const { data: team } = getMainPage("/team/design/_main.mdx");
-  const teamMembers = getAllPages("/team/design");
-  const { data: image2 } = getMainPage("/image/design-image2.mdx");
-  const { data: blog } = getMainPage("/blogs/design/_main.mdx");
-  const blogs = getAllPages("/blogs/design");
-  const { data: statFact } = getMainPage("/funFact/muxxus-stat.mdx");
-  const { data: skill } = getMainPage("/skill/design-skill.mdx");
-  const { data: designProcess } = getMainPage("/process/design-process.mdx");
-  const { data: feature } = getMainPage("/features/web-features.mdx");
-  const { data: portfolio } = getMainPage("/portfolio/design-portfolio.mdx");
-  const { data: creativeTeam } = getMainPage("/team/creative-team.mdx");
-  const { data: toolsTech } = getMainPage("/tools/design-tools-tech.mdx");
-
 
   return (
-    <main>
+    <main className="min-h-screen">
       <BindBtnMoveEffect />
+      
       <SeoData
-        title="Muxxus"
-        description="Muxxus Website"
+        title="Design Studio - Muxxus"
+        description="Découvrez notre studio de design créatif. Nous créons des expériences visuelles uniques et mémorables pour votre marque."
       />
+
+      {/* Section Héro */}
       <DesignHero {...hero} />
-      <DesignTextSlider sliderItems={data} />
-      <StatMuxxus {...statFact}/>
+
+      {/* Espacement avec séparateur après le hero */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
+
+      {/* Slider de texte */}
+      <DesignTextSlider sliderItems={sliderData} />
+
+      {/* Espacement avec séparateur après le slider */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
+
+      {/* Statistiques Muxxus */}
+      <StatMuxxus {...statFact} />
+
+      {/* Espacement avec séparateur après les statistiques */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="line" />
+
+      {/* Section À propos */}
       <DesignAbout {...about} />
-      {/* <DesignImage {...image} /> */}
+
+      {/* Espacement avec séparateur après la section à propos */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
+
+      {/* Section Image */}
       <DesignImage2 {...image} />
 
+      {/* Espacement avec séparateur après l'image */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
+
+      {/* Services de design */}
       <DesignService {...service} services={services} />
 
+      {/* Espacement avec séparateur après les services */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="line" />
+
+      {/* Statistiques de l'équipe */}
+      <TeamCounterArea {...counterArea} />
+
+      {/* Espacement avec séparateur après les statistiques de l'équipe */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
+
+      {/* Compétences de design */}
       <DesignSkill {...skill} />
 
-      {/* <DesignWork {...workMain} projects={works} /> */}
-      {/* <MarketingImage {...image} />
-      <DesignImage2 {...image} />
+      {/* Espacement avec séparateur après les compétences */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
 
-      <WebImage {...image} /> */}
+      {/* Fonctionnalités AI pour le design */}
+      <AiFeature {...aiFeatures} />
 
+      {/* Espacement avec séparateur après les fonctionnalités AI */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="line" />
+
+      {/* Section Image fine */}
       <FineImageSection {...image} />
 
-      {/* <MarketingImage {...image} />
-      <MarketingImage {...image} /> */}
+      {/* Espacement avec séparateur après l'image fine */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
 
-      {/* Section avec les deux composants côte à côte */}
+      {/* Fonctionnalités Muxxus */}
+      <MuxxusFeature {...feature} />
 
-        <MuxxusFeature {...feature} />
+      {/* Espacement avec séparateur après les fonctionnalités Muxxus */}
+      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
 
-
-      {/* Portfolio Gallery */}
-
-
-      {/* Équipe Créative */}
-      {/* <CreativeTeamShowcase {...creativeTeam} /> */}
-
-      {/* Outils et Technologies */}
-      {/* <DesignToolsTechnologies {...toolsTech} /> */}
-
-      
+      {/* Portfolio de travaux */}
       <MuxxusWork works={works} />
-      {/* <MuxxusContactBanner contactTitle="Ready to get started?" btn_text="Contact Us" /> */}
 
-      {/* <DesignTestimonial {...testimonial} /> */}
-      {/* <DesignAward {...award} /> */}
-      {/* <DesignTeam teamMembers={teamMembers} {...team} /> */}
-      {/* <DesignBlog blogs={blogs} {...blog} /> */}
+      {/* Espacement final avec séparateur */}
+      <SectionSpacing size="xl" showSeparator separatorVariant="wave" />
     </main>
   );
 };

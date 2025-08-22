@@ -359,3 +359,187 @@ Ces composants offrent une base solide pour créer des sections de fonctionnalit
 - 🔄 **Cohérence** sur tous les appareils
 
 Pour toute question ou suggestion d'amélioration, consultez la base de connaissance des composants ou contactez l'équipe de développement.
+
+# MuxxusFeature2 - Composant de Fonctionnalités avec Image Switcheable
+
+## 🎯 Description
+
+`MuxxusFeature2` est un composant avancé basé sur `AiFeature` qui permet d'afficher des fonctionnalités avec une image principale et la possibilité de switcher la position de l'image entre gauche et droite.
+
+## ✨ Fonctionnalités
+
+- **Image switcheable** : Position de l'image configurable (gauche ou droite)
+- **Layout responsive** : Adaptation automatique selon la position
+- **Animations GSAP** : Effets de fade intégrés
+- **Design Muxxus** : Style cohérent avec l'identité visuelle
+- **Composants modulaires** : Structure claire et réutilisable
+
+## 🔧 Props
+
+```typescript
+type FeatureSection = {
+  title: string;                    // Titre principal
+  image: string;                    // URL de l'image principale
+  sub_title: string;                // Sous-titre avec support HTML
+  sub_icon: string;                 // Icône décorative
+  action_btn: {                     // Bouton d'action
+    enable: boolean;
+    label: string;
+    link: string;
+  };
+  features: {                       // Liste des fonctionnalités
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  imagePosition?: "left" | "right"; // Position de l'image (optionnel, défaut: "left")
+};
+```
+
+## 📱 Utilisation
+
+### Utilisation basique
+
+```tsx
+import MuxxusFeature2 from "@/components/features/muxxus/MuxxusFeature2";
+
+<MuxxusFeature2 {...data} />
+```
+
+### Avec position d'image personnalisée
+
+```tsx
+<MuxxusFeature2 
+  {...data} 
+  imagePosition="right" 
+/>
+```
+
+### Utilisation avec le composant de démonstration
+
+```tsx
+import MuxxusFeature2Demo from "@/components/features/muxxus/MuxxusFeature2Demo";
+
+<MuxxusFeature2Demo 
+  leftData={leftFeaturesData} 
+  rightData={rightFeaturesData} 
+/>
+```
+
+## 🎨 Structure du Layout
+
+### Image à gauche (par défaut)
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Titre Principal                      │
+├─────────────────────┬───────────────────────────────────┤
+│                     │  Fonctionnalité 1                │
+│                     │  ┌─────┐ Description...          │
+│                     │  │Icon │                          │
+│                     │  └─────┘                          │
+│                     │                                   │
+│                     │  Fonctionnalité 2                │
+│                     │  ┌─────┐ Description...          │
+│                     │  │Icon │                          │
+│                     │  └─────┘                          │
+│                     │                                   │
+│                     │  Fonctionnalité 3                │
+│                     │  ┌─────┐ Description...          │
+│                     │  │Icon │                          │
+│                     │  └─────┘                          │
+│                     │                                   │
+│                     │  [Bouton d'action]               │
+└─────────────────────┴───────────────────────────────────┘
+```
+
+### Image à droite
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Titre Principal                      │
+├───────────────────────────────────┬─────────────────────┤
+│  Fonctionnalité 1                │                     │
+│  ┌─────┐ Description...          │                     │
+│  │Icon │                         │                     │
+│  └─────┘                         │                     │
+│                                   │                     │
+│  Fonctionnalité 2                │                     │
+│  ┌─────┐ Description...          │                     │
+│  │Icon │                         │                     │
+│  └─────┘                         │                     │
+│                                   │                     │
+│  Fonctionnalité 3                │                     │
+│  ┌─────┐ Description...          │                     │
+│  │Icon │                         │                     │
+│  └─────┘                         │                     │
+│                                   │                     │
+│  [Bouton d'action]               │                     │
+└───────────────────────────────────┴─────────────────────┘
+```
+
+## 🚀 Exemples de Contenu
+
+### Fichier de contenu (image à gauche)
+```yaml
+---
+title: "Fonctionnalités avancées Muxxus"
+image: "/assets/imgs/works/img-s-11j.jpg"
+sub_title: "Design powered by <br> Muxxus Innovation"
+sub_icon: "/assets/imgs/shape/img-s-46.png"
+action_btn:
+  enable: true
+  label: "Explorer nos fonctionnalités"
+  link: "/contact"
+imagePosition: "left"
+features:
+  - icon: "/assets/imgs/shape/img-s-46.png"
+    title: "Design System avancé"
+    description: "Un système de design cohérent et évolutif."
+---
+```
+
+### Fichier de contenu (image à droite)
+```yaml
+---
+title: "Innovation Muxxus"
+image: "/assets/imgs/works/img-s-12.jpg"
+sub_title: "Innovation powered by <br> Muxxus Design"
+sub_icon: "/assets/imgs/shape/img-s-47.png"
+action_btn:
+  enable: true
+  label: "Découvrir l'innovation"
+  link: "/contact"
+imagePosition: "right"
+features:
+  - icon: "/assets/imgs/shape/img-s-46.png"
+    title: "Intelligence artificielle"
+    description: "Leveragez l'IA pour vos processus de design."
+---
+```
+
+## 🎭 Animations
+
+Le composant utilise les animations GSAP suivantes :
+- `hasFadeAnim` : Effets de fade pour l'apparition des éléments
+- Animations des cartes de fonctionnalités avec `data-fade-from="left"`
+
+## 🔄 Responsive
+
+- **Mobile** : Layout en colonne unique
+- **Tablet** : Grille adaptative selon la position
+- **Desktop** : Grille optimisée avec espacement approprié
+
+## 📁 Fichiers associés
+
+- `MuxxusFeature2.tsx` - Composant principal
+- `MuxxusFeatureCard2.tsx` - Carte de fonctionnalité
+- `MuxxusFeature2Demo.tsx` - Composant de démonstration
+- `muxxus-features2.mdx` - Contenu exemple (image à gauche)
+- `muxxus-features2-right.mdx` - Contenu exemple (image à droite)
+
+## 🎨 Personnalisation
+
+Le composant peut être facilement personnalisé en modifiant :
+- Les classes CSS dans le composant principal
+- Les animations GSAP
+- Le style des cartes de fonctionnalités
+- Les couleurs et espacements
