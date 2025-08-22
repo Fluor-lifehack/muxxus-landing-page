@@ -14,6 +14,16 @@ import StatMuxxus from "@/components/muxxus/StatMuxxus";
 import SeoData from "@/components/tools/SeoData";
 import AiFeature from "@/components/features/ai/AiFeature";
 import SectionSpacing from "@/components/ui/section-spacing";
+import {
+  ScrollAnimationProvider,
+  RevealOnScroll,
+  StaggerOnScroll,
+  TextRevealOnScroll,
+  CardFlipOnScroll,
+  GradientOnScroll,
+  ParticlesOnScroll,
+  MorphOnScroll,
+} from "@/components/ui/scroll-animations";
 
 const Design = () => {
   // Récupération des données principales
@@ -33,86 +43,83 @@ const Design = () => {
   const works = getAllPages("/works/design");
 
   return (
-    <main className="min-h-screen">
-      <BindBtnMoveEffect />
+    <ScrollAnimationProvider>
+      <main className="min-h-screen">
+        <BindBtnMoveEffect />
+        
+        <SeoData
+          title="Design Studio - Muxxus"
+          description="Découvrez notre studio de design créatif. Nous créons des expériences visuelles uniques et mémorables pour votre marque."
+        />
+
+        {/* Section Héro avec animation de révélation - Pas de décalage avec la navigation */}
+
+            <DesignHero {...hero} />
+
+
+        {/* Slider de texte avec animation de stagger */}
+        <StaggerOnScroll direction="left" distance={80} stagger={0.15}>
+          <DesignTextSlider sliderItems={sliderData} />
+        </StaggerOnScroll>
+
+        {/* Statistiques Muxxus avec animation de révélation */}
+        <RevealOnScroll direction="up" distance={100} duration={1.3} delay={0.3}>
+          <StatMuxxus {...statFact} />
+        </RevealOnScroll>
+
+        {/* Section À propos avec animation de texte */}
+        <TextRevealOnScroll type="words" direction="up" distance={60} stagger={0.1}>
+          <DesignAbout {...about} />
+        </TextRevealOnScroll>
+
+        {/* Section Image avec animation de morphing */}
+        <MorphOnScroll morphTo="scale(1.02)" duration={1.8}>
+          <DesignImage2 {...image} />
+        </MorphOnScroll>
+
+        {/* Services de design avec animation de stagger */}
+        <StaggerOnScroll direction="up" distance={70} stagger={0.12}>
+          <DesignService {...service} services={services} />
+        </StaggerOnScroll>
+
+
+        {/* Statistiques de l'équipe avec animation de révélation */}
+        <RevealOnScroll direction="right" distance={90} duration={1.4} delay={0.2}>
+          <TeamCounterArea {...counterArea} />
+        </RevealOnScroll>
+
+        {/* Compétences de design avec animation de carte 3D */}
+        <CardFlipOnScroll direction="y" angle={12} duration={1.6}>
+          <DesignSkill {...skill} />
+        </CardFlipOnScroll>
+
+        {/* Espacement avec séparateur après les compétences */}
+        <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
+
+        {/* Fonctionnalités AI avec animation de gradient */}
+        <GradientOnScroll fromColor="rgba(59, 130, 246, 0.05)" toColor="rgba(147, 51, 234, 0.05)">
+          <AiFeature {...aiFeatures} />
+        </GradientOnScroll>
+
       
-      <SeoData
-        title="Design Studio - Muxxus"
-        description="Découvrez notre studio de design créatif. Nous créons des expériences visuelles uniques et mémorables pour votre marque."
-      />
+        {/* Section Image fine avec animation de révélation */}
+        <RevealOnScroll direction="up" distance={110} duration={1.7} delay={0.4}>
+          <FineImageSection {...image} />
+        </RevealOnScroll>
 
-      {/* Section Héro */}
-      <DesignHero {...hero} />
 
-      {/* Espacement avec séparateur après le hero */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
+        {/* Fonctionnalités Muxxus avec animation de particules */}
+        <ParticlesOnScroll particleCount={8} duration={4}>
+          <MuxxusFeature {...feature} />
+        </ParticlesOnScroll>
 
-      {/* Slider de texte */}
-      <DesignTextSlider sliderItems={sliderData} />
+        {/* Portfolio de travaux avec animation de stagger */}
+        <StaggerOnScroll direction="up" distance={85} stagger={0.18}>
+          <MuxxusWork works={works} />
+        </StaggerOnScroll>
 
-      {/* Espacement avec séparateur après le slider */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
-
-      {/* Statistiques Muxxus */}
-      <StatMuxxus {...statFact} />
-
-      {/* Espacement avec séparateur après les statistiques */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="line" />
-
-      {/* Section À propos */}
-      <DesignAbout {...about} />
-
-      {/* Espacement avec séparateur après la section à propos */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
-
-      {/* Section Image */}
-      <DesignImage2 {...image} />
-
-      {/* Espacement avec séparateur après l'image */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
-
-      {/* Services de design */}
-      <DesignService {...service} services={services} />
-
-      {/* Espacement avec séparateur après les services */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="line" />
-
-      {/* Statistiques de l'équipe */}
-      <TeamCounterArea {...counterArea} />
-
-      {/* Espacement avec séparateur après les statistiques de l'équipe */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
-
-      {/* Compétences de design */}
-      <DesignSkill {...skill} />
-
-      {/* Espacement avec séparateur après les compétences */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
-
-      {/* Fonctionnalités AI pour le design */}
-      <AiFeature {...aiFeatures} />
-
-      {/* Espacement avec séparateur après les fonctionnalités AI */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="line" />
-
-      {/* Section Image fine */}
-      <FineImageSection {...image} />
-
-      {/* Espacement avec séparateur après l'image fine */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="wave" />
-
-      {/* Fonctionnalités Muxxus */}
-      <MuxxusFeature {...feature} />
-
-      {/* Espacement avec séparateur après les fonctionnalités Muxxus */}
-      <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
-
-      {/* Portfolio de travaux */}
-      <MuxxusWork works={works} />
-
-      {/* Espacement final avec séparateur */}
-      <SectionSpacing size="xl" showSeparator separatorVariant="wave" />
-    </main>
+      </main>
+    </ScrollAnimationProvider>
   );
 };
 

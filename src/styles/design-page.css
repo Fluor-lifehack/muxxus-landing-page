@@ -1,0 +1,35 @@
+/* Styles spécifiques pour la page design - Correction du décalage navigation/hero */
+
+/* Supprime tout espacement indésirable entre la navigation et le hero */
+.hero-section-no-gap {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* S'assure que le hero commence exactement sous la navigation */
+.hero-section-no-gap section {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Ajuste la hauteur minimale pour éviter les problèmes de scroll */
+.hero-section-no-gap section.min-h-screen {
+  min-height: calc(100vh - 4rem); /* 64px sur mobile */
+}
+
+@media (min-width: 1024px) {
+  .hero-section-no-gap section.min-h-screen {
+    min-height: calc(100vh - 5rem); /* 80px sur desktop */
+  }
+}
+
+/* Supprime les marges et paddings par défaut qui pourraient causer des problèmes */
+.hero-section-no-gap * {
+  box-sizing: border-box;
+}
+
+/* S'assure que le contenu du hero est bien centré */
+.hero-section-no-gap section.flex {
+  align-items: center;
+  justify-content: center;
+}

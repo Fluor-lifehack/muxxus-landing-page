@@ -6,6 +6,7 @@ import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
 import MuxxusHeader from "@/components/headers/MuxxusHeader";
+import "@/styles/design-page.css";
 
 const Layout = ({
   children,
@@ -18,12 +19,13 @@ const Layout = ({
       <ToolsComponent />
       <ScrollTop />
       
-                   {/* Header fixe en dehors du ScrollSmoother */}
-             
+      {/* Header fixe en dehors du ScrollSmoother */}
+      <MuxxusHeader />
       
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div className="pt-16">{children}</div>
+          {/* Padding-top ajusté pour correspondre exactement à la hauteur du header */}
+          <div className="pt-16 lg:pt-20">{children}</div>
           
           {/* Newsletter Section */}
           <MuxxusNewsletter />

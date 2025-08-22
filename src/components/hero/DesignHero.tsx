@@ -67,6 +67,7 @@ const DesignHero = ({
     <section
       className="bg-background-fixed relative min-h-screen flex items-center justify-center overflow-hidden"
       ref={containerRef}
+      style={{ marginTop: 0, paddingTop: 0 }}
     >
       <div className="absolute w-full h-full top-0 left-0 z-0">
         <video
