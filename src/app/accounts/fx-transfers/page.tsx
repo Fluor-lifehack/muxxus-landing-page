@@ -58,7 +58,7 @@ const FxTransfersPage = () => {
               items={[
                 { label: "Home", href: "/" },
                 { label: "Business Accounts", href: "/business-accounts" },
-                { label: "FX & Transfers", href: "/service/accounts/fx-transfers", isActive: true }
+                { label: "FX & Transfers", href: "/accounts/fx-transfers", isActive: true }
               ]} 
             />
             <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">

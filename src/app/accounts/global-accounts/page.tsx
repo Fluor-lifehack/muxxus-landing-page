@@ -119,7 +119,7 @@ const GlobalAccountsPage = () => {
                 items={[
                   { label: "Home", href: "/" },
                   { label: "Business Accounts", href: "/business-accounts" },
-                  { label: "Global Accounts", href: "/service/accounts/global-accounts", isActive: true }
+                  { label: "Global Accounts", href: "/accounts/global-accounts", isActive: true }
                 ]} 
               />
               
@@ -305,7 +305,7 @@ const GlobalAccountsPage = () => {
           <div className="text-center mt-16">
             <CircleFillButton 
               text="Learn more" 
-              href="/service/accounts/fx-transfers"
+              href="/accounts/fx-transfers"
               className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg text-base"
             />
           </div>

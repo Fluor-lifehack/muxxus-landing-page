@@ -50,10 +50,10 @@ const MuxxusFooter = ({ footerNav }: Props) => {
       title: "Products",
       links: [
         { name: "Business Accounts", href: "/business-accounts" },
-        { name: "Spend Management", href: "/service/spend-management" },
-        { name: "FX & Transfers", href: "/service/accounts/fx-transfers" },
-        { name: "Corporate Cards", href: "/service/spend-management/corporate-cards" },
-        { name: "Bill Pay", href: "/service/spend-management/bill-pay" },
+        { name: "Spend Management", href: "/spend" },
+        { name: "FX & Transfers", href: "/accounts/fx-transfers" },
+        { name: "Corporate Cards", href: "/spend/corporate-cards" },
+        { name: "Bill Pay", href: "/spend/bill-pay" },
         { name: "Platform APIs", href: "/platform-apis" },
       ]
     },

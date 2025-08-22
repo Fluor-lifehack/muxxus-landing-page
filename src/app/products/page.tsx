@@ -20,7 +20,7 @@ const ProductsPage = () => {
       icon: FaCreditCard,
       title: "Spend Management",
       description: "Corporate cards and bill pay solutions for business spending",
-      path: "/service/spend-management",
+      path: "/spend",
       color: "from-green-50 to-green-100",
       iconColor: "bg-green-100 text-green-600",
       features: ["Corporate cards", "Bill pay automation", "Expense tracking", "Spending controls"]

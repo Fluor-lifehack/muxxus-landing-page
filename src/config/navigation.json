@@ -1,6 +1,12 @@
 {
   "header": [
     {
+      "id": 0,
+      "name": "Home",
+      "path": "/",
+      "icon": "🏠"
+    },
+    { 
       "id": 1,
       "name": "Products",
       "path": "#",
@@ -16,13 +22,13 @@
             {
               "id": 1,
               "name": "Global Accounts",
-              "path": "/service/accounts/global-accounts",
+              "path": "/accounts/global-accounts",
               "description": "Multi-currency accounts to receive funds"
             },
             {
               "id": 2,
               "name": "FX & Transfers",
-              "path": "/service/accounts/fx-transfers",
+              "path": "/accounts/fx-transfers",
               "description": "High-speed international transfers"
             }
           ]
@@ -30,20 +36,20 @@
         {
           "id": 2,
           "name": "Spend Management",
-          "path": "/service/spend-management",
+          "path": "/spend",
           "icon": "💳",
           "hasChildren": true,
           "children": [
             {
               "id": 1,
               "name": "Corporate Cards",
-              "path": "/service/spend-management/corporate-cards",
+              "path": "/spend/corporate-cards",
               "description": "Multi-currency company & employee cards"
             },
             {
               "id": 2,
               "name": "Bill Pay",
-              "path": "/service/spend-management/bill-pay",
+              "path": "/spend/bill-pay",
               "description": "Automated accounts payable management"
             }
           ]
@@ -419,15 +425,15 @@
         },
         {
           "name": "Spend Management",
-          "path": "/service/spend-management"
+          "path": "/spend"
         },
         {
           "name": "FX & Transfers",
-          "path": "/service/accounts/fx-transfers"
+          "path": "/accounts/fx-transfers"
         },
         {
           "name": "Corporate Cards",
-          "path": "/service/spend-management/corporate-cards"
+          "path": "/spend/corporate-cards"
         },
         {
           "name": "Platform APIs",
@@ -559,15 +565,15 @@
         },
         {
           "name": "Spend Management",
-          "path": "/service/spend-management"
+          "path": "/spend"
         },
         {
           "name": "FX & Transfers",
-          "path": "/service/accounts/fx-transfers"
+          "path": "/accounts/fx-transfers"
         },
         {
           "name": "Corporate Cards",
-          "path": "/service/spend-management/corporate-cards"
+          "path": "/spend/corporate-cards"
         }
       ]
     },
