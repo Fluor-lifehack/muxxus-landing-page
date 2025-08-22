@@ -173,8 +173,8 @@ const FxTransfersPage = () => {
               href="/contact"
               className="border-blue-600 text-blue-600 hover:bg-blue-50"
             />
-          </div>
         </div>
+      </div>
       </section>
 
       {/* Footer */}

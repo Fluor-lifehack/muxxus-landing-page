@@ -18,7 +18,7 @@ import DesignSkill from "@/components/skill/design/DesignSkill";
 import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
 import DesignProcess from "@/components/process/DesignProcess";
 import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
-import DesignPortfolioGallery from "@/components/portfolio/DesignPortfolioGallery";
+
 import CreativeTeamShowcase from "@/components/team/CreativeTeamShowcase";
 import DesignToolsTechnologies from "@/components/tools/DesignToolsTechnologies";
 import MuxxusContactBanner from "@/components/banner/MuxxusContactBanner";
@@ -84,13 +84,12 @@ const Design = () => {
       <MarketingImage {...image} /> */}
 
       {/* Section avec les deux composants côte à côte */}
-      <div className="grid lg:grid-cols-2 gap-8">
-        <DesignProcess {...designProcess} />
+
         <MuxxusFeature {...feature} />
-      </div>
+
 
       {/* Portfolio Gallery */}
-      <DesignPortfolioGallery {...portfolio} />
+
 
       {/* Équipe Créative */}
       {/* <CreativeTeamShowcase {...creativeTeam} /> */}

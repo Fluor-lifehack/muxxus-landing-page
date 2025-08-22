@@ -2,11 +2,19 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import MuxxusSectionTitle from "@/components/muxxus/MuxxusSectionTitle";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import MuxxusFeatureCard from "@/components/features/muxxus/MuxxusFeatureCard";
-import ImageComponent from "@/components/tools/ImageComponent";
+import { cn } from "@/lib/utils";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
+import hasCharAnim from "@/lib/animation/hasCharAnim";
+
+// Enregistrer ScrollTrigger
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 type Props = {
   title: string;
@@ -21,40 +29,215 @@ type Props = {
 
 const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
+  const titleRef = useRef<HTMLDivElement>(null!);
+  const descriptionRef = useRef<HTMLDivElement>(null!);
+  const featuresRef = useRef<HTMLDivElement>(null!);
+  const iconRef = useRef<HTMLDivElement>(null!);
+  const decorativeElementsRef = useRef<HTMLDivElement>(null!);
 
   useGSAP(
     () => {
+      // Animations de base
       hasFadeAnim();
       hasTextMovAnim();
+      hasCharAnim();
+
+      // Animation de l'icône décorative au scroll
+      gsap.fromTo(
+        iconRef.current,
+        {
+          y: -50,
+          scale: 0.8,
+          opacity: 0,
+          rotation: -15,
+        },
+        {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          rotation: 0,
+          duration: 1.2,
+          delay: 0.3,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: iconRef.current,
+            start: "top 90%",
+            end: "bottom 10%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation du titre avec effet de révélation au scroll
+      gsap.fromTo(
+        titleRef.current,
+        {
+          y: 80,
+          opacity: 0,
+          scale: 0.9,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.2,
+          delay: 0.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation de la description avec effet de typewriter au scroll
+      gsap.fromTo(
+        descriptionRef.current,
+        {
+          y: 50,
+          opacity: 0,
+          clipPath: "inset(0 100% 0 0)",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          clipPath: "inset(0 0% 0 0)",
+          duration: 1.5,
+          delay: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: descriptionRef.current,
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animation des éléments décoratifs au scroll
+      const decorativeElements = decorativeElementsRef.current?.children;
+      if (decorativeElements) {
+        gsap.fromTo(
+          decorativeElements,
+          {
+            y: 100,
+            opacity: 0,
+            scale: 0.5,
+            rotation: 45,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: decorativeElementsRef.current,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+
+      // Animation de l'effet de brillance sur l'icône au scroll
+      gsap.to(iconRef.current, {
+        boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: iconRef.current,
+          start: "top 70%",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+          scrub: 1,
+        },
+      });
+
     },
     { scope: containerRef }
   );
 
   return (
-    <section className="bg-gray-900" ref={containerRef}>
-      <div className="inner-container">
-        <div className="pt-[60px] lg:pt-[80px] xl:pt-[140px]">
-          <div className=" relative">
-            <div className="has_fade_anim absolute w-[93px] top-[-80px] start-[80%] z-[99] hidden xl:block" data-fade-offset="0" data-delay="0.8">
-              <svg className="w-full h-full text-white/60 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+    <section 
+      className="relative bg-white dark:bg-gray-800 overflow-hidden" 
+      ref={containerRef}
+    >
+      {/* Background subtil avec motif */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: "url('/assets/imgs/muxxus/background/img.png')" }}
+      />
+      
+      {/* Éléments décoratifs subtils avec animation au scroll */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" ref={decorativeElementsRef}>
+        <div className="has_fade_anim absolute w-32 h-32 top-20 left-10 z-10 hidden xl:block" 
+             data-fade-offset="0" 
+             data-delay="0.8">
+          <div className="w-full h-full border border-gray-300/20 rounded-lg transform rotate-45"></div>
+        </div>
+        
+        <div className="has_fade_anim absolute w-24 h-24 top-40 right-20 z-10 hidden xl:block" 
+             data-fade-offset="0" 
+             data-delay="1.2">
+          <div className="w-full h-full border border-gray-300/20 rounded-full"></div>
+        </div>
+
+        <div className="has_fade_anim absolute w-40 h-40 bottom-32 left-1/4 z-10 hidden xl:block" 
+             data-fade-offset="0" 
+             data-delay="1.6">
+          <div className="w-full h-full border border-gray-300/20 transform rotate-12"></div>
+        </div>
+      </div>
+
+      <div className="inner-container relative z-10">
+        <div className="section-spacing-top pb-[60px] xl:pb-[100px]">
+          {/* Header de la section */}
+          <div className="text-center mb-16">
+            {/* Icône décorative avec animation au scroll */}
+            <div className="mb-8" ref={iconRef}>
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-100 dark:bg-gray-700 rounded-2xl border border-gray-200 dark:border-gray-600 transition-all duration-500">
+                <img 
+                  src={img_icon} 
+                  alt="Features Icon" 
+                  className="w-12 h-12 object-contain"
+                />
+              </div>
             </div>
-            <MuxxusSectionTitle
-              title={title}
-              className="has_text_move_anim max-w-[460px] lg:max-w-[460px] xl:max-w-[730px] lg:mx-auto text-white"
-            />
-          </div>
-          <div className="mt-[12px] xl:mt-[22px]">
-            <p className="text has_fade_anim max-w-[460px] lg:ms-[430px] xl:ms-[520px] 2xl:ms-[580px] lg:max-w-[300px] text-white">
-              {description}
-            </p>
+
+            {/* Titre principal avec animation au scroll */}
+            <div className="mb-6" ref={titleRef}>
+              <DesignSectionTitle 
+                title={title}
+                className="max-w-[460px] lg:max-w-[600px] xl:max-w-[730px] mx-auto text-gray-900 dark:text-white"
+              />
+            </div>
+
+            {/* Description avec animation au scroll */}
+            <div className="max-w-[460px] lg:max-w-[600px] xl:max-w-[700px] mx-auto" ref={descriptionRef}>
+              <p className={cn(
+                "text-lg lg:text-xl xl:text-2xl text-gray-600 dark:text-gray-300",
+                "leading-relaxed font-light",
+                "has_fade_anim"
+              )}>
+                {description}
+              </p>
+            </div>
           </div>
 
-          <div className="mt-[53px] xl:mt-[73px] overflow-hidden">
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 mx-[-30px] xl:mx-[-80px] 2xl:mx-[-100px]">
+          {/* Grille des fonctionnalités */}
+          <div className="overflow-hidden" ref={featuresRef}>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <MuxxusFeatureCard key={index} {...feature} />
+                <MuxxusFeatureCard 
+                  key={index} 
+                  {...feature} 
+                  index={index}
+                />
               ))}
             </div>
           </div>

@@ -12,6 +12,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import PricingCard from "@/components/pricing/PricingCard";
+import ImageComponent from "@/components/tools/ImageComponent";
 
 type Props = {
   title: string;
@@ -131,11 +132,16 @@ const DesignService = ({
                       <h3 className={`text-xl font-semibold ${colors.text} mb-4 ${colors.hoverText} transition-colors`}>
                         {service.data.title}
                       </h3>
-                      {service.data.description && (
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {service.data.description}
-                        </p>
-                      )}
+                      {/* Image au lieu de la description */}
+                      <div className="mb-4 overflow-hidden rounded-lg">
+                        <ImageComponent
+                          src={service.data.image || "/assets/imgs/service/design/default.jpg"}
+                          width={400}
+                          height={200}
+                          alt={`${service.data.title} service`}
+                          className="w-full h-32 object-cover transition-all duration-500 ease-in-out group-hover:scale-105"
+                        />
+                      </div>
                     </div>
                     <div className="mt-6 flex items-center justify-between">
                       <span className={`${colors.text} font-medium text-sm`}>

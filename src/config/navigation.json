@@ -9,14 +9,14 @@
         {
           "id": 1,
           "name": "Business Accounts",
-          "path": "/service/accounts/business",
+          "path": "/business-accounts",
           "icon": "💎",
           "hasChildren": true,
           "children": [
             {
               "id": 1,
               "name": "Global Accounts",
-              "path": "/service/accounts/global",
+              "path": "/service/accounts/global-accounts",
               "description": "Multi-currency accounts to receive funds"
             },
             {
@@ -52,7 +52,7 @@
           "id": 3,
           "name": "Payments",
           "path": "/payments",
-          "icon": "[]",
+          "icon": "💳",
           "hasChildren": true,
           "children": [
             {
@@ -77,9 +77,9 @@
         },
         {
           "id": 4,
-          "name": "Platform APIs and Embedded Finance",
+          "name": "Platform APIs",
           "path": "/platform-apis",
-          "icon": "⚪",
+          "icon": "⚡",
           "hasChildren": true,
           "children": [
             {
@@ -159,7 +159,7 @@
         ]
       },
       "featuredCard": {
-        "title": "Explore Airwallex Business Accounts",
+        "title": "Explore Muxxus Business Accounts",
         "description": "All-in-one business accounts to manage your finances globally",
         "link": "/business-accounts",
         "image": "/assets/imgs/works/img-s-9.jpg"
@@ -255,7 +255,7 @@
           "id": 3,
           "name": "API Reference",
           "path": "/developers/api",
-          "description": "Explore the full flexibility and power of our Airwallex API"
+          "description": "Explore the full flexibility and power of our Muxxus API"
         },
         {
           "id": 4,
@@ -327,7 +327,7 @@
       "children": [
         {
           "id": 1,
-          "name": "ABOUT AIRWALLEX",
+          "name": "ABOUT MUXXUS",
           "path": "#",
           "isHeading": true
         },
@@ -335,7 +335,7 @@
           "id": 2,
           "name": "Who we are",
           "path": "/company/who-we-are",
-          "description": "A snapshot of Airwallex"
+          "description": "A snapshot of Muxxus"
         },
         {
           "id": 3,
@@ -358,7 +358,7 @@
         {
           "id": 6,
           "name": "Partnership program",
-          "path": "/company/partnership-program",
+          "path": "/partners",
           "description": "Explore and join our partnership program"
         },
         {
@@ -377,7 +377,7 @@
           "id": 9,
           "name": "Newsroom",
           "path": "/company/newsroom",
-          "description": "Latest news on Airwallex"
+          "description": "Latest news on Muxxus"
         },
         {
           "id": 10,
@@ -399,7 +399,7 @@
         },
         {
           "id": 13,
-          "name": "How Authentic Vacations saved $10k a month on FX with Airwallex",
+          "name": "How TechCorp Expanded to 15 Countries in 6 Months",
           "path": "/case-studies/authentic-vacations",
           "description": "Learn more",
           "isFeatured": true,
@@ -411,27 +411,27 @@
   "footer1": [
     {
       "id": 1,
-      "title": "Service",
+      "title": "Products",
       "children": [
         {
-          "name": "UI/UX Design",
-          "path": "/"
+          "name": "Business Accounts",
+          "path": "/business-accounts"
         },
         {
-          "name": "Web Design",
-          "path": "/"
+          "name": "Spend Management",
+          "path": "/service/spend-management"
         },
         {
-          "name": "Branding",
-          "path": "/"
+          "name": "FX & Transfers",
+          "path": "/service/accounts/fx-transfers"
         },
         {
-          "name": "Webflow",
-          "path": "/"
+          "name": "Corporate Cards",
+          "path": "/service/spend-management/corporate-cards"
         },
         {
-          "name": "Development",
-          "path": "/"
+          "name": "Platform APIs",
+          "path": "/platform-apis"
         }
       ]
     },
@@ -440,91 +440,101 @@
       "title": "Company",
       "children": [
         {
-          "name": "Home",
-          "path": "/"
+          "name": "About Us",
+          "path": "/company/who-we-are"
         },
         {
-          "name": "Agency",
-          "path": "/"
-        },
-        {
-          "name": "Achievement",
-          "path": "/"
-        },
-        {
-          "name": "Career",
+          "name": "Careers",
           "path": "/career"
         },
         {
-          "name": "Contact Us",
+          "name": "Partners",
+          "path": "/partners"
+        },
+        {
+          "name": "Contact",
           "path": "/contact"
+        },
+        {
+          "name": "Blog",
+          "path": "/blog"
         }
       ]
     },
     {
       "id": 3,
-      "title": "New York",
+      "title": "Support",
       "children": [
         {
-          "isLocation": true,
-          "name": "1772 Street Charleston, New York",
-          "path": "https://maps.app.goo.gl/ebuSmBmMBFCDUSjE7"
+          "name": "Help Center",
+          "path": "/support"
         },
         {
-          "name": "+1287-360-633",
-          "path": "tel:+1287-360-633"
+          "name": "API Documentation",
+          "path": "/developers/docs"
         },
         {
-          "name": "info@yourwebsite.com",
-          "path": "mailto:info@yourwebsite.com"
+          "name": "Contact Support",
+          "path": "/contact"
+        },
+        {
+          "name": "Status",
+          "path": "/status"
+        },
+        {
+          "name": "Security",
+          "path": "/security"
         }
       ]
     },
     {
       "id": 4,
-      "title": "London",
+      "title": "Legal",
       "children": [
         {
-          "isLocation": true,
-          "name": "96 Park Hall, West Dulwich",
-          "path": "https://maps.app.goo.gl/ebuSmBmMBFCDUSjE7"
+          "name": "Privacy Policy",
+          "path": "/privacy"
         },
         {
-          "name": "+1287-360-633",
-          "path": "tel:+1287-360-633"
+          "name": "Terms of Service",
+          "path": "/terms"
         },
         {
-          "name": "info@yourwebsite.com",
-          "path": "mailto:info@yourwebsite.com"
+          "name": "Compliance",
+          "path": "/compliance"
+        },
+        {
+          "name": "Trust Center",
+          "path": "/trust"
         }
       ]
     }
   ],
   "footer2": {
-    "title": "{Get started} <br> now",
-    "subtitle": "If you would like to work with us or just want to get in touch, we'd love to hear from you!",
+    "title": "Ready to go global?",
+    "subtitle": "Join thousands of businesses using Muxxus for their global financial needs",
     "locationData": [
       {
         "id": 1,
         "city": "London",
-        "address": "Baltia Squar, Mark Street,London"
+        "address": "123 Finance Street, Canary Wharf, London, UK"
       },
       {
         "id": 2,
         "city": "New York",
-        "address": "Nenuya Centre, Elia Street New York, USA"
+        "address": "456 Business Ave, Manhattan, New York, USA"
       }
     ],
     "navData": [
       {
         "id": 1,
         "name": "About Us",
-        "path": "/about"
+        "path": "/company/who-we-are"
       },
       {
         "id": 2,
         "name": "Privacy Policy",
-        "path": "/"
+        "path": "/privacy"
       },
       {
         "id": 3,
@@ -533,35 +543,31 @@
       },
       {
         "id": 4,
-        "name": "Sitemap",
-        "path": "/"
+        "name": "Contact",
+        "path": "/contact"
       }
     ]
   },
   "footer3": [
     {
       "id": 1,
-      "title": "Service",
+      "title": "Products",
       "children": [
         {
-          "name": "UI/UX Design",
-          "path": "/"
+          "name": "Business Accounts",
+          "path": "/business-accounts"
         },
         {
-          "name": "Web Design",
-          "path": "/"
+          "name": "Spend Management",
+          "path": "/service/spend-management"
         },
         {
-          "name": "Branding",
-          "path": "/"
+          "name": "FX & Transfers",
+          "path": "/service/accounts/fx-transfers"
         },
         {
-          "name": "Webflow",
-          "path": "/"
-        },
-        {
-          "name": "Development",
-          "path": "/"
+          "name": "Corporate Cards",
+          "path": "/service/spend-management/corporate-cards"
         }
       ]
     },
@@ -570,23 +576,19 @@
       "title": "Company",
       "children": [
         {
-          "name": "Home",
-          "path": "/"
+          "name": "About",
+          "path": "/company/who-we-are"
         },
         {
-          "name": "Agency",
-          "path": "/"
-        },
-        {
-          "name": "Achievement",
-          "path": "/"
-        },
-        {
-          "name": "Career",
+          "name": "Careers",
           "path": "/career"
         },
         {
-          "name": "Contact Us",
+          "name": "Partners",
+          "path": "/partners"
+        },
+        {
+          "name": "Contact",
           "path": "/contact"
         }
       ]
@@ -595,23 +597,23 @@
   "footer4": [
     {
       "id": 1,
-      "name": "Agency",
-      "path": "/"
+      "name": "Products",
+      "path": "/business-accounts"
     },
     {
       "id": 2,
-      "name": "Career",
+      "name": "Careers",
       "path": "/career"
     },
     {
       "id": 3,
       "name": "Privacy",
-      "path": "/"
+      "path": "/privacy"
     },
     {
       "id": 4,
-      "name": "Terms & condition",
-      "path": "/"
+      "name": "Terms & Conditions",
+      "path": "/terms"
     }
   ]
 }

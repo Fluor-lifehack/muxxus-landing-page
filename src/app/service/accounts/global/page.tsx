@@ -7,6 +7,8 @@ import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
 import ServiceDetailsFaq from "@/app/service/ServiceDetailsFaq";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
+import Image from "next/image";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 export default function GlobalAccountsPage() {
   // Static service data for Global Accounts
@@ -244,7 +246,7 @@ All accounts are built with enterprise-grade security and compliance features:
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
                   Our global accounts provide businesses with the infrastructure needed to operate internationally 
-                  with confidence. Whether you're a startup looking to expand globally or an enterprise managing 
+                  with confidence. Whether you&apos;re a startup looking to expand globally or an enterprise managing 
                   operations across multiple countries, our solutions scale with your business needs.
                 </p>
                 <div className="flex items-center space-x-4">
@@ -263,10 +265,12 @@ All accounts are built with enterprise-grade security and compliance features:
                 </div>
               </div>
               <div className="relative">
-                <img 
+                <Image 
                   src="/assets/imgs/gallery/img-sd-89.png" 
                   alt="Global Banking Network"
                   className="rounded-lg shadow-2xl"
+                  width={500}
+                  height={500}
                 />
                 <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
                   <div className="text-center">
@@ -528,10 +532,12 @@ All accounts are built with enterprise-grade security and compliance features:
                 </div>
               </div>
               <div className="relative">
-                <img 
+                <Image 
                   src="/assets/imgs/gallery/img-sd-89.png" 
                   alt="Global Banking Process"
                   className="rounded-lg shadow-2xl"
+                  width={500}
+                  height={500}
                 />
                 <div className="absolute -top-4 -left-4 bg-white p-4 rounded-lg shadow-lg">
                   <div className="text-center">
@@ -588,6 +594,7 @@ All accounts are built with enterprise-grade security and compliance features:
         <ClientArea brands={brands.brands} />
         <ContactBanner contactTitle={contactTitle} btn_text={btn_text} />
         <PricingArea {...pricingData.pricing} />
+        <MuxxusFooter />
       </div>
     </main>
   );
