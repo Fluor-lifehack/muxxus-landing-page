@@ -108,8 +108,8 @@ const Design = () => {
         </RevealOnScroll>
 
 
-        {/* Fonctionnalités Muxxus avec animation de particules */}
-        <ParticlesOnScroll particleCount={8} duration={4}>
+        {/* Fonctionnalités Muxxus avec animation de particules - ACCÉLÉRÉES */}
+        <ParticlesOnScroll particleCount={8} duration={2.5}> {/* Réduit de 4 à 2.5 */}
           <MuxxusFeature {...feature} />
         </ParticlesOnScroll>
 

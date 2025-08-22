@@ -32,7 +32,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
     // Animation de base avec hasFadeAnim
     hasFadeAnim();
 
-    // Animation d'entrée de la carte au scroll
+    // Animation d'entrée de la carte au scroll - ACCÉLÉRÉE
     gsap.fromTo(
       cardRef.current,
       {
@@ -46,8 +46,8 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         opacity: 1,
         scale: 1,
         rotationY: 0,
-        duration: 1,
-        delay: index * 0.15,
+        duration: 0.7,        // Réduit de 1.0 à 0.7
+        delay: index * 0.1,   // Réduit de 0.15 à 0.1
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -58,7 +58,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation de l'icône avec effet de rebond
+    // Animation de l'icône avec effet de rebond - ACCÉLÉRÉE
     gsap.fromTo(
       iconRef.current,
       {
@@ -72,9 +72,9 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         scale: 1,
         opacity: 1,
         rotation: 0,
-        duration: 0.8,
-        delay: index * 0.15 + 0.2,
-        ease: "back.out(1.7)",
+        duration: 0.6,                    // Réduit de 0.8 à 0.6
+        delay: index * 0.1 + 0.1,        // Réduit de 0.15 + 0.2 à 0.1 + 0.1
+        ease: "back.out(1.5)",           // Légèrement plus rapide
         scrollTrigger: {
           trigger: cardRef.current,
           start: "top 85%",
@@ -84,7 +84,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation du contenu avec effet de révélation
+    // Animation du contenu avec effet de révélation - ACCÉLÉRÉE
     gsap.fromTo(
       contentRef.current,
       {
@@ -96,8 +96,8 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         y: 0,
         opacity: 1,
         clipPath: "inset(0 0% 0 0)",
-        duration: 0.8,
-        delay: index * 0.15 + 0.4,
+        duration: 0.6,                    // Réduit de 0.8 à 0.6
+        delay: index * 0.1 + 0.2,        // Réduit de 0.15 + 0.4 à 0.1 + 0.2
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -108,7 +108,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation de l'indicateur de progression
+    // Animation de l'indicateur de progression - ACCÉLÉRÉE
     gsap.fromTo(
       progressRef.current,
       {
@@ -118,8 +118,8 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       {
         scaleX: 1,
         opacity: 1,
-        duration: 0.6,
-        delay: index * 0.15 + 0.6,
+        duration: 0.4,                    // Réduit de 0.6 à 0.4
+        delay: index * 0.1 + 0.3,        // Réduit de 0.15 + 0.6 à 0.1 + 0.3
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -130,7 +130,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation de la bordure décorative
+    // Animation de la bordure décorative - ACCÉLÉRÉE
     gsap.fromTo(
       borderRef.current,
       {
@@ -140,8 +140,8 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       {
         scaleX: 1,
         opacity: 1,
-        duration: 0.8,
-        delay: index * 0.15 + 0.8,
+        duration: 0.6,                    // Réduit de 0.8 à 0.6
+        delay: index * 0.1 + 0.4,        // Réduit de 0.15 + 0.8 à 0.1 + 0.4
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -152,10 +152,10 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation de l'effet de brillance au scroll
+    // Animation de l'effet de brillance au scroll - ACCÉLÉRÉE
     gsap.to(cardRef.current, {
       backgroundColor: "rgba(59, 130, 246, 0.02)",
-      duration: 0.5,
+      duration: 0.3,                      // Réduit de 0.5 à 0.3
       scrollTrigger: {
         trigger: cardRef.current,
         start: "top 70%",
@@ -165,11 +165,11 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       },
     });
 
-    // Animation de l'icône au scroll (légère élévation)
+    // Animation de l'icône au scroll (légère élévation) - ACCÉLÉRÉE
     gsap.to(iconRef.current, {
       y: -5,
       scale: 1.05,
-      duration: 0.3,
+      duration: 0.2,                      // Réduit de 0.3 à 0.2
       scrollTrigger: {
         trigger: cardRef.current,
         start: "top 70%",
@@ -187,24 +187,24 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       className={cn(
         "feature-card relative bg-white dark:bg-gray-800 rounded-2xl p-8",
         "border border-gray-200 dark:border-gray-700",
-        "shadow-sm transition-all duration-500",
+        "shadow-sm transition-all duration-300",
         "transform-gpu",
         "has_fade_anim"
       )}
       data-fade-from="bottom"
-      data-delay={index * 0.1}
+      data-delay={index * 0.05}
     >
       {/* Effet de brillance au scroll */}
-      <div className="absolute inset-0 bg-gray-100/30 dark:bg-gray-700/30 opacity-0 transition-opacity duration-500 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gray-100/30 dark:bg-gray-700/30 opacity-0 transition-opacity duration-300 rounded-2xl"></div>
 
       {/* Icône avec animation au scroll */}
       <div className="relative z-10 mb-6" ref={iconRef}>
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600 transition-all duration-300">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600 transition-all duration-200">
           <ImageComponent 
             src={icon} 
             height={32} 
             width={32} 
-            className="w-8 h-8 object-contain filter transition-all duration-300" 
+            className="w-8 h-8 object-contain filter transition-all duration-200"
           />
         </div>
       </div>
@@ -214,20 +214,20 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         <h3
           className={cn(
             "text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-4",
-            "leading-tight transition-colors duration-300"
+            "leading-tight transition-colors duration-200"
           )}
           dangerouslySetInnerHTML={convertWithBr(title)}
         />
         
         <p className={cn(
           "text-gray-600 dark:text-gray-300 leading-relaxed",
-          "transition-colors duration-300"
+          "transition-colors duration-200"
         )}>
           {description}
         </p>
 
         {/* Indicateur de progression avec animation au scroll */}
-        <div className="mt-6 flex items-center gap-2 transition-opacity duration-300" ref={progressRef}>
+        <div className="mt-6 flex items-center gap-2 transition-opacity duration-200" ref={progressRef}>
           <div className="w-2 h-2 bg-gray-600 dark:bg-gray-400 rounded-full"></div>
           <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">Fonctionnalité active</span>
         </div>
@@ -240,7 +240,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       ></div>
 
       {/* Effet de lueur subtil au scroll */}
-      <div className="absolute inset-0 bg-gray-100/20 dark:bg-gray-700/20 opacity-0 transition-opacity duration-500 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gray-100/20 dark:bg-gray-700/20 opacity-0 transition-opacity duration-300 rounded-2xl"></div>
     </div>
   );
 };
