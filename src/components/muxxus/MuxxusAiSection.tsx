@@ -5,10 +5,7 @@ import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import ImageComponent from "@/components/tools/ImageComponent";
-import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
-import { FaPlay } from "react-icons/fa6";
-import { cn } from "@/lib/utils";
+import ButtonFlip from "@/components/elements/button/ButtonFlip";
 
 // Styles CSS pour l'animation flottante
 const floatingStyles = `
@@ -124,16 +121,11 @@ const MuxxusAiSection = ({
                 data-fade-offset="70"
                 data-ease="bounce"
               >
-                <Link
-                  className={cn(
-                    buttonVariants({ variant: "default" }),
-                    "bg-gradient-to-r from-[#111827] to-[#1f2937] text-white hover:from-[#1f2937] hover:to-[#374151] border-0 px-10 py-5 text-lg font-semibold rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  )}
-                  href={action_btn.link}
-                >
-                  <span data-text={action_btn.label}>{action_btn.label}</span>
-                  <FaPlay className="ml-3" />
-                </Link>
+                <ButtonFlip
+                  btnText={action_btn.label}
+                  link={action_btn.link}
+                  className="border-[#111827] text-[#111827] hover:bg-[#111827] hover:text-white text-lg py-5 px-10"
+                />
               </div>
             </div>
             
