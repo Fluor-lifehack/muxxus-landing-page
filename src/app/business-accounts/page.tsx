@@ -2,6 +2,7 @@
 import React, { memo } from "react";
 import AccountAbout from "@/components/muxxus/AccountAbout";
 import MuxxusProductFeature from "@/components/features/muxxus/MuxxusProductFeature";
+import MuxxusAiSection from "@/components/muxxus/MuxxusAiSection";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import MuxxusHeader from "@/components/headers/MuxxusHeader";
 import ProductDetailHero from "@/components/hero/ProductDetailHero";
@@ -65,7 +66,7 @@ const BusinessAccountsPage = () => {
 
   // Données pour MarketingImage
   const marketingImageData = {
-    image: "/assets/imgs/works/img-s-9.jpg",
+    image: "/assets/imgs/muxxus/image/img1.jpg",
     video: "/assets/imgs/hero/hero-bg.mp4"
   };
 
@@ -98,22 +99,65 @@ const BusinessAccountsPage = () => {
     title: "Key Features of Business Accounts",
     subtitle: "FEATURES",
     description: "Discover the powerful features that make our business accounts the ideal choice for global operations",
+    image: "/assets/imgs/gallery/img-s-83.jpg",
+    sub_icon: "/assets/imgs/shape/img-s-78.png",
     features: [
       {
-        icon: "/assets/imgs/icon/icon-1.png",
+        icon: "/assets/imgs/shape/img-s-79.png",
         title: "Multi-Currency Support",
         description: "Hold and manage 50+ currencies in a single account"
       },
       {
-        icon: "/assets/imgs/icon/icon-2.png",
+        icon: "/assets/imgs/shape/img-s-80.png",
         title: "Global Compliance",
         description: "Built-in compliance with international banking standards"
       },
       {
-        icon: "/assets/imgs/icon/icon-3.png",
+        icon: "/assets/imgs/shape/img-s-81.png",
         title: "Real-Time Operations",
         description: "24/7 access to your accounts and instant transactions"
       }
+    ]
+  };
+
+  // Données pour AiAbout
+  const about = {
+    title: "AI-Powered Business Intelligence",
+    description: [
+      "Leverage advanced AI algorithms to gain deep insights into your business operations, identify trends, and make data-driven decisions that drive growth and efficiency.",
+      "Our AI systems provide real-time data processing and analysis, predictive analytics and forecasting, automated reporting and insights, machine learning optimization, natural language processing for queries, and intelligent risk assessment."
+    ],
+    action_btn: {
+      label: "Learn More",
+      link: "/ai-services"
+    }
+  };
+
+  // Données pour AiInfo
+  const infoSection = {
+    bg_img: "/assets/imgs/shape/img-s-75.png",
+    shape_img: "/assets/imgs/shape/img-s-76.png",
+    small_shape: {
+      light: "/assets/imgs/shape/img-s-77.png",
+      dark: "/assets/imgs/shape/img-s-77-dark.png"
+    },
+    info: [
+      {
+        title: "AI Performance Metrics",
+        description: "Our AI systems deliver measurable results that transform how you understand and optimize your business operations."
+      },
+      {
+        title: "Key Insights",
+        description: "99.9% accuracy rate, 3x faster analysis, and 24/7 continuous monitoring capabilities."
+      }
+    ],
+    tags: [
+      "Machine Learning",
+      "Predictive Analytics",
+      "Natural Language Processing",
+      "Computer Vision",
+      "Deep Learning",
+      "Automated Decision Making"
     ]
   };
 
@@ -146,6 +190,7 @@ const BusinessAccountsPage = () => {
     ]
   };
 
+
   return (
     <div 
       className={LAYOUT_CLASSES.root} 
@@ -176,6 +221,31 @@ const BusinessAccountsPage = () => {
             <AccountAbout {...aboutData} />
 
            
+            {/* Section Global Account */}
+            <MuxxusAiSection 
+              title="Global Account Solutions"
+              description={[
+                "Access to 50+ currencies and markets worldwide with our comprehensive global account platform.",
+                "Streamlined cross-border transactions, real-time FX rates, and multi-currency management tools designed for international businesses."
+              ]}
+              action_btn={{ label: "Explore Global Accounts", link: "/business-accounts/global" }}
+              shape_img="/assets/imgs/brand/muxxus-logo.png"
+              small_shape={{ light: "/assets/imgs/shape/shape-1.png", dark: "/assets/imgs/shape/shape-1.png" }}
+              imagePosition="left" 
+            />
+
+            {/* Section FX Trading */}
+            <MuxxusAiSection 
+              title="FX Trading & Currency Management"
+              description={[
+                "Advanced foreign exchange trading platform with competitive spreads and real-time market data.",
+                "Hedge against currency risks, execute trades 24/7, and access institutional-grade liquidity across major and emerging market currencies."
+              ]}
+              action_btn={{ label: "Start FX Trading", link: "/business-accounts/fx-trading" }}
+              shape_img="/assets/imgs/brand/muxxus-logo-2.png"
+              small_shape={{ light: "/assets/imgs/shape/shape-2.png", dark: "/assets/imgs/shape/shape-2.png" }}
+              imagePosition="right" 
+            />
 
             {/* Section FAQ avec ServiceDetailsFaq */}
             <ServiceDetailsFaq 
