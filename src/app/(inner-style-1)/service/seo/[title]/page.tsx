@@ -7,7 +7,7 @@ import ClientArea from "@/components/clients/ClientArea";
 import PricingArea from "@/components/pricing/PricingArea";
 import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
-import ServiceDetailsFaq from "@/components/service/ServiceDetailsFaq";
+import ServiceDetailsFaq from "@/app/service/ServiceDetailsFaq";
 
 type Props = {
   params: {
