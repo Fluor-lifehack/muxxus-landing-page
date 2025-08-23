@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
@@ -8,33 +8,10 @@ import Link from "next/link";
 import Logo from "@/components/elements/logo/Logo";
 import MuxxusButton from "@/components/elements/button/MuxxusButton";
 import siteConfig from "@/config/siteConfig.json";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
-type Props = {
-  footerNav?: {
-    id: number;
-    title: string;
-    children?: {
-      name: string;
-      path: string;
-    }[];
-  }[];
-};
-
-const MuxxusFooter = ({ footerNav }: Props) => {
+const MuxxusFooter = () => {
   const containerRef = useRef<HTMLDivElement>(null!);
-  const { footer_info, social, site_info } = siteConfig;
-  const { theme } = useTheme();
-  const [isLight, setIsLight] = useState(false);
-
-  useEffect(() => {
-    if (theme === "dark") {
-      setIsLight(true);
-    } else {
-      setIsLight(false);
-    }
-  }, [theme]);
+  const { social } = siteConfig;
 
   useGSAP(
     () => {
@@ -44,8 +21,8 @@ const MuxxusFooter = ({ footerNav }: Props) => {
     { scope: containerRef }
   );
 
-  // Navigation réaliste inspirée d'Airwallex mais adaptée à Muxxus
-  const muxxusNavigation = [
+  // Navigation optimisée avec useMemo pour éviter les recalculs
+  const muxxusNavigation = useMemo(() => [
     {
       title: "Products",
       links: [
@@ -101,7 +78,46 @@ const MuxxusFooter = ({ footerNav }: Props) => {
         { name: "Trust Center", href: "/trust" },
       ]
     }
-  ];
+  ], []);
+
+  // Composant de lien optimisé
+  const FooterLink = ({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) => (
+    <Link
+      href={href}
+      className={`text-gray-400 hover:text-white transition-colors duration-200 text-sm ${className}`}
+    >
+      {children}
+    </Link>
+  );
+
+  // Types pour la navigation
+  type NavigationLink = {
+    name: string;
+    href: string;
+  };
+
+  type NavigationSection = {
+    title: string;
+    links: NavigationLink[];
+  };
+
+  // Composant de section de navigation optimisé
+  const NavigationSectionComponent = ({ section, index }: { section: NavigationSection; index: number }) => (
+    <div key={index} className="has_fade_anim">
+      <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wide">
+        {section.title}
+      </h3>
+      <ul className="space-y-3">
+        {section.links.map((link, linkIndex) => (
+          <li key={linkIndex}>
+            <FooterLink href={link.href}>
+              {link.name}
+            </FooterLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 
   return (
     <footer className="bg-gray-900 text-white" ref={containerRef}>
@@ -126,6 +142,7 @@ const MuxxusFooter = ({ footerNav }: Props) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors duration-200"
+                    aria-label={`Follow us on ${item.name || 'social media'}`}
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.107-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
@@ -135,25 +152,9 @@ const MuxxusFooter = ({ footerNav }: Props) => {
               </div>
             </div>
 
-            {/* Navigation - 5 colonnes sur la même ligne */}
+            {/* Navigation - Optimisée avec composants réutilisables */}
             {muxxusNavigation.map((section, index) => (
-              <div key={index} className="has_fade_anim">
-                <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wide">
-                  {section.title}
-                </h3>
-                <ul className="space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <Link
-                        href={link.href}
-                        className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <NavigationSectionComponent key={index} section={section} index={index} />
             ))}
           </div>
         </div>
@@ -191,24 +192,14 @@ const MuxxusFooter = ({ footerNav }: Props) => {
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © 2024 Muxxus Financial Services Ltd. All rights reserved.
+              © {new Date().getFullYear()} Muxxus Financial Services Ltd. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
-                Terms of Service
-              </Link>
-              <Link href="/security" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
-                Security
-              </Link>
-              <Link href="/compliance" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
-                Compliance
-              </Link>
-              <Link href="/trust" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
-                Trust Center
-              </Link>
+            <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
+              <FooterLink href="/privacy">Privacy Policy</FooterLink>
+              <FooterLink href="/terms">Terms of Service</FooterLink>
+              <FooterLink href="/security">Security</FooterLink>
+              <FooterLink href="/compliance">Compliance</FooterLink>
+              <FooterLink href="/trust">Trust Center</FooterLink>
             </div>
           </div>
         </div>

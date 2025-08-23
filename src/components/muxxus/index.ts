@@ -1,9 +1,14 @@
 // Composants Muxxus harmonisés
-export { default as MuxxusHero } from './MuxxusHero';
 export { default as MuxxusAbout } from './MuxxusAbout';
+export { default as MuxxusButton } from './MuxxusButton';
+export { default as MuxxusContact } from './MuxxusContact';
+export { default as MuxxusCTA } from './MuxxusCTA';
+export { default as MuxxusFAQ } from './MuxxusFAQ';
+export { default as MuxxusHero } from './MuxxusHero';
+export { default as MuxxusPricing } from './MuxxusPricing';
+export { default as MuxxusProcess } from './MuxxusProcess';
 export { default as MuxxusSectionTitle } from './MuxxusSectionTitle';
 export { default as MuxxusService } from './MuxxusService';
-export { default as MuxxusContact } from './MuxxusContact';
 export { default as MuxxusTeam } from './MuxxusTeam';
 export { default as MuxxusFeature } from '../features/muxxus/MuxxusFeature';
 export { default as MuxxusSecurityFeature } from '../features/muxxus/MuxxusSecurityFeature';

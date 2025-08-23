@@ -8,11 +8,24 @@ import {
   ArrowRight,
   X,
 } from "lucide-react";
+import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
 
 // Import des données de navigation
 import navigationConfig from "@/config/navigation.json";
 
-export default function MuxxusHeader() {
+export type BreadcrumbItem = {
+  label: string;
+  href?: string;
+};
+
+interface MuxxusHeaderProps {
+  breadcrumb?: {
+    items: BreadcrumbItem[];
+  };
+}
+
+export default function MuxxusHeader({ breadcrumb }: MuxxusHeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -304,6 +317,35 @@ export default function MuxxusHeader() {
             </div>
           )}
         </div>
+
+        {/* Breadcrumb intégré dans le header */}
+        {breadcrumb && (
+          <div className="w-full bg-gray-700 border-t border-gray-700">
+            <nav className="py-2 px-6 lg:px-8" aria-label="Breadcrumb">
+              <ol className="flex items-center space-x-1 text-xs">
+                {breadcrumb.items.map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    {index > 0 && (
+                      <FaChevronRight className="mx-1 text-gray-400 text-xs" />
+                    )}
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="text-gray-300 hover:text-white transition-colors duration-200"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <span className="text-blue-400 font-medium">
+                        {item.label}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Modal placeholder */}
