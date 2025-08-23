@@ -9,7 +9,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import SectionTitle from "../sectionTitle/SectionTitle";
+import SectionTitle from "@/components/sectionTitle/SectionTitle";
 
 type Props = {
   faqTitle: string;

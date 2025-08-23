@@ -1,5 +1,6 @@
 // Composants Muxxus harmonisés
 export { default as MuxxusAbout } from './MuxxusAbout';
+export { default as AccountAbout } from './AccountAbout';
 export { default as MuxxusButton } from './MuxxusButton';
 export { default as MuxxusContact } from './MuxxusContact';
 export { default as MuxxusCTA } from './MuxxusCTA';

@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import ImageComponent from "@/components/tools/ImageComponent";
-import MuxxusButton from "@/components/elements/button/MuxxusButton";
 import MuxxusSectionTitle from "./MuxxusSectionTitle";
 
 type Props = {
@@ -20,20 +19,15 @@ type Props = {
     label: string;
     description?: string;
   };
-  actionButton?: {
-    text: string;
-    href: string;
-  };
   features?: string[];
 };
 
-const MuxxusAbout = ({
+const AccountAbout = ({
   title,
   subtitle,
   description,
   image,
   stats,
-  actionButton,
   features,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
@@ -80,16 +74,6 @@ const MuxxusAbout = ({
                   </ul>
                 </div>
               )}
-
-              {actionButton && (
-                <MuxxusButton
-                  href={actionButton.href}
-                  variant="muxxus"
-                  size="lg"
-                >
-                  {actionButton.text}
-                </MuxxusButton>
-              )}
             </div>
 
             <div className="has_fade_anim" data-fade-from="right">
@@ -128,4 +112,4 @@ const MuxxusAbout = ({
   );
 };
 
-export default MuxxusAbout;
+export default AccountAbout;
