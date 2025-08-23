@@ -1,7 +1,7 @@
 
 import React, { memo } from "react";
 import AccountAbout from "@/components/muxxus/AccountAbout";
-import MuxxusProcess from "@/components/muxxus/MuxxusProcess";
+import MuxxusProductFeature from "@/components/features/muxxus/MuxxusProductFeature";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import MuxxusHeader from "@/components/headers/MuxxusHeader";
 import ProductDetailHero from "@/components/hero/ProductDetailHero";
@@ -18,7 +18,7 @@ import "@/styles/design-page.css";
 // Constantes pour éviter la recréation d'objets
 const LAYOUT_CLASSES = {
   root: "beatrice-kanit root-layout",
-  theme: "style-3",
+  theme: "muxxus",
   contentWrapper: "pt-16 lg:pt-20",
 } as const;
 
@@ -93,26 +93,26 @@ const BusinessAccountsPage = () => {
     ]
   };
 
-  // Données pour MuxxusProcess
-  const processData = {
-    title: "How Business Accounts Work",
-    subtitle: "SETUP PROCESS",
-    description: "Simple steps to get your business account up and running with our streamlined process",
-    steps: [
+  // Données pour MarketingFeature
+  const featureData = {
+    title: "Key Features of Business Accounts",
+    subtitle: "FEATURES",
+    description: "Discover the powerful features that make our business accounts the ideal choice for global operations",
+    features: [
       {
-        number: "1",
-        title: "Apply Online",
-        description: "Complete our simple online application in just a few minutes with instant verification"
+        icon: "/assets/imgs/icon/icon-1.png",
+        title: "Multi-Currency Support",
+        description: "Hold and manage 50+ currencies in a single account"
       },
       {
-        number: "2",
-        title: "Quick Verification",
-        description: "Our team verifies your business details within 24 hours with automated checks"
+        icon: "/assets/imgs/icon/icon-2.png",
+        title: "Global Compliance",
+        description: "Built-in compliance with international banking standards"
       },
       {
-        number: "3",
-        title: "Start Banking",
-        description: "Access your account immediately and start managing your global finances"
+        icon: "/assets/imgs/icon/icon-3.png",
+        title: "Real-Time Operations",
+        description: "24/7 access to your accounts and instant transactions"
       }
     ]
   };
@@ -170,6 +170,7 @@ const BusinessAccountsPage = () => {
             
             {/* Section Image avec MarketingImage */}
             <MarketingImage {...marketingImageData} />
+            <MuxxusProductFeature {...featureData} />
             
             {/* Section À propos avec AccountAbout */}
             <AccountAbout {...aboutData} />

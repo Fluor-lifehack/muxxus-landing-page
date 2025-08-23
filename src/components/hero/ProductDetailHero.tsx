@@ -125,8 +125,8 @@ const ProductDetailHero = ({ title, sub_title, shape_1, shape_2, info }: Props) 
               >
                 <ButtonSwap
                   link="/contact"
-                  bgColor={"bg-theme"}
-                  textColor={"text-text-fixed text-sm"}
+                  bgColor={"bg-[#111827] hover:bg-[#1f2937]"}
+                  textColor={"text-white text-sm"}
                   arrowWidthHeight="w-[40px] h-[40px]"
                   textClassName="px-[22px] font-normal"
                   rootClassName="wc-swap-btn-sm"

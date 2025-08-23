@@ -2,6 +2,7 @@
 export { default as MuxxusAbout } from './MuxxusAbout';
 export { default as AccountAbout } from './AccountAbout';
 export { default as MuxxusButton } from './MuxxusButton';
+export { default as MuxxusProductFeature } from '../features/muxxus/MuxxusProductFeature';
 export { default as MuxxusContact } from './MuxxusContact';
 export { default as MuxxusCTA } from './MuxxusCTA';
 export { default as MuxxusFAQ } from './MuxxusFAQ';
