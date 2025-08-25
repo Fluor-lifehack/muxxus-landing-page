@@ -183,7 +183,7 @@ const MuxxusSection2 = ({
               {/* Contenu en 2 colonnes - SÉPARÉ du header */}
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 {/* Colonne avec Image (position dynamique) */}
-                <div className={`space-y-10 ${imagePosition === 'left' ? 'order-1' : 'order-2'}`}>
+                <div className={`space-y-10 ${imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
                   {/* Image principale sans effet */}
                   <ImageComponent
                     src={leftImage}
@@ -195,7 +195,7 @@ const MuxxusSection2 = ({
                 </div>
                 
                 {/* Colonne avec Items (position dynamique) */}
-                <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2' : 'order-1'}`}>
+                <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
                   {/* Items avec icône, titre et description */}
                   <div className="space-y-6">
                     {items?.map((item, index) => (
@@ -244,7 +244,7 @@ const MuxxusSection2 = ({
                          /* Layout original en 2 colonnes */
              <div className="grid lg:grid-cols-2 gap-16 items-center">
                {/* Colonne avec Image (position dynamique) */}
-               <div className={`space-y-10 ${imagePosition === 'left' ? 'order-1' : 'order-2'}`}>
+               <div className={`space-y-10 ${imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
                  {/* Image principale sans effet */}
                  <ImageComponent
                    src={leftImage}
@@ -256,7 +256,7 @@ const MuxxusSection2 = ({
                </div>
               
               {/* Colonne avec Titre, Description et Items (position dynamique) */}
-              <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2' : 'order-1'}`}>
+              <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-1 lg:order-1'}`}>
                 {/* 1. Titre */}
                 <h1 className={`text-[32px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[52px] leading-[1.1] font-medium has_text_mov_anim ${textColor || 'text-white'}`}>
                   {title}

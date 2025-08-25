@@ -2,27 +2,13 @@ import { Metadata } from "next";
 import DetailHero from "@/components/hero/DetailHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
-import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
 import FeatureSection from "@/components/muxxus/FeatureSection";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import SectionDivider from "@/components/ui/SectionDivider";
 
-// Configuration des styles de la page
-const pageStyles = {
-  spacing: {
-    section: "py-16 lg:py-20"
-  },
-  colors: {
-    light: "bg-background-3 text-text",
-    dark: "bg-gray-900 text-white",
-    primary: "bg-primary text-white",
-    secondary: "bg-gray-900 text-white",
-    accent: "bg-gray-900 text-white",
-    alternate: "bg-background-3 text-text"
-  }
-};
+
 
 // Métadonnées de la page
 export const metadata: Metadata = {

@@ -1,146 +1,451 @@
-import Image from "next/image";
-import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
-import CircleFillButton from "@/components/elements/button/CircleFillButton";
-import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaReceipt, FaShieldAlt, FaClock, FaChartLine, FaRobot } from "react-icons/fa";
-import Link from "next/link";
+import { Metadata } from "next";
+import DetailHero from "@/components/hero/DetailHero";
+import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
+import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
+import FeatureSection from "@/components/muxxus/FeatureSection";
+import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
+import SectionDivider from "@/components/ui/SectionDivider";
 
-const BillPayPage = () => {
-  const features = [
-    {
-      icon: FaReceipt,
-      title: "Automated Bill Processing",
-      description: "Automatically process and pay bills with smart approval workflows"
-    },
-    {
-      icon: FaRobot,
-      title: "Smart Automation",
-      description: "Set up recurring payments and automatic bill scheduling"
-    },
-    {
-      icon: FaChartLine,
-      title: "Expense Analytics",
-      description: "Track spending patterns and optimize cash flow management"
-    },
-    {
-      icon: FaShieldAlt,
-      title: "Secure Payments",
-      description: "Bank-grade security with fraud protection and compliance"
-    }
-  ];
 
-  const faqs = [
-    {
-      question: "How does automated bill pay work?",
-      answer: "Our system automatically processes bills based on your rules, sends them for approval if needed, and makes payments on schedule."
-    },
-    {
-      question: "Can I set approval workflows?",
-      answer: "Yes, you can create custom approval chains based on amount thresholds, vendor categories, or specific business rules."
-    },
-    {
-      question: "What payment methods are supported?",
-      answer: "We support ACH transfers, wire transfers, and check payments for maximum flexibility with your vendors."
-    },
-    {
-      question: "How do I track bill payments?",
-      answer: "All payments are tracked in real-time with detailed logs, receipts, and integration with your accounting software."
-    }
-  ];
 
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <BreadcrumbNav 
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Spend Management", href: "/spend" },
-                { label: "Bill Pay", href: "/spend/bill-pay", isActive: true }
-              ]} 
-            />
-            <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
-              Bill Pay
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Automated accounts payable management that saves time and reduces errors. Streamline your bill processing with intelligent workflows and real-time tracking.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CircleFillButton 
-                text="Get Started" 
-                href="/contact"
-                className="bg-orange-600 hover:bg-orange-700"
-              />
-              <CircleFillButton 
-                text="Learn More" 
-                href="#features"
-                className="border-orange-600 text-orange-600 hover:bg-orange-50"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <DesignSectionTitle 
-            title="Why Choose Our Bill Pay Solution?"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-            {features.map((feature, index) => (
-              <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-8 h-8 text-orange-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-600">Everything you need to know about Bill Pay</p>
-          </div>
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Automate Your Bill Pay?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Start saving time and reducing errors in your accounts payable process
-          </p>
-          <CircleFillButton 
-            text="Get Started Today" 
-            href="/contact"
-            className="bg-orange-600 hover:bg-orange-700"
-          />
-        </div>
-      </section>
-
-      {/* Footer */}
-      <MuxxusFooter />
-    </main>
-  );
+// Métadonnées de la page
+export const metadata: Metadata = {
+  title: "Bill Pay | Automated Accounts Payable Management | Muxxus",
+  description: "Conveniently automate your online bill pay processes in one place. Upload, approve, pay, and reconcile your domestic and international bills all within your Muxxus account.",
+  keywords: "bill pay, accounts payable, invoice management, vendor payments, automated payments, expense reconciliation, bill automation"
 };
 
-export default BillPayPage;
+// Données pour le composant DetailHero
+const heroData = {
+  title: "Conveniently automate your online bill pay processes in one place",
+  shape: {
+    light: "/assets/imgs/shape/img-s-29.png",
+    dark: "/assets/imgs/shape/img-s-29-light.png"
+  },
+  client_img: {
+    light: "/assets/imgs/muxxus/image/img6.jpg",
+    dark: "/assets/imgs/muxxus/image/img6.jpg"
+  },
+  customers: "200+ countries, 60+ currencies",
+  info: {
+    thumb: {
+      light: "/assets/imgs/muxxus/image/img6.jpg",
+      dark: "/assets/imgs/muxxus/image/img6.jpg"
+    },
+    description: "Upload, approve, pay, and reconcile your domestic and international bills all within your Muxxus account.",
+    action_btn: {
+      label: "Get Started",
+      link: "#"
+    }
+  },
+  image: "/assets/imgs/muxxus/image/img6.jpg",
+  feature_text: "Bill Pay Solutions"
+};
+
+// Données pour les composants
+const componentData = {
+  muxxusAiSection: {
+    title: "AI-Powered Bill Management",
+    description: [
+      "Our platform uses artificial intelligence to optimize your bill pay operations, offering automated data extraction and intelligent approval workflows.",
+      "AI algorithms analyze payment patterns to provide insights, detect anomalies, and help optimize your accounts payable processes across all currencies."
+    ],
+    action_btn: {
+      label: "Discover Our AI Solutions",
+      link: "#"
+    },
+    shape_img: "/assets/imgs/shape/img-s-29.png",
+    small_shape: {
+      light: "/assets/imgs/shape/img-s-30.png",
+      dark: "/assets/imgs/shape/img-s-30-light.png"
+    }
+  },
+  
+  muxxusSection2: {
+    title: "Free your finance team from manual, time-consuming bill payments",
+    description: [
+      "Muxxus makes it easy to automate your accounts payable and pay your invoices from one place.",
+      "Customised approval workflows and notifications give you more control to manage your company spend."
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img2.jpg",
+    items: [
+      {
+        icon: "📄",
+        title: "Say goodbye to manual data entry",
+        description: "Upload or email bills and Muxxus will automatically extract all relevant data using OCR technology, saving you time while reducing errors."
+      },
+      {
+        icon: "🛡️",
+        title: "Manage risk and ensure oversight",
+        description: "Create multi-layer approval workflows across specific roles to stay in line with company spend policies."
+      },
+      {
+        icon: "🌍",
+        title: "Easily pay vendors across the globe",
+        description: "Directly pay bills in multiple currencies at market-leading FX rates without having to manually enter payment details into your bank."
+      },
+      {
+        icon: "📊",
+        title: "Reconcile faster with accounting integrations",
+        description: "Import data such as chart of accounts and sync bills and payments back to your accounting software."
+      }
+    ],
+    action_btn: {
+      label: "Get Started with Bill Pay",
+      link: "#"
+    }
+  },
+  
+  keyBenefitsSection2: {
+    title: "Free your finance team from manual, time-consuming bill payments",
+    description: [
+      "Muxxus makes it easy to automate your accounts payable and pay your invoices from one place.",
+      "Customised approval workflows and notifications give you more control to manage your company spend."
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    items: [
+      {
+        icon: "📄",
+        title: "Say goodbye to manual data entry",
+        description: "Upload or email bills and Muxxus will automatically extract all relevant data using OCR technology, saving you time while reducing errors."
+      },
+      {
+        icon: "🛡️",
+        title: "Manage risk and ensure oversight",
+        description: "Create multi-layer approval workflows across specific roles to stay in line with company spend policies."
+      },
+      {
+        icon: "🌍",
+        title: "Easily pay vendors across the globe",
+        description: "Directly pay bills in multiple currencies at market-leading FX rates without having to manually enter payment details into your bank."
+      },
+      {
+        icon: "📊",
+        title: "Reconcile faster with accounting integrations",
+        description: "Import data such as chart of accounts and sync bills and payments back to your accounting software."
+      }
+    ]
+  },
+  
+  supportedCountries: {
+    title: "Global bill payment network",
+    description: "Muxxus bill pay solution works worldwide, providing your business with seamless payment capabilities across all major markets and currencies.",
+    countries: [
+      {
+        name: 'United States',
+        currency: 'USD',
+        currencyName: 'US Dollar',
+        exchangeRate: '1 EUR = 1.08 USD',
+        bankCode: 'US001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['ACH transfers', 'Wire transfers', 'Real-time FX', 'Low fees']
+      },
+      {
+        name: 'United Kingdom',
+        currency: 'GBP',
+        currencyName: 'British Pound',
+        exchangeRate: '1 EUR = 0.86 GBP',
+        bankCode: 'GB001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['BACS transfers', 'CHAPS payments', 'Real-time rates', 'Low spreads']
+      },
+      {
+        name: 'Germany',
+        currency: 'EUR',
+        currencyName: 'Euro',
+        exchangeRate: '1 EUR = 1.00 EUR',
+        bankCode: 'DE001',
+        accountFormat: 'DE89-XXXX-XXXX-XXXX-XXXX-XX',
+        features: ['SEPA transfers', 'Real-time rates', 'Secure payments', 'Local compliance']
+      },
+      {
+        name: 'Australia',
+        currency: 'AUD',
+        currencyName: 'Australian Dollar',
+        exchangeRate: '1 EUR = 1.65 AUD',
+        bankCode: 'AU001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['BPAY transfers', 'Real-time FX', 'Low fees', '24/7 support']
+      },
+      {
+        name: 'Singapore',
+        currency: 'SGD',
+        currencyName: 'Singapore Dollar',
+        exchangeRate: '1 EUR = 1.46 SGD',
+        bankCode: 'SG001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['FAST transfers', 'Real-time FX', 'Low fees', 'Local banking']
+      },
+      {
+        name: 'Hong Kong SAR',
+        currency: 'HKD',
+        currencyName: 'Hong Kong Dollar',
+        exchangeRate: '1 EUR = 8.45 HKD',
+        bankCode: 'HK001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['Local transfers', 'Real-time FX', 'Low fees', '24/7 support']
+      },
+      {
+        name: 'Canada',
+        currency: 'CAD',
+        currencyName: 'Canadian Dollar',
+        exchangeRate: '1 EUR = 1.47 CAD',
+        bankCode: 'CA001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['Interac transfers', 'Real-time FX', 'Low spreads', 'Local compliance']
+      },
+      {
+        name: 'Japan',
+        currency: 'JPY',
+        currencyName: 'Japanese Yen',
+        exchangeRate: '1 EUR = 160.5 JPY',
+        bankCode: 'JP001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['Local banking', 'Real-time rates', 'Secure payments', '24/7 support']
+      }
+    ],
+    accountExample: {
+      title: "Bill Pay Account",
+      description: "Access global payment networks with automated bill processing and real-time payment tracking.",
+      capabilities: [
+        "Automated bill processing",
+        "Multi-currency payments",
+        "Approval workflows",
+        "Accounting integrations"
+      ],
+      depositMethods: {
+        title: "Multiple funding methods",
+        description: "Bank transfers, corporate accounts, and digital wallets"
+      }
+    }
+  },
+  
+  testimonials: {
+    title: "What Our Bill Pay Customers Say",
+    description: "Discover how our customers use our bill pay platform to streamline their accounts payable and vendor management",
+    testimonials: [
+      {
+        quote: "Muxxus Bill Pay has given us better control over our finances, and has helped us roll up important strategic budgeting and forecasting capabilities. It's also improved our relationship with our suppliers, because we now never miss a beat with paying them on time.",
+        icon: "/assets/imgs/icon/quote-1.png",
+        author: "Joel Stehr",
+        designation: "Chief Operating Officer, Bilue",
+        avatar: "/assets/imgs/team/img-s-1.jpg"
+      },
+      {
+        quote: "The feature where we can monitor how much employees are spending on their Muxxus cards is incredibly useful to us. We get to have full visibility, as well as being able to set daily and per transaction budgets.",
+        icon: "/assets/imgs/icon/quote-2.png",
+        author: "Richard Li",
+        designation: "Co-founder & CEO, July",
+        avatar: "/assets/imgs/team/img-s-10.jpg"
+      },
+      {
+        quote: "Having all our global SaaS subscriptions in one place has streamlined our finance processes and enabled better tracking and control of expenses. It's even better knowing that Muxxus isn't hitting us with any international transaction fees.",
+        icon: "/assets/imgs/icon/quote-3.png",
+        author: "Warren Durling",
+        designation: "Chief Operating Officer, Dovetail – Digital Agency",
+        avatar: "/assets/imgs/team/img-s-15.jpg"
+      }
+    ]
+  }
+};
+
+// Données pour les sections FAQ
+const faqData = {
+  faq_title: "Bill Pay FAQ",
+  faq_description: "Common questions about our bill pay services and automated accounts payable management",
+  faqs: [
+    {
+      question: "What is the Muxxus Bill Pay Solution and how does it work?",
+      answer: "A bill pay solution allows you to manage multiple steps required to pay vendor invoices and bills. This includes uploading bills and extracting the relevant data, routing bills to the appropriate team members for approval prior to payment, making the payment to the vendor, and reconciling the bill and payment data. Muxxus's bill pay solution reduces hours spent in multiple tools by consolidating all of these processes into one, easy-to use workflow for both domestic and international bills, while reducing errors associated with manual tasks."
+    },
+    {
+      question: "How do I set up custom approval workflows?",
+      answer: "Custom approval workflows can easily be set up by admins according to the bill's amount and currency. Approvers can be set to the user's specific manager, specific roles, or specific users and multiple layers of approvers can be set within each workflow to ensure the right team members are reviewing spend."
+    },
+    {
+      question: "Can I integrate Muxxus's bill pay solution with my accounting software?",
+      answer: "Muxxus is integrated with Netsuite, Xero and Quickbooks. With these integrations you can import invoices directly to pay in Muxxus or code invoices created in Muxxus with your chart of accounts data. You can also sync invoices and their payments back to your accounting software for faster reconciliation."
+    },
+    {
+      question: "How secure is the bill pay platform?",
+      answer: "We provide enterprise-level security including multi-factor authentication, approval workflows, audit trails, and compliance with international security standards. All vendor data and payment information is encrypted and securely stored."
+    },
+    {
+      question: "Can I pay bills in multiple currencies?",
+      answer: "Yes, you can pay bills in multiple currencies at market-leading FX rates. The platform automatically handles currency conversion and you can pay vendors across 200+ countries without manual bank transfers."
+    },
+    {
+      question: "How quickly can I process and pay bills?",
+      answer: "Bills can be processed and paid within 24-48 hours depending on approval workflows. For urgent payments, we offer expedited processing. All payments are tracked in real-time with instant notifications."
+    }
+  ]
+};
+
+// Composant principal de la page
+export default function BillPayPage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <DetailHero {...heroData} />
+
+      {/* Key Benefits Section */}
+      <MuxxusSection2 
+        {...componentData.keyBenefitsSection2} 
+        fullWidthHeader={true} 
+        backgroundVideo="/assets/videos/world-globe.mp4"
+      />
+
+              <MuxxusSection2 
+        title="Customise invoice approvals to match your business needs"
+        description={[
+          "Create multi-layer approval flows",
+          "Create multi-layer approvals based on bill currency and amount thresholds."
+        ]}
+        leftImage={componentData.muxxusSection2.leftImage}
+        items={[
+          {
+            icon: "🔄",
+            title: "Create multi-layer approval flows",
+            description: "Create multi-layer approvals based on bill currency and amount thresholds."
+          },
+          {
+            icon: "👥",
+            title: "Customise approvers for each flow",
+            description: "Set specific approvers or approver roles at each layer to ensure the right people are reviewing spend."
+          },
+          {
+            icon: "🔔",
+            title: "Never miss a payment",
+            description: "Stay on top of bills with regular notifications when bills are waiting for approval or payment."
+          }
+        ]}
+        action_btn={componentData.muxxusSection2.action_btn}
+        fullWidthHeader={false}
+        imagePosition="right"
+        backgroundColor="bg-white"
+        textColor="text-gray-900"
+      />
+
+ 
+              <MuxxusSection2 
+        title="Pay business expenses globally with Muxxus Transfers"
+        description={[
+          "Pay vendors from around the world",
+          "Easily convert funds for bills requiring payment in a foreign currency. Pay out to 200+ countries with access to interbank rates."
+        ]}
+        leftImage={componentData.muxxusSection2.leftImage}
+        items={[
+          {
+            icon: "🌍",
+            title: "Pay vendors from around the world",
+            description: "Easily convert funds for bills requiring payment in a foreign currency. Pay out to 200+ countries with access to interbank rates."
+          },
+          {
+            icon: "⚡",
+            title: "Pay domestic and international bills faster",
+            description: "Simply pay hundreds of bills to vendors across countries and currencies in one go."
+          },
+          {
+            icon: "🔐",
+            title: "Pay with additional approvals",
+            description: "Set up additional payout approvals on top of bill approval workflows for added security."
+          }
+        ]}
+        action_btn={componentData.muxxusSection2.action_btn}
+        fullWidthHeader={false}
+        backgroundColor="bg-white"
+        textColor="text-gray-900"
+      />
+            
+      <MuxxusSection2 
+        title="VENDOR MANAGEMENT"
+        description={[
+          "Keep track of all vendors, reducing errors, missed payments, and payment fraud. Sync up-to-date vendor data from your accounting software or create in Muxxus."
+        ]}
+        leftImage={componentData.muxxusSection2.leftImage}
+        items={[
+          {
+            icon: "📊",
+            title: "Track all vendor information in one place",
+            description: "Sync up-to-date vendor data from your accounting software or create in Muxxus."
+          },
+          {
+            icon: "🔄",
+            title: "Set approval flows to manage vendor changes",
+            description: "Review and control changes with a complete audit trail for each vendor."
+          },
+          {
+            icon: "⚡",
+            title: "Create and pay bills faster",
+            description: "Pre-fill details like chart of accounts, tax rates, and saved payment details based on the vendor selected."
+          }
+        ]}
+        action_btn={componentData.muxxusSection2.action_btn}
+        fullWidthHeader={false}
+        backgroundColor="bg-white"
+        textColor="text-gray-900"
+        imagePosition="right"
+      />
+              <MuxxusSection2 
+        title="ACCOUNTING INTEGRATIONS"
+        description={[
+          "Automate reconciliation with a range of accounting applications and integrations",
+        ]}
+        leftImage={componentData.muxxusSection2.leftImage}
+        items={[
+          {
+            icon: "📊",
+            title: "Sync your accounting data and invoices",
+            description: "Create and code bills with your accounting data in Muxxus or import bills directly from your accounting software to pay."
+          },
+          {
+            icon: "⚡",
+            title: "Speed up reconciliation",
+            description: "Automatically sync bills and their payments back to your accounting software."
+          },
+          {
+            icon: "🔗",
+            title: "Integrate with accounting software easily",
+            description: "Connect Muxxus to popular accounting platforms like NetSuite, Xero, QuickBooks in just a few simple clicks."
+          }
+        ]}
+        action_btn={componentData.muxxusSection2.action_btn}
+        fullWidthHeader={false}
+        backgroundColor="bg-white"
+        textColor="text-gray-900"
+        imagePosition="left"
+      />
+      {/* Customer Testimonials Section */}
+      <TestimonialsSection {...componentData.testimonials} />
+
+
+      {/* Approval Workflows Section */}
+      <FeatureSection
+        title="Scale faster with Corporate Cards"
+        subtitle=""
+        description="Create multi-currency employee and company cards in minutes and stay in control of all purchases from a single dashboard, in real-time. They’re free to create and you can start using them immediately online. Avoid surprise foreign transaction fees and other hidden charges, so you can reinvest every dollar back into your growth."
+        buttonText="Learn More"
+        buttonLink="/accounts/corporate-cards"
+        imageSrc="/assets/imgs/muxxus/image/img5.jpg"
+        imageAlt="Company Cards"
+        badgeColor="white"
+        imageFirst={false}
+        className="bg-gray-900 text-white"
+      />
+
+      <SectionDivider variant="gradient" size="lg" color="primary" />
+
+
+      {/* FAQ et Footer */}
+      <ServiceDetailsFaq 
+        faqs={faqData.faqs} 
+        faqTitle={faqData.faq_title} 
+      />
+      <MuxxusNewsletter />
+      <MuxxusFooter />
+    </>
+  );
+}
+
