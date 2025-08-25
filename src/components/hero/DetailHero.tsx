@@ -4,6 +4,7 @@ import ImageComponent from "../tools/ImageComponent";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
+import ButtonFlip from "../elements/button/ButtonFlip";
 
 // Interface personnalisée pour DetailHero
 interface DetailHeroProps {
@@ -68,12 +69,11 @@ const DetailHero = ({
           <p className="text-lg leading-relaxed mb-6 text-text">
             {info.description}
           </p>
-          <a
-            href={info.action_btn.link}
-            className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-          >
-            {info.action_btn.label}
-          </a>
+          <ButtonFlip
+            btnText={info.action_btn.label}
+            link={info.action_btn.link}
+            className="bg-primary text-white border-primary hover:bg-primary/90"
+          />
         </div>
         
         {/* Image principale avec titre superposé */}

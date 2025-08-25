@@ -133,33 +133,6 @@ const BusinessAccountsPage = () => {
     }
   };
 
-  // Données pour AiInfo
-  const infoSection = {
-    bg_img: "/assets/imgs/shape/img-s-75.png",
-    shape_img: "/assets/imgs/shape/img-s-76.png",
-    small_shape: {
-      light: "/assets/imgs/shape/img-s-77.png",
-      dark: "/assets/imgs/shape/img-s-77-dark.png"
-    },
-    info: [
-      {
-        title: "AI Performance Metrics",
-        description: "Our AI systems deliver measurable results that transform how you understand and optimize your business operations."
-      },
-      {
-        title: "Key Insights",
-        description: "99.9% accuracy rate, 3x faster analysis, and 24/7 continuous monitoring capabilities."
-      }
-    ],
-    tags: [
-      "Machine Learning",
-      "Predictive Analytics",
-      "Natural Language Processing",
-      "Computer Vision",
-      "Deep Learning",
-      "Automated Decision Making"
-    ]
-  };
 
   // Données pour MuxxusFAQ
   const faqData = {

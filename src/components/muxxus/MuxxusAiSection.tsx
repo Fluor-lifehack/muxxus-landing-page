@@ -36,15 +36,19 @@ type Props = {
   };
   // Layout control
   imagePosition?: 'left' | 'right';
+  // Customization
+  backgroundColor?: string;
+  textColor?: string;
+  className?: string;
 };
 
 /**
- * MuxxusAiSection - Composant de section AI avec layout dynamique
+ * MuxxusAiSection - Composant de section AI avec layout dynamique et personnalisation
  * 
  * Structure : Titre → Description → Bouton d'action | Image
  * 
  * @example
- * // Image à gauche (par défaut)
+ * // Image à gauche (par défaut) avec fond blanc
  * <MuxxusAiSection 
  *   title="AI Solutions"
  *   description={["Description 1", "Description 2"]}
@@ -54,10 +58,20 @@ type Props = {
  *   imagePosition="left" // ou omettre pour la valeur par défaut
  * />
  * 
- * // Image à droite
+ * // Image à droite avec fond personnalisé
  * <MuxxusAiSection 
  *   {...props}
  *   imagePosition="right"
+ *   backgroundColor="bg-gray-900"
+ *   textColor="text-white"
+ * />
+ * 
+ * // Avec classe CSS personnalisée
+ * <MuxxusAiSection 
+ *   {...props}
+ *   backgroundColor="bg-primary"
+ *   textColor="text-white"
+ *   className="shadow-lg rounded-lg"
  * />
  * 
  * @param imagePosition - Position de l'image : 'left' (par défaut) ou 'right'
@@ -66,6 +80,9 @@ type Props = {
  * @param action_btn - Bouton d'action avec label et lien
  * @param shape_img - Image principale
  * @param small_shape - Petite image décorative (light/dark)
+ * @param backgroundColor - Couleur de fond de la section (défaut: transparent)
+ * @param textColor - Couleur du texte (défaut: 'text-text')
+ * @param className - Classes CSS supplémentaires pour la personnalisation
  */
 const MuxxusAiSection = ({ 
   title, 
@@ -73,7 +90,10 @@ const MuxxusAiSection = ({
   action_btn, 
   shape_img, 
   small_shape, 
-  imagePosition = 'left' // Default to left
+  imagePosition = 'left', // Default to left
+  backgroundColor = '', // Default to transparent
+  textColor = 'text-text', // Default to text color
+  className = '' // Default to empty
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
 
@@ -86,7 +106,7 @@ const MuxxusAiSection = ({
   );
 
   return (
-    <section ref={containerRef}>
+    <section ref={containerRef} className={`${backgroundColor} ${className}`}>
       <style dangerouslySetInnerHTML={{ __html: floatingStyles }} />
       <div className="inner-container">
 
@@ -97,16 +117,16 @@ const MuxxusAiSection = ({
             {/* Colonne avec Titre, Description et Bouton (position dynamique) */}
             <div className={`space-y-10 ${imagePosition === 'left' ? 'order-1' : 'order-2'}`}>
               {/* 1. Titre */}
-              <h1 className="text-[32px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[52px] leading-[1.1] font-medium has_text_mov_anim">
+              <h1 className={`text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[44px] leading-[1.1] font-medium has_text_mov_anim ${textColor} mb-6`}>
                 {title}
               </h1>
               
               {/* 2. Description */}
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {description?.map((para, index) => (
                   <p
                     key={`para-${index}`}
-                    className="has_text_mov_anim text-[18px] leading-[1.7] text-text-3 !font-primary"
+                    className={`has_text_mov_anim text-[16px] leading-[1.6] ${textColor} !font-primary`}
                     data-delay={index * 0.1}
                   >
                     {para}
@@ -124,7 +144,7 @@ const MuxxusAiSection = ({
                 <ButtonFlip
                   btnText={action_btn.label}
                   link={action_btn.link}
-                  className="border-[#111827] text-[#111827] hover:bg-[#111827] hover:text-white text-lg py-5 px-10"
+                  className="border-primary text-primary hover:bg-primary hover:text-white text-lg py-5 px-10"
                 />
               </div>
             </div>

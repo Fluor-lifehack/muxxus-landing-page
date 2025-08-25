@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import { FaLightbulb, FaSearch, FaPencilAlt, FaCode, FaEye, FaRocket } from "react-icons/fa";
+import ButtonFlip from "@/components/elements/button/ButtonFlip";
 
 type Props = {
   title: string;
@@ -80,12 +81,11 @@ const DesignProcess = ({ title, description, process_steps }: Props) => {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="has_fade_anim inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
-            <span>Découvrir notre approche</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </div>
+          <ButtonFlip
+            btnText="Discover Our Approach"
+            link="#"
+            className="bg-blue-600 text-white border-blue-600 hover:bg-blue-700"
+          />
         </div>
       </div>
     </section>

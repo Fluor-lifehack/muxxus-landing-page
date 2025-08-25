@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
-import Separator from "./separator";
+import SectionDivider from "./SectionDivider";
 
 type SectionSpacingProps = {
   size?: "sm" | "md" | "lg" | "xl" | "2xl";
   showSeparator?: boolean;
-  separatorVariant?: "line" | "dots" | "wave" | "none";
-  separatorSize?: "sm" | "md" | "lg";
+  separatorVariant?: "line" | "dots" | "chevron" | "gradient" | "spacer";
+  separatorSize?: "sm" | "md" | "lg" | "xl";
   className?: string;
   children?: React.ReactNode;
 };
@@ -29,7 +29,7 @@ const SectionSpacing = ({
   return (
     <div className={cn(spacingClasses[size], className)}>
       {showSeparator && (
-        <Separator variant={separatorVariant} size={separatorSize} />
+        <SectionDivider variant={separatorVariant} size={separatorSize} />
       )}
       {children}
     </div>

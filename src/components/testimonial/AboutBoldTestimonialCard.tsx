@@ -18,23 +18,42 @@ const AboutBoldTestimonialCard = ({
   return (
     <div className="text-center">
       <div>
-        <div className="flex justify-center items-center">
-          <ImageComponent src={icon} width={40} height={27} alt="icon" />
+        {/* Icône de citation */}
+        <div className="flex justify-center items-center mb-8">
+          <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+            <ImageComponent 
+              src={icon} 
+              width={24} 
+              height={24} 
+              alt="Quote icon" 
+              className="w-6 h-6"
+            />
+          </div>
         </div>
-        <div className="mt-[29px]">
-          <p className="text-[18px] md:text-[22px] xl:text-[24px] 2xl:text-[30px] font-light leading-[1.38] text-text">
-            {quote}
+        
+        {/* Citation */}
+        <div className="mb-10">
+          <p className="text-[18px] md:text-[22px] xl:text-[24px] 2xl:text-[30px] font-light leading-[1.38] text-text max-w-4xl mx-auto">
+            "{quote}"
           </p>
         </div>
-        <div className="mt-10 xl:mt-[50px] 2xl:mt-[90px] flex gap-[10px] items-center justify-center text-start">
-          <div className="rounded-full overflow-hidden">
-            <ImageComponent src={avatar} width={50} height={50} alt="avatar" />
+        
+        {/* Auteur et avatar */}
+        <div className="flex gap-4 items-center justify-center">
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+            <ImageComponent 
+              src={avatar} 
+              width={64} 
+              height={64} 
+              alt={`${author} avatar`}
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div>
-            <h2 className="text-[20px] 2xl:text-[24px] leading-none uppercase">
+          <div className="text-left">
+            <h3 className="text-[20px] 2xl:text-[24px] leading-none font-semibold text-text">
               {author}
-            </h2>
-            <p className="text-[16px] font-medium leading-none uppercase mt-[7px] font-teko">
+            </h3>
+            <p className="text-[16px] font-medium text-text-3 mt-2">
               {designation}
             </p>
           </div>
