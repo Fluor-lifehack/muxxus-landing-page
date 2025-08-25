@@ -19,3 +19,5 @@ export { default as MuxxusFooter } from '../footer/MuxxusFooter';
 export { default as MuxxusNewsletter } from '../newsletter/MuxxusNewsletter';
 export { default as MuxxusContactBanner } from '../banner/MuxxusContactBanner';
 export { default as StatMuxxus } from './StatMuxxus';
+export { default as MuxxusTestimonials } from './MuxxusTestimonials';
+export { default as MuxxusCenteredSection } from './MuxxusCenteredSection';
