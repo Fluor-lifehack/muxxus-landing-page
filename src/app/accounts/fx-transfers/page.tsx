@@ -8,7 +8,6 @@ import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import FeatureSection from "@/components/muxxus/FeatureSection";
 import SectionDivider from "@/components/ui/SectionDivider";
 import DetailHero from "@/components/hero/DetailHero";
-import MuxxusAiSection from "@/components/muxxus/MuxxusAiSection";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
