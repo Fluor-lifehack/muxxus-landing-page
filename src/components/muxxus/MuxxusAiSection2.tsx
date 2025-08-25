@@ -28,9 +28,9 @@ type Props = {
     label: string;
     link: string;
   };
-  // Images
-  shape_img: string;
-  small_shape: {
+  // Images (optionnelles)
+  shape_img?: string;
+  small_shape?: {
     light: string;
     dark: string;
   };
@@ -106,11 +106,11 @@ const MuxxusAiSection2 = ({
   );
 
   return (
-    <section ref={containerRef} className={`w-full bg-white ${backgroundColor} ${className}`}>
+    <section ref={containerRef} className={`w-full ${backgroundColor} ${className}`}>
       <style dangerouslySetInnerHTML={{ __html: floatingStyles }} />
       
       {/* Section principale avec layout dynamique */}
-      <div className="py-20 lg:py-24 relative z-[2] bg-white">
+      <div className="py-20 lg:py-24 relative z-[2]">
         <div className="container2">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Colonne avec Titre, Description et Bouton (position dynamique) */}
@@ -162,16 +162,18 @@ const MuxxusAiSection2 = ({
                 />
                 
                 {/* Small shape flottant */}
-                <div className="absolute -top-3 -right-3 animate-float">
-                  <ImageComponent
-                    src={small_shape.light}
-                    darkSrc={small_shape.dark}
-                    width={70}
-                    height={140}
-                    alt="small shape"
-                    className="drop-shadow-lg"
-                  />
-                </div>
+                {small_shape && (
+                  <div className="absolute -top-3 -right-3 animate-float">
+                    <ImageComponent
+                      src={small_shape.light}
+                      darkSrc={small_shape.dark}
+                      width={70}
+                      height={140}
+                      alt="small shape"
+                      className="drop-shadow-lg"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
