@@ -41,6 +41,9 @@ type Props = {
   fullWidthHeader?: boolean;
   // Vidéo en arrière-plan (optionnel)
   backgroundVideo?: string;
+  // Couleurs personnalisables
+  backgroundColor?: string;
+  textColor?: string;
 };
 
 /**
@@ -81,6 +84,16 @@ type Props = {
  *   items={[...]}
  *   backgroundVideo="/assets/videos/custom-video.mp4"
  * />
+ * 
+ * // Layout avec couleurs personnalisées
+ * <MuxxusSection2 
+ *   title="Section Title"
+ *   description={["Description 1", "Description 2"]}
+ *   leftImage="/path/to/image.jpg"
+ *   items={[...]}
+ *   backgroundColor="bg-white"
+ *   textColor="text-gray-900"
+ * />
  */
 const MuxxusSection2 = ({ 
   title, 
@@ -90,7 +103,9 @@ const MuxxusSection2 = ({
   action_btn,
   imagePosition = 'left', // Default to left
   fullWidthHeader = false, // Default to false
-  backgroundVideo // New prop
+  backgroundVideo, // New prop
+  backgroundColor, // Couleur de fond personnalisable
+  textColor // Couleur de texte personnalisable
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const videoRef = useRef<HTMLVideoElement>(null!);
@@ -109,7 +124,7 @@ const MuxxusSection2 = ({
   );
 
   return (
-    <section ref={containerRef} className={`relative overflow-hidden mt-16 min-h-[600px] ${backgroundVideo ? 'bg-transparent' : 'bg-gray-900'}`}>
+    <section ref={containerRef} className={`relative overflow-hidden mt-16 min-h-[600px] ${backgroundVideo ? 'bg-transparent' : backgroundColor || 'bg-gray-900'}`}>
       <style dangerouslySetInnerHTML={{ __html: floatingStyles }} />
       
       {/* Vidéo en arrière-plan de TOUTE LA SECTION */}
@@ -138,7 +153,7 @@ const MuxxusSection2 = ({
             {/* Contenu par-dessus la vidéo */}
             <div className="relative z-10 px-4">
               {/* Titre */}
-              <h1 className="text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[44px] leading-[1.1] font-medium has_text_mov_anim text-white mb-4">
+              <h1 className={`text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[44px] leading-[1.1] font-medium has_text_mov_anim mb-4 ${textColor || 'text-white'}`}>
                 {title}
               </h1>
               
@@ -147,7 +162,7 @@ const MuxxusSection2 = ({
                 {description?.map((para, index) => (
                   <p
                     key={`para-${index}`}
-                    className="has_text_mov_anim text-[16px] leading-[1.6] text-white !font-primary"
+                    className={`has_text_mov_anim text-[16px] leading-[1.6] !font-primary ${textColor || 'text-white'}`}
                     data-delay={index * 0.1}
                   >
                     {para}
@@ -196,10 +211,10 @@ const MuxxusSection2 = ({
                         
                         {/* Contenu */}
                         <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+                          <h3 className={`text-xl font-semibold mb-2 group-hover:text-primary transition-colors ${textColor || 'text-white'}`}>
                             {item.title}
                           </h3>
-                          <p className="text-white leading-relaxed">
+                          <p className={`leading-relaxed ${textColor || 'text-white'}`}>
                             {item.description}
                           </p>
                         </div>
@@ -218,7 +233,7 @@ const MuxxusSection2 = ({
                       <ButtonFlip
                         btnText={action_btn.label}
                         link={action_btn.link}
-                        className="border-white text-white hover:bg-white hover:text-gray-900 text-lg py-5 px-10"
+                        className={`border-white text-white hover:bg-white hover:text-gray-900 text-lg py-5 px-10 ${textColor ? `border-${textColor.split('-')[1]} ${textColor} hover:bg-${textColor.split('-')[1]} hover:text-white` : ''}`}
                       />
                     </div>
                   )}
@@ -243,7 +258,7 @@ const MuxxusSection2 = ({
               {/* Colonne avec Titre, Description et Items (position dynamique) */}
               <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2' : 'order-1'}`}>
                 {/* 1. Titre */}
-                <h1 className="text-[32px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[52px] leading-[1.1] font-medium has_text_mov_anim text-white">
+                <h1 className={`text-[32px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[52px] leading-[1.1] font-medium has_text_mov_anim ${textColor || 'text-white'}`}>
                   {title}
                 </h1>
                 
@@ -252,7 +267,7 @@ const MuxxusSection2 = ({
                   {description?.map((para, index) => (
                     <p
                       key={`para-${index}`}
-                      className="has_text_mov_anim text-[18px] leading-[1.7] text-white !font-primary"
+                      className={`has_text_mov_anim text-[18px] leading-[1.7] !font-primary ${textColor || 'text-white'}`}
                       data-delay={index * 0.1}
                     >
                       {para}
@@ -275,10 +290,10 @@ const MuxxusSection2 = ({
                       
                       {/* Contenu */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+                        <h3 className={`text-xl font-semibold mb-2 group-hover:text-primary transition-colors ${textColor || 'text-white'}`}>
                           {item.title}
                         </h3>
-                        <p className="text-white leading-relaxed">
+                        <p className={`leading-relaxed ${textColor || 'text-white'}`}>
                           {item.description}
                         </p>
                       </div>
