@@ -9,7 +9,6 @@ import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import DetailHero from "@/components/hero/DetailHero";
 import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
 import MuxxusSteps from "@/components/muxxus/MuxxusSteps";
-import MuxxusListers from "@/components/muxxus/MuxxusListers";
 import { MuxxusAiSection } from '@/components/muxxus';
 import MuxxusStepperRecord from '@/components/muxxus/MuxxusStepperRecord';
 
@@ -253,7 +252,7 @@ export default function PaymentPluginsPage() {
       <MuxxusColumns data={columnsData} />
 
       <MuxxusSteps {...stepsData} />
-      {/* <MuxxusListers {...financialOperationsData} /> */}
+
       <MuxxusStepperRecord {...financialOperationsData} />
 
       <MuxxusStepperRecord {...securityData} />
