@@ -13,6 +13,9 @@ interface MuxxusCardProps {
   className?: string;
   delay?: number;
   url?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  buttonPosition?: 'before' | 'after';
 }
 
 const MuxxusCard: React.FC<MuxxusCardProps> = ({
@@ -21,7 +24,10 @@ const MuxxusCard: React.FC<MuxxusCardProps> = ({
   description,
   className = '',
   delay = 0,
-  url = ''
+  url = '',
+  buttonText,
+  buttonLink,
+  buttonPosition = 'after'
 }) => {
   const cardRef = useRef<HTMLDivElement>(null!);
 
@@ -31,6 +37,30 @@ const MuxxusCard: React.FC<MuxxusCardProps> = ({
     },
     { scope: cardRef }
   );
+
+  // Fonction pour rendre le bouton
+  const renderButton = () => {
+    if (!url && !buttonLink) return null;
+    
+    return (
+      <a 
+        href={buttonLink || url} 
+        className="inline-flex items-center justify-center text-purple-600 hover:text-purple-700 font-medium text-sm transition-all duration-300 group w-12 h-12 rounded-full hover:w-auto hover:px-4 hover:py-2 hover:bg-purple-50 border-2 border-purple-300 hover:border-purple-400 shadow-sm hover:shadow-md"
+      >
+        <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 mr-3 whitespace-nowrap overflow-hidden">
+          {buttonText || "Learn more"}
+        </span>
+        <svg 
+          className="w-6 h-6 transition-all duration-300 group-hover:translate-x-1" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    );
+  };
 
   return (
     <div
@@ -54,28 +84,16 @@ const MuxxusCard: React.FC<MuxxusCardProps> = ({
         {title}
       </h3>
 
+      {/* Bouton avant le texte si buttonPosition = 'before' */}
+      {buttonPosition === 'before' && renderButton()}
+
       {/* Description */}
       <p className="text-gray-600 text-sm leading-relaxed">
         {description}
       </p>
-      {url && (
-        <a 
-          href={url} 
-          className="inline-flex items-center justify-center text-purple-600 hover:text-purple-700 font-medium text-sm transition-all duration-300 group w-12 h-12 rounded-full hover:w-auto hover:px-4 hover:py-2 hover:bg-purple-50 border-2 border-purple-300 hover:border-purple-400 shadow-sm hover:shadow-md"
-        >
-          <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 mr-3 whitespace-nowrap overflow-hidden">
-            Learn more
-          </span>
-          <svg 
-            className="w-6 h-6 transition-all duration-300 group-hover:translate-x-1" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      )}
+
+      {/* Bouton après le texte si buttonPosition = 'after' */}
+      {buttonPosition === 'after' && renderButton()}
     </div>
   );
 };

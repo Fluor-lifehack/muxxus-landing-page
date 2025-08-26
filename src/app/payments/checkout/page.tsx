@@ -1,70 +1,453 @@
-import BottomSection from "@/components/elements/bottomSection/BottomSection";
+import type { Metadata } from 'next';
+import React from "react";
 
+// Composants
+import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";  
+import DetailHero from "@/components/hero/DetailHero";
+import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
+import MuxxusSteps from "@/components/muxxus/MuxxusSteps";
+import { MuxxusCenteredSection } from '@/components/muxxus';
+import MuxxusAiSection2 from '@/components/muxxus/MuxxusAiSection2';
+import MuxxusCardSection from '@/components/muxxus/MuxxusCardSection';
+import MuxxusCTA from '@/components/muxxus/MuxxusCTA';
+import MuxxusStepperRecord from '@/components/muxxus/MuxxusStepperRecord';
+
+// Métadonnées Next.js
+export const metadata: Metadata = {
+  title: "Checkout | Low-Code Payment Forms | Muxxus",
+  description: "Embed low-code payment forms into your website or redirect customers to Muxxus-hosted checkout pages. Optimize conversions with our conversion-focused payment solution.",
+  keywords: ["checkout", "payment forms", "low-code payments", "payment integration", "conversion optimization", "global payments"],
+  openGraph: {
+    title: "Checkout | Low-Code Payment Forms | Muxxus",
+    description: "Embed low-code payment forms into your website or redirect customers to Muxxus-hosted checkout pages.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Muxxus",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Checkout | Low-Code Payment Forms | Muxxus",
+    description: "Embed low-code payment forms into your website.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+// Données pour le composant DetailHero
+const heroData = {
+  title: "Higher conversions, lower fees with a low-code checkout solution",
+  shape: {
+    light: "/assets/imgs/shape/img-s-29.png",
+    dark: "/assets/imgs/shape/img-s-29-light.png"
+  },
+  client_img: {
+    light: "/assets/imgs/muxxus/image/img5.jpg",
+    dark: "/assets/imgs/muxxus/image/img5.jpg"
+  },
+  customers: "160+ payment methods, 180+ countries",
+  info: {
+    thumb: {
+      light: "/assets/imgs/muxxus/image/img5.jpg",
+      dark: "/assets/imgs/muxxus/image/img5.jpg"
+    },
+    description: "Embed Muxxus's Checkout solution into your website, boosting conversion potential with multiple payment methods and currencies - while saving on processing fees.",
+    action_btn: {
+      label: "Get started",
+      link: "#"
+    }
+  },
+  image: "/assets/imgs/muxxus/image/img5.jpg",
+  feature_text: "Checkout Solutions"
+};
+
+// Données pour les steps
+const stepsData = {
+  title: "Accept payments quickly with our low-code solutions",
+  subtitle: "Add new payment methods without code changes, maintain the look and feel of your website, and avoid hours spent on PCI compliance.",
+  steps: [
+    {
+      title: "Drop-in Element",
+      description: "Easily brand and embed a frictionless checkout UI component covering multiple payment methods. See product docs",
+      image: "/assets/imgs/muxxus/image/img5.jpg",
+      icon: "/assets/imgs/icon/drop-in.png"
+    },
+    {
+      title: "Hosted Payments Page",
+      description: "Save on development resources by redirecting customers to an Airwallex-hosted payment page. See product docs",
+      image: "/assets/imgs/muxxus/image/img6.jpg",
+      icon: "/assets/imgs/icon/hosted.png"
+    }
+  ]
+};
+
+// Données pour MuxxusColumns
+const columnsData = [
+  {
+    icon: "🌍",
+    title: "Accept payments from global customers",
+    description: "Convert more customers by pricing in local currency and letting customers pay with their preferred payment methods."
+  },
+  {
+    icon: "📈",
+    title: "Boost conversion and acceptance rates",
+    description: "Airwallex's machine learning powered optimisation engine, 3DS logic, and local acquiring improve global acceptance rates."
+  },
+  {
+    icon: "💰",
+    title: "Eliminate costly FX fees with like-for-like settlement",
+    description: "Settle funds in the same currency your customers pay in, avoiding hidden FX conversion fees."
+  },
+  {
+    icon: "🛡️",
+    title: "Reduce chargebacks with built-in fraud prevention",
+    description: "Identify suspicious transactions and reduce chargebacks with an AI-powered fraud engine."
+  }
+];
+
+// Données pour l'optimisation des paiements
+const paymentOptimizationData = {
+  title: "Conversion Optimization",
+  subtitle: "Maximize your payment success rates",
+  description: "Our checkout solution is designed to convert more customers with intelligent optimization and seamless user experience.",
+  image: "/assets/imgs/muxxus/image/img5.jpg",
+  methods: [
+    {
+      title: "Smart form validation",
+      description: "Real-time validation that guides customers through the payment process and reduces errors that lead to abandoned carts.",
+      color: "bg-blue-100",
+      link: "#"
+    },
+    {
+      title: "One-click payments",
+      description: "Enable customers to save payment methods for faster future checkouts, increasing repeat purchase rates.",
+      color: "bg-green-100",
+      link: "#"
+    },
+    {
+      title: "Local payment methods",
+      description: "Display payment options that customers prefer in their region, significantly improving conversion rates globally.",
+      color: "bg-purple-100",
+      link: "#"
+    }
+  ]
+};
+
+// Données pour les méthodes d'intégration
+const integrationMethodsData = {
+  title: "INTEGRATION METHODS",
+  subtitle: "More options to accept payments",
+  description: "Choose the integration that best suits your needs. In addition to Muxxus Checkout, you can explore other no-code, low-code, and full API integration paths.",
+  image: "/assets/imgs/muxxus/image/img6.jpg",
+  methods: [
+    {
+      title: "Payment Plugins",
+      description: "Access plug-and-play integrations with Shopify, WooCommerce, Magento, and more.",
+      color: "bg-blue-100",
+      link: "/payments/plugins"
+    },
+    {
+      title: "Checkout",
+      description: "Embed a low-code payment form into your website or redirect customers to a Muxxus-hosted page.",
+      color: "bg-green-100",
+      link: "/payments/checkout"
+    },
+    {
+      title: "Subscriptions",
+      description: "Accept recurring customer payments across various billing schedules with a built-in tool to manage subscription logic.",
+      color: "bg-purple-100",
+      link: "#"
+    }
+  ]
+};
+
+// Données pour MuxxusAiSection2
+const apiSolutionsData = {
+  title: "Build custom checkout experiences",
+  description: [
+    "Leverage our Checkout APIs to create fully customized payment flows that integrate seamlessly with your existing systems and workflows."
+  ],
+  action_btn: {
+    label: "Explore the docs",
+    link: "#"
+  }
+};
+
+// Données pour MuxxusCardSection
+const cardSectionData = {
+  title: "Integration Methods",
+  subtitle: "More options to accept payments",
+  description: "Choose the integration that best suits your needs. In addition to Muxxus Checkout, you can explore other no-code, low-code, and full API integration paths.",
+  cards: [
+    {
+      title: "Payment Plugins",
+      description: "Access plug-and-play integrations with Shopify, WooCommerce, Magento, and more.",
+      image: "/assets/imgs/icon/plugins.png",
+      url: "/payments/plugins"
+    },
+    {
+      title: "Checkout",
+      description: "Embed a low-code payment form into your website or redirect customers to a Muxxus-hosted page.",
+      image: "/assets/imgs/icon/checkout.png",
+      url: "/payments/checkout"
+    },
+    {
+      title: "Subscriptions",
+      description: "Accept recurring customer payments across various billing schedules with a built-in tool to manage subscription logic.",
+      image: "/assets/imgs/icon/subscriptions.png",
+      url: "#"
+    }
+  ]
+};
+
+// Données pour la section Conversion Optimisation
+const conversionOptimizationData = {
+  title: "Conversion Optimisation",
+  subtitle: "Boost conversion and acceptance rates across markets with out-of-the-box optimisations",
+  description: "Our checkout solution is designed to convert more customers with intelligent optimization and seamless user experience.",
+  image: "/assets/imgs/muxxus/image/img4.jpg",
+  methods: [
+    {
+      title: "Make it easier for customers to pay",
+      description: "Localise and tailor your checkout experience to individual customers with automatic local payment methods, local language, and local currencies.",
+      color: "bg-blue-100",
+      link: "#"
+    },
+    {
+      title: "Strengthen trust with customers",
+      description: "Enhance customer confidence by displaying your brand and verifying card details with PCI DSS, SOC1, and SOC2 compliance.",
+      color: "bg-green-100",
+      link: "#"
+    },
+    {
+      title: "Reduce failed payments",
+      description: "Improve acceptance rates with machine learning optimisation, smart 3DS engine, and descriptive error messages.",
+      color: "bg-purple-100",
+      link: "#"
+    }
+  ]
+};
+
+// Données pour la section Global Payments
+const globalPaymentsData = {
+  title: "Global payments",
+  subtitle: "Grow into new markets and convert more customers",
+  description: "Expand your business globally with our comprehensive payment solutions.",
+  image: "/assets/imgs/muxxus/image/img5.jpg",
+  methods: [
+    {
+      title: "Global and local payment methods",
+      description: "Collect payments from customers in 180+ countries through 160+ payment methods, including popular local options.",
+      color: "bg-blue-100",
+      link: "#"
+    },
+    {
+      title: "Automatic currency conversion",
+      description: "Muxxus will use the location you specified or the one we detected to display the payment priced in your customer's local currency with the corresponding local payment methods.",
+      color: "bg-green-100",
+      link: "#"
+    },
+    {
+      title: "Multi-currency transfers",
+      description: "Use the funds you settle into your multi-currency wallet to pay out to suppliers using Muxxus's global payout network or corporate cards.",
+      color: "bg-purple-100",
+      link: "#"
+    }
+  ]
+};
+
+// Données pour la section Use Cases
+const useCasesData = {
+  title: "Use Cases",
+  subtitle: "Tailor your checkout to your business model",
+  description: "Our checkout solution adapts to various business models and payment scenarios.",
+  image: "/assets/imgs/muxxus/image/img6.jpg",
+  methods: [
+    {
+      title: "One-time payments",
+      description: "Accept single payments for products, services, or donations with our secure checkout.",
+      color: "bg-blue-100",
+      link: "#"
+    },
+    {
+      title: "Saved payment details",
+      description: "Enable customers to save payment methods for recurring purchases and faster checkouts.",
+      color: "bg-green-100",
+      link: "#"
+    },
+    {
+      title: "Subscriptions and trials",
+      description: "Manage recurring billing with built-in subscription logic and trial period support.",
+      color: "bg-purple-100",
+      link: "#"
+    },
+    {
+      title: "Platform and marketplace payments",
+      description: "Handle complex payment flows for multi-vendor platforms and marketplaces.",
+      color: "bg-orange-100",
+      link: "#"
+    }
+  ]
+};
+
+// Données pour la section Fraud Prevention
+const fraudPreventionData = {
+  title: "Fraud Prevention",
+  subtitle: "Safeguard your global revenue",
+  description: "Muxxus's fraud engine is fully integrated into our Payments platform, and helps you stop fraud before it occurs.",
+  image: "/assets/imgs/muxxus/image/img4.jpg",
+  methods: [
+    {
+      title: "Smart 3DS optimisation",
+      description: "Maximise global acceptance while staying compliant with local regulations. Our 3DS engine automatically picks the best strategy based on transaction risk, applicable regulatory exemptions, and policies.",
+      color: "bg-blue-100",
+      link: "#"
+    },
+    {
+      title: "AI-powered fraud engine",
+      description: "Our fraud engine uses AI trained on millions of transactions to detect and prevent fraud. This leads to higher payment success rates and lower fraud rates, protecting your business's revenue.",
+      color: "bg-green-100",
+      link: "#"
+    },
+    {
+      title: "Highest security standards",
+      description: "Muxxus meets the highest international security standards including PCI DSS, SOC1, and SOC2 compliance, in addition to our local regulatory requirements.",
+      color: "bg-purple-100",
+      link: "#"
+    }
+  ]
+};
+
+// Données pour la section Processing Fees
+const processingFeesData = {
+  title: "Processing Fees",
+  subtitle: "Say goodbye to unnecessary fees",
+  description: "Transparent pricing with no hidden costs.",
+  image: "/assets/imgs/muxxus/image/img5.jpg",
+  methods: [
+    {
+      title: "Save on costly processing fees",
+      description: "Enjoy competitive processing fees on both domestic and foreign transactions.",
+      color: "bg-blue-100",
+      link: "#"
+    },
+    {
+      title: "Like-for-like settlement",
+      description: "Avoid unnecessary currency conversion fees when you receive funds in the same currency that your customers pay in.",
+      color: "bg-green-100",
+      link: "#"
+    }
+  ]
+};
+
+// Données pour MuxxusCenteredSection
+const centeredSectionData = {
+  title: "RESOURCES",
+  subtitle: "Get started with Checkout today",
+  description: "Access our comprehensive guides and documentation to integrate checkout solutions and optimize your payment conversions.",
+  image: "/assets/imgs/muxxus/image/img4.jpg",
+  buttonText: "Read more",
+  buttonLink: "#"
+};
+
+// Données pour la section CTA
+const ctaData = {
+  title: "Create a Muxxus account today",
+  description: "Get started with our checkout solution and start accepting payments globally.",
+  buttons: [
+    {
+      text: "Get started",
+      href: "#",
+      variant: 'primary' as const
+    }
+  ]
+};
+
+// Données pour les sections FAQ
+const faqData = {
+  faq_title: "Checkout FAQ",
+  faq_description: "Common questions about our checkout and payment form solutions",
+  faqs: [
+    {
+      question: "What is the difference between Drop-in Element and Hosted Payments Page?",
+      answer: "Drop-in Element is a UI component you embed directly into your website, while Hosted Payments Page redirects customers to our optimized payment page. Drop-in gives you more control, Hosted saves development time."
+    },
+    {
+      question: "How does the machine learning optimisation work?",
+      answer: "Our ML engine uses ISO alterations, smart MCCs, and automatic retries to improve payment success rates. It learns from millions of transactions to optimize your checkout performance."
+    },
+    {
+      question: "What is like-for-like settlement?",
+      answer: "Like-for-like settlement means you receive funds in the same currency your customers pay in, eliminating hidden FX conversion fees and saving you money on international transactions."
+    },
+    {
+      question: "How does the fraud prevention work?",
+      answer: "Our AI-powered fraud engine analyzes transactions in real-time using our own models and external data sources to identify and prevent fraudulent transactions before they occur."
+    },
+    {
+      question: "What compliance standards do you meet?",
+      answer: "We meet the highest international security standards including PCI DSS, SOC1, and SOC2 compliance, in addition to local regulatory requirements in all markets where we operate."
+    }
+  ]
+};
+
+// Composant principal de la page
 export default function CheckoutPage() {
   return (
-    <main className="min-h-screen bg-white">
-            
+    <>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Checkout
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Conversion-optimised prebuilt payment form.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-purple-600 text-white px-8 py-3 rounded-md font-medium hover:bg-purple-700 transition-colors">
-              Get Started
-            </button>
-            <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </section>
+      <DetailHero {...heroData} />
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Key Features
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover what makes our solution perfect for your needs.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Fast & Reliable</h3>
-              <p className="text-gray-600">Lightning-fast performance with 99.9% uptime guarantee.</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Secure</h3>
-              <p className="text-gray-600">Bank-level security with end-to-end encryption.</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌍</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Global</h3>
-              <p className="text-gray-600">Available in 190+ countries with local support.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MuxxusColumns data={columnsData} />
 
-      <BottomSection />
-    </main>
+      <MuxxusSteps {...stepsData} />
+      
+      <MuxxusStepperRecord {...paymentOptimizationData} />
+
+      <MuxxusStepperRecord {...integrationMethodsData} />
+
+      {/* Conversion Optimisation Section */}
+      <MuxxusStepperRecord {...conversionOptimizationData} />
+
+      {/* Global Payments Section */}
+      <MuxxusStepperRecord {...globalPaymentsData} />
+
+      {/* Use Cases Section */}
+      <MuxxusStepperRecord {...useCasesData} />
+
+      {/* Fraud Prevention Section */}
+      <MuxxusStepperRecord {...fraudPreventionData} />
+
+      {/* Processing Fees Section */}
+      <MuxxusStepperRecord {...processingFeesData} />
+
+      <MuxxusCenteredSection {...centeredSectionData} />
+
+      {/* AI Section */}
+      <MuxxusAiSection2 {...apiSolutionsData} backgroundColor="bg-gray-50" />
+
+      <MuxxusCardSection {...cardSectionData} />
+
+      {/* CTA Section */}
+      <MuxxusCTA {...ctaData} />
+
+      {/* FAQ et Footer */}
+      <ServiceDetailsFaq 
+        faqs={faqData.faqs} 
+        faqTitle={faqData.faq_title} 
+      />
+      <MuxxusNewsletter />
+      <MuxxusFooter />
+    </>
   );
 }

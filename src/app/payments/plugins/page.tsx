@@ -10,8 +10,8 @@ import DetailHero from "@/components/hero/DetailHero";
 import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
 import MuxxusSteps from "@/components/muxxus/MuxxusSteps";
 import MuxxusListers from "@/components/muxxus/MuxxusListers";
-import MuxxusSecurity from "@/components/muxxus/MuxxusSecurity";
 import { MuxxusAiSection } from '@/components/muxxus';
+import MuxxusStepperRecord from '@/components/muxxus/MuxxusStepperRecord';
 
 // Métadonnées Next.js
 export const metadata: Metadata = {
@@ -101,25 +101,23 @@ const listersData = {
   title: "Payment Methods",
   subtitle: "Improve checkout rates with a locally-optimised experience",
   description: "Enhance your checkout experience with modern payment methods and local optimization to increase conversion rates.",
+  image: "/assets/imgs/muxxus/image/img6.jpg",
   methods: [
     {
       title: "Express checkout via Apple Pay and Google Pay",
       description: "Offer express checkout with Apple Pay and Google Pay so that your customers can make their purchases with a single tap.",
-      icon: "/assets/imgs/icon/apple-pay.png",
       color: "bg-blue-100",
       link: "#"
     },
     {
       title: "Local payment methods and currencies",
       description: "Collect payments through 160+ payment methods worldwide and automatically display pricing in local currency.",
-      icon: "/assets/imgs/icon/globe.png",
       color: "bg-green-100",
       link: "#"
     },
     {
       title: "More flexibility for your customers",
       description: "Seamlessly add new payment methods via the Muxxus app, including cards, wallets, bank transfers, and buy now pay later options.",
-      icon: "/assets/imgs/icon/flexibility.png",
       color: "bg-purple-100",
       link: "#"
     }
@@ -146,25 +144,23 @@ const financialOperationsData = {
   title: "End-to-End Financial Operations",
   subtitle: "Benefit from Muxxus's unified financial platform",
   description: "Streamline your financial operations with our comprehensive platform that handles multiple currencies, global payments, and corporate spending.",
+  image: "/assets/imgs/muxxus/image/img4.jpg",
   methods: [
     {
       title: "Manage multiple currencies and FX conversions",
       description: "Settle payments directly into your Muxxus multi-currency wallet and securely hold funds for future payments to suppliers. Earn a competitive return on balances as your business grows.",
-      icon: "/assets/imgs/icon/currency.png",
       color: "bg-blue-100",
       link: "#"
     },
     {
       title: "Pay suppliers around the world in local currency",
       description: "Make fast, cost-effective transfers to global suppliers in 200+ countries. 95% of funds arrive within the same day or a few hours. Pay in local currency to avoid costly FX conversion fees.",
-      icon: "/assets/imgs/icon/suppliers.png",
       color: "bg-green-100",
       link: "#"
     },
     {
       title: "Streamline spending with multi-currency cards",
       description: "Instantly issue multi-currency corporate cards to smartly pay for corporate purchases and expenses. Save on international fees and get a real time view of company spend in one place.",
-      icon: "/assets/imgs/icon/cards.png",
       color: "bg-purple-100",
       link: "#"
     }
@@ -177,21 +173,24 @@ const securityData = {
   subtitle: "Safeguard your global revenue",
   description: "Muxxus's fraud engine is fully integrated into our Payments platform to help you reduce chargebacks and stop fraud before it even occurs. It leverages our own models combined with external data sources to discern fraudulent transactions from legitimate ones.",
   image: "/assets/imgs/muxxus/image/img4.jpg",
-  items: [
+  methods: [
     {
-      icon: "/assets/imgs/icon/3ds.png",
       title: "Smart 3DS optimisation",
-      description: "Maximise acceptance while staying compliant with local regulations. Our 3DS engine picks the best strategy based on transaction risk, applicable regulatory exemptions, and policies."
+      description: "Maximise acceptance while staying compliant with local regulations. Our 3DS engine picks the best strategy based on transaction risk, applicable regulatory exemptions, and policies.",
+      color: "bg-blue-100",
+      link: "#"
     },
     {
-      icon: "/assets/imgs/icon/ai.png",
       title: "AI-powered fraud engine",
-      description: "Our fraud engine uses AI trained on millions of transactions to detect and prevent fraud and is designed to help you achieve higher payment success rates and lower fraud rates."
+      description: "Our fraud engine uses AI trained on millions of transactions to detect and prevent fraud and is designed to help you achieve higher payment success rates and lower fraud rates.",
+      color: "bg-green-100",
+      link: "#"
     },
     {
-      icon: "/assets/imgs/icon/security.png",
       title: "Highest security standards",
-      description: "Muxxus meets the highest international security standards including PCI DSS, SOC1, and SOC2 compliance, in addition to local regulatory requirements."
+      description: "Muxxus meets the highest international security standards including PCI DSS, SOC1, and SOC2 compliance, in addition to local regulatory requirements.",
+      color: "bg-purple-100",
+      link: "#"
     }
   ]
 };
@@ -254,11 +253,12 @@ export default function PaymentPluginsPage() {
       <MuxxusColumns data={columnsData} />
 
       <MuxxusSteps {...stepsData} />
-      <MuxxusListers {...financialOperationsData} />
+      {/* <MuxxusListers {...financialOperationsData} /> */}
+      <MuxxusStepperRecord {...financialOperationsData} />
 
-      <MuxxusSecurity {...securityData} />
+      <MuxxusStepperRecord {...securityData} />
 
-      <MuxxusListers {...listersData} />
+      <MuxxusStepperRecord {...listersData} />
 
       <MuxxusAiSection {...apiSolutionsData} />
 
