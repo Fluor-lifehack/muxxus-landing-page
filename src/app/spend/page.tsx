@@ -101,7 +101,7 @@ const SpendManagementPage = () => {
     description: "Discover the powerful features that make our spend management solutions the ideal choice for business expense control",
     image: "/assets/imgs/gallery/img-s-83.jpg",
     sub_icon: "/assets/imgs/shape/img-s-78.png",
-    features: [
+      features: [
       {
         icon: "/assets/imgs/shape/img-s-79.png",
         title: "Multi-Currency Support",
@@ -138,26 +138,26 @@ const SpendManagementPage = () => {
     title: "Frequently Asked Questions",
     subtitle: "FAQ",
     description: "Get answers to common questions about our spend management solutions and services",
-    faqs: [
-      {
-        question: "How quickly can I implement spend management?",
-        answer: "Basic setup can be completed within 24-48 hours. Full implementation with custom workflows and integrations typically takes 1-2 weeks depending on your business complexity."
-      },
-      {
-        question: "What types of expenses can be managed?",
-        answer: "We support all expense types including travel, office supplies, software subscriptions, vendor payments, and custom categories. Our system is flexible and can be customized to your specific needs."
-      },
-      {
-        question: "Are there monthly maintenance fees?",
-        answer: "Standard plans start at $29/month per user, Professional plans cost $79/month per user, and Enterprise plans have custom pricing. All plans include full feature access and support."
-      },
-      {
-        question: "How secure is the expense data?",
-        answer: "All data is protected by bank-level security including 256-bit encryption, multi-factor authentication, real-time fraud monitoring, and compliance with international security standards."
-      },
-      {
-        question: "Can I integrate with my existing accounting systems?",
-        answer: "Yes, we offer integrations with major accounting platforms including QuickBooks, Xero, Sage, and NetSuite. Enterprise plans include custom API access for seamless system integration."
+      faqs: [
+        {
+          question: "How quickly can I implement spend management?",
+          answer: "Basic setup can be completed within 24-48 hours. Full implementation with custom workflows and integrations typically takes 1-2 weeks depending on your business complexity."
+        },
+        {
+          question: "What types of expenses can be managed?",
+          answer: "We support all expense types including travel, office supplies, software subscriptions, vendor payments, and custom categories. Our system is flexible and can be customized to your specific needs."
+        },
+        {
+          question: "Are there monthly maintenance fees?",
+          answer: "Standard plans start at $29/month per user, Professional plans cost $79/month per user, and Enterprise plans have custom pricing. All plans include full feature access and support."
+        },
+        {
+          question: "How secure is the expense data?",
+          answer: "All data is protected by bank-level security including 256-bit encryption, multi-factor authentication, real-time fraud monitoring, and compliance with international security standards."
+        },
+        {
+          question: "Can I integrate with my existing accounting systems?",
+          answer: "Yes, we offer integrations with major accounting platforms including QuickBooks, Xero, Sage, and NetSuite. Enterprise plans include custom API access for seamless system integration."
       }
     ]
   };
@@ -240,9 +240,9 @@ const SpendManagementPage = () => {
           {/* Sections de contenu */}
           <MemoizedNewsletter />
           <MemoizedFooter />
-        </div>
-      </div>
-    </div>
+              </div>
+            </div>
+          </div>
   );
 };
 
