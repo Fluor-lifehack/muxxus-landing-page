@@ -14,6 +14,7 @@ import MuxxusCTA from '@/components/muxxus/MuxxusCTA';
 import MuxxusStepperRecord from '@/components/muxxus/MuxxusStepperRecord';
 import MuxxusScrollImageDemo from '@/components/muxxus/MuxxusScrollImageDemo';
 import MuxxusScrollImageTest from '@/components/muxxus/MuxxusScrollImageTest';
+import MuxxusColumns from '@/components/muxxus/MuxxusColumns';
 
 // Métadonnées Next.js
 export const metadata: Metadata = {
@@ -95,51 +96,49 @@ const stepsData = {
 // Données pour MuxxusColumns
 const columnsData = [
   {
-    icon: "/assets/imgs/icon/global.png",
-    title: "Accept payments from global customers",
-    description: "Convert more customers by pricing in local currency and letting customers pay with their preferred payment methods."
-  },
-  {
-    icon: "/assets/imgs/icon/analytics.png",
-    title: "Boost conversion and acceptance rates",
-    description: "Airwallex's machine learning powered optimisation engine, 3DS logic, and local acquiring improve global acceptance rates."
-  },
-  {
-    icon: "/assets/imgs/icon/money.png",
-    title: "Eliminate costly FX fees with like-for-like settlement",
-    description: "Settle funds in the same currency your customers pay in, avoiding hidden FX conversion fees."
-  },
-  {
     icon: "/assets/imgs/icon/security.png",
-    title: "Reduce chargebacks with built-in fraud prevention",
-    description: "Identify suspicious transactions and reduce chargebacks with an AI-powered fraud engine."
+    title: "Smart 3DS optimisation",
+    description: "Maximise global acceptance while staying compliant with local regulations. Our 3DS engine automatically picks the best strategy based on transaction risk, applicable regulatory exemptions, and policies."
+  },
+  {
+    icon: "/assets/imgs/icon/ai.png",
+    title: "AI-powered fraud engine",
+    description: "Our fraud engine uses AI trained on millions of transactions to detect and prevent fraud. This leads to higher payment success rates and lower fraud rates, protecting your business's revenue."
+  },
+  {
+    icon: "/assets/imgs/icon/compliance.png",
+    title: "Highest security standards",
+    description: "Airwallex meets the highest international security standards including PCI DSS, SOC1, and SOC2 compliance, in addition to our local regulatory requirements."
   }
 ];
 
 // Données pour l'optimisation des paiements
 const paymentOptimizationData = {
-  title: "Conversion Optimization",
-  subtitle: "Maximize your payment success rates",
-  description: "Our checkout solution is designed to convert more customers with intelligent optimization and seamless user experience.",
+  title: "Global payments",
+  subtitle: "Grow into new markets and convert more customers",
+  description: "Expand your business globally with our comprehensive payment solutions.",
   image: "/assets/imgs/muxxus/image/img5.jpg",
   methods: [
     {
-      title: "Smart form validation",
-      description: "Real-time validation that guides customers through the payment process and reduces errors that lead to abandoned carts.",
+      title: "Global and local payment methods",
+      description: "Collect payments from customers in 180+ countries through 160+ payment methods, including popular local options.",
       color: "bg-blue-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/global.png"
     },
     {
-      title: "One-click payments",
-      description: "Enable customers to save payment methods for faster future checkouts, increasing repeat purchase rates.",
+      title: "Automatic currency conversion",
+      description: "Airwallex will use the location you specified or the one we detected to display the payment priced in your customer's local currency with the corresponding local payment methods.",
       color: "bg-green-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/currency.png"
     },
     {
-      title: "Local payment methods",
-      description: "Display payment options that customers prefer in their region, significantly improving conversion rates globally.",
+      title: "Multi-currency transfers",
+      description: "Use the funds you settle into your multi-currency wallet to pay out to suppliers using Airwallex's global payout network or corporate cards.",
       color: "bg-purple-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/transfer.png"
     }
   ]
 };
@@ -188,7 +187,7 @@ const apiSolutionsData = {
 const cardSectionData = {
   title: "Integration Methods",
   subtitle: "More options to accept payments",
-  description: "Choose the integration that best suits your needs. In addition to Muxxus Checkout, you can explore other no-code, low-code, and full API integration paths.",
+  description: "Choose the integration that best suits your needs. In addition to Airwallex Checkout, you can explore other no-code, low-code, and full API integration paths.",
   cards: [
     {
       title: "Payment Plugins",
@@ -197,15 +196,33 @@ const cardSectionData = {
       url: "/payments/plugins"
     },
     {
-      title: "Checkout",
-      description: "Embed a low-code payment form into your website or redirect customers to a Muxxus-hosted page.",
-      image: "/assets/imgs/icon/checkout.png",
-      url: "/payments/checkout"
+      title: "Payment Links",
+      description: "Create, customise, and share payment links in a few clicks over social media, email, and more.",
+      image: "/assets/imgs/icon/links.png",
+      url: "/payments/links"
+    },
+    {
+      title: "Embedded Elements",
+      description: "Use prebuilt UI components, choosing how each payment method is presented.",
+      image: "/assets/imgs/icon/elements.png",
+      url: "#"
+    },
+    {
+      title: "API and Mobile SDK",
+      description: "Fully customise your checkout with our API and accept payments in your iOS or Android app.",
+      image: "/assets/imgs/icon/api.png",
+      url: "#"
     },
     {
       title: "Subscriptions",
-      description: "Accept recurring customer payments across various billing schedules with a built-in tool to manage subscription logic.",
+      description: "Accept recurring customer payments with a built-in tool to manage subscription logic.",
       image: "/assets/imgs/icon/subscriptions.png",
+      url: "#"
+    },
+    {
+      title: "Invoices",
+      description: "Collect payments on invoices created by your accounting software.",
+      image: "/assets/imgs/icon/invoices.png",
       url: "#"
     }
   ]
@@ -278,25 +295,29 @@ const useCasesData = {
       title: "One-time payments",
       description: "Accept single payments for products, services, or donations with our secure checkout.",
       color: "bg-blue-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/payment.png"
     },
     {
       title: "Saved payment details",
-      description: "Enable customers to save payment methods for recurring purchases and faster checkouts.",
+      description: "Saved payment details for recurring purchases",
       color: "bg-green-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/save.png"
     },
     {
       title: "Subscriptions and trials",
-      description: "Manage recurring billing with built-in subscription logic and trial period support.",
+      description: "Subscriptions and trials",
       color: "bg-purple-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/subscription.png"
     },
     {
       title: "Platform and marketplace payments",
-      description: "Handle complex payment flows for multi-vendor platforms and marketplaces.",
+      description: "Platform and marketplace payments",
       color: "bg-orange-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/platform.png"
     }
   ]
 };
@@ -305,26 +326,29 @@ const useCasesData = {
 const fraudPreventionData = {
   title: "Fraud Prevention",
   subtitle: "Safeguard your global revenue",
-  description: "Muxxus's fraud engine is fully integrated into our Payments platform, and helps you stop fraud before it occurs.",
+  description: "Airwallex's fraud engine is fully integrated into our Payments platform, and helps you stop fraud before it occurs. It leverages our own models combined with external data sources to discern fraudulent transactions from legitimate ones.",
   image: "/assets/imgs/muxxus/image/img4.jpg",
   methods: [
     {
       title: "Smart 3DS optimisation",
       description: "Maximise global acceptance while staying compliant with local regulations. Our 3DS engine automatically picks the best strategy based on transaction risk, applicable regulatory exemptions, and policies.",
       color: "bg-blue-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/security.png"
     },
     {
       title: "AI-powered fraud engine",
       description: "Our fraud engine uses AI trained on millions of transactions to detect and prevent fraud. This leads to higher payment success rates and lower fraud rates, protecting your business's revenue.",
       color: "bg-green-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/ai.png"
     },
     {
       title: "Highest security standards",
       description: "Muxxus meets the highest international security standards including PCI DSS, SOC1, and SOC2 compliance, in addition to our local regulatory requirements.",
       color: "bg-purple-100",
-      link: "#"
+      link: "#",
+      icon: "/assets/imgs/icon/compliance.png"
     }
   ]
 };
@@ -439,32 +463,24 @@ export default function CheckoutPage() {
       
       <MuxxusStepperRecord {...paymentOptimizationData} />
 
-      <MuxxusStepperRecord {...integrationMethodsData} />
-
-      {/* Conversion Optimisation Section */}
-      <MuxxusStepperRecord {...conversionOptimizationData} />
-
-      {/* Global Payments Section */}
-      <MuxxusStepperRecord {...globalPaymentsData} />
-
       {/* Use Cases Section */}
       <MuxxusStepperRecord {...useCasesData} />
 
       {/* Fraud Prevention Section */}
       <MuxxusStepperRecord {...fraudPreventionData} />
 
+      <MuxxusColumns 
+        data={columnsData} 
+        backgroundColor="bg-white" 
+        align="center" 
+        showIcons={false}
+
+      />
+
       {/* Processing Fees Section */}
       <MuxxusStepperRecord {...processingFeesData} />
 
-      <MuxxusCenteredSection {...centeredSectionData} />
-
-      {/* AI Section */}
-      <MuxxusAiSection2 {...apiSolutionsData} backgroundColor="bg-gray-50" />
-
       <MuxxusCardSection {...cardSectionData} />
-
-      {/* CTA Section */}
-      <MuxxusCTA {...ctaData} />
 
       {/* FAQ et Footer */}
       <ServiceDetailsFaq 

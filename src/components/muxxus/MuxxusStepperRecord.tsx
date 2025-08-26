@@ -8,6 +8,7 @@ interface StepperItem {
   description: string;
   color?: string;
   link?: string;
+  icon?: string;
 }
 
 interface MuxxusStepperRecordProps {
@@ -50,6 +51,18 @@ const MuxxusStepperRecord: React.FC<MuxxusStepperRecordProps> = ({
             {methods.map((item, index) => (
               <div key={index} className="pb-8">
                 <div className="flex items-start">
+                  {/* Icône de l'étape */}
+                  {item.icon && (
+                    <div className="flex-shrink-0 w-12 h-12 mr-4 bg-gray-100 rounded-full flex items-center justify-center">
+                      <Image
+                        src={item.icon}
+                        alt={`${item.title} icon`}
+                        width={24}
+                        height={24}
+                        className="w-6 h-6 object-contain"
+                      />
+                    </div>
+                  )}
                   {/* Contenu de l'étape */}
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
