@@ -7,6 +7,7 @@ import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import SectionDivider from "@/components/ui/SectionDivider";
+import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
 
 // Métadonnées de la page
 export const metadata: Metadata = {
@@ -141,7 +142,7 @@ const componentData = {
         currencyName: 'British Pound',
         exchangeRate: '1 EUR = 0.86 GBP',
         bankCode: 'GB001',
-        accountFormat: 'XX-XX-XX-XXXX-XXXX-XX',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
         features: ['BACS transfers', 'CHAPS payments', 'Real-time rates', 'Local banking']
       },
       {
@@ -150,7 +151,7 @@ const componentData = {
         currencyName: 'Euro',
         exchangeRate: '1 EUR = 1.00 EUR',
         bankCode: 'DE001',
-        accountFormat: 'DE89-XXXX-XXXX-XXXX-XXXX-XX',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
         features: ['SEPA network', 'Local transfers', 'Real-time FX', 'Secure trading']
       },
       {
@@ -276,6 +277,232 @@ const faqData = {
   ]
 };
 
+// Nouvelles sections
+const apiEndpointsData = {
+  title: "API Endpoints & Integration",
+  subtitle: "Powerful endpoints for seamless account creation",
+  description: "Our RESTful API provides comprehensive endpoints for creating, managing, and monitoring business accounts programmatically.",
+  endpoints: [
+    {
+      method: "POST",
+      endpoint: "/v1/accounts",
+      description: "Create a new business account",
+      parameters: ["business_info", "kyc_documents", "compliance_data"]
+    },
+    {
+      method: "GET",
+      endpoint: "/v1/accounts/{id}",
+      description: "Retrieve account details and status",
+      parameters: ["account_id"]
+    },
+    {
+      method: "PUT",
+      endpoint: "/v1/accounts/{id}",
+      description: "Update account information",
+      parameters: ["account_id", "update_data"]
+    },
+    {
+      method: "POST",
+      endpoint: "/v1/accounts/{id}/verify",
+      description: "Initiate KYC verification process",
+      parameters: ["account_id", "verification_data"]
+    }
+  ]
+};
+
+const integrationStepsData = {
+  title: "Integration Steps",
+  subtitle: "Get started in minutes, not days",
+  description: "Follow these simple steps to integrate our Connected Accounts API into your platform.",
+  steps: [
+    {
+      number: "01",
+      title: "API Key Setup",
+      description: "Generate your API keys from the dashboard and configure authentication headers."
+    },
+    {
+      number: "02",
+      description: "Test Environment",
+      title: "Use our sandbox environment to test account creation and verification flows."
+    },
+    {
+      number: "03",
+      title: "Production Integration",
+      description: "Deploy to production with confidence using our comprehensive testing tools."
+    },
+    {
+      number: "04",
+      title: "Go Live",
+      description: "Start creating accounts for your customers with real-time processing."
+    }
+  ]
+};
+
+const pricingData = {
+  title: "Pricing & Plans",
+  subtitle: "Transparent pricing for every business size",
+  description: "Choose the plan that fits your needs with no hidden fees or setup costs.",
+  plans: [
+    {
+      name: "Starter",
+      price: "$99",
+      period: "/month",
+      features: [
+        "Up to 100 accounts/month",
+        "Basic KYC automation",
+        "Email support",
+        "Standard compliance"
+      ],
+      buttonText: "Get Started",
+      popular: false
+    },
+    {
+      name: "Professional",
+      price: "$299",
+      period: "/month",
+      features: [
+        "Up to 1,000 accounts/month",
+        "Advanced AI verification",
+        "Priority support",
+        "Enhanced compliance",
+        "Custom integrations"
+      ],
+      buttonText: "Get Started",
+      popular: true
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      period: "",
+      features: [
+        "Unlimited accounts",
+        "Custom AI models",
+        "Dedicated support",
+        "Full compliance suite",
+        "White-label solutions"
+      ],
+      buttonText: "Contact Sales",
+      popular: false
+    }
+  ]
+};
+
+const securityData = {
+  title: "Security & Compliance",
+  subtitle: "Bank-grade security for your peace of mind",
+  description: "We maintain the highest security standards and compliance certifications to protect your business and customers.",
+  features: [
+    {
+      icon: "🔒",
+      title: "SOC 2 Type II Certified",
+      description: "Annual security audits and compliance verification"
+    },
+    {
+      icon: "🛡️",
+      title: "End-to-End Encryption",
+      description: "256-bit AES encryption for all data in transit and at rest"
+    },
+    {
+      icon: "🔐",
+      title: "Multi-Factor Authentication",
+      description: "Advanced MFA for all API access and admin functions"
+    },
+    {
+      icon: "📋",
+      title: "GDPR & CCPA Compliant",
+      description: "Full compliance with international data protection regulations"
+    }
+  ]
+};
+
+const performanceData = {
+  title: "Performance Metrics",
+  subtitle: "Enterprise-grade reliability and speed",
+  description: "Our platform is built for scale with 99.99% uptime and sub-second response times.",
+  metrics: [
+    {
+      value: "99.99%",
+      label: "Uptime SLA",
+      description: "Guaranteed platform availability"
+    },
+    {
+      value: "< 200ms",
+      label: "API Response Time",
+      description: "Average response time for all endpoints"
+    },
+    {
+      value: "10,000+",
+      label: "Accounts/Second",
+      description: "Peak processing capacity"
+    },
+    {
+      value: "24/7",
+      label: "Monitoring",
+      description: "Real-time performance tracking"
+    }
+  ]
+};
+
+const useCasesData = {
+  title: "Use Cases & Industries",
+  subtitle: "Powering innovation across industries",
+  description: "Discover how businesses across different sectors use our Connected Accounts API to transform their operations.",
+  industries: [
+    {
+      name: "Fintech",
+      description: "Embedded banking, neobanks, and financial platforms",
+      examples: ["Digital banking apps", "Payment processors", "Investment platforms"]
+    },
+    {
+      name: "E-commerce",
+      description: "Marketplaces and online retailers with global reach",
+      examples: ["Cross-border marketplaces", "Subscription services", "Digital goods platforms"]
+    },
+    {
+      name: "SaaS",
+      description: "Software companies expanding globally",
+      examples: ["B2B platforms", "Freemium services", "Enterprise software"]
+    },
+    {
+      name: "Gig Economy",
+      description: "Platforms connecting workers and clients worldwide",
+      examples: ["Freelance platforms", "Delivery services", "Professional networks"]
+    }
+  ]
+};
+
+const documentationData = {
+  title: "Documentation & Resources",
+  subtitle: "Everything you need to get started",
+  description: "Comprehensive documentation, SDKs, and developer tools to accelerate your integration.",
+  resources: [
+    {
+      title: "API Reference",
+      description: "Complete API documentation with examples and code snippets",
+      link: "/developers/api-reference",
+      icon: "📚"
+    },
+    {
+      title: "SDKs & Libraries",
+      description: "Official SDKs for Node.js, Python, Java, and more",
+      link: "/developers/sdks",
+      icon: "⚙️"
+    },
+    {
+      title: "Postman Collection",
+      description: "Ready-to-use Postman collection for testing",
+      link: "/developers/postman",
+      icon: "📮"
+    },
+    {
+      title: "Developer Support",
+      description: "24/7 technical support and developer community",
+      link: "/developers/support",
+      icon: "💬"
+    }
+  ]
+};
+
 // Composant principal de la page
 export default function ConnectedAccountsPage() {
   return (
@@ -297,6 +524,203 @@ export default function ConnectedAccountsPage() {
         backgroundColor="bg-white"
         textColor="text-gray-900"
       />
+
+      {/* Supported Countries Section */}
+      <SupportedCountriesSection {...componentData.supportedCountries} />
+
+      {/* API Endpoints Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{apiEndpointsData.title}</h2>
+            <p className="text-xl text-gray-600 mb-4">{apiEndpointsData.subtitle}</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{apiEndpointsData.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {apiEndpointsData.endpoints.map((endpoint, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div className="flex items-center mb-4">
+                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    endpoint.method === 'POST' ? 'bg-green-100 text-green-800' :
+                    endpoint.method === 'GET' ? 'bg-blue-100 text-blue-800' :
+                    endpoint.method === 'PUT' ? 'bg-yellow-100 text-yellow-800' :
+                    'bg-gray-100 text-gray-800'
+                  }`}>
+                    {endpoint.method}
+                  </span>
+                  <code className="ml-3 text-sm bg-gray-100 px-2 py-1 rounded">{endpoint.endpoint}</code>
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">{endpoint.description}</h3>
+                <div className="text-sm text-gray-600">
+                  <strong>Parameters:</strong> {endpoint.parameters.join(', ')}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Steps Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{integrationStepsData.title}</h2>
+            <p className="text-xl text-gray-600 mb-4">{integrationStepsData.subtitle}</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{integrationStepsData.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {integrationStepsData.steps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  {step.number}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{pricingData.title}</h2>
+            <p className="text-xl text-gray-600 mb-4">{pricingData.subtitle}</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{pricingData.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pricingData.plans.map((plan, index) => (
+              <div key={index} className={`bg-white p-8 rounded-lg shadow-sm border-2 ${
+                plan.popular ? 'border-primary' : 'border-gray-200'
+              } relative`}>
+                {plan.popular && (
+                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-gray-600">{plan.period}</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center">
+                      <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button className={`w-full py-3 px-6 rounded-lg font-medium ${
+                  plan.popular 
+                    ? 'bg-primary text-white hover:bg-primary-dark' 
+                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                } transition-colors`}>
+                  {plan.buttonText}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Security Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{securityData.title}</h2>
+            <p className="text-xl text-gray-600 mb-4">{securityData.subtitle}</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{securityData.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {securityData.features.map((feature, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Metrics Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{performanceData.title}</h2>
+            <p className="text-xl text-gray-600 mb-4">{performanceData.subtitle}</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{performanceData.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {performanceData.metrics.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">{metric.value}</div>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{metric.label}</div>
+                <p className="text-gray-600">{metric.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{useCasesData.title}</h2>
+            <p className="text-xl text-gray-600 mb-4">{useCasesData.subtitle}</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{useCasesData.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {useCasesData.industries.map((industry, index) => (
+              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{industry.name}</h3>
+                <p className="text-gray-600 mb-4">{industry.description}</p>
+                <ul className="space-y-2">
+                  {industry.examples.map((example, exampleIndex) => (
+                    <li key={exampleIndex} className="text-sm text-gray-600 flex items-center">
+                      <svg className="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {example}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Documentation Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{documentationData.title}</h2>
+            <p className="text-xl text-gray-600 mb-4">{documentationData.subtitle}</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{documentationData.description}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {documentationData.resources.map((resource, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div className="text-3xl mb-4">{resource.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{resource.title}</h3>
+                <p className="text-gray-600 mb-4">{resource.description}</p>
+                <a href={resource.link} className="text-primary hover:text-primary-dark font-medium">
+                  Learn More →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Customer Testimonials Section */}
       <TestimonialsSection {...componentData.testimonials} />
