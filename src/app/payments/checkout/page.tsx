@@ -6,13 +6,14 @@ import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
 import DetailHero from "@/components/hero/DetailHero";
-import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
-import MuxxusSteps from "@/components/muxxus/MuxxusSteps";
 import { MuxxusCenteredSection } from '@/components/muxxus';
+import MuxxusCard from '@/components/muxxus/MuxxusCard';
 import MuxxusAiSection2 from '@/components/muxxus/MuxxusAiSection2';
 import MuxxusCardSection from '@/components/muxxus/MuxxusCardSection';
 import MuxxusCTA from '@/components/muxxus/MuxxusCTA';
 import MuxxusStepperRecord from '@/components/muxxus/MuxxusStepperRecord';
+import MuxxusScrollImageDemo from '@/components/muxxus/MuxxusScrollImageDemo';
+import MuxxusScrollImageTest from '@/components/muxxus/MuxxusScrollImageTest';
 
 // Métadonnées Next.js
 export const metadata: Metadata = {
@@ -94,22 +95,22 @@ const stepsData = {
 // Données pour MuxxusColumns
 const columnsData = [
   {
-    icon: "🌍",
+    icon: "/assets/imgs/icon/global.png",
     title: "Accept payments from global customers",
     description: "Convert more customers by pricing in local currency and letting customers pay with their preferred payment methods."
   },
   {
-    icon: "📈",
+    icon: "/assets/imgs/icon/analytics.png",
     title: "Boost conversion and acceptance rates",
     description: "Airwallex's machine learning powered optimisation engine, 3DS logic, and local acquiring improve global acceptance rates."
   },
   {
-    icon: "💰",
+    icon: "/assets/imgs/icon/money.png",
     title: "Eliminate costly FX fees with like-for-like settlement",
     description: "Settle funds in the same currency your customers pay in, avoiding hidden FX conversion fees."
   },
   {
-    icon: "🛡️",
+    icon: "/assets/imgs/icon/security.png",
     title: "Reduce chargebacks with built-in fraud prevention",
     description: "Identify suspicious transactions and reduce chargebacks with an AI-powered fraud engine."
   }
@@ -408,9 +409,33 @@ export default function CheckoutPage() {
       {/* Hero Section */}
       <DetailHero {...heroData} />
 
-      <MuxxusColumns data={columnsData} />
 
-      <MuxxusSteps {...stepsData} />
+      {/* Steps Section avec MuxxusCard */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{stepsData.title}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{stepsData.subtitle}</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {stepsData.steps.map((step, index) => (
+              <MuxxusCard
+                key={index}
+                image={step.icon}
+                title={step.title}
+                description={step.description}
+                delay={index * 0.2}
+                className="h-full"
+                buttonText="Learn more"
+                buttonLink="#"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interface Dynamique avec Images qui changent selon le scroll */}
+      <MuxxusScrollImageDemo />
       
       <MuxxusStepperRecord {...paymentOptimizationData} />
 
