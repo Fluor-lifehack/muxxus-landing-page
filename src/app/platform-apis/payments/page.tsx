@@ -11,13 +11,13 @@ import SectionDivider from "@/components/ui/SectionDivider";
 // Métadonnées de la page
 export const metadata: Metadata = {
   title: "Payments API | Global Multi-Currency Payment Acceptance | Muxxus",
-  description: "Accept multi-currency payments globally with our comprehensive Payments API. Process payments in 50+ currencies with real-time processing and settlement.",
-  keywords: "payments API, global payments, multi-currency payments, payment processing, fintech API, international payments"
+  description: "Securely collect one time or recurring payments from your customers in their preferred currencies and local payment methods, boost global acceptance rates, save with like-for-like settlement, and more.",
+  keywords: "payments API, global payments, multi-currency payments, payment processing, fintech API, international payments, like-for-like settlement"
 };
 
 // Données pour le composant DetailHero
 const heroData = {
-  title: "Accept payments globally with our comprehensive Payments API",
+  title: "Global payments, made local",
   shape: {
     light: "/assets/imgs/shape/img-s-29.png",
     dark: "/assets/imgs/shape/img-s-29-light.png"
@@ -26,15 +26,15 @@ const heroData = {
     light: "/assets/imgs/muxxus/image/img3.jpg",
     dark: "/assets/imgs/muxxus/image/img3.jpg"
   },
-  customers: "50+ currencies, 190+ countries",
+  customers: "160+ payment methods, 190+ countries",
   info: {
     thumb: {
       light: "/assets/imgs/muxxus/image/img3.jpg",
       dark: "/assets/imgs/muxxus/image/img3.jpg"
     },
-    description: "Process payments in 50+ currencies, support multiple payment methods, and handle complex payment flows with real-time processing and settlement.",
+    description: "Securely collect one time or recurring payments from your customers in their preferred currencies and local payment methods, boost global acceptance rates, save with like-for-like settlement, and more.",
     action_btn: {
-      label: "Get Started",
+      label: "Contact Sales",
       link: "#"
     }
   },
@@ -44,87 +44,227 @@ const heroData = {
 
 // Données pour les composants
 const componentData = {
-  muxxusAiSection: {
-    title: "AI-Powered Payment Intelligence & Fraud Prevention",
+  keyBenefitsSection2: {
+    title: "Grow and safeguard your global revenue",
     description: [
-      "Our AI-driven platform automatically detects fraudulent transactions, optimizes payment routing, and provides real-time risk assessment across all payment methods.",
-      "Reduce chargeback rates by 85% with intelligent fraud detection, smart payment routing, and automated compliance monitoring."
-    ],
-    action_btn: {
-      label: "Discover Our AI Solutions",
-      link: "#"
-    },
-    shape_img: "/assets/imgs/shape/img-s-29.png",
-    small_shape: {
-      light: "/assets/imgs/shape/img-s-30.png",
-      dark: "/assets/imgs/shape/img-s-30-light.png"
-    }
-  },
-  
-  muxxusSection2: {
-    title: "Global payment acceptance for modern platforms",
-    description: [
-      "Build seamless payment experiences",
-      "Accept payments from customers worldwide with our comprehensive API, supporting multiple payment methods and currencies."
+      "Businesses of all shapes and sizes – from eCommerce stores and subscription businesses to online marketplaces and platforms – rely on Muxxus to reach new global customers, eliminate unnecessary currency conversion fees, and protect against fraud."
     ],
     leftImage: "/assets/imgs/muxxus/image/img4.jpg",
     items: [
       {
         icon: "💳",
-        title: "Multi-Payment Method Support",
-        description: "Accept credit cards, bank transfers, digital wallets, and alternative payment methods from customers worldwide."
+        title: "Accept 160+ payment methods worldwide",
+        description: "Boost checkout rates by pricing in local currency and letting customers pay with their preferred payment methods."
       },
       {
-        icon: "🌍",
-        title: "Global Currency Support",
-        description: "Process payments in 50+ currencies with automatic FX conversion and local banking infrastructure."
+        icon: "💰",
+        title: "Avoid costly FX fees with like-for-like settlement",
+        description: "Collect and settle funds in the same currency without the hassle of setting up multiple entities or paying hidden conversion fees."
       },
       {
-        icon: "⚡",
-        title: "Real-Time Processing",
-        description: "Instant payment processing with real-time settlement and immediate confirmation notifications."
+        icon: "🔒",
+        title: "Reduce chargebacks with built-in fraud prevention",
+        description: "Automatically identify suspicious transactions and reduce chargebacks with built-in fraud detection and dispute management."
+      },
+      {
+        icon: "📈",
+        title: "Boost conversion and acceptance rates",
+        description: "Benefit from Muxxus's ML-powered optimisation engine, 3DS logic, and local acquiring to improve acceptance rates."
       }
-    ],
-    action_btn: {
-      label: "Start Building",
-      link: "#"
-    }
+    ]
   },
   
-  keyBenefitsSection2: {
-    title: "Streamline your global payment operations with intelligent processing",
+  muxxusSection2: {
+    title: "Borderless Commerce",
     description: [
-      "Our Payments API enables you to accept payments from customers worldwide, eliminating payment barriers and providing seamless checkout experiences.",
-      "From instant processing to automated settlement, we provide everything you need to scale your global payment operations."
+      "Powerful out-of-box features to boost your conversions"
     ],
     leftImage: "/assets/imgs/muxxus/image/img5.jpg",
     items: [
       {
         icon: "🚀",
-        title: "Global Reach",
-        description: "Accept payments from customers in 190+ countries with local payment methods and compliance requirements."
+        title: "Adaptive success rate optimisation",
+        description: "Muxxus's ML-powered optimisation engine includes smart MCC assignment, automatic retries, ISO message optimisations, and more to improve acceptance rates."
       },
       {
-        icon: "💱",
-        title: "Multi-Currency Processing",
-        description: "Process payments in 50+ currencies with competitive FX rates and automatic currency conversion."
+        icon: "🔐",
+        title: "Smart 3DS optimisation",
+        description: "Maximise global acceptance while staying compliant with local regulations. Our 3DS engine picks the best strategy based on transaction risk, applicable regulatory exemptions, and policies."
       },
       {
-        icon: "🔒",
-        title: "Advanced Security",
-        description: "Bank-grade security with PCI DSS compliance, fraud detection, and end-to-end encryption."
-      },
-      {
-        icon: "📊",
-        title: "Real-Time Analytics",
-        description: "Get comprehensive insights into payment performance, success rates, and customer behavior patterns."
+        icon: "⚙️",
+        title: "Adjustable risk thresholds",
+        description: "Customise your risk appetite based on your business model, set specific rules for 3D Secure, build alerts lists, and have the option to do manual reviews when needed."
       }
     ]
   },
+
+  additionalFeatures: {
+    title: "Additional features to drive performance",
+    description: [
+      "Network tokenisation, saved payment details, and direct network integrations"
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img3.jpg",
+    items: [
+      {
+        icon: "🔗",
+        title: "Network tokenisation",
+        description: "Muxxus replaces PANs with network-issued tokens to improve card acceptance rates and reduce processing costs."
+      },
+      {
+        icon: "💾",
+        title: "Saved payment details",
+        description: "Drive repeat sales by initiating payments based on your customers' saved payment details."
+      },
+      {
+        icon: "🌐",
+        title: "Direct network integrations",
+        description: "Benefit from our full-stack payments platform that directly integrates with all major card scheme networks."
+      }
+    ]
+  },
+
+  likeForLikeSettlement: {
+    title: "Like-for-like Settlement",
+    description: [
+      "Save on costly FX fees with like-for-like settlement"
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    items: [
+      {
+        icon: "💸",
+        title: "Get paid without hidden fees",
+        description: "Settle funds from your customers in the same currencies they pay in, avoiding costly FX conversions back to your home currency."
+      },
+      {
+        icon: "🏦",
+        title: "Store funds in your multi-currency wallet",
+        description: "Settle payments directly into your multi-currency wallet and securely hold funds for future payments to local suppliers."
+      },
+      {
+        icon: "🌍",
+        title: "Pay suppliers in local currency",
+        description: "Make fast, cost-effective transfers to local suppliers or easily make purchases with your Muxxus Borderless corporate cards."
+      }
+    ]
+  },
+
+  integrationMethods: {
+    title: "Integration Methods",
+    description: [
+      "Choose the integration path that's right for you"
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img5.jpg",
+    items: [
+      {
+        icon: "🔌",
+        title: "No-code eCommerce Plugins",
+        description: "Access our simple plug-and-play integrations with popular platforms like Shopify, WooCommerce, and Magento."
+      },
+      {
+        icon: "🌐",
+        title: "Hosted payment page",
+        description: "Save on development resources by redirecting customers to a Muxxus-hosted page on your own web store. We take care of the whole payments journey."
+      },
+      {
+        icon: "🧩",
+        title: "Drop-ins and embedded elements",
+        description: "Use our pre-built UI components to easily design and show a unified payment methods list on your checkout page or show payment methods separately under different blocks."
+      },
+      {
+        icon: "📱",
+        title: "API or mobile SDK",
+        description: "Take full control over your checkout experience by building directly via our API in the back end or accept payments in your iOS or Android app using our mobile SDKs."
+      }
+    ]
+  },
+
+  applications: {
+    title: "Applications that adapt to your business model",
+    description: [
+      "Billing, subscriptions, and invoices"
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img3.jpg",
+    items: [
+      {
+        icon: "📊",
+        title: "Billing",
+        description: "Set up and automate your billing logic, from simple to complex usage-based pricing models."
+      },
+      {
+        icon: "🔄",
+        title: "Subscriptions",
+        description: "Accept recurring customer payments with a built-in tool to manage subscription logic."
+      },
+      {
+        icon: "📄",
+        title: "Invoices",
+        description: "Collect payments on invoices created by your accounting software."
+      }
+    ]
+  },
+
+  paymentsForPlatforms: {
+    title: "Payments for Platforms",
+    description: [
+      "Embed payments into your platform or marketplace"
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    items: [
+      {
+        icon: "🌐",
+        title: "Frictionless global pay-in and pay-out",
+        description: "Enable a frictionless global pay-in and pay-out experience for your customers."
+      },
+      {
+        icon: "🔗",
+        title: "Programmatic connected accounts",
+        description: "Programmatically create connected accounts, streamline onboarding and compliance, manage fund flows without requiring PayFac registration."
+      },
+      {
+        icon: "💰",
+        title: "Instant fund routing",
+        description: "Instantly split proceeds and route funds to sellers after deducting your platform fee."
+      }
+    ],
+    action_btn: {
+      label: "Learn more",
+      link: "#"
+    }
+  },
+
+  forDevelopers: {
+    title: "FOR DEVELOPERS",
+    description: [
+      "Designed for developers, by developers."
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img5.jpg",
+    items: [
+      {
+        icon: "⚙️",
+        title: "Best-in-class developer tools",
+        description: "Integrate in a fraction of the time with our high-quality developer capabilities, libraries, and APIs."
+      },
+      {
+        icon: "🚀",
+        title: "Complex use cases made easy",
+        description: "Our comprehensive APIs and proprietary financial infrastructure can be tailored to suit your most complex requirements, all supported by our world-class technical teams."
+      },
+      {
+        icon: "🔗",
+        title: "Accelerated integrations",
+        description: "We've partnered with the likes of Shopify, Xero, and NetSuite to engineer prebuilt integrations to help you get started quickly."
+      }
+    ],
+    action_btn: {
+      label: "See the docs",
+      link: "#"
+    }
+  },
   
   supportedCountries: {
-    title: "Global payment acceptance network",
-    description: "Our Payments API supports payment acceptance across major markets worldwide, providing local payment methods and multi-currency capabilities.",
+    title: "Grow your revenue by accepting a wide array of popular global and local payment methods",
+    description: "Accept local payments from a wide range of popular payment methods. Availability dependent on merchant entity location.",
     countries: [
       {
         name: 'United States',
@@ -133,7 +273,7 @@ const componentData = {
         exchangeRate: '1 EUR = 1.08 USD',
         bankCode: 'US001',
         accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Credit cards', 'ACH transfers', 'Digital wallets', 'Local compliance']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       },
       {
         name: 'United Kingdom',
@@ -142,7 +282,7 @@ const componentData = {
         exchangeRate: '1 EUR = 0.86 GBP',
         bankCode: 'GB001',
         accountFormat: 'XX-XX-XX-XXXX-XXXX-XX',
-        features: ['Credit cards', 'BACS transfers', 'Digital wallets', 'Local banking']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       },
       {
         name: 'Germany',
@@ -151,7 +291,7 @@ const componentData = {
         exchangeRate: '1 EUR = 1.00 EUR',
         bankCode: 'DE001',
         accountFormat: 'DE89-XXXX-XXXX-XXXX-XXXX-XX',
-        features: ['Credit cards', 'SEPA transfers', 'Digital wallets', 'Secure processing']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       },
       {
         name: 'Australia',
@@ -160,7 +300,7 @@ const componentData = {
         exchangeRate: '1 EUR = 1.65 AUD',
         bankCode: 'AU001',
         accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Credit cards', 'Local transfers', 'Digital wallets', '24/7 processing']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       },
       {
         name: 'Singapore',
@@ -169,7 +309,7 @@ const componentData = {
         exchangeRate: '1 EUR = 1.46 SGD',
         bankCode: 'SG001',
         accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Credit cards', 'FAST network', 'Digital wallets', 'Local banking']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       },
       {
         name: 'Hong Kong SAR',
@@ -178,7 +318,7 @@ const componentData = {
         exchangeRate: '1 EUR = 8.45 HKD',
         bankCode: 'HK001',
         accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Credit cards', 'Local transfers', 'Digital wallets', '24/7 support']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       },
       {
         name: 'Canada',
@@ -187,7 +327,7 @@ const componentData = {
         exchangeRate: '1 EUR = 1.47 CAD',
         bankCode: 'CA001',
         accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Credit cards', 'Interac network', 'Digital wallets', 'Local compliance']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       },
       {
         name: 'Japan',
@@ -196,14 +336,14 @@ const componentData = {
         exchangeRate: '1 EUR = 160.5 JPY',
         bankCode: 'JP001',
         accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Credit cards', 'Local banking', 'Digital wallets', '24/7 support']
+        features: ['Visa', 'Mastercard', 'American Express', 'Apple Pay', 'Google Pay']
       }
     ],
     accountExample: {
       title: "Global Payment Processing",
       description: "Accept payments worldwide with real-time processing and automated settlement.",
       capabilities: [
-        "Multi-payment methods",
+        "160+ payment methods",
         "Real-time processing",
         "Multi-currency support",
         "Advanced security"
@@ -251,7 +391,7 @@ const faqData = {
   faqs: [
     {
       question: "What payment methods are supported?",
-      answer: "We support credit cards, debit cards, bank transfers, digital wallets (Apple Pay, Google Pay), and alternative payment methods. Support varies by country and local market requirements."
+      answer: "We support 160+ payment methods including credit cards (Visa, Mastercard, American Express), digital wallets (Apple Pay, Google Pay), bank transfers, and alternative payment methods like Klarna and UnionPay. Support varies by country and local market requirements."
     },
     {
       question: "How quickly are payments processed?",
@@ -262,8 +402,8 @@ const faqData = {
       answer: "We support 50+ major currencies including USD, EUR, GBP, JPY, CAD, AUD, CHF, and many emerging market currencies. New currencies are added regularly based on business demand."
     },
     {
-      question: "How does fraud detection work?",
-      answer: "Our AI-powered fraud detection system analyzes payment patterns in real-time, using machine learning to identify suspicious transactions and protect your business from fraudulent activities."
+      question: "How does like-for-like settlement work?",
+      answer: "Like-for-like settlement allows you to collect and settle funds in the same currency your customers pay in, avoiding costly FX conversions back to your home currency."
     },
     {
       question: "What compliance standards do you follow?",
@@ -290,12 +430,61 @@ export default function PaymentsPage() {
         backgroundVideo="/assets/videos/world-globe.mp4"
       />
 
-      {/* API Features Section */}
+      {/* Borderless Commerce Section */}
       <MuxxusSection2 
         {...componentData.muxxusSection2} 
         fullWidthHeader={true} 
         backgroundColor="bg-white"
         textColor="text-gray-900"
+      />
+
+      {/* Additional Features Section */}
+      <MuxxusSection2 
+        {...componentData.additionalFeatures} 
+        fullWidthHeader={true} 
+        backgroundColor="bg-gray-50"
+        textColor="text-gray-900"
+      />
+
+      {/* Like-for-like Settlement Section */}
+      <MuxxusSection2 
+        {...componentData.likeForLikeSettlement} 
+        fullWidthHeader={true} 
+        backgroundColor="bg-white"
+        textColor="text-gray-900"
+      />
+
+      {/* Integration Methods Section */}
+      <MuxxusSection2 
+        {...componentData.integrationMethods} 
+        fullWidthHeader={true} 
+        backgroundColor="bg-gray-50"
+        textColor="text-gray-900"
+      />
+
+      {/* Applications Section */}
+      <MuxxusSection2 
+        {...componentData.applications} 
+        fullWidthHeader={true} 
+        backgroundColor="bg-white"
+        textColor="text-gray-900"
+      />
+
+      {/* Payments for Platforms Section */}
+      <MuxxusSection2 
+        {...componentData.paymentsForPlatforms} 
+        fullWidthHeader={true} 
+        backgroundColor="bg-gray-50"
+        textColor="text-gray-900"
+      />
+
+      {/* For Developers Section */}
+      <MuxxusSection2 
+        {...componentData.forDevelopers} 
+        fullWidthHeader={true} 
+        backgroundColor="bg-white"
+        textColor="text-gray-900"
+        buttonClassName="bg-gray-900 text-white hover:bg-gray-800 border-gray-900"
       />
 
       {/* Customer Testimonials Section */}

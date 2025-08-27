@@ -48,6 +48,12 @@
             },
             {
               "id": 2,
+              "name": "Expense Management",
+              "path": "/spend/expense-management",
+              "description": "Expenses & reimbursement management"
+            },
+            {
+              "id": 3,
               "name": "Bill Pay",
               "path": "/spend/bill-pay",
               "description": "Automated accounts payable management"
@@ -105,24 +111,6 @@
               "name": "Payments",
               "path": "/platform-apis/payments",
               "description": "Global multi-currency payment acceptance"
-            },
-            {
-              "id": 4,
-              "name": "Transactional FX",
-              "path": "/platform-apis/transactional-fx",
-              "description": "Interbank FX rates & currency management"
-            },
-            {
-              "id": 5,
-              "name": "Payouts",
-              "path": "/platform-apis/payouts",
-              "description": "Programmatic, cost-effective global payouts"
-            },
-            {
-              "id": 6,
-              "name": "Issuing",
-              "path": "/platform-apis/issuing",
-              "description": "Global card issuance for a variety of use cases"
             }
           ]
         },
@@ -272,56 +260,20 @@
         {
           "id": 5,
           "name": "Connected Accounts",
-          "path": "/developers/connected-accounts",
+          "path": "/platform-apis/connected-accounts",
           "description": "Programmatic account creation and onboarding"
         },
         {
           "id": 6,
           "name": "Accounts",
-          "path": "/developers/accounts",
+          "path": "/platform-apis/accounts",
           "description": "Multi-currency account management, at scale"
         },
         {
           "id": 7,
           "name": "Payments",
-          "path": "/developers/payments",
+          "path": "/platform-apis/payments",
           "description": "Accept multi-currency payments globally"
-        },
-        {
-          "id": 8,
-          "name": "Transactional FX",
-          "path": "/developers/transactional-fx",
-          "description": "Interbank FX rates and transaction services"
-        },
-        {
-          "id": 9,
-          "name": "Payouts",
-          "path": "/developers/payouts",
-          "description": "Make fast and cost-effective payouts"
-        },
-        {
-          "id": 10,
-          "name": "Issuing",
-          "path": "/developers/issuing",
-          "description": "Create multi-currency cards"
-        },
-        {
-          "id": 11,
-          "name": "Banking as a Service",
-          "path": "/developers/banking-as-service",
-          "description": "Offer full-featured financial products"
-        },
-        {
-          "id": 12,
-          "name": "Global Treasury",
-          "path": "/developers/global-treasury",
-          "description": "Collect, store, and disburse funds globally"
-        },
-        {
-          "id": 13,
-          "name": "Payments for Platforms",
-          "path": "/developers/payments-for-platforms",
-          "description": "Integrate end-to-end payments"
         }
       ]
     },
@@ -551,75 +503,75 @@
         "id": 4,
         "name": "Contact",
         "path": "/contact"
+        }
+      ]
+    },
+    "footer3": [
+      {
+        "id": 1,
+        "title": "Products",
+        "children": [
+          {
+            "name": "Business Accounts",
+            "path": "/business-accounts"
+          },
+          {
+            "name": "Spend Management",
+            "path": "/spend"
+          },
+          {
+            "name": "FX & Transfers",
+            "path": "/accounts/fx-transfers"
+          },
+          {
+            "name": "Corporate Cards",
+            "path": "/spend/corporate-cards"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Company",
+        "children": [
+          {
+            "name": "About",
+            "path": "/company/who-we-are"
+          },
+          {
+            "name": "Careers",
+            "path": "/career"
+          },
+          {
+            "name": "Partners",
+            "path": "/partners"
+          },
+          {
+            "name": "Contact",
+            "path": "/contact"
+          }
+        ]
+      }
+    ],
+    "footer4": [
+      {
+        "id": 1,
+        "name": "Products",
+        "path": "/business-accounts"
+      },
+      {
+        "id": 2,
+        "name": "Careers",
+        "path": "/career"
+      },
+      {
+        "id": 3,
+        "name": "Privacy",
+        "path": "/privacy"
+      },
+      {
+        "id": 4,
+        "name": "Terms & Conditions",
+        "path": "/terms"
       }
     ]
-  },
-  "footer3": [
-    {
-      "id": 1,
-      "title": "Products",
-      "children": [
-        {
-          "name": "Business Accounts",
-          "path": "/business-accounts"
-        },
-        {
-          "name": "Spend Management",
-          "path": "/spend"
-        },
-        {
-          "name": "FX & Transfers",
-          "path": "/accounts/fx-transfers"
-        },
-        {
-          "name": "Corporate Cards",
-          "path": "/spend/corporate-cards"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Company",
-      "children": [
-        {
-          "name": "About",
-          "path": "/company/who-we-are"
-        },
-        {
-          "name": "Careers",
-          "path": "/career"
-        },
-        {
-          "name": "Partners",
-          "path": "/partners"
-        },
-        {
-          "name": "Contact",
-          "path": "/contact"
-        }
-      ]
-    }
-  ],
-  "footer4": [
-    {
-      "id": 1,
-      "name": "Products",
-      "path": "/business-accounts"
-    },
-    {
-      "id": 2,
-      "name": "Careers",
-      "path": "/career"
-    },
-    {
-      "id": 3,
-      "name": "Privacy",
-      "path": "/privacy"
-    },
-    {
-      "id": 4,
-      "name": "Terms & Conditions",
-      "path": "/terms"
-    }
-  ]
-}
+  }
