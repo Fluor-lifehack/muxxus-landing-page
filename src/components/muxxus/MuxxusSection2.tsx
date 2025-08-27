@@ -44,6 +44,8 @@ type Props = {
   // Couleurs personnalisables
   backgroundColor?: string;
   textColor?: string;
+  // Style personnalisé pour le bouton
+  buttonClassName?: string;
 };
 
 /**
@@ -105,7 +107,8 @@ const MuxxusSection2 = ({
   fullWidthHeader = false, // Default to false
   backgroundVideo, // New prop
   backgroundColor, // Couleur de fond personnalisable
-  textColor // Couleur de texte personnalisable
+  textColor, // Couleur de texte personnalisable
+  buttonClassName // Style personnalisé pour le bouton
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const videoRef = useRef<HTMLVideoElement>(null!);
@@ -233,7 +236,7 @@ const MuxxusSection2 = ({
                       <ButtonFlip
                         btnText={action_btn.label}
                         link={action_btn.link}
-                        className={`border-white text-white hover:bg-white hover:text-gray-900 text-lg py-5 px-10 ${textColor ? `border-${textColor.split('-')[1]} ${textColor} hover:bg-${textColor.split('-')[1]} hover:text-white` : ''}`}
+                        className={buttonClassName || `border-white text-white hover:bg-white hover:text-gray-900 text-lg py-5 px-10 ${textColor ? `border-${textColor.split('-')[1]} ${textColor} hover:bg-${textColor.split('-')[1]} hover:text-white` : ''}`}
                       />
                     </div>
                   )}
@@ -312,7 +315,7 @@ const MuxxusSection2 = ({
                     <ButtonFlip
                       btnText={action_btn.label}
                       link={action_btn.link}
-                      className="border-white text-white hover:bg-white hover:text-gray-900 text-lg py-5 px-10"
+                      className={buttonClassName || "border-white text-white hover:bg-white hover:text-gray-900 text-lg py-5 px-10"}
                     />
                   </div>
                 )}

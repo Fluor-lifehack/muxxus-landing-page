@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 // Données pour le composant DetailHero
 const heroData = {
-  title: "Manage global accounts at scale with our platform API",
+  title: "Open and manage accounts at scale in 20+ currencies",
   shape: {
     light: "/assets/imgs/shape/img-s-29.png",
     dark: "/assets/imgs/shape/img-s-29-light.png"
@@ -26,15 +26,15 @@ const heroData = {
     light: "/assets/imgs/muxxus/image/img2.jpg",
     dark: "/assets/imgs/muxxus/image/img2.jpg"
   },
-  customers: "50+ currencies, 190+ countries",
+  customers: "20+ currencies, 60+ markets",
   info: {
     thumb: {
       light: "/assets/imgs/muxxus/image/img2.jpg",
       dark: "/assets/imgs/muxxus/image/img2.jpg"
     },
-    description: "Scale your account management with our powerful Accounts API supporting 50+ currencies and global operations.",
+    description: "Provision accounts in real-time to receive funds in local currency and authorise direct debit payouts in multiple geographies.",
     action_btn: {
-      label: "Get Started",
+      label: "Contact Sales",
       link: "#"
     }
   },
@@ -62,69 +62,66 @@ const componentData = {
   },
   
   muxxusSection2: {
-    title: "Multi-currency account management for enterprise platforms",
-    description: [
-      "Build comprehensive banking solutions",
-      "Create, manage, and monitor accounts programmatically with real-time balance updates and automated lifecycle management."
-    ],
+    title: "Designed for developers, by developers.",
+    description:["Build comprehensive banking solutions"],
     leftImage: "/assets/imgs/muxxus/image/img3.jpg",
     items: [
       {
         icon: "💳",
-        title: "Account Lifecycle Management",
-        description: "Create, activate, suspend, and close accounts programmatically with full audit trails and compliance controls."
+        title: "Best-in-class developer tools",
+        description: "Integrate in a fraction of the time with our high-quality developer capabilities, libraries, and APIs."
       },
       {
         icon: "💰",
-        title: "Real-Time Balance Monitoring",
-        description: "Track account balances, transactions, and currency positions in real-time across all your global accounts."
+        title: "Complex use cases made easy",
+        description: "Our comprehensive APIs and proprietary financial infrastructure can be tailored to suit your most complex requirements, all supported by our world-class technical teams."
       },
       {
         icon: "🔒",
-        title: "Advanced Security Controls",
-        description: "Implement multi-factor authentication, spending limits, and merchant restrictions at the account level."
+        title: "Accelerated integrations",
+        description: "We've partnered with the likes of Shopify, Xero, and NetSuite to engineer prebuilt integrations to help you get started quickly."
       }
     ],
     action_btn: {
-      label: "Start Building",
+      label: "See the docs",
       link: "#"
     }
   },
   
   keyBenefitsSection2: {
-    title: "Streamline your global account operations with programmatic management",
+    title: "Programmatic account creation that saves you time and cost",
     description: [
-      "Our Accounts API enables you to manage thousands of business accounts programmatically, eliminating manual processes and providing real-time visibility into your global financial operations.",
-      "From instant account creation to automated compliance monitoring, we provide everything you need to scale your account management operations."
+      "Instantly create currency accounts with local bank and branch codes and dedicated account numbers. Collects funds in 60+ markets and eliminate costly conversion and transaction fees.",
+      "Easily retrieve transaction details via API for the purposes of reconciliation, proof of funds, and data analysis."
     ],
     leftImage: "/assets/imgs/muxxus/image/img4.jpg",
     items: [
       {
-        icon: "🚀",
-        title: "Scale Without Limits",
-        description: "Manage thousands of accounts simultaneously with our high-performance API infrastructure and automated workflows."
+        icon: "⚡",
+        title: "Streamline global management of funds",
+        description: "Receive funds via local bank transfers, SWIFT, or direct debits from Linked Accounts, and convert balances to different currencies when needed."
       },
       {
-        icon: "🌍",
-        title: "Global Currency Support",
-        description: "Support 50+ currencies with automatic FX capabilities, local banking infrastructure, and real-time exchange rates."
+        icon: "💰",
+        title: "Avoid forced conversion fees",
+        description: "Eliminate unnecessary conversion fees by receiving, holding, and paying out funds in local currency worldwide."
       },
       {
         icon: "📊",
-        title: "Real-Time Analytics",
-        description: "Get comprehensive insights into account performance, transaction patterns, and currency exposure across your entire portfolio."
+        title: "Simplify and speed up reconciliation",
+        description: "Create separate accounts for receivables and payables with different counterparties. Effortlessly review detailed account statements."
       },
       {
-        icon: "🔐",
-        title: "Enterprise Security",
-        description: "Bank-grade security with end-to-end encryption, role-based access controls, and compliance with international standards."
+        icon: "🌍",
+        title: "Safely share account information via open banking",
+        description: "Accept requests from third-party providers automatically via our API and securely share account information."
       }
     ]
   },
   
   supportedCountries: {
-    title: "Global account management network",
-    description: "Our Accounts API supports account management across major markets worldwide, providing local banking infrastructure and multi-currency capabilities.",
+    title: "Safe and secure currency accounts in multiple geographies",
+    description: "Set up currency accounts in the majority of countries below regardless of where your business is located. Muxxus partners with a network of leading global banks to offer secure, reliable, and compliant infrastructure that lets you operate with peace of mind.",
     countries: [
       {
         name: 'United States',
@@ -214,6 +211,68 @@ const componentData = {
       }
     }
   },
+
+  // Global Treasury Section
+  globalTreasury: {
+    title: "GLOBAL TREASURY",
+    description: [
+      "Enable your customers to manage money globally",
+      "Offer financial services to your customers by allowing them to collect, store, and disburse funds in multiple currencies worldwide. Create connected accounts, streamline onboarding and compliance, and explore multiple monetisation models."
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img5.jpg",
+    items: [
+      {
+        icon: "🌍",
+        title: "Multi-Currency Collection",
+        description: "Allow customers to collect funds in multiple currencies worldwide with local banking infrastructure."
+      },
+      {
+        icon: "💳",
+        title: "Connected Accounts",
+        description: "Create and manage connected accounts for your customers with streamlined onboarding and compliance."
+      },
+      {
+        icon: "💰",
+        title: "Multiple Monetisation Models",
+        description: "Explore various revenue streams through transaction fees, FX spreads, and platform services."
+      }
+    ],
+    action_btn: {
+      label: "Learn more",
+      link: "#"
+    }
+  },
+
+  // For Developers Section
+  forDevelopers: {
+    title: "FOR DEVELOPERS",
+    description: [
+      "Designed for developers, by developers.",
+      "Integrate in a fraction of the time with our high-quality developer capabilities, libraries, and APIs."
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    items: [
+      {
+        icon: "⚙️",
+        title: "Best-in-class developer tools",
+        description: "Integrate in a fraction of the time with our high-quality developer capabilities, libraries, and APIs."
+      },
+      {
+        icon: "🚀",
+        title: "Complex use cases made easy",
+        description: "Our comprehensive APIs and proprietary financial infrastructure can be tailored to suit your most complex requirements, all supported by our world-class technical teams."
+      },
+      {
+        icon: "🔗",
+        title: "Accelerated integrations",
+        description: "We've partnered with the likes of Shopify, Xero, and NetSuite to engineer prebuilt integrations to help you get started quickly."
+      }
+    ],
+    action_btn: {
+      label: "See the docs",
+      link: "#"
+    }
+  },
   
   testimonials: {
     title: "What Our Accounts API Customers Say",
@@ -287,7 +346,20 @@ export default function AccountsPage() {
       <MuxxusSection2 
         {...componentData.keyBenefitsSection2} 
         fullWidthHeader={true} 
-        backgroundVideo="/assets/videos/world-globe.mp4"
+        // backgroundVideo="/assets/videos/world-globe.mp4"
+      />
+
+      <FeatureSection
+        title="GLOBAL TREASURY"
+        subtitle="Enable your customers to manage money globally"
+        description="Offer financial services to your customers by allowing them to collect, store, and disburse funds in multiple currencies worldwide. Create connected accounts, streamline onboarding and compliance, and explore multiple monetisation models."
+        buttonText="Learn more"
+        buttonLink="#/"
+        imageSrc="/assets/imgs/muxxus/image/img5.jpg"
+        imageAlt="Global Treasury"
+        // badgeColor="white"
+        imageFirst={false}
+        className="bg-gray-900 text-white"
       />
 
       {/* API Features Section */}
@@ -296,23 +368,7 @@ export default function AccountsPage() {
         fullWidthHeader={true} 
         backgroundColor="bg-white"
         textColor="text-gray-900"
-      />
-
-      {/* Customer Testimonials Section */}
-      <TestimonialsSection {...componentData.testimonials} />
-
-      {/* API Integration Section */}
-      <FeatureSection
-        title="API Integration"
-        subtitle="Build comprehensive banking solutions"
-        description="Integrate our Accounts API into your platform with comprehensive documentation, SDKs, and dedicated support. Start building in minutes with our developer-friendly endpoints."
-        buttonText="View Documentation"
-        buttonLink="/developers/docs"
-        imageSrc="/assets/imgs/muxxus/image/img5.jpg"
-        imageAlt="API Integration"
-        badgeColor="white"
-        imageFirst={false}
-        className="bg-gray-900 text-white"
+        buttonClassName="bg-gray-900 text-white hover:bg-gray-800 border-gray-900"
       />
 
       <SectionDivider variant="gradient" size="lg" color="primary" />
