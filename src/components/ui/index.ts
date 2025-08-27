@@ -1,3 +1,22 @@
 // Export des composants UI
 export { default as SectionDivider } from './SectionDivider';
 export { default as SectionSpacing } from './section-spacing';
+export { Badge, badgeVariants } from './badge';
+export { Separator } from './separator';
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card';
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './accordion';
+export { Button } from './button';
+export { Input } from './input';
+export { Label } from './label';
+export { Dialog, DialogContent, DialogHeader, DialogTitle } from './dialog';
+export { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from './drawer';
+export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select';
+export { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from './navigation-menu';
+export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './carousel';
+export { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from './form';
+export { ScrollArea } from './scroll-area';
+export { Skeleton } from './skeleton';
+export { Avatar, AvatarFallback, AvatarImage } from './avatar';
+export { ScrollAnimation } from './scroll-animations';
+export { AnimatedBackground } from './animated-background';

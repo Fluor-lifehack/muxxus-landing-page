@@ -8,17 +8,24 @@ import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import SectionDivider from "@/components/ui/SectionDivider";
 import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
+import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
+import MuxxusListers from "@/components/muxxus/MuxxusListers";
+import MuxxusAiSection from "@/components/muxxus/MuxxusAiSection";
+import MuxxusStepperRecord from "@/components/muxxus/MuxxusStepperRecord";
+import MuxxusCardSection from "@/components/muxxus/MuxxusCardSection";
 
 // Métadonnées de la page
 export const metadata: Metadata = {
-  title: "Connected Accounts API | Programmatic Account Creation | Muxxus",
-  description: "Create and manage business accounts programmatically with our Connected Accounts API. Automate KYC/AML processes and scale your onboarding at speed.",
-  keywords: "connected accounts, API, programmatic onboarding, KYC automation, business accounts, fintech API"
+  title: "Connected Accounts API | Platform Banking & Embedded Finance | Muxxus",
+  description: "Improve revenue and engagement on your platform with our Connected Accounts API. Programmatic account creation, automated KYC/AML, and multi-currency support for 50+ markets.",
+  keywords: "connected accounts, platform banking, embedded finance, KYC automation, business accounts, fintech API, marketplace payments"
 };
 
-// Données pour le composant DetailHero
-const heroData = {
-  title: "Create business accounts programmatically in 190+ countries",
+// Données consolidées pour tous les composants
+const pageData = {
+  // Hero Section
+  hero: {
+    title: "Improve revenue and engagement on your platform",
   shape: {
     light: "/assets/imgs/shape/img-s-29.png",
     dark: "/assets/imgs/shape/img-s-29-light.png"
@@ -33,36 +40,73 @@ const heroData = {
       light: "/assets/imgs/muxxus/image/img1.jpg",
       dark: "/assets/imgs/muxxus/image/img1.jpg"
     },
-    description: "Automate business account creation with our Connected Accounts API. Create accounts in seconds, not days, with built-in KYC/AML automation and global compliance.",
+      description: "Equip your customers with a range of financial services, including high-speed payouts, card issuing, multi-currency account numbers, and more. We manage the full onboarding and screening process for a seamless experience.",
     action_btn: {
-      label: "Get Started",
+        label: "Contact Sales",
       link: "#"
     }
   },
   image: "/assets/imgs/muxxus/image/img1.jpg",
   feature_text: "Connected Accounts API"
-};
+  },
 
-// Données pour les composants
-const componentData = {
-  muxxusAiSection: {
-    title: "AI-Powered KYC & Compliance Automation",
+  // Key Benefits Section
+  keyBenefits: {
+    title: "Differentiate your platform or marketplace",
     description: [
-      "Our AI-driven platform automatically verifies business information, performs risk assessments, and ensures compliance across 190+ jurisdictions.",
-      "Reduce manual review time by 80% with intelligent document processing, automated identity verification, and real-time compliance monitoring."
+      "Programmatically create connected accounts for businesses and individuals, and enable them with rich financial capabilities.",
+      "Unlock new revenue streams and improve customer engagement and retention."
     ],
-    action_btn: {
-      label: "Discover Our AI Solutions",
+    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    items: [
+      {
+        icon: "💼",
+        title: "More value for your customers",
+        description: "Offer customers a suite of financial capabilities directly within your platform, from multi-currency wallets, accounts with local bank details, payment acceptance, high-speed transfers, and card issuing."
+      },
+      {
+        icon: "💰",
+        title: "Multiple monetisation opportunities",
+        description: "Explore various ways to monetise, such as payout fees on transactions, FX fees on currency conversions, issuing interchange rebates, and platform SaaS fees."
+      },
+      {
+        icon: "🛡️",
+        title: "Streamlined onboarding and compliance",
+        description: "Let Muxxus manage full KYC, AML, sanctions screening, and identity requirements on your customers, ensuring they meet regulatory requirements."
+      },
+      {
+        icon: "📈",
+        title: "Simplified reconciliation",
+        description: "Benefit from a multi-currency ledgering system for each customer. Automate fund flows among connected accounts and review reports and transaction level data."
+      }
+    ]
+  },
+
+  // Get Started Section
+  getStarted: {
+    title: "Get started with Connected Accounts",
+    subtitle: "Whether you're a platform or marketplace, Muxxus makes it easy for you to securely create and onboard connected accounts around the world, while complying with local regulations.",
+    description: "Choose the right account type for your business needs and start creating connected accounts programmatically.",
+    methods: [
+      {
+        title: "Ledger accounts for marketplace payouts",
+        description: "Leverage an account type that further streamlines seller diligence in 200+ countries. Marketplaces using ledger accounts maintain ownership of funds prior to payout and can experience a faster go-to-market for payout needs.",
+        icon: "/assets/imgs/icon/marketplace.png",
+        color: "bg-blue-100",
       link: "#"
     },
-    shape_img: "/assets/imgs/shape/img-s-29.png",
-    small_shape: {
-      light: "/assets/imgs/shape/img-s-30.png",
-      dark: "/assets/imgs/shape/img-s-30-light.png"
-    }
+      {
+        title: "Full scale connected accounts",
+        description: "Fully onboard customers, including in depth KYC, and provide them with their own multi-currency wallet, as well as a range of other financial services, from third-party payouts to physical and virtual card issuing.",
+        icon: "/assets/imgs/icon/accounts.png",
+        color: "bg-green-100",
+        link: "#"
+      }
+    ]
   },
-  
-  muxxusSection2: {
+
+  // API Features Section
+  apiFeatures: {
     title: "Programmatic account creation for fintech platforms",
     description: [
       "Build embedded banking experiences",
@@ -92,37 +136,190 @@ const componentData = {
     }
   },
   
-  keyBenefitsSection2: {
-    title: "Transform your customer onboarding with automated account creation",
+  // Onboarding Section
+  onboarding: {
+    title: "Onboard customers with minimal friction",
+    subtitle: "HASSLE-FREE ONBOARDING",
     description: [
-      "Our Connected Accounts API enables you to create business accounts programmatically, eliminating manual processes and accelerating your customer acquisition.",
-      "From instant verification to automated compliance checks, we provide everything you need to scale your onboarding operations."
+      "Onboard customers with minimal friction",
+      "Effortlessly onboard users across the globe. Onboard customers in 50+ markets. We dynamically adjust information collection to meet local compliance requirements.",
+      "Leave the heavy lifting to us. We take care of Know-Your-Customer (KYC), Anti-Money Laundering (AML), sanctions screening, and identity requirements for you.",
+      "Choose the solution for your specific needs. Enjoy a faster go-to-market for payouts with ledger accounts, or opt for standard connected accounts with full KYC of sellers."
     ],
-    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
-    items: [
+    action_btn: {
+      label: "Get Started",
+      link: "#"
+    },
+    shape_img: "/assets/imgs/muxxus/image/img3.jpg",
+    small_shape: {
+      light: "/assets/imgs/shape/img-s-30.png",
+      dark: "/assets/imgs/shape/img-s-30-light.png"
+    },
+    backgroundColor: "bg-gray-50",
+    textColor: "text-gray-900",
+    buttonColor: "bg-primary",
+    buttonTextColor: "text-white",
+    buttonHoverColor: "hover:bg-primary-dark",
+    accentColor: "text-primary",
+    borderColor: "border-gray-200",
+    shadowColor: "shadow-gray-200"
+  },
+
+  // Onboarding Stepper Record
+  onboardingStepper: {
+    title: "ONBOARD CUSTOMERS WITH MINIMAL FRICTION",
+    subtitle: "Hassle-free onboarding process",
+    description: "Our streamlined onboarding process ensures your customers can start using financial services quickly while maintaining full compliance with local regulations.",
+    methods: [
       {
-        icon: "🚀",
-        title: "80% Faster Onboarding",
-        description: "Reduce onboarding time from days to minutes with automated account creation and instant verification."
+        title: "Effortlessly onboard users across the globe",
+        description: "Onboard customers in 50+ markets with our intelligent system that dynamically adjusts information collection to meet local compliance requirements. No more manual research needed.",
+        icon: "/assets/imgs/icon/globe.png"
       },
       {
-        icon: "📊",
-        title: "Scale Without Limits",
-        description: "Handle thousands of account creations simultaneously with our high-performance API infrastructure."
+        title: "Leave the heavy lifting to us",
+        description: "We take care of all Know-Your-Customer (KYC), Anti-Money Laundering (AML), sanctions screening, and identity requirements for you. Focus on your business while we handle compliance.",
+        icon: "/assets/imgs/icon/shield.png"
       },
       {
-        icon: "💳",
-        title: "Multi-Currency Ready",
-        description: "Create accounts in 50+ currencies with automatic FX capabilities and local banking infrastructure."
+        title: "Choose the solution for your specific needs",
+        description: "Enjoy a faster go-to-market for payouts with ledger accounts, or opt for standard connected accounts with full KYC of sellers. Flexibility that adapts to your business model.",
+        icon: "/assets/imgs/icon/gear.png"
+      }
+    ],
+    image: "/assets/imgs/muxxus/image/img3.jpg"
+  },
+
+  // API Endpoints
+  apiEndpoints: [
+    {
+      icon: "🚀",
+      title: "POST /v1/accounts",
+      description: "Create a new business account with business_info, kyc_documents, and compliance_data parameters."
+    },
+    {
+      icon: "📋",
+      title: "GET /v1/accounts/{id}",
+      description: "Retrieve account details and status using account_id parameter."
+    },
+    {
+      icon: "✏️",
+      title: "PUT /v1/accounts/{id}",
+      description: "Update account information with account_id and update_data parameters."
+    },
+    {
+      icon: "✅",
+      title: "POST /v1/accounts/{id}/verify",
+      description: "Initiate KYC verification process using account_id and verification_data."
+    }
+  ],
+
+  // Key Features
+  keyFeatures: [
+    {
+      icon: "💼",
+      title: "More value for your customers",
+      description: "Offer customers a suite of financial capabilities directly within your platform, from multi-currency wallets, accounts with local bank details, payment acceptance, high-speed transfers, and card issuing."
+    },
+    {
+      icon: "💰",
+      title: "Multiple monetisation opportunities",
+      description: "Explore various ways to monetise, such as payout fees on transactions, FX fees on currency conversions, issuing interchange rebates, and platform SaaS fees."
+    },
+    {
+      icon: "🔒",
+      title: "Streamlined onboarding and compliance",
+      description: "Let Muxxus manage full KYC, AML, sanctions screening, and identity requirements on your customers, ensuring they meet regulatory requirements."
+    },
+    {
+      icon: "📊",
+      title: "Simplified reconciliation",
+      description: "Benefit from a multi-currency ledgering system for each customer. Automate fund flows among connected accounts and review reports and transaction level data."
+    }
+  ],
+
+  // Account Types
+  accountTypes: [
+    {
+      icon: "🛒",
+      title: "Ledger accounts for marketplace payouts",
+      description: "Leverage an account type that further streamlines seller diligence in 200+ countries. Marketplaces using ledger accounts maintain ownership of funds prior to payout and can experience a faster go-to-market for payout needs."
+    },
+    {
+      icon: "💳",
+      title: "Full scale connected accounts",
+      description: "Fully onboard customers, including in depth KYC, and provide them with their own multi-currency wallet, as well as a range of other financial services, from third-party payouts to physical and virtual card issuing."
+    }
+  ],
+
+  // Onboarding Options
+  onboardingOptions: [
+    {
+      icon: "🌍",
+      title: "Effortlessly onboard users across the globe",
+      description: "Onboard customers in 50+ markets. Muxxus dynamically adjusts information collection to meet local compliance requirements."
+    },
+    {
+      icon: "🛡️",
+      title: "Leave the heavy lifting to us",
+      description: "Muxxus takes care of Know-Your-Customer (KYC), Anti-Money Laundering (AML), sanctions screening, and identity requirements for you."
+    },
+    {
+      icon: "⚡",
+      title: "Choose the solution for your specific needs",
+      description: "Enjoy a faster go-to-market for payouts with ledger accounts, or opt for standard connected accounts with full KYC of sellers."
+    }
+  ],
+
+  // Onboarding Options
+  onboardingOptions2: {
+    title: "Choose Your Onboarding Method",
+    subtitle: "Flexible onboarding solutions for every business",
+    description: "Select the onboarding approach that best fits your platform's needs and user experience requirements.",
+    cards: [
+      {
+        image: "/assets/imgs/icon/globe.png",
+        title: "Hosted onboarding",
+        description: "Redirect customers to a Muxxus-hosted web form to complete onboarding."
       },
       {
-        icon: "🔐",
-        title: "Enterprise Security",
-        description: "Bank-grade security with end-to-end encryption, multi-factor authentication, and compliance with international standards."
+        image: "/assets/imgs/icon/components.png",
+        title: "Embedded components",
+        description: "Leverage pre-built UI elements to onboard accounts globally via an API integration."
+      },
+      {
+        image: "/assets/imgs/icon/api.png",
+        title: "Native API",
+        description: "Fully customise your onboarding experience using Muxxus APIs."
       }
     ]
   },
-  
+
+  // Industry Use Cases
+  industryUseCases: [
+    {
+      icon: "🛒",
+      title: "Marketplaces",
+      description: "Onboard sellers to streamline global payouts, and introduce additional services like physical and virtual cards. Examples: E-commerce platforms, Service marketplaces, Gig economy platforms."
+    },
+    {
+      icon: "☁️",
+      title: "SaaS platforms",
+      description: "Consolidate end-to-end payments, from payment acceptance to payouts, to streamline customer experience. Examples: B2B software, Subscription services, Enterprise platforms."
+    },
+    {
+      icon: "💳",
+      title: "Fintechs and financial services",
+      description: "Power global funds collection and money movement for your customers around the world. Examples: Digital banks, Payment processors, Investment platforms."
+    },
+    {
+      icon: "🎨",
+      title: "Digital and creator",
+      description: "Onboard global creators and influencers, and provide a secure centralised wallet and card issuing. Examples: Content platforms, Creator marketplaces, Streaming services."
+    }
+  ],
+
+  // Supported Countries
   supportedCountries: {
     title: "Global business support network",
     description: "Our Connected Accounts API supports businesses from around the world, providing local compliance and banking infrastructure in major markets.",
@@ -216,6 +413,7 @@ const componentData = {
     }
   },
   
+  // Testimonials
   testimonials: {
     title: "What Our Connected Accounts Customers Say",
     description: "Discover how our customers use our Connected Accounts API to streamline their onboarding and scale their operations",
@@ -242,14 +440,38 @@ const componentData = {
         avatar: "/assets/imgs/team/img-s-15.jpg"
       }
     ]
-  }
-};
+  },
 
-// Données pour les sections FAQ
-const faqData = {
-  faq_title: "Connected Accounts FAQ",
-  faq_description: "Common questions about our Connected Accounts API and programmatic account creation",
-  faqs: [
+  // Connected Account Console Data
+  connectedAccountConsoleData: {
+    title: "CONNECTED ACCOUNT CONSOLE",
+    subtitle: "Easily manage connected accounts and gain insights",
+    description: "Streamline connected account management with our comprehensive console that provides full visibility and control over all your connected accounts.",
+    methods: [
+      {
+        title: "Centrally manage operations to see all activity",
+        description: "View all activity in your connected accounts, including overviews of all accounts in a single dashboard for complete operational visibility.",
+        icon: "/assets/imgs/icon/dashboard.png"
+      },
+      {
+        title: "Increase visibility for compliance processes",
+        description: "View onboarding and KYC status, and respond to KYC Request for Information (RFI) on behalf of your connected accounts to speed up processes.",
+        icon: "/assets/imgs/icon/compliance.png"
+      },
+      {
+        title: "Generate reporting and tracking for your accounts",
+        description: "Export dashboard data to conduct analyses and generate insights relating to connected accounts for better decision making.",
+        icon: "/assets/imgs/icon/reports.png"
+      }
+    ],
+    image: "/assets/imgs/muxxus/image/img5.jpg"
+  },
+
+  // FAQ
+  faq: {
+    title: "Connected Accounts FAQ",
+    description: "Common questions about our Connected Accounts API and programmatic account creation",
+    items: [
     {
       question: "How quickly can I create accounts through the API?",
       answer: "Account creation through our API typically takes 2-5 seconds for basic verification. Full KYC/AML compliance checks may take 24-48 hours depending on business complexity and jurisdiction requirements."
@@ -275,479 +497,48 @@ const faqData = {
       answer: "Standard plans include generous rate limits. Enterprise plans offer custom limits and dedicated infrastructure. All plans include comprehensive monitoring and alerting tools."
     }
   ]
-};
-
-// Nouvelles sections
-const apiEndpointsData = {
-  title: "API Endpoints & Integration",
-  subtitle: "Powerful endpoints for seamless account creation",
-  description: "Our RESTful API provides comprehensive endpoints for creating, managing, and monitoring business accounts programmatically.",
-  endpoints: [
-    {
-      method: "POST",
-      endpoint: "/v1/accounts",
-      description: "Create a new business account",
-      parameters: ["business_info", "kyc_documents", "compliance_data"]
-    },
-    {
-      method: "GET",
-      endpoint: "/v1/accounts/{id}",
-      description: "Retrieve account details and status",
-      parameters: ["account_id"]
-    },
-    {
-      method: "PUT",
-      endpoint: "/v1/accounts/{id}",
-      description: "Update account information",
-      parameters: ["account_id", "update_data"]
-    },
-    {
-      method: "POST",
-      endpoint: "/v1/accounts/{id}/verify",
-      description: "Initiate KYC verification process",
-      parameters: ["account_id", "verification_data"]
-    }
-  ]
-};
-
-const integrationStepsData = {
-  title: "Integration Steps",
-  subtitle: "Get started in minutes, not days",
-  description: "Follow these simple steps to integrate our Connected Accounts API into your platform.",
-  steps: [
-    {
-      number: "01",
-      title: "API Key Setup",
-      description: "Generate your API keys from the dashboard and configure authentication headers."
-    },
-    {
-      number: "02",
-      description: "Test Environment",
-      title: "Use our sandbox environment to test account creation and verification flows."
-    },
-    {
-      number: "03",
-      title: "Production Integration",
-      description: "Deploy to production with confidence using our comprehensive testing tools."
-    },
-    {
-      number: "04",
-      title: "Go Live",
-      description: "Start creating accounts for your customers with real-time processing."
-    }
-  ]
-};
-
-const pricingData = {
-  title: "Pricing & Plans",
-  subtitle: "Transparent pricing for every business size",
-  description: "Choose the plan that fits your needs with no hidden fees or setup costs.",
-  plans: [
-    {
-      name: "Starter",
-      price: "$99",
-      period: "/month",
-      features: [
-        "Up to 100 accounts/month",
-        "Basic KYC automation",
-        "Email support",
-        "Standard compliance"
-      ],
-      buttonText: "Get Started",
-      popular: false
-    },
-    {
-      name: "Professional",
-      price: "$299",
-      period: "/month",
-      features: [
-        "Up to 1,000 accounts/month",
-        "Advanced AI verification",
-        "Priority support",
-        "Enhanced compliance",
-        "Custom integrations"
-      ],
-      buttonText: "Get Started",
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      features: [
-        "Unlimited accounts",
-        "Custom AI models",
-        "Dedicated support",
-        "Full compliance suite",
-        "White-label solutions"
-      ],
-      buttonText: "Contact Sales",
-      popular: false
-    }
-  ]
-};
-
-const securityData = {
-  title: "Security & Compliance",
-  subtitle: "Bank-grade security for your peace of mind",
-  description: "We maintain the highest security standards and compliance certifications to protect your business and customers.",
-  features: [
-    {
-      icon: "🔒",
-      title: "SOC 2 Type II Certified",
-      description: "Annual security audits and compliance verification"
-    },
-    {
-      icon: "🛡️",
-      title: "End-to-End Encryption",
-      description: "256-bit AES encryption for all data in transit and at rest"
-    },
-    {
-      icon: "🔐",
-      title: "Multi-Factor Authentication",
-      description: "Advanced MFA for all API access and admin functions"
-    },
-    {
-      icon: "📋",
-      title: "GDPR & CCPA Compliant",
-      description: "Full compliance with international data protection regulations"
-    }
-  ]
-};
-
-const performanceData = {
-  title: "Performance Metrics",
-  subtitle: "Enterprise-grade reliability and speed",
-  description: "Our platform is built for scale with 99.99% uptime and sub-second response times.",
-  metrics: [
-    {
-      value: "99.99%",
-      label: "Uptime SLA",
-      description: "Guaranteed platform availability"
-    },
-    {
-      value: "< 200ms",
-      label: "API Response Time",
-      description: "Average response time for all endpoints"
-    },
-    {
-      value: "10,000+",
-      label: "Accounts/Second",
-      description: "Peak processing capacity"
-    },
-    {
-      value: "24/7",
-      label: "Monitoring",
-      description: "Real-time performance tracking"
-    }
-  ]
-};
-
-const useCasesData = {
-  title: "Use Cases & Industries",
-  subtitle: "Powering innovation across industries",
-  description: "Discover how businesses across different sectors use our Connected Accounts API to transform their operations.",
-  industries: [
-    {
-      name: "Fintech",
-      description: "Embedded banking, neobanks, and financial platforms",
-      examples: ["Digital banking apps", "Payment processors", "Investment platforms"]
-    },
-    {
-      name: "E-commerce",
-      description: "Marketplaces and online retailers with global reach",
-      examples: ["Cross-border marketplaces", "Subscription services", "Digital goods platforms"]
-    },
-    {
-      name: "SaaS",
-      description: "Software companies expanding globally",
-      examples: ["B2B platforms", "Freemium services", "Enterprise software"]
-    },
-    {
-      name: "Gig Economy",
-      description: "Platforms connecting workers and clients worldwide",
-      examples: ["Freelance platforms", "Delivery services", "Professional networks"]
-    }
-  ]
-};
-
-const documentationData = {
-  title: "Documentation & Resources",
-  subtitle: "Everything you need to get started",
-  description: "Comprehensive documentation, SDKs, and developer tools to accelerate your integration.",
-  resources: [
-    {
-      title: "API Reference",
-      description: "Complete API documentation with examples and code snippets",
-      link: "/developers/api-reference",
-      icon: "📚"
-    },
-    {
-      title: "SDKs & Libraries",
-      description: "Official SDKs for Node.js, Python, Java, and more",
-      link: "/developers/sdks",
-      icon: "⚙️"
-    },
-    {
-      title: "Postman Collection",
-      description: "Ready-to-use Postman collection for testing",
-      link: "/developers/postman",
-      icon: "📮"
-    },
-    {
-      title: "Developer Support",
-      description: "24/7 technical support and developer community",
-      link: "/developers/support",
-      icon: "💬"
-    }
-  ]
+  }
 };
 
 // Composant principal de la page
 export default function ConnectedAccountsPage() {
   return (
     <>
-      {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <DetailHero {...pageData.hero} />
 
-      {/* Key Benefits Section */}
-      <MuxxusSection2 
-        {...componentData.keyBenefitsSection2} 
-        fullWidthHeader={true} 
-        backgroundVideo="/assets/videos/world-globe.mp4"
-      />
+      <div className="py-12">
+        <MuxxusSection2 
+          {...pageData.keyBenefits} 
+          fullWidthHeader={true} 
+        />
+      </div>
 
-      {/* API Features Section */}
-      <MuxxusSection2 
-        {...componentData.muxxusSection2} 
-        fullWidthHeader={true} 
-        backgroundColor="bg-white"
-        textColor="text-gray-900"
-      />
-
-      {/* Supported Countries Section */}
-      <SupportedCountriesSection {...componentData.supportedCountries} />
-
-      {/* API Endpoints Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{apiEndpointsData.title}</h2>
-            <p className="text-xl text-gray-600 mb-4">{apiEndpointsData.subtitle}</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{apiEndpointsData.description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {apiEndpointsData.endpoints.map((endpoint, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <div className="flex items-center mb-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    endpoint.method === 'POST' ? 'bg-green-100 text-green-800' :
-                    endpoint.method === 'GET' ? 'bg-blue-100 text-blue-800' :
-                    endpoint.method === 'PUT' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-gray-100 text-gray-800'
-                  }`}>
-                    {endpoint.method}
-                  </span>
-                  <code className="ml-3 text-sm bg-gray-100 px-2 py-1 rounded">{endpoint.endpoint}</code>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{endpoint.description}</h3>
-                <div className="text-sm text-gray-600">
-                  <strong>Parameters:</strong> {endpoint.parameters.join(', ')}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Steps Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{integrationStepsData.title}</h2>
-            <p className="text-xl text-gray-600 mb-4">{integrationStepsData.subtitle}</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{integrationStepsData.description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {integrationStepsData.steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{pricingData.title}</h2>
-            <p className="text-xl text-gray-600 mb-4">{pricingData.subtitle}</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{pricingData.description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingData.plans.map((plan, index) => (
-              <div key={index} className={`bg-white p-8 rounded-lg shadow-sm border-2 ${
-                plan.popular ? 'border-primary' : 'border-gray-200'
-              } relative`}>
-                {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Most Popular
-                  </span>
-                )}
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                  <span className="text-gray-600">{plan.period}</span>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <button className={`w-full py-3 px-6 rounded-lg font-medium ${
-                  plan.popular 
-                    ? 'bg-primary text-white hover:bg-primary-dark' 
-                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                } transition-colors`}>
-                  {plan.buttonText}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Security Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{securityData.title}</h2>
-            <p className="text-xl text-gray-600 mb-4">{securityData.subtitle}</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{securityData.description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {securityData.features.map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Performance Metrics Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{performanceData.title}</h2>
-            <p className="text-xl text-gray-600 mb-4">{performanceData.subtitle}</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{performanceData.description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {performanceData.metrics.map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">{metric.label}</div>
-                <p className="text-gray-600">{metric.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{useCasesData.title}</h2>
-            <p className="text-xl text-gray-600 mb-4">{useCasesData.subtitle}</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{useCasesData.description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {useCasesData.industries.map((industry, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{industry.name}</h3>
-                <p className="text-gray-600 mb-4">{industry.description}</p>
-                <ul className="space-y-2">
-                  {industry.examples.map((example, exampleIndex) => (
-                    <li key={exampleIndex} className="text-sm text-gray-600 flex items-center">
-                      <svg className="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {example}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Documentation Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{documentationData.title}</h2>
-            <p className="text-xl text-gray-600 mb-4">{documentationData.subtitle}</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">{documentationData.description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {documentationData.resources.map((resource, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                <div className="text-3xl mb-4">{resource.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{resource.title}</h3>
-                <p className="text-gray-600 mb-4">{resource.description}</p>
-                <a href={resource.link} className="text-primary hover:text-primary-dark font-medium">
-                  Learn More →
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Testimonials Section */}
-      <TestimonialsSection {...componentData.testimonials} />
-
-      {/* API Integration Section */}
-      <FeatureSection
-        title="API Integration"
-        subtitle="Build seamless onboarding experiences"
-        description="Integrate our Connected Accounts API into your platform with comprehensive documentation, SDKs, and dedicated support. Start building in minutes with our developer-friendly endpoints."
-        buttonText="View Documentation"
-        buttonLink="/developers/docs"
-        imageSrc="/assets/imgs/muxxus/image/img5.jpg"
-        imageAlt="API Integration"
-        badgeColor="white"
-        imageFirst={false}
-        className="bg-gray-900 text-white"
-      />
+      <MuxxusListers {...pageData.getStarted} />
+        <MuxxusStepperRecord {...pageData.onboardingStepper}  />
+        <MuxxusCardSection 
+          cards={pageData.onboardingOptions2.cards}
+          showHeader={false}
+          backgroundColor="bg-white"
+        />
+        <MuxxusStepperRecord {...pageData.connectedAccountConsoleData} />
 
       <SectionDivider variant="gradient" size="lg" color="primary" />
 
       {/* FAQ et Footer */}
-      <ServiceDetailsFaq 
-        faqs={faqData.faqs} 
-        faqTitle={faqData.faq_title} 
-      />
-      <MuxxusNewsletter />
-      <MuxxusFooter />
+      <div className="py-12">
+        <ServiceDetailsFaq 
+          faqs={pageData.faq.items} 
+          faqTitle={pageData.faq.title} 
+        />
+      </div>
+      
+      <div className="py-8">
+        <MuxxusNewsletter />
+      </div>
+      
+      <div className="py-6">
+        <MuxxusFooter />
+      </div>
     </>
   );
 }

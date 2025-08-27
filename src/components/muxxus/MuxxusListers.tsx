@@ -30,20 +30,20 @@ const MuxxusListers: React.FC<MuxxusListersProps> = ({
     <section className={`py-16 bg-white ${className}`}>
       <div className="container mx-auto px-4">
         {/* Titre et sous-titre */}
-        <div className="text-left mb-12">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {subtitle}
           </p>
-          <p className="text-lg text-gray-500 mt-3 max-w-4xl">
+          <p className="text-lg text-gray-500 mt-3 max-w-4xl mx-auto">
             {description}
           </p>
         </div>
 
         {/* Contenu principal */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {methods.map((method, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
               <div className="mb-4">

@@ -14,11 +14,13 @@ interface Card {
 }
 
 interface MuxxusCardSectionProps {
-  title: string;
-  subtitle: string;
-  description: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
   cards: Card[];
   className?: string;
+  showHeader?: boolean;
+  backgroundColor?: string;
 }
 
 const MuxxusCardSection: React.FC<MuxxusCardSectionProps> = ({
@@ -26,7 +28,9 @@ const MuxxusCardSection: React.FC<MuxxusCardSectionProps> = ({
   subtitle,
   description,
   cards,
-  className = ''
+  className = '',
+  showHeader = true,
+  backgroundColor = 'bg-gray-50'
 }) => {
   const containerRef = useRef<HTMLDivElement>(null!);
 
@@ -38,20 +42,26 @@ const MuxxusCardSection: React.FC<MuxxusCardSectionProps> = ({
   );
 
   return (
-    <section ref={containerRef} className={`py-16 bg-gray-50 ${className}`}>
+    <section ref={containerRef} className={`py-16 ${backgroundColor} ${className}`}>
       <div className="container mx-auto px-4">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 has_text_mov_anim">
-            {title}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4 has_text_mov_anim">
-            {subtitle}
-          </p>
-          <p className="text-lg text-gray-500 max-w-4xl mx-auto has_text_mov_anim">
-            {description}
-          </p>
-        </div>
+        {/* Header Section - Conditionnel */}
+        {showHeader && title && (
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 has_text_mov_anim">
+              {title}
+            </h2>
+            {subtitle && (
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4 has_text_mov_anim">
+                {subtitle}
+              </p>
+            )}
+            {description && (
+              <p className="text-lg text-gray-500 max-w-4xl mx-auto has_text_mov_anim">
+                {description}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">

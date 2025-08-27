@@ -18,6 +18,7 @@ interface MuxxusStepperRecordProps {
   methods: StepperItem[];
   image?: string;
   className?: string;
+  titleAlign?: 'left' | 'center' | 'right';
 }
 
 const MuxxusStepperRecord: React.FC<MuxxusStepperRecordProps> = ({ 
@@ -26,26 +27,52 @@ const MuxxusStepperRecord: React.FC<MuxxusStepperRecordProps> = ({
   description,
   methods, 
   image,
-  className = '' 
+  className = '',
+  titleAlign = 'center'
 }) => {
+  // Déterminer les classes d'alignement
+  const getAlignmentClasses = () => {
+    switch (titleAlign) {
+      case 'left':
+        return 'text-left';
+      case 'right':
+        return 'text-right';
+      case 'center':
+      default:
+        return 'text-center';
+    }
+  };
+
+  const getMarginClasses = () => {
+    switch (titleAlign) {
+      case 'left':
+        return '';
+      case 'right':
+        return '';
+      case 'center':
+      default:
+        return 'mx-auto';
+    }
+  };
+
   return (
     <section className={`py-16 bg-white ${className}`}>
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre et sous-titre */}
-        <div className="text-left mb-12">
+        <div className={`${getAlignmentClasses()} mb-12`}>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl">
+          <p className={`text-xl text-gray-600 max-w-3xl ${getMarginClasses()}`}>
             {subtitle}
           </p>
-          <p className="text-lg text-gray-500 mt-3 max-w-4xl">
+          <p className={`text-lg text-gray-500 mt-3 max-w-4xl ${getMarginClasses()}`}>
             {description}
           </p>
         </div>
 
         {/* Contenu principal - Vrai Stepper style avec image à droite */}
-        <div className="flex gap-12">
+        <div className="flex gap-12 justify-center">
           {/* Stepper à gauche */}
           <div className="flex-1 max-w-2xl">
             {methods.map((item, index) => (

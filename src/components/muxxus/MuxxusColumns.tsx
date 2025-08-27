@@ -49,14 +49,28 @@ const MuxxusColumns: React.FC<MuxxusColumnsProps> = ({
     }
   };
 
+  // Déterminer le nombre de colonnes par ligne selon le nombre d'éléments
+  const getGridCols = () => {
+    const itemCount = data.length;
+    if (itemCount === 3 || itemCount === 6) {
+      return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
+    } else if (itemCount === 4 || itemCount === 8) {
+      return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4';
+    } else {
+      // Par défaut, utiliser 3 colonnes
+      return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
+    }
+  };
+
   const textColors = getTextColorClasses();
   const alignmentClass = getAlignmentClasses();
+  const gridCols = getGridCols();
 
   return (
     <section className={`mt-16 py-12 ${backgroundColor} ${className}`} >
       <div className="container mx-auto px-4">
-        {/* Grille 2x4 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grille adaptative */}
+        <div className={`grid ${gridCols} gap-6`}>
           {data.map((item, index) => (
             <div 
               key={index}
