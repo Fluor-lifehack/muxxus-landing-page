@@ -128,7 +128,7 @@ const MuxxusFooter = () => {
             {/* Logo and Description */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <Logo />
+                <Logo light={true} />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Global financial infrastructure for modern businesses. 

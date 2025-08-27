@@ -2,20 +2,20 @@
   "metadata": {
     "meta_author": "Wealcoder",
     "meta_image": "",
-    "meta_description": "Arolax Landing Page"
+    "meta_description": "Muxxus Landing Page"
   },
   "site_info": {
-    "title": "Arolax",
-    "description": "Arolax is a full-service brand agency for purpose-driven companies. We build brands that look good, sound good,and do good.",
-    "info": "Arolax is a startup design agency based in Canada",
+    "title": "Muxxus",
+    "description": "Muxxus is a comprehensive financial technology platform providing global business accounts, payments, and embedded finance solutions.",
+    "info": "Muxxus is a fintech platform based in Europe",
     "base_url": "",
     "logo": "/assets/imgs/logo/logo.png",
-    "logo_light": "/assets/imgs/logo/logo-light.png",
-    "logo_light_2": "/assets/imgs/logo/logo-light-2.png",
-    "logo_tm_light": "/assets/imgs/logo/logo-tm-light.png",
-    "logo_width": 125,
-    "logo_height": 34,
-    "logo_text": "Arolax"
+    "logo_light": "/assets/imgs/logo/logo.png",
+    "logo_light_2": "/assets/imgs/logo/logo.png",
+    "logo_tm_light": "/assets/imgs/logo/logo.png",
+    "logo_width": 180,
+    "logo_height": 60,
+    "logo_text": "Muxxus"
   },
   "footer_info": {
     "address": {

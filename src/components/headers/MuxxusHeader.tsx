@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
+import Logo from "@/components/elements/logo/Logo";
 
 // Import des données de navigation
 import navigationConfig from "@/config/navigation.json";
@@ -76,9 +77,7 @@ export default function MuxxusHeader({ breadcrumb }: MuxxusHeaderProps) {
           <div className="flex h-16 lg:h-20 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="w-32 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600">
-                <span className="text-white font-bold text-xl">Muxxus</span>
-              </div>
+              <Logo customWidth={160} customHeight={53} />
             </div>
 
             {/* Desktop Navigation - Prend toute la largeur disponible */}
@@ -120,13 +119,7 @@ export default function MuxxusHeader({ breadcrumb }: MuxxusHeaderProps) {
                         onMouseLeave={() => handleMouseLeave(item.name)}
                       >
                         <div className="max-w-7xl mx-auto px-8 py-6">
-                          {/* Header Section - Simple */}
-                          <div className="mb-6 text-center">
-                            <h2 className="text-xl font-semibold text-gray-900 mb-2">{item.name}</h2>
-                            <p className="text-gray-600">
-                              Tools and services for your business
-                            </p>
-                          </div>
+
 
                           {/* Content Grid */}
                           <div className="grid grid-cols-5 gap-6">
