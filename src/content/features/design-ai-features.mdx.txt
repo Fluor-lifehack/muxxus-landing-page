@@ -1,0 +1,16 @@
+---
+title: "L'Intelligence Artificielle révolutionne la banque"
+image: "/assets/images/accueil/ia-illustration-3.jpg"
+sub_title: ""
+sub_icon: "/assets/imgs/shape/img-s-46.png"
+features:
+  - icon: "/assets/imgs/shape/img-s-46.png"
+    title: "Automatisation des processus bancaires"
+    description: "Optimisez vos opérations financières avec nos solutions d'IA qui automatisent la gestion des comptes et des transactions."
+  - icon: "/assets/imgs/shape/img-s-47.png"
+    title: "Détection de fraude intelligente"
+    description: "Protégez vos clients avec notre système d'IA qui détecte et prévient les activités frauduleuses en temps réel."
+  - icon: "/assets/imgs/shape/img-s-48.png"
+    title: "Support client bancaire 24/7"
+    description: "Offrez un service client exceptionnel avec notre assistant virtuel intelligent disponible jour et nuit."
+---

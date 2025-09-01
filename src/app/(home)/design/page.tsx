@@ -103,13 +103,13 @@ const Design = () => {
 
       
         {/* Section Image fine avec animation de révélation */}
-        <RevealOnScroll direction="up" distance={110} duration={1.7} delay={0.4}>
+        {/* <RevealOnScroll direction="up" distance={110} duration={1.7} delay={0.4}>
           <FineImageSection {...image} />
-        </RevealOnScroll>
+        </RevealOnScroll> */}
 
 
         {/* Fonctionnalités Muxxus avec animation de particules - ACCÉLÉRÉES */}
-        <ParticlesOnScroll particleCount={8} duration={2.5}> {/* Réduit de 4 à 2.5 */}
+        <ParticlesOnScroll> {/* Réduit de 4 à 2.5 */}
           <MuxxusFeature {...feature} />
         </ParticlesOnScroll>
 

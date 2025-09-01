@@ -59,128 +59,102 @@ const DesignSkill = ({ title, description, skills }: Props) => {
       cards: [
         {
           title: "Global Accounts",
-          description: "Open local currency accounts to receive funds in 20+ currencies",
-          image: skills[0]?.img_main || "/assets/imgs/skill/design/skill1.jpg",
+          description: "Create and manage multi-currency accounts worldwide with local banking capabilities",
+          image: "/assets/images/accueil/145789.png",
+          // image: skills[0]?.img_main || "/assets/images/accueil/145789.png",
           icon: "globe",
           color: "blue"
         },
         {
           title: "FX & Transfers", 
-          description: "Make global transfers to 200+ countries at interbank rates",
-          image: skills[0]?.img_main || "/assets/imgs/skill/design/skill2.jpg",
+          description: "Exchange currencies and transfer funds globally at competitive rates",
+          image: "/assets/images/accueil/6318783.png",
+          // image: skills[0]?.img_main || "/assets/imgs/skill/design/skill2.jpg",
           icon: "transfer",
           color: "green"
         },
-        {
-          title: "Corporate Cards",
-          description: "Issue multi-currency corporate cards instantly",
-          image: skills[0]?.img_main || "/assets/imgs/skill/design/skill3.jpg",
-          icon: "card",
-          color: "purple"
-        },
-        {
-          title: "Integrations",
-          description: "Connect Airwallex to other popular software platforms",
-          image: skills[0]?.img_main || "/assets/imgs/skill/design/skill4.jpg",
-          icon: "integration",
-          color: "orange"
-        }
+
       ]
     },
     1: { // Spend
       cards: [
         {
-          title: "Smart Cards",
-          description: "Control spending with smart cards and automated approvals",
-          image: skills[1]?.img_main || "/assets/imgs/skill/design/skill5.jpg",
+          title: "Corporate Cards",
+          description: "Issue virtual and physical cards with spending controls and real-time monitoring",
+          image: "/assets/images/accueil/237653.png",
+          // image: skills[1]?.img_main || "/assets/imgs/skill/design/skill5.jpg",
           icon: "card",
           color: "blue"
         },
         {
-          title: "Analytics",
-          description: "Track spending with detailed analytics and insights",
-          image: skills[1]?.img_main || "/assets/imgs/skill/design/skill6.jpg",
+          title: "Expense Management",
+          description: "Automate expense tracking, approval workflows, and reimbursement processes",
+          image: "/assets/images/accueil/092834.png",
+          // image: skills[1]?.img_main || "/assets/imgs/skill/design/skill6.jpg",
           icon: "chart",
           color: "green"
         },
         {
-          title: "Approvals",
-          description: "Automated approval workflows for expense management",
-          image: skills[1]?.img_main || "/assets/imgs/skill/design/skill7.jpg",
+          title: "Bill Pay",
+          description: "Streamline bill payments with automated scheduling and vendor management",
+          image: "/assets/images/accueil/098735.png",
+          // image: skills[1]?.img_main || "/assets/imgs/skill/design/skill7.jpg",
           icon: "check",
           color: "purple"
         },
-        {
-          title: "Reporting",
-          description: "Comprehensive reporting and expense tracking",
-          image: skills[1]?.img_main || "/assets/imgs/skill/design/skill8.jpg",
-          icon: "report",
-          color: "orange"
-        }
       ]
     },
     2: { // Payments
+
+
       cards: [
         {
-          title: "Global Network",
-          description: "Send and receive payments globally with competitive rates",
-          image: skills[2]?.img_main || "/assets/imgs/skill/design/skill9.jpg",
+          title: "Checkout",
+          description: "Accept payments online with secure checkout solutions and multiple payment methods",
+          image:"/assets/images/accueil/checkout-illustration.png",
           icon: "network",
           color: "blue"
         },
         {
-          title: "Instant Settlement",
-          description: "Real-time settlement for faster payment processing",
-          image: skills[2]?.img_main || "/assets/imgs/skill/design/skill10.jpg",
+          title: "Payment Plugins",
+          description: "Integrate payment processing into your applications with ready-to-use plugins",
+          image: "/assets/images/accueil/plugin-puzzle.png",
           icon: "clock",
           color: "green"
         },
         {
-          title: "Multi-Currency",
-          description: "Support for multiple currencies and exchange rates",
-          image: skills[2]?.img_main || "/assets/imgs/skill/design/skill11.jpg",
+          title: "Payment Links",
+          description: "Create shareable payment links for quick and easy transactions",
+          image: "/assets/images/accueil/payment-link.png",
           icon: "currency",
           color: "purple"
         },
-        {
-          title: "Security",
-          description: "Enterprise-grade security for all payment transactions",
-          image: skills[2]?.img_main || "/assets/imgs/skill/design/skill12.jpg",
-          icon: "shield",
-          color: "orange"
-        }
       ]
     },
-    3: { // Platform APIs
+    3: {
       cards: [
         {
-          title: "REST APIs",
-          description: "Powerful REST APIs for seamless integration",
-          image: skills[3]?.img_main || "/assets/imgs/skill/design/skill13.jpg",
+          title: "Connected Accounts",
+          description: "Onboard and manage third-party accounts with automated compliance",
+          image: "/assets/images/accueil/connected-accounts.png",
           icon: "api",
           color: "blue"
         },
         {
-          title: "SDKs",
-          description: "Comprehensive SDKs for multiple programming languages",
-          image: skills[3]?.img_main || "/assets/imgs/skill/design/skill14.jpg",
+          title: "Accounts",
+          description: "Create and manage multi-currency accounts programmatically via APIs",
+          image: "/assets/images/accueil/accounts.png",
           icon: "code",
           color: "green"
         },
         {
-          title: "Webhooks",
-          description: "Real-time notifications via webhooks",
-          image: skills[3]?.img_main || "/assets/imgs/skill/design/skill15.jpg",
+          title: "Payments",
+          description: "Process payments globally with real-time settlement and webhook notifications",
+          image: "/assets/images/accueil/payments.png",
           icon: "webhook",
           color: "purple"
         },
-        {
-          title: "Documentation",
-          description: "Comprehensive documentation and developer resources",
-          image: skills[3]?.img_main || "/assets/imgs/skill/design/skill16.jpg",
-          icon: "docs",
-          color: "orange"
-        }
+
       ]
     }
   };

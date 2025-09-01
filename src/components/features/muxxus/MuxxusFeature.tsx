@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import MuxxusFeatureCard from "@/components/features/muxxus/MuxxusFeatureCard";
+import ImageComponent from "@/components/tools/ImageComponent";
 import { cn } from "@/lib/utils";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
@@ -42,7 +43,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
       hasTextMovAnim();
       hasCharAnim();
 
-      // Animation de l'icône décorative au scroll - ACCÉLÉRÉE
+      // Animation de l'icône décorative au scroll
       gsap.fromTo(
         iconRef.current,
         {
@@ -56,9 +57,8 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
           scale: 1,
           opacity: 1,
           rotation: 0,
-          duration: 0.8, // Réduit de 1.2 à 0.8
-          delay: 0.1,    // Réduit de 0.3 à 0.1
-          ease: "back.out(1.4)", // Légèrement plus rapide
+          duration: 0.8,
+          ease: "back.out(1.4)",
           scrollTrigger: {
             trigger: iconRef.current,
             start: "top 90%",
@@ -68,7 +68,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
         }
       );
 
-      // Animation du titre avec effet de révélation au scroll - ACCÉLÉRÉE
+      // Animation du titre avec effet de révélation au scroll
       gsap.fromTo(
         titleRef.current,
         {
@@ -80,8 +80,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 0.8, // Réduit de 1.2 à 0.8
-          delay: 0.2,    // Réduit de 0.5 à 0.2
+          duration: 0.8,
           ease: "power3.out",
           scrollTrigger: {
             trigger: titleRef.current,
@@ -92,7 +91,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
         }
       );
 
-      // Animation de la description avec effet de typewriter au scroll - ACCÉLÉRÉE
+      // Animation de la description avec effet de typewriter au scroll
       gsap.fromTo(
         descriptionRef.current,
         {
@@ -104,8 +103,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
           y: 0,
           opacity: 1,
           clipPath: "inset(0 0% 0 0)",
-          duration: 1.0, // Réduit de 1.5 à 1.0
-          delay: 0.4,    // Réduit de 0.8 à 0.4
+          duration: 1.0,
           ease: "power2.out",
           scrollTrigger: {
             trigger: descriptionRef.current,
@@ -116,7 +114,7 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
         }
       );
 
-      // Animation des éléments décoratifs au scroll - ACCÉLÉRÉE
+      // Animation des éléments décoratifs au scroll
       const decorativeElements = decorativeElementsRef.current?.children;
       if (decorativeElements) {
         gsap.fromTo(
@@ -132,8 +130,8 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
             opacity: 1,
             scale: 1,
             rotation: 0,
-            duration: 0.7,    // Réduit de 1.0 à 0.7
-            stagger: 0.15,    // Réduit de 0.3 à 0.15
+            duration: 0.7,
+            stagger: 0.1,
             ease: "power2.out",
             scrollTrigger: {
               trigger: decorativeElementsRef.current,
@@ -173,23 +171,20 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
         style={{ backgroundImage: "url('/assets/imgs/muxxus/background/img.png')" }}
       />
       
-      {/* Éléments décoratifs subtils avec animation au scroll - DÉLAIS RÉDUITS */}
+      {/* Éléments décoratifs subtils avec animation au scroll */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" ref={decorativeElementsRef}>
         <div className="has_fade_anim absolute w-32 h-32 top-20 left-10 z-10 hidden xl:block" 
-             data-fade-offset="0" 
-             data-delay="0.4"> {/* Réduit de 0.8 à 0.4 */}
+             data-fade-offset="0">
           <div className="w-full h-full border border-gray-300/20 rounded-lg transform rotate-45"></div>
         </div>
         
         <div className="has_fade_anim absolute w-24 h-24 top-40 right-20 z-10 hidden xl:block" 
-             data-fade-offset="0" 
-             data-delay="0.6"> {/* Réduit de 1.2 à 0.6 */}
+             data-fade-offset="0">
           <div className="w-full h-full border border-gray-300/20 rounded-full"></div>
         </div>
 
         <div className="has_fade_anim absolute w-40 h-40 bottom-32 left-1/4 z-10 hidden xl:block" 
-             data-fade-offset="0" 
-             data-delay="0.8"> {/* Réduit de 1.6 à 0.8 */}
+             data-fade-offset="0">
           <div className="w-full h-full border border-gray-300/20 transform rotate-12"></div>
         </div>
       </div>
@@ -199,15 +194,6 @@ const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
           {/* Header de la section */}
           <div className="text-center mb-16">
             {/* Icône décorative avec animation au scroll */}
-            <div className="mb-8" ref={iconRef}>
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-100 dark:bg-gray-700 rounded-2xl border border-gray-200 dark:border-gray-600 transition-all duration-300"> {/* Réduit de 500ms à 300ms */}
-                <img 
-                  src={img_icon} 
-                  alt="Features Icon" 
-                  className="w-12 h-12 object-contain"
-                />
-              </div>
-            </div>
 
             {/* Titre principal avec animation au scroll */}
             <div className="mb-6" ref={titleRef}>

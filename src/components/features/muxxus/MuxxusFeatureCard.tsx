@@ -32,7 +32,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
     // Animation de base avec hasFadeAnim
     hasFadeAnim();
 
-    // Animation d'entrée de la carte au scroll - ACCÉLÉRÉE
+    // Animation d'entrée de la carte au scroll
     gsap.fromTo(
       cardRef.current,
       {
@@ -46,8 +46,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         opacity: 1,
         scale: 1,
         rotationY: 0,
-        duration: 0.7,        // Réduit de 1.0 à 0.7
-        delay: index * 0.1,   // Réduit de 0.15 à 0.1
+        duration: 0.7,
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -58,7 +57,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation de l'icône avec effet de rebond - ACCÉLÉRÉE
+    // Animation de l'icône avec effet de rebond
     gsap.fromTo(
       iconRef.current,
       {
@@ -72,9 +71,8 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         scale: 1,
         opacity: 1,
         rotation: 0,
-        duration: 0.6,                    // Réduit de 0.8 à 0.6
-        delay: index * 0.1 + 0.1,        // Réduit de 0.15 + 0.2 à 0.1 + 0.1
-        ease: "back.out(1.5)",           // Légèrement plus rapide
+        duration: 0.6,
+        ease: "back.out(1.5)",
         scrollTrigger: {
           trigger: cardRef.current,
           start: "top 85%",
@@ -84,7 +82,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation du contenu avec effet de révélation - ACCÉLÉRÉE
+    // Animation du contenu avec effet de révélation
     gsap.fromTo(
       contentRef.current,
       {
@@ -96,8 +94,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         y: 0,
         opacity: 1,
         clipPath: "inset(0 0% 0 0)",
-        duration: 0.6,                    // Réduit de 0.8 à 0.6
-        delay: index * 0.1 + 0.2,        // Réduit de 0.15 + 0.4 à 0.1 + 0.2
+        duration: 0.6,
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -108,7 +105,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation de l'indicateur de progression - ACCÉLÉRÉE
+    // Animation de l'indicateur de progression
     gsap.fromTo(
       progressRef.current,
       {
@@ -118,8 +115,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       {
         scaleX: 1,
         opacity: 1,
-        duration: 0.4,                    // Réduit de 0.6 à 0.4
-        delay: index * 0.1 + 0.3,        // Réduit de 0.15 + 0.6 à 0.1 + 0.3
+        duration: 0.4,
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -130,7 +126,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       }
     );
 
-    // Animation de la bordure décorative - ACCÉLÉRÉE
+    // Animation de la bordure décorative
     gsap.fromTo(
       borderRef.current,
       {
@@ -140,8 +136,7 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
       {
         scaleX: 1,
         opacity: 1,
-        duration: 0.6,                    // Réduit de 0.8 à 0.6
-        delay: index * 0.1 + 0.4,        // Réduit de 0.15 + 0.8 à 0.1 + 0.4
+        duration: 0.6,
         ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
@@ -192,7 +187,6 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         "has_fade_anim"
       )}
       data-fade-from="bottom"
-      data-delay={index * 0.05}
     >
       {/* Effet de brillance au scroll */}
       <div className="absolute inset-0 bg-gray-100/30 dark:bg-gray-700/30 opacity-0 transition-opacity duration-300 rounded-2xl"></div>
@@ -227,10 +221,10 @@ const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
         </p>
 
         {/* Indicateur de progression avec animation au scroll */}
-        <div className="mt-6 flex items-center gap-2 transition-opacity duration-200" ref={progressRef}>
+        {/* <div className="mt-6 flex items-center gap-2 transition-opacity duration-200" ref={progressRef}>
           <div className="w-2 h-2 bg-gray-600 dark:bg-gray-400 rounded-full"></div>
           <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">Fonctionnalité active</span>
-        </div>
+        </div> */}
       </div>
 
       {/* Bordure décorative avec animation au scroll */}
