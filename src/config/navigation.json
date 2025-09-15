@@ -162,8 +162,8 @@
     {
       "id": 2,
       "name": "Solutions",
-      "path": "#",
-      "hasChildren": true,
+      "path": "solutions",
+      "hasChildren": false,
       "children": [
         {
           "id": 1,
@@ -231,7 +231,7 @@
       "id": 3,
       "name": "Developers",
       "path": "#",
-      "hasChildren": true,
+      "hasChildren": false,
       "children": [
         {
           "id": 1,
@@ -281,7 +281,7 @@
       "id": 4,
       "name": "Company",
       "path": "#",
-      "hasChildren": true,
+      "hasChildren": false,
       "children": [
         {
           "id": 1,

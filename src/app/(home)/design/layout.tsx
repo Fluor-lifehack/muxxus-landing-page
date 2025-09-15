@@ -42,7 +42,7 @@ const DesignLayout = ({ children }: Readonly<LayoutProps>) => {
       <ScrollTop />
       
       {/* Header fixe en dehors du ScrollSmoother pour une meilleure UX */}
-      <MemoizedHeader />
+      <MemoizedHeader navigationConfig={navigation} />
       
       {/* Wrapper principal avec ScrollSmoother */}
       <div id="smooth-wrapper">

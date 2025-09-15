@@ -37,45 +37,45 @@ const MuxxusFooter = () => {
     {
       title: "Solutions",
       links: [
-        { name: "E-commerce", href: "/solutions/ecommerce" },
-        { name: "Marketplaces", href: "/solutions/marketplaces" },
-        { name: "Travel", href: "/solutions/travel" },
-        { name: "SaaS", href: "/solutions/saas" },
-        { name: "Fintech", href: "/solutions/fintech" },
-        { name: "Enterprise", href: "/solutions/enterprise" },
+        { name: "E-commerce", href: "/#" },
+        { name: "Marketplaces", href: "/#" },
+        { name: "Travel", href: "/#" },
+        { name: "SaaS", href: "/#" },
+        { name: "Fintech", href: "/#" },
+        { name: "Enterprise", href: "/#" },
       ]
     },
     {
       title: "Developers",
       links: [
-        { name: "Documentation", href: "/developers/docs" },
-        { name: "API Reference", href: "/developers/api" },
-        { name: "SDKs", href: "/developers/sdks" },
-        { name: "Webhooks", href: "/developers/webhooks" },
-        { name: "Status", href: "/developers/status" },
-        { name: "Support", href: "/developers/support" },
+        { name: "Documentation", href: "/#" },
+        { name: "API Reference", href: "/#" },
+        { name: "SDKs", href: "/#" },
+        { name: "Webhooks", href: "/#" },
+        { name: "Status", href: "/#" },
+        { name: "Support", href: "/#" },
       ]
     },
     {
       title: "Company",
       links: [
-        { name: "About", href: "/company/who-we-are" },
-        { name: "Careers", href: "/career" },
-        { name: "Press", href: "/company/newsroom" },
-        { name: "Partners", href: "/partners" },
-        { name: "Contact", href: "/contact" },
-        { name: "Blog", href: "/blog" },
+        { name: "About", href: "/#" },
+        { name: "Careers", href: "/#" },
+        { name: "Press", href: "/#" },
+        { name: "Partners", href: "/#" },
+        { name: "Contact", href: "/#" },
+        { name: "Blog", href: "/#" },
       ]
     },
     {
       title: "Support",
       links: [
-        { name: "Help Center", href: "/support" },
-        { name: "Contact Support", href: "/contact" },
-        { name: "Status", href: "/status" },
-        { name: "Security", href: "/security" },
-        { name: "Compliance", href: "/compliance" },
-        { name: "Trust Center", href: "/trust" },
+        { name: "Help Center", href: "/#" },
+        { name: "Contact Support", href: "/#" },
+        { name: "Status", href: "/#" },
+        { name: "Security", href: "/#" },
+        { name: "Compliance", href: "/#" },
+        { name: "Trust Center", href: "/#" },
       ]
     }
   ], []);

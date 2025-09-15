@@ -12,8 +12,8 @@ import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 import Logo from "@/components/elements/logo/Logo";
 
-// Import des données de navigation
-import navigationConfig from "@/config/navigation.json";
+// Import des données de navigation par défaut
+import defaultNavigationConfig from "@/config/navigation.json";
 
 export type BreadcrumbItem = {
   label: string;
@@ -24,9 +24,10 @@ interface MuxxusHeaderProps {
   breadcrumb?: {
     items: BreadcrumbItem[];
   };
+  navigationConfig?: typeof defaultNavigationConfig;
 }
 
-export default function MuxxusHeader({ breadcrumb }: MuxxusHeaderProps) {
+export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNavigationConfig }: MuxxusHeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
