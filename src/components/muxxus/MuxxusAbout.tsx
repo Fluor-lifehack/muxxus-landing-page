@@ -48,8 +48,8 @@ const MuxxusAbout = ({
   return (
     <section ref={containerRef} className="bg-white dark:bg-gray-900">
       <div className="container2">
-        <div className="py-[60px] xl:py-[140px]">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="py-[80px] xl:py-[160px]">
+          <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
             <div className="has_fade_anim">
               {subtitle && (
                 <div className="mb-6">
@@ -94,25 +94,25 @@ const MuxxusAbout = ({
 
             <div className="has_fade_anim" data-fade-from="right">
               {image && (
-                <div className="relative">
+                <div className="relative w-full h-full">
                   <ImageComponent
                     src={image.src}
-                    width={500}
-                    height={400}
+                    width={800}
+                    height={600}
                     alt={image.alt}
-                    className="rounded-lg"
+                    className="rounded-2xl w-full h-auto object-cover shadow-2xl"
                   />
                   
                   {stats && (
-                    <div className="absolute -bottom-8 -left-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
-                      <div className="text-3xl font-bold text-gray-900 mb-2">
+                    <div className="absolute -bottom-12 -left-12 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700">
+                      <div className="text-4xl font-bold text-gray-900 mb-3">
                         {stats.number}
                       </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300">
+                      <div className="text-base font-semibold text-gray-600 dark:text-gray-300">
                         {stats.label}
                       </div>
                       {stats.description && (
-                        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">
                           {stats.description}
                         </div>
                       )}

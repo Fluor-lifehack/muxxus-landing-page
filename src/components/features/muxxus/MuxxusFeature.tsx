@@ -1,17 +1,10 @@
-"use client";
-
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import MuxxusSectionTitle from "@/components/muxxus/MuxxusSectionTitle";
+import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import MuxxusFeatureCard from "@/components/features/muxxus/MuxxusFeatureCard";
-import ImageComponent from "@/components/tools/ImageComponent";
-import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
+import { cn } from "@/lib/utils";
 
 type Props = {
   title: string;
   description: string;
-  img_icon: string;
   features: {
     title: string;
     description: string;
@@ -19,44 +12,42 @@ type Props = {
   }[];
 };
 
-const MuxxusFeature = ({ title, img_icon, description, features }: Props) => {
-  const containerRef = useRef<HTMLDivElement>(null!);
-
-  useGSAP(
-    () => {
-      hasFadeAnim();
-      hasTextMovAnim();
-    },
-    { scope: containerRef }
-  );
+const MuxxusFeature = ({ title, description, features }: Props) => {
 
   return (
-    <section className="bg-gray-900" ref={containerRef}>
-      <div className="inner-container">
-        <div className="pt-[60px] lg:pt-[80px] xl:pt-[140px]">
-          <div className=" relative">
-            <div className="has_fade_anim absolute w-[93px] top-[-80px] start-[80%] z-[99] hidden xl:block" data-fade-offset="0" data-delay="0.8">
-              <svg className="w-full h-full text-white/60 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+    <section className="relative bg-white dark:bg-gray-800 overflow-hidden">
+      <div className="inner-container relative z-10">
+        <div className="section-spacing-top pb-[60px] xl:pb-[100px]">
+          {/* Header de la section */}
+          <div className="text-center mb-16">
+            {/* Titre principal */}
+            <div className="mb-6">
+              <DesignSectionTitle 
+                title={title}
+                className="max-w-[460px] lg:max-w-[600px] xl:max-w-[730px] mx-auto text-gray-900 dark:text-white"
+              />
             </div>
-            <MuxxusSectionTitle
-              title={title}
-              className="has_text_move_anim max-w-[460px] lg:max-w-[460px] xl:max-w-[730px] lg:mx-auto text-white"
-            />
-          </div>
-          <div className="mt-[12px] xl:mt-[22px]">
-            <p className="text has_fade_anim max-w-[460px] lg:ms-[430px] xl:ms-[520px] 2xl:ms-[580px] lg:max-w-[300px] text-white">
-              {description}
-            </p>
+
+            {/* Description */}
+            <div className="max-w-[460px] lg:max-w-[600px] xl:max-w-[700px] mx-auto">
+              <p className={cn(
+                "text-lg lg:text-xl xl:text-2xl text-gray-600 dark:text-gray-300",
+                "leading-relaxed font-light"
+              )}>
+                {description}
+              </p>
+            </div>
           </div>
 
-          <div className="mt-[53px] xl:mt-[73px] overflow-hidden">
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 mx-[-30px] xl:mx-[-80px] 2xl:mx-[-100px]">
-              {features.map((feature, index) => (
-                <MuxxusFeatureCard key={index} {...feature} />
-              ))}
-            </div>
+          {/* Grille des fonctionnalités */}
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <MuxxusFeatureCard 
+                key={index} 
+                {...feature} 
+                index={index}
+              />
+            ))}
           </div>
         </div>
       </div>

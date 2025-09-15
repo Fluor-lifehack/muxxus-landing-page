@@ -1,112 +1,64 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Logo from "@/components/elements/logo/Logo";
-import GetStartedModal from "@/components/modals/GetStartedModal";
-import Link from "next/link";
+import { useState, useRef } from "react";
 import {
   ChevronDown,
-  Menu,
-  X,
+  Search,
   Globe,
-  Building2,
-  CreditCard,
-  Zap,
-  Shield,
-  Users,
   ArrowRight,
+  X,
 } from "lucide-react";
+import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
+import Logo from "@/components/elements/logo/Logo";
 
-const MuxxusHeader = () => {
-  // States
-  const [isScrolled, setIsScrolled] = useState(false);
+// Import des données de navigation par défaut
+import defaultNavigationConfig from "@/config/navigation.json";
+
+export type BreadcrumbItem = {
+  label: string;
+  href?: string;
+};
+
+interface MuxxusHeaderProps {
+  breadcrumb?: {
+    items: BreadcrumbItem[];
+  };
+  navigationConfig?: typeof defaultNavigationConfig;
+}
+
+export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNavigationConfig }: MuxxusHeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isInMegaMenu, setIsInMegaMenu] = useState(false);
-
-  // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Navigation data
-  const navigationItems = [
-    {
-      name: "Products",
-      hasDropdown: true,
-      items: [
-        {
-          title: "Business Accounts",
-          description: "Multi-currency accounts for global business",
-          href: "/business-accounts",
-          icon: Building2,
-          features: ["Global Accounts", "FX & Transfers", "Multi-currency"],
-        },
-        {
-          title: "Spend Management",
-          description: "Corporate cards and expense management",
-          href: "/spend",
-          icon: CreditCard,
-          features: ["Corporate Cards", "Expense Management", "Bill Pay"],
-        },
-        {
-          title: "Payments",
-          description: "Accept payments globally with ease",
-          href: "/payments",
-          icon: Zap,
-          features: ["Checkout", "Payment Links", "Plugins"],
-        },
-      ],
-    },
-    {
-      name: "Solutions",
-      hasDropdown: true,
-      items: [
-        {
-          title: "E-commerce",
-          description: "Built for online businesses",
-          href: "/solutions/ecommerce",
-          icon: Users,
-          features: ["Marketplaces", "Retail", "Digital Creators"],
-        },
-        {
-          title: "Fintech",
-          description: "Financial services innovation",
-          href: "/solutions/fintech",
-          icon: Shield,
-          features: ["Banking as a Service", "Embedded Finance"],
-        },
-      ],
-    },
-    { name: "Developers", href: "/developers" },
-    { name: "Company", href: "/company" },
-  ];
+  
+  // Refs for better event handling
+  const timeoutRefs = useRef<{ [key: string]: NodeJS.Timeout | null }>({});
 
   // Event handlers
   const handleDropdownToggle = (itemName: string) => {
-    if (navigationItems.find(item => item.name === itemName)?.hasDropdown) {
-      setActiveDropdown(activeDropdown === itemName ? null : itemName);
-    }
-  };
-
-  const handleDropdownOpen = (itemName: string) => {
-    const item = navigationItems.find(item => item.name === itemName);
-    if (item?.hasDropdown) {
+    if (activeDropdown === itemName) {
+      setActiveDropdown(null);
+    } else {
       setActiveDropdown(itemName);
     }
   };
 
-  const handleDropdownClose = () => {
-    setTimeout(() => {
-      if (!isInMegaMenu) {
-        setActiveDropdown(null);
-      }
-    }, 500);
+  const handleMouseEnter = (itemName: string) => {
+    if (timeoutRefs.current[itemName]) {
+      clearTimeout(timeoutRefs.current[itemName]);
+      timeoutRefs.current[itemName] = null;
+    }
+    
+    if (navigationConfig.header.find(item => item.name === itemName)?.hasChildren) {
+      setActiveDropdown(itemName);
+    }
+  };
+
+  const handleMouseLeave = (itemName: string) => {
+    timeoutRefs.current[itemName] = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
   };
 
   const handleModalOpen = () => {
@@ -120,214 +72,299 @@ const MuxxusHeader = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm"
-            : "bg-white/80 backdrop-blur-sm"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 w-full bg-white border-b border-gray-200/50 shadow-sm`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="w-full px-6 lg:px-8">
           <div className="flex h-16 lg:h-20 items-center justify-between">
             {/* Logo */}
-            <Logo light={false} customWidth={120} customHeight={50} />
+            <div className="flex items-center">
+              <Logo customWidth={160} customHeight={53} />
+            </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2">
-              {navigationItems.map((item) => (
-                <div key={item.name} className="relative group">
-                  <div className="relative">
-                    <button
-                      className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                        activeDropdown === item.name
-                          ? "text-gray-900"
-                          : "text-gray-700 hover:text-gray-900"
-                      }`}
-                      onClick={() => handleDropdownToggle(item.name)}
-                      onMouseEnter={() => handleDropdownOpen(item.name)}
-                      onMouseLeave={handleDropdownClose}
-                    >
-                      <span>{item.name}</span>
-                      {item.hasDropdown && (
+            {/* Desktop Navigation - Prend toute la largeur disponible */}
+            <nav className="hidden lg:flex items-center justify-center flex-1 mx-8">
+              <div className="flex items-center space-x-1">
+                {navigationConfig.header.map((item) => (
+                  <div key={item.name} className="relative">
+                    {item.hasChildren ? (
+                      <button
+                        className={`flex items-center space-x-1 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                          activeDropdown === item.name
+                            ? "text-blue-600 bg-blue-50" 
+                            : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                        }`}
+                        onMouseEnter={() => handleMouseEnter(item.name)}
+                        onMouseLeave={() => handleMouseLeave(item.name)}
+                      >
+                        <span>{item.name}</span>
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform ${
+                          className={`w-4 h-4 transition-transform duration-200 ${
                             activeDropdown === item.name ? "rotate-180" : ""
                           }`}
                         />
-                      )}
-                    </button>
-                    
-                    {/* Clickable link overlay for items with href */}
-                    {item.href && (
-                      <Link
-                        href={item.href}
-                        className="absolute inset-0 z-10"
-                        aria-label={`Go to ${item.name} page`}
-                      />
+                      </button>
+                    ) : (
+                      <a
+                        href={item.path}
+                        className="flex items-center space-x-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all duration-200"
+                      >
+                        <span>{item.name}</span>
+                      </a>
                     )}
-                  </div>
 
-                  {/* Mega Menu */}
-                  {item.hasDropdown && activeDropdown === item.name && (
-                    <div
-                      className="fixed top-20 left-0 right-0 w-full bg-white border-t border-gray-200 shadow-xl z-[9999]"
-                      onMouseEnter={() => {
-                        setIsInMegaMenu(true);
-                        setActiveDropdown(item.name);
-                      }}
-                      onMouseLeave={() => {
-                        setIsInMegaMenu(false);
-                        setTimeout(() => {
-                          if (!isInMegaMenu) {
-                            setActiveDropdown(null);
-                          }
-                        }, 300);
-                      }}
-                    >
-                      <div className="max-w-7xl mx-auto px-8 py-10">
-                        {/* Header Section */}
-                        <div className="mb-8">
-                          <h2 className="text-2xl font-bold text-gray-900 mb-2">{item.name}</h2>
-                          <p className="text-gray-600">Discover our comprehensive solutions</p>
-                        </div>
+                    {/* Mega Menu - Design simple et naturel */}
+                    {item.hasChildren && activeDropdown === item.name && (
+                      <div
+                        className="fixed top-[64px] left-0 w-screen bg-white border-t border-gray-200 z-[9999]"
+                        onMouseEnter={() => handleMouseEnter(item.name)}
+                        onMouseLeave={() => handleMouseLeave(item.name)}
+                      >
+                        <div className="max-w-7xl mx-auto px-8 py-6">
 
-                        {/* Content Grid - Items + Image */}
-                        <div className="grid grid-cols-3 gap-8">
-                          {/* Left Column - Menu Items */}
-                          <div className="col-span-2">
-                            <div className="grid grid-cols-2 gap-6">
-                              {item.items?.map((subItem) => (
-                                                              <Link
-                                key={subItem.title}
-                                href={subItem.href}
-                                className="group block p-5 rounded-xl border border-transparent hover:border-gray-200 hover:shadow-md transition-all duration-200 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 cursor-pointer relative z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                              >
-                                {/* Icône et titre */}
-                                <div className="flex items-start space-x-4 mb-4">
-                                  <div className="p-3 rounded-lg bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                                    <subItem.icon className="w-6 h-6" />
+
+                          {/* Content Grid */}
+                          <div className="grid grid-cols-5 gap-6">
+                            {/* Colonne gauche - Catégories simples */}
+                            <div className="col-span-4">
+                              <div className="space-y-6">
+                                {item.children?.filter(category => 
+                                  'children' in category && 
+                                  category.children && 
+                                  category.children.length > 0
+                                ).map((category) => (
+                                  <div key={category.id} className="pb-4 last:pb-0">
+                                    <div className="flex items-center gap-2 mb-3">
+                                      <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span>
+                                      <a href={category.path} className="group">
+                                        <h3 className="text-base font-medium text-gray-900 group-hover:text-blue-600">
+                                          {category.name}
+                                        </h3>
+                                      </a>
+                                      <span className="text-blue-600">›</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 gap-3">
+                                      {('children' in category && category.children) && category.children.map((product) => (
+                                        <div key={product.id}>
+                                          <a
+                                            href={product.path}
+                                            className="block p-3 hover:bg-gray-50 rounded"
+                                          >
+                                            <div className="flex items-center gap-1 mb-1">
+                                              <h4 className="text-sm font-medium text-gray-900">
+                                                {product.name}
+                                              </h4>
+                                              <span className="text-blue-600 text-xs">›</span>
+                                            </div>
+                                            <p className="text-xs text-gray-600">
+                                              {product.description}
+                                            </p>
+                                          </a>
+                                        </div>
+                                      ))}
+                                    </div>
                                   </div>
-                                  <div>
-                                    <h3 className="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
-                                      {subItem.title}
-                                    </h3>
-                                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
-                                      {subItem.description}
-                                    </p>
-                                  </div>
-                                </div>
-
-                                {/* Features List */}
-                                <ul className="text-xs text-gray-600 space-y-1">
-                                  {subItem.features.map((feature) => (
-                                    <li key={feature} className="flex items-center">
-                                      <span className="mr-2 text-blue-500">•</span>
-                                      {feature}
-                                    </li>
-                                  ))}
-                                </ul>
-
-                                {/* Learn More Link */}
-                                <div className="mt-4 flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700 cursor-pointer">
-                                  <span>Learn more</span>
-                                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                                </div>
-                              </Link>
-                              ))}
+                                ))}
+                              </div>
                             </div>
-                          </div>
 
-                          {/* Right Column - Featured Image */}
-                          <div className="col-span-1">
-                            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6 h-full flex flex-col justify-center">
-                              <div className="text-center">
-                                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                  <div className="w-8 h-8 text-white font-bold text-xl">
-                                    {item.name.charAt(0)}
+                            {/* Colonne droite - Section simple */}
+                            <div className="col-span-1">
+                              <div className="bg-gray-50 p-4 rounded">
+                                <div className="text-center">
+                                  <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center mx-auto mb-3">
+                                    <span className="text-white text-lg">💼</span>
                                   </div>
+                                  <h3 className="text-sm font-medium text-gray-900 mb-2">
+                                    Need help?
+                                  </h3>
+                                  <button
+                                    onClick={handleModalOpen}
+                                    className="w-full px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
+                                  >
+                                    Contact us
+                                  </button>
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                                  {item.name} Solutions
-                                </h3>
-                                <p className="text-sm text-gray-600 mb-4">
-                                  Transform your business with our cutting-edge {item.name.toLowerCase()} services
-                                </p>
-                                <button
-                                  onClick={handleModalOpen}
-                                  className="w-full px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
-                                >
-                                  Get Started
-                                </button>
                               </div>
                             </div>
                           </div>
                         </div>
-
-                        {/* Bottom CTA Section */}
-                        <div className="mt-8 pt-6 border-t border-gray-200">
-                          <div className="flex justify-between items-center">
-                            <div>
-                              <p className="text-sm text-gray-600">Need help choosing?</p>
-                              <p className="text-base font-medium text-gray-900">Our experts are here to guide you</p>
-                            </div>
-                            <div className="flex space-x-3">
-                              <button className="px-4 py-2 border border-gray-200 text-gray-800 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors">
-                                Contact Sales
-                              </button>
-                              <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">
-                                Schedule Demo
-                              </button>
-                            </div>
-                          </div>
-                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                    )}
+                  </div>
+                ))}
+              </div>
             </nav>
 
             {/* Right Side Actions */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
+              {/* Search Button */}
+              <button className="hidden lg:flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-all duration-200">
+                <Search className="w-5 h-5" />
+              </button>
+
               {/* Language Selector */}
-              <button className="hidden lg:flex items-center space-x-2 text-sm text-gray-700 hover:text-gray-900">
+              <button className="hidden lg:flex items-center space-x-2 px-3 py-2 rounded-lg text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all duration-200">
                 <Globe className="w-4 h-4" />
                 <span>EN</span>
               </button>
 
-              {/* CTA Buttons */}
+              {/* Login Link */}
+              <a
+                href="/login"
+                className="hidden lg:inline-flex px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200"
+              >
+                Log in
+              </a>
+
+              {/* Get Started Button */}
               <button
                 onClick={handleModalOpen}
-                className="hidden lg:inline-flex px-4 py-2 text-sm font-medium bg-black text-white rounded-md hover:bg-gray-800 transition"
+                className="hidden lg:inline-flex px-6 py-2.5 text-sm font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 Get Started
               </button>
-              <button className="hidden lg:inline-flex px-4 py-2 text-sm font-medium border border-gray-200 rounded-md hover:bg-gray-50 transition">
-                Contact Sales
-              </button>
+            </div>
 
-              {/* Mobile Menu Button */}
+            {/* Mobile Menu */}
+            <div className="lg:hidden">
               <button
                 onClick={handleMobileMenuToggle}
-                className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-900/10"
+                className="p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200"
               >
                 {isMobileMenuOpen ? (
                   <X className="w-6 h-6" />
                 ) : (
-                  <Menu className="w-6 h-6" />
+                  <div className="w-6 h-6 flex flex-col justify-center items-center">
+                    <div className="w-5 h-0.5 bg-gray-700 mb-1"></div>
+                    <div className="w-5 h-0.5 bg-gray-700 mb-1"></div>
+                    <div className="w-5 h-0.5 bg-gray-700"></div>
+                  </div>
                 )}
               </button>
             </div>
           </div>
+
+          {/* Mobile Menu Dropdown */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden bg-white border-t border-gray-200">
+              <div className="px-6 py-4 space-y-4">
+                {navigationConfig.header.map((item) => (
+                  <div key={item.name}>
+                    {item.hasChildren ? (
+                      <div>
+                        <button
+                          onClick={() => handleDropdownToggle(item.name)}
+                          className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-200"
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${
+                              activeDropdown === item.name ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                        {activeDropdown === item.name && (
+                          <div className="mt-2 ml-4 space-y-4">
+                            {item.children?.map((category) => {
+                              if (!('hasChildren' in category) || !category.hasChildren || !('children' in category) || !category.children || ('isHeading' in category && category.isHeading)) {
+                                return null;
+                              }
+                              
+                              return (
+                                <div key={category.id} className="space-y-3">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span>
+                                    <h4 className="text-sm font-semibold text-gray-700">{category.name}</h4>
+                                  </div>
+                                  <div className="grid grid-cols-1 gap-2">
+                                    {category.children.map((product) => (
+                                      <a
+                                        key={product.id}
+                                        href={product.path}
+                                        className="flex items-start gap-3 px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                                      >
+                                        <div className="flex-1">
+                                          <div className="font-medium text-gray-900 mb-1">{product.name}</div>
+                                          <div className="text-xs text-gray-500">{product.description}</div>
+                                        </div>
+                                        <ArrowRight className="w-3 h-3 text-gray-400 mt-1" />
+                                      </a>
+                                    ))}
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <a
+                        href={item.path}
+                        className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                      >
+                        {item.name}
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+
+        {/* Breadcrumb intégré dans le header */}
+        {breadcrumb && (
+          <div className="w-full bg-gray-700 border-t border-gray-700">
+            <nav className="py-2 px-6 lg:px-8" aria-label="Breadcrumb">
+              <ol className="flex items-center space-x-1 text-xs">
+                {breadcrumb.items.map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    {index > 0 && (
+                      <FaChevronRight className="mx-1 text-gray-400 text-xs" />
+                    )}
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="text-gray-300 hover:text-white transition-colors duration-200"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <span className="text-blue-400 font-medium">
+                        {item.label}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          </div>
+        )}
       </header>
 
-      {/* Get Started Modal */}
-      <GetStartedModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {/* Modal placeholder */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <h3 className="text-xl font-bold mb-4">Get Started</h3>
+            <p className="text-gray-600 mb-6">Contact us to get started with Muxxus solutions.</p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="flex-1 px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+              >
+                Cancel
+              </button>
+              <a
+                href="/contact"
+                className="flex-1 px-4 py-2 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              >
+                Contact Sales
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
-};
-
-export default MuxxusHeader;
+}

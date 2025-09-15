@@ -1,112 +1,125 @@
-import { getMainPage } from "@/lib/helper/contentConverter";
+import { getMainPage, getAllPages } from "@/lib/helper/contentConverter";
 import DesignHero from "@/components/hero/DesignHero";
 import DesignTextSlider from "@/components/slider/design/DesignTextSlider";
 import DesignAbout from "@/components/about/DesignAbout";
 import BindBtnMoveEffect from "@/components/tools/BindBtnMoveEffect";
-import DesignImage from "@/components/image/DesignImage";
-import { getAllPages } from "@/lib/helper/contentConverter";
-import DesignService from "@/components/service/design/DesignService";
-import DesignWork from "@/components/work/design/DesignWork";
-import DesignTestimonial from "@/components/testimonial/design/DesignTestimonial";
-import DesignAward from "@/components/award/design/DesignAward";
-import DesignTeam from "@/components/team/design/DesignTeam";
 import DesignImage2 from "@/components/image/DesignImage2";
-import DesignBlog from "@/components/blog/design/DesignBlog";
-import SeoData from "@/components/tools/SeoData";
-import StatMuxxus from "@/components/muxxus/StatMuxxus";
+import DesignService from "@/components/service/design/DesignService";
 import DesignSkill from "@/components/skill/design/DesignSkill";
 import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
-import DesignProcess from "@/components/process/DesignProcess";
 import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
-import DesignPortfolioGallery from "@/components/portfolio/DesignPortfolioGallery";
-import CreativeTeamShowcase from "@/components/team/CreativeTeamShowcase";
-import DesignToolsTechnologies from "@/components/tools/DesignToolsTechnologies";
-import MuxxusContactBanner from "@/components/banner/MuxxusContactBanner";
-import MarketingImage from "@/components/image/MarketingImage";
-import SeoImage from "@/components/image/SeoImage";
-import WebImage from '@/components/image/WebImage';
-import BrandingImage from '@/components/image/BrandingImage';
 import FineImageSection from '@/components/image/FineImageSection';
-
+import TeamCounterArea from "@/components/team/TeamCounterArea";
+import StatMuxxus from "@/components/muxxus/StatMuxxus";
+import SeoData from "@/components/tools/SeoData";
+import AiFeature from "@/components/features/ai/AiFeature";
+import SectionSpacing from "@/components/ui/section-spacing";
+import {
+  ScrollAnimationProvider,
+  RevealOnScroll,
+  StaggerOnScroll,
+  TextRevealOnScroll,
+  CardFlipOnScroll,
+  GradientOnScroll,
+  ParticlesOnScroll,
+  MorphOnScroll,
+} from "@/components/ui/scroll-animations";
 
 const Design = () => {
+  // Récupération des données principales
   const { data: hero } = getMainPage("/heros/design-hero.mdx");
-  const { data } = getMainPage("/slider/design/text-slider.mdx");
+  const { data: sliderData } = getMainPage("/slider/design/text-slider.mdx");
   const { data: about } = getMainPage("/about/design-about.mdx");
   const { data: image } = getMainPage("/image/design-image.mdx");
   const { data: service } = getMainPage("/services/design/_main.mdx");
+  const { data: skill } = getMainPage("/skill/design-skill.mdx");
+  const { data: feature } = getMainPage("/features/web-features.mdx");
+  const { data: aiFeatures } = getMainPage("/features/design-ai-features.mdx");
+  const { data: statFact } = getMainPage("/funFact/muxxus-stat.mdx");
+  const { data: counterArea } = getMainPage("/team/design/counter-area.mdx");
+
+  // Récupération des collections
   const services = getAllPages("/services/design");
   const works = getAllPages("/works/design");
-  const { data: workMain } = getMainPage("/works/design/_main.mdx");
-  const { data: testimonial } = getMainPage("/testimonial/design-testimonial.mdx");
-  const { data: award } = getMainPage("/award/design-award.mdx");
-  const { data: team } = getMainPage("/team/design/_main.mdx");
-  const teamMembers = getAllPages("/team/design");
-  const { data: image2 } = getMainPage("/image/design-image2.mdx");
-  const { data: blog } = getMainPage("/blogs/design/_main.mdx");
-  const blogs = getAllPages("/blogs/design");
-  const { data: statFact } = getMainPage("/funFact/muxxus-stat.mdx");
-  const { data: skill } = getMainPage("/skill/design-skill.mdx");
-  const { data: designProcess } = getMainPage("/process/design-process.mdx");
-  const { data: feature } = getMainPage("/features/web-features.mdx");
-  const { data: portfolio } = getMainPage("/portfolio/design-portfolio.mdx");
-  const { data: creativeTeam } = getMainPage("/team/creative-team.mdx");
-  const { data: toolsTech } = getMainPage("/tools/design-tools-tech.mdx");
-
 
   return (
-    <main>
-      <BindBtnMoveEffect />
-      <SeoData
-        title="Muxxus"
-        description="Muxxus Website"
-      />
-      <DesignHero {...hero} />
-      <DesignTextSlider sliderItems={data} />
-      <StatMuxxus {...statFact}/>
-      <DesignAbout {...about} />
-      {/* <DesignImage {...image} /> */}
-      <DesignImage2 {...image} />
+    <ScrollAnimationProvider>
+      <main className="min-h-screen">
+        <BindBtnMoveEffect />
+        
+        <SeoData
+          title="Design Studio - Muxxus"
+          description="Découvrez notre studio de design créatif. Nous créons des expériences visuelles uniques et mémorables pour votre marque."
+        />
 
-      <DesignService {...service} services={services} />
+        {/* Section Héro avec animation de révélation - Pas de décalage avec la navigation */}
 
-      <DesignSkill {...skill} />
+            <DesignHero {...hero} />
 
-      {/* <DesignWork {...workMain} projects={works} /> */}
-      {/* <MarketingImage {...image} />
-      <DesignImage2 {...image} />
 
-      <WebImage {...image} /> */}
+        {/* Slider de texte avec animation de stagger */}
+        <StaggerOnScroll direction="left" distance={80} stagger={0.15}>
+          <DesignTextSlider sliderItems={sliderData} />
+        </StaggerOnScroll>
 
-      <FineImageSection {...image} />
+        {/* Statistiques Muxxus avec animation de révélation */}
+        <RevealOnScroll direction="up" distance={100} duration={1.3} delay={0.3}>
+          <StatMuxxus {...statFact} />
+        </RevealOnScroll>
 
-      {/* <MarketingImage {...image} />
-      <MarketingImage {...image} /> */}
+        {/* Section À propos avec animation de texte */}
+        <TextRevealOnScroll type="words" direction="up" distance={60} stagger={0.1}>
+          <DesignAbout {...about} />
+        </TextRevealOnScroll>
 
-      {/* Section avec les deux composants côte à côte */}
-      <div className="grid lg:grid-cols-2 gap-8">
-        <DesignProcess {...designProcess} />
-        <MuxxusFeature {...feature} />
-      </div>
+        {/* Section Image avec animation de morphing */}
+        <MorphOnScroll morphTo="scale(1.02)" duration={1.8}>
+          <DesignImage2 {...image} />
+        </MorphOnScroll>
 
-      {/* Portfolio Gallery */}
-      <DesignPortfolioGallery {...portfolio} />
+        {/* Services de design avec animation de stagger */}
+        <StaggerOnScroll direction="up" distance={70} stagger={0.12}>
+          <DesignService {...service} services={services} />
+        </StaggerOnScroll>
 
-      {/* Équipe Créative */}
-      {/* <CreativeTeamShowcase {...creativeTeam} /> */}
 
-      {/* Outils et Technologies */}
-      {/* <DesignToolsTechnologies {...toolsTech} /> */}
+        {/* Statistiques de l'équipe avec animation de révélation */}
+        <RevealOnScroll direction="right" distance={90} duration={1.4} delay={0.2}>
+          <TeamCounterArea {...counterArea} />
+        </RevealOnScroll>
+
+        {/* Compétences de design avec animation de carte 3D */}
+        <CardFlipOnScroll direction="y" angle={12} duration={1.6}>
+          <DesignSkill {...skill} />
+        </CardFlipOnScroll>
+
+        {/* Espacement avec séparateur après les compétences */}
+        <SectionSpacing size="lg" showSeparator separatorVariant="dots" />
+
+        {/* Fonctionnalités AI avec animation de gradient */}
+        <GradientOnScroll fromColor="rgba(59, 130, 246, 0.05)" toColor="rgba(147, 51, 234, 0.05)">
+          <AiFeature {...aiFeatures} />
+        </GradientOnScroll>
 
       
-      <MuxxusWork works={works} />
-      {/* <MuxxusContactBanner contactTitle="Ready to get started?" btn_text="Contact Us" /> */}
+        {/* Section Image fine avec animation de révélation */}
+        {/* <RevealOnScroll direction="up" distance={110} duration={1.7} delay={0.4}>
+          <FineImageSection {...image} />
+        </RevealOnScroll> */}
 
-      {/* <DesignTestimonial {...testimonial} /> */}
-      {/* <DesignAward {...award} /> */}
-      {/* <DesignTeam teamMembers={teamMembers} {...team} /> */}
-      {/* <DesignBlog blogs={blogs} {...blog} /> */}
-    </main>
+
+        {/* Fonctionnalités Muxxus avec animation de particules - ACCÉLÉRÉES */}
+        <ParticlesOnScroll> {/* Réduit de 4 à 2.5 */}
+          <MuxxusFeature {...feature} />
+        </ParticlesOnScroll>
+
+        {/* Portfolio de travaux avec animation de stagger */}
+        <StaggerOnScroll direction="up" distance={85} stagger={0.18}>
+          <MuxxusWork works={works} />
+        </StaggerOnScroll>
+
+      </main>
+    </ScrollAnimationProvider>
   );
 };
 

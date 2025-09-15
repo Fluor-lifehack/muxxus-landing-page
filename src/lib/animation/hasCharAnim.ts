@@ -10,8 +10,15 @@ const hasCharAnim = () => {
     try {
       if (item) {
         const stagger_value = item.getAttribute("data-stagger") ?? 0.05;
-        const translateX_value = item.getAttribute("data-translateX") ?? 20;
-        const translateY_value = item.getAttribute("data-translateY") ?? false;
+        // Support both lowercase (React-compliant) and legacy camel-case data attributes
+        const translateX_value =
+          item.getAttribute("data-translatex") ??
+          item.getAttribute("data-translateX") ??
+          20;
+        const translateY_value =
+          item.getAttribute("data-translatey") ??
+          item.getAttribute("data-translateY") ??
+          false;
         const onscroll_value = item.getAttribute("data-on-scroll") ?? 1;
         const data_delay = item.getAttribute("data-delay") ?? 0.1;
         const data_duration = item.getAttribute("data-duration") ?? 1;

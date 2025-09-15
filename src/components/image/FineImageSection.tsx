@@ -3,17 +3,19 @@
 import FineImage from "./FineImage";
 
 type Props = {
-  image: any;
+  image: {
+    image?: string;
+  } | null | undefined;
 };
 
 const FineImageSection = ({ image }: Props) => {
   return (
     <div className="h-[500px] w-full">
       <FineImage 
-        image={image?.image || "/assets/imgs/muxxus/about/img.jpg"}
+        image={image?.image || "/assets/images/accueil/diversity-people.jpg"}
         alt="Fine Design Image"
         overlay={false}
-        className="h-[500px] w-full"
+        className="h-full w-full"
       />
     </div>
   );

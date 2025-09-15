@@ -10,7 +10,7 @@ export default function NotFound() {
         meta_title={"Not Found Page"}
         description={"Not Found Page Description"}
       />
-      <BrandingHeader />
+      
       <ErrorPage data={errorData.data} />
     </main>
   );

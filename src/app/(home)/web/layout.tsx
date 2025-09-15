@@ -18,7 +18,7 @@ const Layout = ({
       <ScrollTop />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <WebHeader />
+          
           <div>{children}</div>
           <Footer4 footerNav={navigation.footer4} />
         </div>

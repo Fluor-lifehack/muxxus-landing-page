@@ -37,7 +37,7 @@ const Logo = ({
     title = "Logo",
   } = siteConfig.site_info as SiteInfo;
 
-  const path = url ? url : light ? logo_light || logo : logo;
+  const path = url ? url : light ? "/assets/imgs/logo/logo-light.png" : logo;
 
   return (
     <>
@@ -49,10 +49,6 @@ const Logo = ({
             src={path}
             alt={title}
             priority
-            style={{
-              height: customHeight || logo_height + "px",
-              width: customWidth || logo_width + "px",
-            }}
             className={cn("", className)}
           />
         ) : logo_text ? (

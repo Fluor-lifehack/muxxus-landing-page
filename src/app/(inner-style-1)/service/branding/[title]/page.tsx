@@ -2,12 +2,12 @@ import { notFound } from "next/navigation";
 import { getAllPages } from "@/lib/helper/contentConverter";
 import { getMainPage } from "@/lib/helper/contentConverter";
 import MDXContent from "@/components/tools/MDXContent";
-import ServiceDetails from "@/components/service/ServiceDetails";
+import ServiceDetails from "@/app/service/ServiceDetails";
 import ClientArea from "@/components/clients/ClientArea";
 import PricingArea from "@/components/pricing/PricingArea";
 import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
-import ServiceDetailsFaq from "@/components/service/ServiceDetailsFaq";
+import ServiceDetailsFaq from "@/app/service/ServiceDetailsFaq";
 
 type Props = {
   params: {

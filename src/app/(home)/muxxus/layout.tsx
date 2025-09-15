@@ -19,7 +19,7 @@ const Layout = ({
       <ScrollTop />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <DesignStudioHeader />
+          
           <div>{children}</div>
           
           {/* Newsletter Section */}

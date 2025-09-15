@@ -5,8 +5,8 @@ import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import ImageComponent from "@/components/tools/ImageComponent";
-import { FaFigma, FaAdobe, FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiNextdotjs, SiFramer, SiSketch } from "react-icons/si";
+import { FaFigma, FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiNextdotjs, SiFramer, SiSketch, SiAdobephotoshop } from "react-icons/si";
 
 type Props = {
   title: string;
@@ -39,7 +39,7 @@ const DesignToolsTechnologies = ({ title, description, design_tools, technologie
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "figma": return <FaFigma className="w-8 h-8" />;
-      case "adobe": return <FaAdobe className="w-8 h-8" />;
+      case "adobe": return <SiAdobephotoshop className="w-8 h-8" />;
       case "sketch": return <SiSketch className="w-8 h-8" />;
       case "framer": return <SiFramer className="w-8 h-8" />;
       case "react": return <FaReact className="w-8 h-8" />;

@@ -10,7 +10,7 @@ import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import { cn } from "@/lib/utils";
 
 // Composant Skeleton adaptatif pour les cartes
-const CardSkeleton = ({ card }: { card: any }) => (
+const CardSkeleton = ({ card }: { card: { title: string; description: string; image: string } }) => (
   <div className="bg-white rounded-xl p-8 animate-pulse">
     {/* Image skeleton - même dimensions que l'image réelle */}
     <div className="w-full h-48 bg-gray-200 rounded-lg mb-6"></div>
@@ -53,118 +53,108 @@ const DesignSkill = ({ title, description, skills }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null!);
 
-  // Données des cartes pour chaque service
+  // Données des cartes pour chaque service avec images
   const cardsData = {
     0: { // Business Accounts
       cards: [
         {
           title: "Global Accounts",
-          description: "Open local currency accounts to receive funds in 20+ currencies",
+          description: "Create and manage multi-currency accounts worldwide with local banking capabilities",
+          image: "/assets/images/accueil/145789.png",
+          // image: skills[0]?.img_main || "/assets/images/accueil/145789.png",
           icon: "globe",
           color: "blue"
         },
         {
           title: "FX & Transfers", 
-          description: "Make global transfers to 200+ countries at interbank rates",
+          description: "Exchange currencies and transfer funds globally at competitive rates",
+          image: "/assets/images/accueil/6318783.png",
+          // image: skills[0]?.img_main || "/assets/imgs/skill/design/skill2.jpg",
           icon: "transfer",
           color: "green"
         },
-        {
-          title: "Corporate Cards",
-          description: "Issue multi-currency corporate cards instantly",
-          icon: "card",
-          color: "purple"
-        },
-        {
-          title: "Integrations",
-          description: "Connect Airwallex to other popular software platforms",
-          icon: "integration",
-          color: "orange"
-        }
+
       ]
     },
     1: { // Spend
       cards: [
         {
-          title: "Smart Cards",
-          description: "Control spending with smart cards and automated approvals",
+          title: "Corporate Cards",
+          description: "Issue virtual and physical cards with spending controls and real-time monitoring",
+          image: "/assets/images/accueil/237653.png",
+          // image: skills[1]?.img_main || "/assets/imgs/skill/design/skill5.jpg",
           icon: "card",
           color: "blue"
         },
         {
-          title: "Analytics",
-          description: "Track spending with detailed analytics and insights",
+          title: "Expense Management",
+          description: "Automate expense tracking, approval workflows, and reimbursement processes",
+          image: "/assets/images/accueil/092834.png",
+          // image: skills[1]?.img_main || "/assets/imgs/skill/design/skill6.jpg",
           icon: "chart",
           color: "green"
         },
         {
-          title: "Approvals",
-          description: "Automated approval workflows for expense management",
+          title: "Bill Pay",
+          description: "Streamline bill payments with automated scheduling and vendor management",
+          image: "/assets/images/accueil/098735.png",
+          // image: skills[1]?.img_main || "/assets/imgs/skill/design/skill7.jpg",
           icon: "check",
           color: "purple"
         },
-        {
-          title: "Reporting",
-          description: "Comprehensive reporting and expense tracking",
-          icon: "report",
-          color: "orange"
-        }
       ]
     },
     2: { // Payments
+
+
       cards: [
         {
-          title: "Global Network",
-          description: "Send and receive payments globally with competitive rates",
+          title: "Checkout",
+          description: "Accept payments online with secure checkout solutions and multiple payment methods",
+          image:"/assets/images/accueil/checkout-illustration.png",
           icon: "network",
           color: "blue"
         },
         {
-          title: "Instant Settlement",
-          description: "Real-time settlement for faster payment processing",
+          title: "Payment Plugins",
+          description: "Integrate payment processing into your applications with ready-to-use plugins",
+          image: "/assets/images/accueil/plugin-puzzle.png",
           icon: "clock",
           color: "green"
         },
         {
-          title: "Multi-Currency",
-          description: "Support for multiple currencies and exchange rates",
+          title: "Payment Links",
+          description: "Create shareable payment links for quick and easy transactions",
+          image: "/assets/images/accueil/payment-link.png",
           icon: "currency",
           color: "purple"
         },
-        {
-          title: "Security",
-          description: "Enterprise-grade security for all payment transactions",
-          icon: "shield",
-          color: "orange"
-        }
       ]
     },
-    3: { // Platform APIs
+    3: {
       cards: [
         {
-          title: "REST APIs",
-          description: "Powerful REST APIs for seamless integration",
+          title: "Connected Accounts",
+          description: "Onboard and manage third-party accounts with automated compliance",
+          image: "/assets/images/accueil/connected-accounts.png",
           icon: "api",
           color: "blue"
         },
         {
-          title: "SDKs",
-          description: "Comprehensive SDKs for multiple programming languages",
+          title: "Accounts",
+          description: "Create and manage multi-currency accounts programmatically via APIs",
+          image: "/assets/images/accueil/accounts.png",
           icon: "code",
           color: "green"
         },
         {
-          title: "Webhooks",
-          description: "Real-time notifications via webhooks",
+          title: "Payments",
+          description: "Process payments globally with real-time settlement and webhook notifications",
+          image: "/assets/images/accueil/payments.png",
           icon: "webhook",
           color: "purple"
         },
-        {
-          title: "Documentation",
-          description: "Comprehensive documentation and developer resources",
-          icon: "docs",
-          color: "orange"
-        }
+
       ]
     }
   };
@@ -234,20 +224,30 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                       <CardSkeleton key={index} card={card} />
                     ))
                   ) : (
-                    // Afficher les vraies cartes
+                    // Afficher les cartes avec images au lieu des descriptions
                     currentCards.map((card, index) => (
-                      <div key={index} className="bg-white rounded-xl p-8 transition-all duration-500 ease-in-out">
-                        <ImageComponent
-                          src={skills[active].img_main}
-                          width={400}
-                          height={250}
-                          alt={card.title.toLowerCase().replace(/\s+/g, '-')}
-                          className="rounded-lg transition-all duration-[2000ms] ease-in-out mb-6 w-full h-48 object-cover"
-                        />
+                      <div key={index} className="bg-white rounded-xl p-8 transition-all duration-500 ease-in-out shadow-sm hover:shadow-md">
+                        {/* Image principale de la carte */}
+                        <div className="mb-6 overflow-hidden rounded-lg">
+                          <ImageComponent
+                            src={card.image}
+                            width={400}
+                            height={250}
+                            alt={card.title.toLowerCase().replace(/\s+/g, '-')}
+                            className="w-full h-48 object-cover transition-all duration-500 ease-in-out hover:scale-105"
+                          />
+                        </div>
+                        
+                        {/* Titre de la carte */}
                         <h3 className="text-xl font-semibold text-gray-900 mb-4">{card.title}</h3>
-                        <p className="text-gray-600 mb-6">{card.description}</p>
-                        <button className="text-gray-900 hover:text-gray-800 font-medium transition-colors duration-200">
-                          Learn more →
+                        
+                        {/* Description de la carte */}
+                        <p className="text-gray-600 mb-6 leading-relaxed">{card.description}</p>
+                        
+                        {/* Bouton d'action */}
+                        <button className="text-gray-900 hover:text-gray-800 font-medium transition-colors duration-200 flex items-center gap-2 group">
+                          <span>Learn more</span>
+                          <span className="transform transition-transform duration-200 group-hover:translate-x-1">→</span>
                         </button>
                       </div>
                     ))

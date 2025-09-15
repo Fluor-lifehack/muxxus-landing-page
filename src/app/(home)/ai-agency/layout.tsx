@@ -19,7 +19,7 @@ const Layout = ({
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="pb-[15px] 2xl:pb-[50px]">
-            <AiHeader />
+            
             <div>{children}</div>
             <Footer3 footerNav={navigation.footer3} />
           </div>

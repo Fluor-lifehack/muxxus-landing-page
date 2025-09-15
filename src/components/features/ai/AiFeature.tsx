@@ -2,7 +2,6 @@
 
 import AiSectionTitle from "@/components/sectionTitle/AiSectionTitle";
 import { convertWithBr } from "@/lib/helper/converter";
-import Link from "next/link";
 import AiFeatureCard from "./AiFeatureCard";
 import ImageComponent from "@/components/tools/ImageComponent";
 import { useRef } from "react";
@@ -14,11 +13,6 @@ type FeatureSection = {
   image: string;
   sub_title: string;
   sub_icon: string;
-  action_btn: {
-    enable: boolean;
-    label: string;
-    link: string;
-  };
   features: {
     icon: string;
     title: string;
@@ -31,7 +25,6 @@ const AiFeature = ({
   image,
   sub_title,
   sub_icon,
-  action_btn,
   features,
 }: FeatureSection) => {
   const containerRef = useRef<HTMLDivElement>(null!);
@@ -71,14 +64,6 @@ const AiFeature = ({
                     className="text-[18px] md:text-[24px] leading-[1.08] mt-[11px] text-text-fixed-2 font-instrument font-medium"
                     dangerouslySetInnerHTML={convertWithBr(sub_title)}
                   />
-                </div>
-                <div className="rounded-t-[20px] bg-background-5 absolute py-[15px] px-[25px] md:pt-[25px] md:pb-[19px] md:px-[35px] start-[40px] md:start-[110px] bottom-0 before:content-[''] before:absolute before:w-10 before:h-10 before:bg-transparent before:rounded-full before:bottom-0 before:right-full before:[box-shadow:20px_20px_0_#F0F2F4] dark:before:[box-shadow:20px_20px_0_#252525] after:content-[''] after:absolute after:w-10 after:h-10 after:bg-transparent after:rounded-full after:bottom-0 after:left-full after:[box-shadow:-20px_20px_0_#F0F2F4] dark:after:[box-shadow:-20px_20px_0_#252525]">
-                  <Link
-                    href={action_btn.link}
-                    className="wc-btn-underline btn-text-flip text-[18px] font-instrument font-medium pb-2 before:!h-[1px]"
-                  >
-                    <span data-text={action_btn.label}>{action_btn.label}</span>
-                  </Link>
                 </div>
               </div>
               <div>
