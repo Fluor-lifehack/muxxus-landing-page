@@ -230,7 +230,7 @@
     {
       "id": 3,
       "name": "Developers",
-      "path": "#",
+      "path": "/developers",
       "hasChildren": false,
       "children": [
         {

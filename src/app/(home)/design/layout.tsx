@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import navigation from "@/config/navigation.json";
+import navigation from "@/config/navigation";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
