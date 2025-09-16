@@ -5,7 +5,7 @@ import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaSearch, FaCalendar, FaUser, FaTag, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
-const BlogPage = () => {
+const MuxxusBlogPage = () => {
   const featuredPosts = [
     {
       title: "The Future of Global Payments: Trends to Watch in 2024",
@@ -228,4 +228,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default MuxxusBlogPage;

@@ -5,7 +5,7 @@ import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaUsers, FaGlobe, FaRocket, FaHeart, FaLightbulb, FaHandshake } from "react-icons/fa";
 import Link from "next/link";
 
-const CareerPage = () => {
+const MuxxusCareerPage = () => {
   const jobCategories = [
     {
       title: "Engineering",
@@ -99,7 +99,7 @@ const CareerPage = () => {
               Join Our Team
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Help us build the future of global financial services. We're looking for passionate, 
+              Help us build the future of global financial services. We &apos;re looking for passionate, 
               talented individuals who want to make a difference in the world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -211,4 +211,4 @@ const CareerPage = () => {
   );
 };
 
-export default CareerPage;
+export default MuxxusCareerPage;

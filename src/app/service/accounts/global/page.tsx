@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import MDXContent from "@/components/tools/MDXContent";
-import ServiceDetails from "@/app/service/ServiceDetails";
+import ServiceDetails from "@/components/service/ServiceDetails";
 import ClientArea from "@/components/clients/ClientArea";
 import PricingArea from "@/components/pricing/PricingArea";
 import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
-import ServiceDetailsFaq from "@/app/service/ServiceDetailsFaq";
+import ServiceDetailsFaq from "@/components/service/ServiceDetailsFaq";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import Image from "next/image";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";

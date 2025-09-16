@@ -2,7 +2,7 @@ import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaFileAlt, FaShield, FaUser, FaGlobe, FaLock, FaGavel, FaEye, FaDownload } from "react-icons/fa";
+import { FaFileAlt, FaShieldAlt, FaUser, FaGlobe, FaLock, FaGavel, FaEye, FaDownload } from "react-icons/fa";
 
 const TermsPage = () => {
   const legalDocuments = [
@@ -19,7 +19,7 @@ const TermsPage = () => {
       description: "How we collect, use, and protect your personal information",
       lastUpdated: "December 1, 2024",
       version: "v4.1",
-      icon: FaShield,
+      icon: FaShieldAlt,
       color: "from-green-50 to-green-100"
     },
     {
@@ -259,7 +259,7 @@ const TermsPage = () => {
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <FaShield className="w-8 h-8 text-purple-600" />
+                <FaShieldAlt className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Security Standards</h3>
               <p className="text-gray-600">We maintain industry-leading security standards to protect your information</p>

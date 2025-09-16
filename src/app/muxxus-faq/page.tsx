@@ -5,7 +5,7 @@ import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaQuestionCircle, FaSearch, FaBook, FaHeadset } from "react-icons/fa";
 import Link from "next/link";
 
-const FAQPage = () => {
+const MuxxusFAQPage = () => {
   const faqCategories = [
     {
       title: "Getting Started",
@@ -105,7 +105,7 @@ const FAQPage = () => {
               Frequently Asked Questions
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Find answers to common questions about Muxxus. Can't find what you're looking for? 
+              Find answers to common questions about Muxxus. Can&apos;t find what you&apos;re looking for? 
               Our support team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -173,7 +173,7 @@ const FAQPage = () => {
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Still Need Help?</h2>
           <p className="text-lg text-gray-600 mb-8">
-            Can't find the answer you're looking for? Our support team is here to help 24/7.
+            Can&apos;t find the answer you&apos;re looking for? Our support team is here to help 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CircleFillButton 
@@ -193,4 +193,4 @@ const FAQPage = () => {
   );
 };
 
-export default FAQPage;
+export default MuxxusFAQPage;

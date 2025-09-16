@@ -2,7 +2,7 @@ import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaShield, FaEye, FaLock, FaUser, FaGlobe, FaDatabase, FaCog, FaHandshake } from "react-icons/fa";
+import { FaShieldAlt, FaEye, FaLock, FaUser, FaGlobe, FaDatabase, FaCog, FaHandshake } from "react-icons/fa";
 
 const PrivacyPage = () => {
   const privacyPrinciples = [
@@ -15,7 +15,7 @@ const PrivacyPage = () => {
     {
       title: "Security",
       description: "Your data is protected with industry-leading security measures",
-      icon: FaShield,
+      icon: FaShieldAlt,
       color: "from-green-50 to-green-100"
     },
     {
@@ -101,7 +101,7 @@ const PrivacyPage = () => {
     {
       measure: "Access Controls",
       description: "Multi-factor authentication and role-based access controls",
-      icon: FaShield
+      icon: FaShieldAlt
     },
     {
       measure: "Regular Audits",

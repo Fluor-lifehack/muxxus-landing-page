@@ -2,7 +2,7 @@ import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaHandshake, FaGlobe, FaUsers, FaRocket, FaChartLine, FaShield, FaBuilding, FaExternalLinkAlt } from "react-icons/fa";
+import { FaHandshake, FaGlobe, FaUsers, FaRocket, FaChartLine, FaShieldAlt, FaBuilding, FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
@@ -35,7 +35,7 @@ const PartnersPage = () => {
     {
       title: "Regulatory Partners",
       description: "Compliance and legal expertise",
-      icon: FaShield,
+      icon: FaShieldAlt,
       count: 18,
       color: "from-orange-50 to-orange-100",
       iconColor: "bg-orange-100 text-orange-600"
@@ -105,7 +105,7 @@ const PartnersPage = () => {
       description: "Average 40% increase in customer acquisition through partnerships"
     },
     {
-      icon: FaShield,
+      icon: FaShieldAlt,
       title: "Risk Mitigation",
       description: "Shared compliance and regulatory expertise"
     },

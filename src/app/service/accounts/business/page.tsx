@@ -1,8 +1,8 @@
-import ServicesHero from "@/app/service/ServicesHero";
+import ServicesHero from "@/components/service/ServicesHero";
 import { getAllPages, getMainPage } from "@/lib/helper/contentConverter";
 import ClientArea from "@/components/clients/ClientArea";
 import ClientSlider from "@/components/clients/ClientSlider";
-import ServiceInnerArea from "@/app/service/ServiceInnerArea";
+import ServiceInnerArea from "@/components/service/ServiceInnerArea";
 import PricingArea from "@/components/pricing/PricingArea";
 import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
