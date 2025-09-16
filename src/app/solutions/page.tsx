@@ -1,215 +1,330 @@
+import type { Metadata } from 'next';
+import React from "react";
 
-import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
-import CircleFillButton from "@/components/elements/button/CircleFillButton";
-import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaGlobe, FaShoppingCart, FaCode, FaTruck, FaStore, FaCloud, FaChartLine, FaUsers, FaVideo } from "react-icons/fa";
+// Composants
+import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";  
+import FeatureSection from "@/components/muxxus/FeatureSection";
+import SectionDivider from "@/components/ui/SectionDivider";
+import DetailHero from "@/components/hero/DetailHero";
+import MuxxusAiSection2 from "@/components/muxxus/MuxxusAiSection2";
+import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
+import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
+import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
 
-
-const SolutionsPage = () => {
-  const solutions = [
-    {
-      icon: FaGlobe,
-      title: "Travel",
-      description: "Agencies, tour operators, hospitality",
-      details: "Streamline international payments for travel agencies, manage multi-currency bookings, and handle complex cross-border transactions with ease.",
-      features: ["Multi-currency accounts", "FX optimization", "Payment processing", "Compliance support"],
-      color: "from-blue-50 to-blue-100",
-      iconColor: "bg-blue-100 text-blue-600"
-    },
-    {
-      icon: FaShoppingCart,
-      title: "eCommerce and Retail",
-      description: "Online and in-store retail",
-      details: "Accept payments globally, manage inventory across borders, and optimize conversion rates with our integrated payment solutions.",
-      features: ["Global payment acceptance", "Inventory management", "Conversion optimization", "Fraud protection"],
-      color: "from-green-50 to-green-100",
-      iconColor: "bg-green-100 text-green-600"
-    },
-    {
-      icon: FaCode,
-      title: "Software and Technology",
-      description: "B2B and B2C software",
-      details: "Embed financial services into your software platform with our APIs, enabling seamless payment experiences for your users.",
-      features: ["API integration", "White-label solutions", "Developer tools", "Scalable infrastructure"],
-      color: "from-purple-50 to-purple-100",
-      iconColor: "bg-purple-100 text-purple-600"
-    },
-    {
-      icon: FaTruck,
-      title: "Wholesale and Trade",
-      description: "Wholesalers, manufacturing, logistics",
-      details: "Manage complex supply chain payments, handle large volume transactions, and optimize working capital across global operations.",
-      features: ["Supply chain payments", "Working capital optimization", "Trade finance", "Risk management"],
-      color: "from-orange-50 to-orange-100",
-      iconColor: "bg-orange-100 text-orange-600"
-    },
-    {
-      icon: FaStore,
-      title: "Marketplaces",
-      description: "Goods and services marketplaces",
-      details: "Enable marketplace payments, manage seller payouts, and handle complex multi-party transactions with our marketplace solutions.",
-      features: ["Marketplace payments", "Seller payouts", "Multi-party transactions", "Revenue sharing"],
-      color: "from-red-50 to-red-100",
-      iconColor: "bg-red-100 text-red-600"
-    },
-    {
-      icon: FaCloud,
-      title: "SaaS Platforms",
-      description: "Integrated SaaS offerings",
-      details: "Integrate financial services into your SaaS platform, offering subscription billing, usage-based pricing, and global payment collection.",
-      features: ["Subscription billing", "Usage-based pricing", "Global collections", "Revenue recognition"],
-      color: "from-indigo-50 to-indigo-100",
-      iconColor: "bg-indigo-100 text-indigo-600"
-    },
-    {
-      icon: FaChartLine,
-      title: "Fintechs and Financial Services",
-      description: "Fintechs, lending, banks",
-      details: "Build and scale financial products with our infrastructure, from digital banking to lending platforms and investment services.",
-      features: ["Digital banking", "Lending infrastructure", "Investment services", "Regulatory compliance"],
-      color: "from-teal-50 to-teal-100",
-      iconColor: "bg-teal-100 text-teal-600"
-    },
-    {
-      icon: FaUsers,
-      title: "Professional Services",
-      description: "People-based businesses",
-      details: "Streamline invoicing, manage client payments, and handle international transactions for consulting, legal, and professional services.",
-      features: ["Client invoicing", "Payment collection", "International transfers", "Expense management"],
-      color: "from-pink-50 to-pink-100",
-      iconColor: "bg-pink-100 text-pink-600"
-    },
-    {
-      icon: FaVideo,
-      title: "Digital and Creator",
-      description: "Social, streaming, creator economy",
-      details: "Monetize content globally, manage fan payments, and handle creator payouts across multiple platforms and currencies.",
-      features: ["Content monetization", "Fan payments", "Creator payouts", "Multi-platform support"],
-      color: "from-yellow-50 to-yellow-100",
-      iconColor: "bg-yellow-100 text-yellow-600"
-    }
-  ];
-
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-violet-50 to-purple-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <BreadcrumbNav 
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Solutions", href: "/solutions", isActive: true }
-              ]} 
-            />
-            <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
-              Industry Solutions
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Tailored financial solutions for every industry. From travel to fintech, we understand your unique challenges and provide the tools you need to succeed.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CircleFillButton 
-                text="Get Started" 
-                href="/contact"
-                className="bg-violet-600 hover:bg-violet-700"
-              />
-              <CircleFillButton 
-                text="View All Solutions" 
-                href="#solutions"
-                className="border-violet-600 text-violet-600 hover:bg-violet-50"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Grid */}
-      <section id="solutions" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <DesignSectionTitle 
-            title="Solutions for Every Industry"
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
-            {solutions.map((solution, index) => (
-              <div key={index} className="group">
-                <div className={`p-8 rounded-xl bg-gradient-to-br ${solution.color} hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 border border-gray-100 h-full`}>
-                  <div className={`w-16 h-16 ${solution.iconColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <solution.icon className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-violet-600 transition-colors">
-                    {solution.title}
-                  </h3>
-                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors mb-6">
-                    {solution.description}
-                  </p>
-                  <p className="text-gray-700 mb-6 leading-relaxed">
-                    {solution.details}
-                  </p>
-                  <div className="space-y-2">
-                    {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Solutions?</h2>
-            <p className="text-lg text-gray-600">Built for modern businesses that need industry-specific expertise</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaGlobe className="w-8 h-8 text-violet-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Industry Expertise</h3>
-              <p className="text-gray-600">Deep understanding of sector-specific challenges and requirements</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaChartLine className="w-8 h-8 text-violet-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Scalable Solutions</h3>
-              <p className="text-gray-600">Solutions that grow with your business from startup to enterprise</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaCode className="w-8 h-8 text-violet-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Seamless Integration</h3>
-              <p className="text-gray-600">Easy integration with your existing systems and workflows</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Transform Your Industry?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Start using our industry-specific solutions today and unlock your business potential
-          </p>
-          <CircleFillButton 
-            text="Get Started" 
-            href="/contact"
-            className="bg-violet-600 hover:bg-violet-700"
-          />
-        </div>
-      </section>
-    </main>
-  );
+// Configuration des styles uniformes
+const pageStyles = {
+  colors: {
+    primary: 'bg-primary text-white',
+    secondary: 'bg-background-3 text-text',
+    accent: 'bg-gray-900 text-white',
+    light: 'bg-background text-text',
+    dark: 'bg-gray-900 text-white',
+    alternate: 'bg-background-3 text-text'
+  },
+  spacing: {
+    section: 'py-20',
+    large: 'py-24',
+    small: 'py-16'
+  },
+  typography: {
+    heading: 'font-semibold text-text',
+    body: 'text-text-3 font-primary',
+    accent: 'text-primary font-medium'
+  }
 };
 
-export default SolutionsPage; 
+// Métadonnées Next.js
+export const metadata: Metadata = {
+  title: "Global Multi-Currency Business Accounts | Muxxus",
+  description: "Open a global multi-currency account for international business payments in minutes. Support for 50+ currencies and 13+ countries with no hidden fees.",
+  keywords: ["global accounts", "multi-currency", "international banking", "FX trading", "business accounts", "global payments"],
+  openGraph: {
+    title: "Global Multi-Currency Business Accounts | Muxxus",
+    description: "Open a global multi-currency account for international business payments in minutes. Support for 50+ currencies and 13+ countries.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Muxxus",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Global Multi-Currency Business Accounts | Muxxus",
+    description: "Open a global multi-currency account for international business payments in minutes.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+// Données pour le composant DetailHero
+const heroData = {
+  title: "AI-Powered Global Banking",
+  shape: {
+    light: "/assets/imgs/shape/img-s-29.png",
+    dark: "/assets/imgs/shape/img-s-29-light.png"
+  },
+  client_img: {
+    light: "/assets/imgs/muxxus/image/img1.jpg",
+    dark: "/assets/imgs/muxxus/image/img1.jpg"
+  },
+  customers: "50+ Currencies",
+  info: {
+    thumb: {
+      light: "/assets/imgs/muxxus/image/img1.jpg",
+      dark: "/assets/imgs/muxxus/image/img1.jpg"
+    },
+    description: "Open a global multi-currency account for international business payments in minutes.",
+    action_btn: {
+      label: "Get Started",
+      link: "#"
+    }
+  },
+  image: "/assets/imgs/muxxus/image/img1.jpg",
+  feature_text: "Global Banking Solutions"
+};
+
+// Données pour les composants
+const componentData = {
+  muxxusAiSection: {
+    title: "Artificial Intelligence at the Service of Global Banking",
+    description: [
+      "Our platform uses AI to optimize your international banking operations, offering competitive exchange rates and real-time intelligent risk management.",
+      "Artificial intelligence analyzes global financial markets to offer you the best trading and currency conversion opportunities."
+    ],
+    action_btn: {
+      label: "Discover Our AI Solutions",
+      link: "#"
+    },
+    shape_img: "/assets/imgs/shape/img-s-29.png",
+    small_shape: {
+      light: "/assets/imgs/shape/img-s-30.png",
+      dark: "/assets/imgs/shape/img-s-30-light.png"
+    }
+  },
+  
+  muxxusSection2: {
+    title: "Global Banking Made Simple",
+    description: [
+      "Experience seamless international banking with our innovative platform that connects you to financial markets worldwide.",
+      "From multi-currency accounts to real-time FX trading, we provide everything you need to succeed in global commerce."
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img2.jpg",
+    items: [
+      {
+        icon: "🌍",
+        title: "Global Coverage",
+        description: "Access banking services in 13+ countries with local account details and instant setup."
+      },
+      {
+        icon: "💱",
+        title: "Multi-Currency",
+        description: "Hold and manage 50+ currencies in a single platform with competitive exchange rates."
+      },
+      {
+        icon: "⚡",
+        title: "Instant Access",
+        description: "Open accounts in minutes, not days. Start trading and receiving payments immediately."
+      },
+      {
+        icon: "🔒",
+        title: "Bank-Grade Security",
+        description: "Enterprise-level security with end-to-end encryption and regulatory compliance."
+      }
+    ],
+    action_btn: {
+      label: "Get Started Today",
+      link: "#"
+    }
+  },
+  
+  keyBenefitsSection2: {
+    title: "Global accounts hassle-free with local banking details",
+    description: [
+      "Avoid the queues and tedious paperwork typically involved in creating local currency accounts worldwide.",
+      "Open an online multi-currency business account and collect international payments from global customers in their preferred currency."
+    ],
+    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    items: [
+      {
+        icon: "💰",
+        title: "Save on unnecessary banking fees",
+        description: "No account opening fees, monthly maintenance fees, or minimum transaction requirements."
+      },
+      {
+        icon: "🌍",
+        title: "Simplify your global cash management",
+        description: "Convert balances held in different currencies with a few clicks and review your global transactions in a single view."
+      },
+      {
+        icon: "🔒",
+        title: "Know that your funds are safe and secure",
+        description: "Rest easy knowing that your money is secured and protected with end-to-end encryption and bank-level security."
+      },
+      {
+        icon: "💱",
+        title: "Avoid costly conversion fees",
+        description: "Eliminate unnecessary conversion fees by receiving payments in the same currencies your customers pay in."
+      }
+    ]
+  },
+  
+  supportedCountries: {
+    title: "Supported Countries",
+    description: "Our global accounts work like local currency accounts in your name that come with local bank and branch codes and dedicated account numbers.",
+    countries: [
+      {
+        name: 'Ivory Coast',
+        currency: 'XOF',
+        currencyName: 'West African CFA Franc',
+        exchangeRate: '1 USD = 610 XOF',
+        bankCode: 'CI001',
+        accountFormat: 'XX-XXXX-XXXX-XXXX',
+        features: ['Local transfers', 'Mobile money', 'No monthly fees']
+      },
+      {
+        name: 'France',
+        currency: 'EUR',
+        currencyName: 'Euro',
+        exchangeRate: '1 USD = 0.92 EUR',
+        bankCode: 'FR001',
+        accountFormat: 'FR76-XXXX-XXXX-XXXX-XXXX-XXXX-XXX',
+        features: ['SEPA transfers', 'Direct debits', 'Online banking']
+      },
+      {
+        name: 'Luxembourg',
+        currency: 'EUR',
+        currencyName: 'Euro',
+        exchangeRate: '1 USD = 0.92 EUR',
+        bankCode: 'LU001',
+        accountFormat: 'LU28-XXXX-XXXX-XXXX-XXXX',
+        features: ['SEPA transfers', 'Investment accounts', 'Private banking']
+      },
+      {
+        name: 'Ethiopia',
+        currency: 'ETB',
+        currencyName: 'Ethiopian Birr',
+        exchangeRate: '1 USD = 55.5 ETB',
+        bankCode: 'ET001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['Local transfers', 'Mobile banking', 'SMS notifications']
+      },
+      {
+        name: 'Canada',
+        currency: 'CAD',
+        currencyName: 'Canadian Dollar',
+        exchangeRate: '1 USD = 1.35 CAD',
+        bankCode: 'CA001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['Interac transfers', 'Direct deposits', 'Bill payments']
+      },
+      {
+        name: 'United Kingdom',
+        currency: 'GBP',
+        currencyName: 'British Pound',
+        exchangeRate: '1 USD = 0.79 GBP',
+        bankCode: 'GB001',
+        accountFormat: 'XX-XX-XX-XXXX-XXXX-XX',
+        features: ['BACS transfers', 'CHAPS payments', 'Faster payments']
+      },
+      {
+        name: 'United States',
+        currency: 'USD',
+        currencyName: 'US Dollar',
+        exchangeRate: '1 USD = 1.00 USD',
+        bankCode: 'US001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['ACH transfers', 'Wire transfers', 'Online banking']
+      }
+    ],
+    accountExample: {
+      title: "Global Multi-Currency Account",
+      description: "Access local banking infrastructure in multiple countries with dedicated account numbers and local transfer capabilities.",
+      capabilities: [
+        "Create accounts instantly",
+        "Create accounts in your company's name",
+        "Payment via Direct Debit",
+        "No transaction limits"
+      ],
+      depositMethods: {
+        title: "Multiple deposit methods",
+        description: "Local transfers, international wires, mobile money"
+      }
+    }
+  },
+  
+  testimonials: {
+    title: "What Our Customers Say",
+    description: "Discover how our customers use our global accounts to optimize their international operations",
+    testimonials: [
+      {
+        quote: "We use Muxxus to open accounts in new markets quickly and now have bank accounts in every country where we operate. This allows us to very easily move funds from our US account to our other local currency accounts in various markets in seconds.",
+        icon: "/assets/imgs/icon/quote-1.png",
+        author: "Charlie Bullock",
+        designation: "CEO and Co-Founder, Scan.com",
+        avatar: "/assets/imgs/team/img-s-1.jpg"
+      },
+      {
+        quote: "Muxxus provides us with flexibility and savings in our international transactions. We used Muxxus to receive our recent global funding round and pay international suppliers and save at least 5% per dollar transferred compared to major banks.",
+        icon: "/assets/imgs/icon/quote-2.png",
+        author: "George van Dyck",
+        designation: "Finance Manager, Zoomo",
+        avatar: "/assets/imgs/team/img-s-10.jpg"
+      },
+      {
+        quote: "Muxxus saves us €40,000 annually on the costs of collecting our Amazon sales, which represent the majority of our sales in the US market. This also allows us to 'reuse' our international currencies. For example, if we sell in Europe, we can pay European suppliers in euros.",
+        icon: "/assets/imgs/icon/quote-3.png",
+        author: "Edward Agaba",
+        designation: "Controller, Dalstrong",
+        avatar: "/assets/imgs/team/img-s-15.jpg"
+      }
+    ]
+  }
+};
+
+// Données pour les sections FAQ
+const faqData = {
+  faq_title: "Global Accounts FAQ",
+  faq_description: "Common questions about our global multi-currency business accounts",
+  faqs: [
+    {
+      question: "How quickly can I open a global account?",
+      answer: "Global accounts can be opened within 3-5 business days with our streamlined international onboarding process."
+    },
+    {
+      question: "What currencies are supported globally?",
+      answer: "We support 50+ major currencies including USD, EUR, GBP, JPY, CAD, AUD, CHF, and many emerging market currencies."
+    },
+    {
+      question: "Are there minimum balance requirements?",
+      answer: "No minimum balance requirements for most global account types. We believe in accessible global banking with transparent pricing."
+    }
+  ]
+};
+
+// Composant principal de la page
+export default function SolutionsPage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <DetailHero {...heroData} />
+      <DetailHero {...heroData} />
+      <DetailHero {...heroData} />
+      {/* FAQ et Footer */}
+      <ServiceDetailsFaq 
+        faqs={faqData.faqs} 
+        faqTitle={faqData.faq_title} 
+      />
+      <MuxxusNewsletter />
+      <MuxxusFooter />
+    </>
+  );
+}
