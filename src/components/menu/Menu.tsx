@@ -83,7 +83,7 @@ const Menu = ({ textColor, className }: Props) => {
                   {menu.name}
                 </NavigationMenuTrigger>
                 {menu.children && menu.children.length && (
-                  <NavigationMenuContent className="border-0 bg-white shadow-lg transition-none w-screen left-0">
+                  <NavigationMenuContent className="border-0 bg-white/80 backdrop-blur-xl shadow-2xl transition-none w-screen left-0 rounded-2xl mx-4 mt-2">
                     <div className="max-w-7xl mx-auto px-8 py-12">
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Colonne principale */}
@@ -99,7 +99,7 @@ const Menu = ({ textColor, className }: Props) => {
                               onMouseLeave={handleMouseLeave}
                             >
                               {childMenu.isHeading ? (
-                                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                                <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-3">
                                   {childMenu.name}
                                 </div>
                               ) : childMenu.isFeatured ? (
@@ -115,7 +115,7 @@ const Menu = ({ textColor, className }: Props) => {
                               ) : (
                                 <div className="group">
                                   <Link
-                                    className="flex items-center justify-between text-gray-700 hover:text-gray-900 transition-colors"
+                                    className="flex items-center justify-between text-gray-700 hover:text-gray-900 transition-all duration-200 rounded-xl p-3 hover:bg-gray-50/50"
                                     href={childMenu.path}
                                   >
                                     <div className="flex items-center space-x-3">
@@ -123,7 +123,7 @@ const Menu = ({ textColor, className }: Props) => {
                                         <span className="text-lg">{childMenu.icon}</span>
                                       )}
                                       <div>
-                                        <div className="font-medium">{childMenu.name}</div>
+                                        <div className="font-medium text-gray-900">{childMenu.name}</div>
                                         {childMenu.description && (
                                           <div className="text-sm text-gray-500 mt-1">
                                             {childMenu.description}
@@ -134,9 +134,9 @@ const Menu = ({ textColor, className }: Props) => {
                                     {childMenu.hasChildren && (
                                       <>
                                         {direction === "rtl" ? (
-                                          <ChevronLeft className="text-gray-400 group-hover:text-gray-600" />
+                                          <ChevronLeft className="text-gray-400 group-hover:text-gray-600 transition-colors" />
                                         ) : (
-                                          <ChevronRight className="text-gray-400 group-hover:text-gray-600" />
+                                          <ChevronRight className="text-gray-400 group-hover:text-gray-600 transition-colors" />
                                         )}
                                       </>
                                     )}
@@ -162,7 +162,7 @@ const Menu = ({ textColor, className }: Props) => {
                           
                           {menu.featuredCard && (
                             <div>
-                              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-3">
                                 FEATURED
                               </h3>
                               <FeaturedCard

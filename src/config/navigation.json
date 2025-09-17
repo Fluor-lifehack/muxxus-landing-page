@@ -3,8 +3,7 @@
     {
       "id": 0,
       "name": "Home",
-      "path": "/",
-      "icon": "🏠"
+      "path": "/"
     },
     { 
       "id": 1,
@@ -16,7 +15,6 @@
           "id": 1,
           "name": "Business Accounts",
           "path": "/business-accounts",
-          "icon": "💎",
           "hasChildren": true,
           "children": [
             {
@@ -37,7 +35,6 @@
           "id": 2,
           "name": "Spend Management",
           "path": "/spend",
-          "icon": "💳",
           "hasChildren": true,
           "children": [
             {
@@ -64,7 +61,6 @@
           "id": 3,
           "name": "Payments",
           "path": "/payments",
-          "icon": "💳",
           "hasChildren": true,
           "children": [
             {
@@ -91,7 +87,6 @@
           "id": 4,
           "name": "Platform APIs",
           "path": "/platform-apis",
-          "icon": "⚡",
           "hasChildren": true,
           "children": [
             {

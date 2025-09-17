@@ -112,10 +112,10 @@ export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNav
                       </a>
                     )}
 
-                    {/* Mega Menu - Design simple et naturel */}
+                    {/* Mega Menu - Design Apple avec transparence */}
                     {item.hasChildren && activeDropdown === item.name && (
                       <div
-                        className="fixed top-[64px] left-0 w-screen bg-white border-t border-gray-200 z-[9999]"
+                        className="fixed top-[64px] left-0 w-screen bg-white/75 backdrop-blur-xl border-t border-gray-200/40 z-[9999] shadow-2xl"
                         onMouseEnter={() => handleMouseEnter(item.name)}
                         onMouseLeave={() => handleMouseLeave(item.name)}
                       >
@@ -134,7 +134,7 @@ export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNav
                                 ).map((category) => (
                                   <div key={category.id} className="pb-4 last:pb-0">
                                     <div className="flex items-center gap-2 mb-3">
-                                      <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span>
+                                      {/* <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span> */}
                                       <a href={category.path} className="group">
                                         <h3 className="text-base font-medium text-gray-900 group-hover:text-blue-600">
                                           {category.name}
@@ -147,7 +147,7 @@ export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNav
                                         <div key={product.id}>
                                           <a
                                             href={product.path}
-                                            className="block p-3 hover:bg-gray-50 rounded"
+                                            className="block p-3 hover:bg-gray-50/50 rounded-xl transition-all duration-200"
                                           >
                                             <div className="flex items-center gap-1 mb-1">
                                               <h4 className="text-sm font-medium text-gray-900">
@@ -169,7 +169,7 @@ export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNav
 
                             {/* Colonne droite - Section simple */}
                             <div className="col-span-1">
-                              <div className="bg-gray-50 p-4 rounded">
+                              <div className="bg-gray-50/40 backdrop-blur-sm p-4 rounded-2xl border border-gray-200/40">
                                 <div className="text-center">
                                   <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center mx-auto mb-3">
                                     <span className="text-white text-lg">💼</span>
@@ -273,7 +273,7 @@ export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNav
                               return (
                                 <div key={category.id} className="space-y-3">
                                   <div className="flex items-center gap-2 mb-3">
-                                    <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span>
+                                    {/* <span className="text-lg">{('icon' in category && category.icon) || "💼"}</span> */}
                                     <h4 className="text-sm font-semibold text-gray-700">{category.name}</h4>
                                   </div>
                                   <div className="grid grid-cols-1 gap-2">
