@@ -70,7 +70,7 @@ const WebFeature = ({ title, img_icon, description, features, image }: Props) =>
           {/* Composants d'images ajoutés */}
           {image && (
             <div className="text-center py-8">
-              <p className="text-gray-600">Image: {image}</p>
+              <p className="text-gray-600">Image: {typeof image === 'string' ? image : JSON.stringify(image)}</p>
             </div>
           )}
         </div>
