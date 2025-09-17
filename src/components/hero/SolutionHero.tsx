@@ -1,13 +1,12 @@
 "use client";
 
 import { ActionBtnType } from "@/types";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import hasCharAnim from "@/lib/animation/hasCharAnim";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasWordAnim from "@/lib/animation/hasWordAnim";
-import GetStartedModal from "@/components/modals/GetStartedModal";
 
 type Props = {
   title: string;
@@ -16,7 +15,7 @@ type Props = {
   action_btn: ActionBtnType;
 };
 
-const SubHero = ({
+const SolutionHero = ({
   title,
   description,
   bg_video,
@@ -32,17 +31,6 @@ const SubHero = ({
     },
     { scope: containerRef }
   );
-
-
-  const [email, setEmail] = useState("");
-  const [acceptNewsletter, setAcceptNewsletter] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!acceptNewsletter || !email.trim()) return;
-    // Ouvrir le modal avec l'email saisi
-    setIsModalOpen(true);
-  };
 
   return (
     <section
@@ -78,26 +66,17 @@ const SubHero = ({
           >
             {description}
           </p>
-          {/* Champ email + bouton Get started */}
-
-              <Link
-                href={action_btn.link}
-                className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 transition whitespace-nowrap border border-white/60 shadow-[0_0_10px_rgba(255,255,255,0.3)]"
-              >
-                {action_btn.label}
-              </Link>
-
+          {/* Bouton d'action */}
+          <Link
+            href={action_btn.link}
+            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 transition-all duration-500 whitespace-nowrap border border-white/40 shadow-[0_0_8px_rgba(255,255,255,0.2)] hover:border-white/80 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+          >
+            {action_btn.label}
+          </Link>
         </div>
       </div>
-      
-      {/* Modal Get Started */}
-      <GetStartedModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        initialEmail={email}
-      />
     </section>
   );
 };
 
-export default SubHero;
+export default SolutionHero;

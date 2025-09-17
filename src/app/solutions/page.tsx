@@ -5,7 +5,7 @@ import React from "react";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
-import SubHero from "@/components/hero/SubHero";
+import SolutionHero from "../../components/hero/SolutionHero";
 import { Separator } from "@/components/ui/separator";
 
 
@@ -107,13 +107,13 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Hero Section */}
-      <SubHero {...heroDataEcomerce} />
+      <SolutionHero {...heroDataEcomerce} />
       <Separator />
-      <SubHero {...heroDataTravel} />
+      <SolutionHero {...heroDataTravel} />
       <Separator />
-      <SubHero {...heroDataSoftware} />
+      <SolutionHero {...heroDataSoftware} />
       <Separator />
-      <SubHero {...heroDataWholesale} />
+      <SolutionHero {...heroDataWholesale} />
       {/* FAQ et Footer */}
       <ServiceDetailsFaq 
         faqs={faqData.faqs} 
