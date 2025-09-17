@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import hasCharAnim from "@/lib/animation/hasCharAnim";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasWordAnim from "@/lib/animation/hasWordAnim";
+import GetStartedModal from "@/components/modals/GetStartedModal";
 
 type Props = {
   title: string;
@@ -50,11 +51,12 @@ const DesignHero = ({
 
   const [email, setEmail] = useState("");
   const [acceptNewsletter, setAcceptNewsletter] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!acceptNewsletter) return;
-    // Remplace par l'action souhaitée
-    console.log("Email submitted:", email);
+    if (!acceptNewsletter || !email.trim()) return;
+    // Ouvrir le modal avec l'email saisi
+    setIsModalOpen(true);
   };
 
   return (
@@ -167,6 +169,13 @@ const DesignHero = ({
           </div>
         </div>
       </div>
+      
+      {/* Modal Get Started */}
+      <GetStartedModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        initialEmail={email}
+      />
     </section>
   );
 };

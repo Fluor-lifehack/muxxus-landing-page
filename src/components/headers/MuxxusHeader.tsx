@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 import Logo from "@/components/elements/logo/Logo";
+import GetStartedModal from "@/components/modals/GetStartedModal";
 
 // Import des données de navigation par défaut
 import defaultNavigationConfig from "@/config/navigation.json";
@@ -342,29 +343,11 @@ export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNav
         )}
       </header>
 
-      {/* Modal placeholder */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
-            <h3 className="text-xl font-bold mb-4">Get Started</h3>
-            <p className="text-gray-600 mb-6">Contact us to get started with Muxxus solutions.</p>
-            <div className="flex gap-3">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="flex-1 px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-              >
-                Cancel
-              </button>
-              <a
-                href="/contact"
-                className="flex-1 px-4 py-2 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors duration-200"
-              >
-                Contact Sales
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Get Started Modal */}
+      <GetStartedModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </>
   );
 }
