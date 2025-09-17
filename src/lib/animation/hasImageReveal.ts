@@ -4,8 +4,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const hasImageReveal = () => {
-  const imageRevealArray = gsap.utils.toArray(".has_image_reveal");
-  imageRevealArray.forEach((item: Element) => {
+  const imageRevealArray = gsap.utils.toArray<Element>(".has_image_reveal");
+  imageRevealArray.forEach((item) => {
     try {
       if (item) {
         const startValue = item.getAttribute("data-start") ?? "80%";

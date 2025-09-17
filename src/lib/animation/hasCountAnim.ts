@@ -4,8 +4,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const hasCountAnim = () => {
-  const countAnimArray = gsap.utils.toArray(".has_count_anim");
-  countAnimArray.forEach((item: Element) => {
+  const countAnimArray = gsap.utils.toArray<Element>(".has_count_anim");
+  countAnimArray.forEach((item) => {
     try {
       if (item) {
         const count_value = item.getAttribute("data-count") ?? 0;

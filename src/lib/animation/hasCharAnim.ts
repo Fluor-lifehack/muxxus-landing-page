@@ -5,11 +5,11 @@ import { SplitText } from "@/lib/plugins";
 gsap.registerPlugin(ScrollTrigger);
 
 const hasCharAnim = () => {
-  const charAnimArray = gsap.utils.toArray(".has_char_anim");
-  charAnimArray.forEach((item: Element) => {
+  const charAnimArray = gsap.utils.toArray<Element>(".has_char_anim");
+  charAnimArray.forEach((item) => {
     try {
       if (item) {
-        const stagger_value = item.getAttribute("data-stagger") ?? 0.05;
+        const stagger_value = parseFloat(item.getAttribute("data-stagger") ?? "0.05");
         // Support both lowercase (React-compliant) and legacy camel-case data attributes
         const translateX_value =
           item.getAttribute("data-translatex") ??

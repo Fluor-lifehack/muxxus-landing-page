@@ -17,8 +17,8 @@ type AnimationSetting = {
 };
 
 export default function hasFadeAnim() {
-  const fadeArray = gsap.utils.toArray(".has_fade_anim");
-  fadeArray.forEach((item: Element) => {
+  const fadeArray = gsap.utils.toArray<Element>(".has_fade_anim");
+  fadeArray.forEach((item) => {
     let fade_direction = "bottom";
     let onscroll_value = 1;
     let duration_value = 1.15;
@@ -27,23 +27,23 @@ export default function hasFadeAnim() {
     let ease_value = "power2.out";
 
     if (item.getAttribute("data-fade-offset")) {
-      fade_offset = item.getAttribute("data-fade-offset");
+      fade_offset = parseFloat(item.getAttribute("data-fade-offset") ?? "40");
     }
     if (item.getAttribute("data-duration")) {
-      duration_value = item.getAttribute("data-duration");
+      duration_value = parseFloat(item.getAttribute("data-duration") ?? "1.15");
     }
 
     if (item.getAttribute("data-fade-from")) {
-      fade_direction = item.getAttribute("data-fade-from");
+      fade_direction = item.getAttribute("data-fade-from") ?? "bottom";
     }
     if (item.getAttribute("data-on-scroll")) {
-      onscroll_value = item.getAttribute("data-on-scroll");
+      onscroll_value = parseFloat(item.getAttribute("data-on-scroll") ?? "1");
     }
     if (item.getAttribute("data-delay")) {
-      delay_value = item.getAttribute("data-delay");
+      delay_value = parseFloat(item.getAttribute("data-delay") ?? "0.15");
     }
     if (item.getAttribute("data-ease")) {
-      ease_value = item.getAttribute("data-ease");
+      ease_value = item.getAttribute("data-ease") ?? "power2.out";
     }
 
     const animation_settings: AnimationSetting = {

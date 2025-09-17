@@ -5,8 +5,8 @@ import { SplitText } from "@/lib/plugins";
 gsap.registerPlugin(ScrollTrigger);
 
 const hasTextMovAnim = () => {
-  const textMoveArray = gsap.utils.toArray(".has_text_mov_anim");
-  textMoveArray.forEach((item: Element) => {
+  const textMoveArray = gsap.utils.toArray<Element>(".has_text_mov_anim");
+  textMoveArray.forEach((item) => {
     try {
       if (item) {
         const delayValue = item.getAttribute("data-delay") ?? 0.1;
@@ -25,7 +25,7 @@ const hasTextMovAnim = () => {
 
         gsap.set(item, { perspective: 400 });
 
-        tl.from(itemSplitted.lines, {
+        tl.from(itemSplitted.words, {
           duration: 1,
           delay: delayValue,
           opacity: 0,
