@@ -280,7 +280,7 @@
     {
       "id": 4,
       "name": "Company",
-      "path": "#",
+      "path": "/about",
       "hasChildren": false,
       "children": [
         {
