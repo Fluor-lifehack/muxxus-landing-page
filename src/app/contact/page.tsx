@@ -1,9 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaGlobe, FaHeadset } from "react-icons/fa";
-import Link from "next/link";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaHeadset } from "react-icons/fa";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 const ContactPage = () => {

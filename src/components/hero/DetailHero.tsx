@@ -35,12 +35,8 @@ interface DetailHeroProps {
 
 const DetailHero = ({
   title,
-  shape,
-  client_img,
-  customers,
   info,
   image,
-  feature_text,
 }: DetailHeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null!);
 

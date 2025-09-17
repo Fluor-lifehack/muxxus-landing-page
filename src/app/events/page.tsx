@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaCalendar, FaMapMarkerAlt, FaClock, FaUsers, FaVideo, FaGlobe, FaTicketAlt, FaStar } from "react-icons/fa";
+import { FaCalendar, FaMapMarkerAlt, FaUsers, FaVideo, FaGlobe, FaStar } from "react-icons/fa";
 
 const EventsPage = () => {
   const upcomingEvents = [

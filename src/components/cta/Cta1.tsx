@@ -25,14 +25,16 @@ const Cta1 = ({ title, sub_title, action_btn, bg_video }: Props) => {
     console.log('useEffect triggered, bg_video:', bg_video);
     console.log('videoRef.current:', videoRef.current);
     
-    if (videoRef.current && bg_video) {
+    const videoElement = videoRef.current;
+    
+    if (videoElement && bg_video) {
       console.log('Setting up video...');
       
       // Préchargement de la vidéo
-      videoRef.current.load();
+      videoElement.load();
       
       // Optimisation des performances
-      videoRef.current.playbackRate = 1.0;
+      videoElement.playbackRate = 1.0;
       
       // Gestion des erreurs de vidéo
       const handleError = () => {
@@ -42,21 +44,19 @@ const Cta1 = ({ title, sub_title, action_btn, bg_video }: Props) => {
       // Gestion du chargement réussi
       const handleLoadedData = () => {
         console.log('Vidéo chargée avec succès');
-        if (videoRef.current) {
-          videoRef.current.play().catch(e => {
+        if (videoElement) {
+          videoElement.play().catch(e => {
             console.log('Erreur de lecture vidéo:', e);
           });
         }
       };
       
-      videoRef.current.addEventListener('error', handleError);
-      videoRef.current.addEventListener('loadeddata', handleLoadedData);
+      videoElement.addEventListener('error', handleError);
+      videoElement.addEventListener('loadeddata', handleLoadedData);
       
       return () => {
-        if (videoRef.current) {
-          videoRef.current.removeEventListener('error', handleError);
-          videoRef.current.removeEventListener('loadeddata', handleLoadedData);
-        }
+        videoElement.removeEventListener('error', handleError);
+        videoElement.removeEventListener('loadeddata', handleLoadedData);
       };
     } else {
       console.log('Video setup skipped - missing videoRef or bg_video');

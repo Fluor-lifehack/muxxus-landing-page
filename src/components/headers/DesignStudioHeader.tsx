@@ -4,8 +4,6 @@ import Menu from "@/components/menu/Menu";
 import Logo from "@/components/elements/logo/Logo";
 import SideNavModal from "@/components/sideNavModal/SideNavModal";
 import GetStartedModal from "@/components/modals/GetStartedModal";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 

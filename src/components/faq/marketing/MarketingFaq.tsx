@@ -70,12 +70,7 @@ const MarketingFaq = ({ title, subtitle, description, faqs, className }: Props) 
             defaultValue={openItem}
             onValueChange={(value) => {
               setOpenItem(value || "");
-              const smoother = ScrollSmoother.get();
-              if (smoother) {
-                smoother.refresh();
-              } else {
-                ScrollTrigger.refresh();
-              }
+              ScrollTrigger.refresh();
             }}
             data-delay="0.45"
           >
@@ -87,7 +82,6 @@ const MarketingFaq = ({ title, subtitle, description, faqs, className }: Props) 
               >
                 <AccordionTrigger
                   className="text-[20px] xl:text-[24px] pt-6 pb-[18px] px-6 font-semibold text-start text-gray-900 hover:text-blue-600 transition-colors duration-200"
-                  customIcon={true}
                 >
                   {item.question}
                 </AccordionTrigger>

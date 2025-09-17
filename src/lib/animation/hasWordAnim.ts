@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function hasWordAnim() {
   const wordAnimArray = gsap.utils.toArray(".has_word_anim");
 
-  wordAnimArray.forEach((item: any) => {
+  wordAnimArray.forEach((item: Element) => {
     try {
       if (item) {
         const stagger_value = item.getAttribute("data-stagger") ?? 0.05;
@@ -27,7 +27,7 @@ export default function hasWordAnim() {
         const words = split.words;
 
         const excludeWords = item.querySelectorAll(".no-animate");
-        const animateWords = Array.from(words).filter((word: any) => {
+        const animateWords = Array.from(words).filter((word: Element) => {
           return !Array.from(excludeWords).some((exclude) => {
             const excludeElement = exclude as HTMLElement;
             return excludeElement.contains(word);

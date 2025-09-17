@@ -75,7 +75,7 @@ const Footer2 = ({ data, TitleclassName }: Props) => {
           </div>
 
           <div className="border-t border-[#ffffff14] mt-10 md:mt-[50px] 2xl:mt-[60px] py-[39px] md:py-[59px] 2xl:pb-[79px] grid gap-y-[30px] gap-x-10 xl:gap-x-[120px] md:grid-cols-[150px_150px_1fr] lg:grid-cols-[190px_190px_1fr]">
-            {locationData.map((item, i) => (
+            {locationData.map((item) => (
               <div key={item.id}>
                 <h2 className="text-[20px] text-text-fixed-2 leading-[1.5]">
                   {item.city}

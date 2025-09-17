@@ -68,7 +68,7 @@ const MuxxusTeam = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
+            {teamMembers.map((member) => (
               <div key={member.id} className="has_fade_anim group">
                 <Link href={`/team/${member.slug}`}>
                   <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">

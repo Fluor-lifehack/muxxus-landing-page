@@ -11,14 +11,14 @@ type AnimationSetting = {
   y?: string | number;
   x?: string | number;
   scrollTrigger?: {
-    trigger: any;
+    trigger: Element | string;
     start: string;
   };
 };
 
 export default function hasFadeAnim() {
   const fadeArray = gsap.utils.toArray(".has_fade_anim");
-  fadeArray.forEach((item: any) => {
+  fadeArray.forEach((item: Element) => {
     let fade_direction = "bottom";
     let onscroll_value = 1;
     let duration_value = 1.15;
@@ -46,7 +46,7 @@ export default function hasFadeAnim() {
       ease_value = item.getAttribute("data-ease");
     }
 
-    let animation_settings: AnimationSetting = {
+    const animation_settings: AnimationSetting = {
       opacity: 0,
       ease: ease_value,
       duration: duration_value,

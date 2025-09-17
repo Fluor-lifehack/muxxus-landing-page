@@ -18,5 +18,4 @@ export { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 export { ScrollArea } from './scroll-area';
 export { Skeleton } from './skeleton';
 export { Avatar, AvatarFallback, AvatarImage } from './avatar';
-export { ScrollAnimation } from './scroll-animations';
-export { AnimatedBackground } from './animated-background';
+export { default as AnimatedBackground } from './animated-background';

@@ -1,7 +1,6 @@
 "use client";
 
 import { ActionBtnType } from "@/types";
-import CircleFillButton from "../elements/button/CircleFillButton";
 import DesignSectionTitle from "../sectionTitle/DesignSectionTitle";
 import { useRef } from "react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";

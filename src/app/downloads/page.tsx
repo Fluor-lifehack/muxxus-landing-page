@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaDownload, FaFilePdf, FaFileAlt, FaCode, FaMobile, FaDesktop, FaGlobe, FaShieldAlt } from "react-icons/fa";
+import { FaFileAlt, FaCode, FaMobile, FaDesktop } from "react-icons/fa";
 
 const DownloadsPage = () => {
   const downloadCategories = [

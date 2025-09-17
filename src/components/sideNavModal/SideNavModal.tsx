@@ -2,10 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import clsx from "clsx";
 import { FaBars } from "react-icons/fa6";
 import navigation from "@/config/navigation.json";
-import siteConfig from "@/config/siteConfig.json";
 import {
   Drawer,
   DrawerClose,
@@ -22,11 +20,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { SocialShare1 } from "../tools/Social";
+
+// Types pour les données de navigation
+interface NavigationItem {
+  id: number;
+  name: string;
+  path: string;
+  hasChildren?: boolean;
+  children?: NavigationItem[];
+  icon?: string;
+  description?: string;
+  isHeading?: boolean;
+  isFeatured?: boolean;
+  image?: string;
+}
 
 const SideNavModal = () => {
-  const SideMenuData = navigation.header;
-  const { footer_info, social } = siteConfig;
+  const SideMenuData = navigation.header as NavigationItem[];
 
   return (
     <>
@@ -57,7 +67,7 @@ const SideNavModal = () => {
 
               <ScrollArea className="flex-1">
                 <Accordion type="single" collapsible className="w-full">
-                  {SideMenuData.map((menuItem, i) =>
+                  {SideMenuData.map((menuItem) =>
                     menuItem.hasChildren ? (
                       <AccordionItem
                         value={`item-${menuItem.name}`}
@@ -68,48 +78,48 @@ const SideNavModal = () => {
                           {menuItem.name}
                         </AccordionTrigger>
                         <AccordionContent className="pb-4">
-                                                     <div className="space-y-2 pl-4">
-                             {menuItem.children?.map((submenu: any, k: number) =>
-                               submenu.hasChildren ? (
-                                 <Accordion
-                                   type="single"
-                                   collapsible
-                                   key={`id-${submenu.id}`}
-                                 >
-                                   <AccordionItem
-                                     value={`submenuChild-${submenu.id}`}
-                                     className="border-0"
-                                   >
-                                     <AccordionTrigger className="text-left py-2 hover:text-gray-600">
-                                       {submenu.name}
-                                     </AccordionTrigger>
-                                     <AccordionContent className="pb-2">
-                                       <div className="space-y-1 pl-4">
-                                         {submenu.children?.map((submenuChild: any, j: number) => (
-                                           <DrawerClose asChild key={submenuChild.id}>
-                                             <Link
-                                               href={submenuChild.path}
-                                               className="block text-sm text-gray-600 hover:text-gray-900 py-1"
-                                             >
-                                               {submenuChild.name}
-                                             </Link>
-                                           </DrawerClose>
-                                         ))}
-                                       </div>
-                                     </AccordionContent>
-                                   </AccordionItem>
-                                 </Accordion>
-                               ) : (
-                                 <DrawerClose asChild key={submenu.id}>
-                                   <Link
-                                     href={submenu.path}
-                                     className="block text-sm text-gray-600 hover:text-gray-900 py-1"
-                                   >
-                                     {submenu.name}
-                                   </Link>
-                                 </DrawerClose>
-                               )
-                             )}
+                          <div className="space-y-2 pl-4">
+                            {menuItem.children?.map((submenu) =>
+                              submenu.hasChildren ? (
+                                <Accordion
+                                  type="single"
+                                  collapsible
+                                  key={`id-${submenu.id}`}
+                                >
+                                  <AccordionItem
+                                    value={`submenuChild-${submenu.id}`}
+                                    className="border-0"
+                                  >
+                                    <AccordionTrigger className="text-left py-2 hover:text-gray-600">
+                                      {submenu.name}
+                                    </AccordionTrigger>
+                                    <AccordionContent className="pb-2">
+                                      <div className="space-y-1 pl-4">
+                                        {submenu.children?.map((submenuChild) => (
+                                          <DrawerClose asChild key={submenuChild.id}>
+                                            <Link
+                                              href={submenuChild.path}
+                                              className="block text-sm text-gray-600 hover:text-gray-900 py-1"
+                                            >
+                                              {submenuChild.name}
+                                            </Link>
+                                          </DrawerClose>
+                                        ))}
+                                      </div>
+                                    </AccordionContent>
+                                  </AccordionItem>
+                                </Accordion>
+                              ) : (
+                                <DrawerClose asChild key={submenu.id}>
+                                  <Link
+                                    href={submenu.path}
+                                    className="block text-sm text-gray-600 hover:text-gray-900 py-1"
+                                  >
+                                    {submenu.name}
+                                  </Link>
+                                </DrawerClose>
+                              )
+                            )}
                           </div>
                         </AccordionContent>
                       </AccordionItem>

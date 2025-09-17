@@ -22,7 +22,7 @@ export type TWorkType = {
     };
   };
   slug: string;
-  content: any;
+  content: string;
 };
 
 export type TServiceType = {
@@ -55,7 +55,7 @@ export type TServiceType = {
     };
   };
   slug: string;
-  content: any;
+  content: string;
 };
 
 type TTestimonialList = {
@@ -111,7 +111,7 @@ type TBlogType = {
   };
 
   slug: string;
-  content: any;
+  content: string;
 };
 
 type TjobDataType = {
@@ -131,7 +131,7 @@ type TjobDataType = {
 type TJobType = {
   data: TjobDataType;
   slug: string;
-  content: any;
+  content: string;
 };
 
 type TAboutFaqs = {

@@ -20,7 +20,7 @@ interface SecondaryNavProps {
   className?: string;
 }
 
-const SecondaryNav = ({ title, description, items, currentPath, className = "" }: SecondaryNavProps) => {
+const SecondaryNav = ({ title, description, items, className = "" }: SecondaryNavProps) => {
   const pathname = usePathname();
 
   const getIcon = (iconName?: string) => {

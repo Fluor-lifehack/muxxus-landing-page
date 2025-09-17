@@ -5,11 +5,6 @@ import { useGSAP } from "@gsap/react";
 import WebSectionTItle from "@/components/sectionTitle/WebSectionTItle";
 import WebFeatureCard from "@/components/features/web/WebFeatureCard";
 import ImageComponent from "@/components/tools/ImageComponent";
-import MarketingImage from "@/components/image/MarketingImage";
-import DesignImage2 from "@/components/image/DesignImage2";
-import DesignImage from "@/components/image/DesignImage";
-import SeoImage from "@/components/image/SeoImage";
-import WebImage from "@/components/image/WebImage";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 
@@ -22,7 +17,7 @@ type Props = {
     description: string;
     icon: string;
   }[];
-  image?: any; // Ajout de la prop image pour les composants d'images
+  image?: string; // Ajout de la prop image pour les composants d'images
 };
 
 const WebFeature = ({ title, img_icon, description, features, image }: Props) => {
@@ -74,13 +69,9 @@ const WebFeature = ({ title, img_icon, description, features, image }: Props) =>
 
           {/* Composants d'images ajoutés */}
           {image && (
-            <>
-              <MarketingImage {...image} />
-              <DesignImage2 {...image} />
-              <DesignImage {...image} />
-              <SeoImage {...image} />
-              <WebImage {...image} />
-            </>
+            <div className="text-center py-8">
+              <p className="text-gray-600">Image: {image}</p>
+            </div>
           )}
         </div>
       </div>

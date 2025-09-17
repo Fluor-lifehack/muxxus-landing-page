@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaQuoteLeft, FaStar, FaBuilding, FaGlobe, FaChartLine, FaUsers, FaIndustry } from "react-icons/fa";
+import { FaQuoteLeft, FaStar, FaBuilding, FaGlobe, FaUsers, FaIndustry } from "react-icons/fa";
 
 const TestimonialsPage = () => {
   const featuredTestimonials = [
@@ -180,7 +179,7 @@ const TestimonialsPage = () => {
                 <div className="mb-6">
                   <FaQuoteLeft className="w-8 h-8 text-teal-200 mb-4" />
                   <p className="text-gray-700 italic text-lg leading-relaxed">
-                    "{testimonial.testimonial}"
+                    &ldquo;{testimonial.testimonial}&rdquo;
                   </p>
                 </div>
                 <div className="flex items-center gap-4 mb-6">

@@ -1,0 +1,19 @@
+# Ignore minified files
+**/*.min.js
+**/*.min.ts
+**/*.min.tsx
+
+# Ignore Swiper plugin files
+src/lib/swiper-modules/effect-material.js
+
+# Ignore build directories
+.next/
+out/
+dist/
+build/
+
+# Ignore node_modules
+node_modules/
+
+# Ignore generated files
+*.d.ts

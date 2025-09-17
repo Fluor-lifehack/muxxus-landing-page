@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const hasCountAnim = () => {
   const countAnimArray = gsap.utils.toArray(".has_count_anim");
-  countAnimArray.forEach((item: any) => {
+  countAnimArray.forEach((item: Element) => {
     try {
       if (item) {
         const count_value = item.getAttribute("data-count") ?? 0;

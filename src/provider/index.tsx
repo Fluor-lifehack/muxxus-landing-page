@@ -34,6 +34,6 @@ const ThemeWrapper = ({
   const { setMode } = useMode();
   useEffect(() => {
     setMode(theme as string);
-  }, []);
+  }, [setMode, theme]);
   return <>{children}</>;
 };

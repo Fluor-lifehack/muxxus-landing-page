@@ -49,7 +49,7 @@ const BusinessAccountsPage = ({
                   className="has_fade_anim grid gap-x-20 md:grid-cols-2"
                   data-fade-from="left"
                 >
-                  {services.map((service, index) => (
+                  {services.map((service) => (
                     <Link
                       href={`/service/design/${service.slug}`}
                       key={service.data.id}

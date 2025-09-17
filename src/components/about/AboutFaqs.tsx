@@ -82,7 +82,6 @@ const AboutFaqs = ({ title, image, video, faqs }: Props) => {
                     >
                       <AccordionTrigger
                         className="text-text-fixed-2 text-[18px] xl:text-[24px] l py-[18px] text-start"
-                        customIcon={true}
                       >
                         {item.question}
                       </AccordionTrigger>

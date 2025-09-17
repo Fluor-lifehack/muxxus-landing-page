@@ -5,12 +5,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const hasImageReveal = () => {
   const imageRevealArray = gsap.utils.toArray(".has_image_reveal");
-  imageRevealArray.forEach((item: any) => {
+  imageRevealArray.forEach((item: Element) => {
     try {
       if (item) {
         const startValue = item.getAttribute("data-start") ?? "80%";
 
-        let tl = gsap.timeline({
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
             start: `center ${startValue}`,

@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 
 interface Testimonial {
   quote: string;
@@ -52,7 +51,7 @@ const MuxxusTestimonials: React.FC<MuxxusTestimonialsProps> = ({
               </div>
               
               <blockquote className="text-gray-700 mb-4 italic">
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
               
               <div className="border-t border-gray-100 pt-4">

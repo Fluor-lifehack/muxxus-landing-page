@@ -1,17 +1,11 @@
 "use client";
-import CircleFillButton from "@/components/elements/button/CircleFillButton";
-import ButtonSwap from "@/components/elements/button/ButtonSwap";
-import ButtonFlip from "@/components/elements/button/ButtonFlip";
-import TopLineButton from "@/components/elements/button/TopLineButton";
-import { Button } from "@/components/ui/button";
-import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
+
 import { ActionBtnType, TServiceType } from "@/types";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import PricingCard from "@/components/pricing/PricingCard";
 import ImageComponent from "@/components/tools/ImageComponent";
 
 type Props = {
@@ -23,25 +17,24 @@ type Props = {
 };
 
 // Fonction pour convertir les services en format pricing card
-const convertServicesToPricingCard = (services: TServiceType[]) => {
-  return services.map((service, index) => ({
-    tag: service.data.title,
-    price: `$${(index + 1) * 50 + 50}`, // Prix dynamique basé sur l'index
-    feature_list: [
-      { text: "Design personnalisé" },
-      { text: "Révisions illimitées" },
-      { text: "Support 24/7" },
-      { text: service.data.description ? service.data.description.substring(0, 50) + "..." : "Service premium" },
-    ],
-    btn_title: "Commander",
-    service: service, // Garder la référence au service original
-  }));
-};
+// const convertServicesToPricingCard = (services: TServiceType[]) => {
+//   return services.map((service, index) => ({
+//     tag: service.data.title,
+//     price: `$${(index + 1) * 50 + 50}`, // Prix dynamique basé sur l'index
+//     feature_list: [
+//       { text: "Design personnalisé" },
+//       { text: "Révisions illimitées" },
+//       { text: "Support 24/7" },
+//       { text: service.data.description ? service.data.description.substring(0, 50) + "..." : "Service premium" },
+//     ],
+//     btn_title: "Commander",
+//     service: service, // Garder la référence au service original
+//   }));
+// };
 const DesignService = ({
   title,
   description,
   sub_title,
-  action_btn,
   services,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);

@@ -3,7 +3,6 @@ import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
-import MarketingHeader from "@/components/headers/MarketingHeader";
 import Footer6 from "@/components/footer/Footer6";
 
 const Layout = ({

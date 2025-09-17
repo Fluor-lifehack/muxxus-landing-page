@@ -11,7 +11,7 @@ const ScrollTop = () => {
   const topScroll = useRef<HTMLButtonElement>(null!);
   useEffect(() => {
     if (typeof window !== "undefined") {
-      let scroll_top = topScroll.current;
+      const scroll_top = topScroll.current;
       if (scroll_top) {
         window.onscroll = function () {
           if (

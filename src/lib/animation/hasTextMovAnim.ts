@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const hasTextMovAnim = () => {
   const textMoveArray = gsap.utils.toArray(".has_text_mov_anim");
-  textMoveArray.forEach((item: any) => {
+  textMoveArray.forEach((item: Element) => {
     try {
       if (item) {
         const delayValue = item.getAttribute("data-delay") ?? 0.1;

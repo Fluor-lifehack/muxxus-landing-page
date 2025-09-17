@@ -1,12 +1,9 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import mdx from "./mdx";
 
-const MDXContent = ({ content }: { content: any }) => {
-
-
+const MDXContent = ({ content }: { content: string }) => {
   return (
     <>
-      {/* @ts-ignore */}
       <MDXRemote source={content} components={mdx} />
     </>
   );

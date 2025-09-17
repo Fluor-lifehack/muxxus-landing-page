@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
@@ -30,7 +30,6 @@ type Props = {
 
 const CreativeTeamShowcase = ({ title, description, team_members }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
-  const [activeMember, setActiveMember] = useState<string | null>(null);
 
   useGSAP(
     () => {
@@ -68,8 +67,6 @@ const CreativeTeamShowcase = ({ title, description, team_members }: Props) => {
             <div
               key={member.id}
               className="has_fade_anim group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-              onMouseEnter={() => setActiveMember(member.id)}
-              onMouseLeave={() => setActiveMember(null)}
             >
               {/* Photo et infos principales */}
               <div className="text-center mb-6">
@@ -118,7 +115,7 @@ const CreativeTeamShowcase = ({ title, description, team_members }: Props) => {
               <div className="mb-4">
                 <h4 className="text-sm font-semibold text-gray-700 mb-2">Projet Préféré</h4>
                 <p className="text-sm text-gray-600 italic">
-                  "{member.favorite_project}"
+                  &ldquo;{member.favorite_project}&rdquo;
                 </p>
               </div>
 

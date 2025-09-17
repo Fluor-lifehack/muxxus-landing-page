@@ -18,10 +18,9 @@ type Props = {
   title: string;
   description: string;
   icon: string;
-  index?: number;
 };
 
-const MuxxusFeatureCard = ({ title, description, icon, index = 0 }: Props) => {
+const MuxxusFeatureCard = ({ title, description, icon }: Props) => {
   const cardRef = useRef<HTMLDivElement>(null!);
   const iconRef = useRef<HTMLDivElement>(null!);
   const contentRef = useRef<HTMLDivElement>(null!);

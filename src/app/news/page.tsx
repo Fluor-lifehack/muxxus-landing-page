@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaNewspaper, FaCalendar, FaUser, FaTag, FaArrowRight, FaSearch, FaFilter } from "react-icons/fa";
+import { FaNewspaper, FaArrowRight } from "react-icons/fa";
 
 const NewsPage = () => {
   const featuredNews = [

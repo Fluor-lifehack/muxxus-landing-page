@@ -1,6 +1,5 @@
 import { useState } from "react";
 import VideoModal from "@/components/tools/VideoModal";
-import Link from "next/link";
 import { FaPlay } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 

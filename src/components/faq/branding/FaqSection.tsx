@@ -35,12 +35,7 @@ const FaqSection = ({ faqs, className }: Props) => {
         defaultValue={openItem}
         onValueChange={(value) => {
           setOpenItem(value || "");
-          const smoother = ScrollSmoother.get();
-          if (smoother) {
-            smoother.refresh();
-          } else {
-            ScrollTrigger.refresh();
-          }
+          ScrollTrigger.refresh();
         }}
         data-delay=".45"
       >
@@ -55,7 +50,6 @@ const FaqSection = ({ faqs, className }: Props) => {
                 " leading-[1.08] text-[20px] xl:text-[24px] pt-6 pb-[18px] px-0 font-beatricetrial text-start font-normal",
                 className
               )}
-              customIcon={true}
             >
               {item.question}
             </AccordionTrigger>

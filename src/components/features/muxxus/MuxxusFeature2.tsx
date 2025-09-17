@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import { cn } from "@/lib/utils";
 import MuxxusSectionTitle from "@/components/muxxus/MuxxusSectionTitle";
+import MuxxusFeatureCard2 from "./MuxxusFeatureCard2";
 
 type FeatureSection = {
   title: string;

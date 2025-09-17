@@ -1,11 +1,9 @@
 import React from "react";
-import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
-import DesignStudioHeader from "@/components/headers/DesignStudioHeader";
 
 const Layout = ({
   children,
@@ -26,7 +24,7 @@ const Layout = ({
           <MuxxusNewsletter />
           
           {/* MuxxusFooter - Footer personnalisé */}
-          <MuxxusFooter footerNav={navigation.footer1} />
+          <MuxxusFooter />
         </div>
       </div>
     </div>

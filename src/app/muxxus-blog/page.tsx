@@ -1,9 +1,8 @@
-import Image from "next/image";
+import Link from "next/link";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaSearch, FaCalendar, FaUser, FaTag, FaArrowRight } from "react-icons/fa";
-import Link from "next/link";
+import { FaCalendar, FaUser, FaArrowRight } from "react-icons/fa";
 
 const MuxxusBlogPage = () => {
   const featuredPosts = [

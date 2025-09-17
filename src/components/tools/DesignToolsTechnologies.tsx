@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
-import ImageComponent from "@/components/tools/ImageComponent";
 import { FaFigma, FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiFramer, SiSketch, SiAdobephotoshop } from "react-icons/si";
 

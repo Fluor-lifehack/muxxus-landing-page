@@ -5,7 +5,7 @@ import SecondaryNav from "@/components/navigation/SecondaryNav";
 import BusinessAccountsLinks from "@/components/elements/bottomSection/BusinessAccountsLinks";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import MuxxusHeader from "@/components/headers/MuxxusHeader";
-import { Building2, Globe, CreditCard, Zap, Shield, Users, ArrowRight, CheckCircle, Star, Play, ChevronDown, ChevronUp } from "lucide-react";
+import { Globe, Zap, Shield, Users, ArrowRight, CheckCircle, Star, Play, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
 export default function BusinessAccountsPage() {

@@ -1,5 +1,4 @@
 import React from "react";
-import SeoHeader from "@/components/headers/SeoHeader";
 import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import Footer3 from "@/components/footer/Footer3";

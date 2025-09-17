@@ -8,7 +8,6 @@ import DesignService from "@/components/service/design/DesignService";
 import DesignSkill from "@/components/skill/design/DesignSkill";
 import MuxxusWork from "@/components/work/muxxus/MuxxusWork";
 import MuxxusFeature from "@/components/features/muxxus/MuxxusFeature";
-import FineImageSection from '@/components/image/FineImageSection';
 import TeamCounterArea from "@/components/team/TeamCounterArea";
 import StatMuxxus from "@/components/muxxus/StatMuxxus";
 import SeoData from "@/components/tools/SeoData";

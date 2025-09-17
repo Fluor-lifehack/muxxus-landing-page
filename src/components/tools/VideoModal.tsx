@@ -19,7 +19,7 @@ const VideoModal = ({ link, isOpen, close }: Props) => {
   const [deviceWidth, setDeviceWidth] = useState(0);
 
   useEffect(() => {
-    let device_width = window.innerWidth;
+    const device_width = window.innerWidth;
     setDeviceWidth(device_width);
   }, []);
 

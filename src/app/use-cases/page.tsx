@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaBuilding, FaGlobe, FaCreditCard, FaChartLine, FaUsers, FaShieldAlt } from "react-icons/fa";
+import { FaBuilding, FaGlobe, FaCreditCard, FaChartLine, FaUsers } from "react-icons/fa";
 import Link from "next/link";
 
 const UseCasesPage = () => {
@@ -123,7 +122,7 @@ const UseCasesPage = () => {
                 </div>
               </div>
               <p className="text-gray-600 mb-4">
-                "Saved $10k a month on FX with automated global payments and competitive rates."
+                &ldquo;Saved $10k a month on FX with automated global payments and competitive rates.&rdquo;
               </p>
               <Link href="/case-studies/authentic-vacations" className="text-indigo-600 hover:text-indigo-700 font-medium">
                 Read Case Study →
@@ -140,7 +139,7 @@ const UseCasesPage = () => {
                 </div>
               </div>
               <p className="text-gray-600 mb-4">
-                "Integrated global payments in weeks, not months, with our developer-friendly APIs."
+                &ldquo;Integrated global payments in weeks, not months, with our developer-friendly APIs.&rdquo;
               </p>
               <Link href="/case-studies" className="text-indigo-600 hover:text-indigo-700 font-medium">
                 Read Case Study →
@@ -155,7 +154,7 @@ const UseCasesPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Transform Your Business?</h2>
           <p className="text-lg text-gray-600 mb-8">
-            Let's discuss how our solutions can help you scale globally
+            Let&apos;s discuss how our solutions can help you scale globally
           </p>
           <CircleFillButton 
             text="Schedule a Consultation" 

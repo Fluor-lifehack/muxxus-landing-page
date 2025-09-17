@@ -1,9 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaPlay, FaRocket, FaGlobe, FaCreditCard, FaChartLine, FaCog } from "react-icons/fa";
-import Link from "next/link";
 
 const ProductTourPage = () => {
   const tourSteps = [
@@ -76,7 +74,7 @@ const ProductTourPage = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Take a guided tour of our platform and discover how easy it is to go global with Muxxus. 
-              From setup to success, we'll show you everything you need to know.
+              From setup to success, we&apos;ll show you everything you need to know.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CircleFillButton 

@@ -61,7 +61,6 @@ const FeatureShowcase = ({
         <MuxxusFeature 
           title={title}
           description={description}
-          img_icon={img_icon}
           features={features}
         />
       )}
@@ -80,7 +79,7 @@ const FeatureShowcase = ({
                 Variante Standard
               </h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Design épuré et professionnel avec animations subtiles. Parfait pour les sites d'entreprise.
+                Design épuré et professionnel avec animations subtiles. Parfait pour les sites d&apos;entreprise.
               </p>
               <ul className="text-sm text-gray-500 dark:text-gray-400 space-y-1">
                 <li>• Animations GSAP de base</li>

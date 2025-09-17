@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const hasCharAnim = () => {
   const charAnimArray = gsap.utils.toArray(".has_char_anim");
-  charAnimArray.forEach((item: any) => {
+  charAnimArray.forEach((item: Element) => {
     try {
       if (item) {
         const stagger_value = item.getAttribute("data-stagger") ?? 0.05;
@@ -29,7 +29,7 @@ const hasCharAnim = () => {
         const chars = split.chars;
 
         const excludeChars = item.querySelectorAll(".no-animate");
-        const animateChars = Array.from(chars).filter((char: any) => {
+        const animateChars = Array.from(chars).filter((char: Element) => {
           return !Array.from(excludeChars).some((exclude) => {
             const excludeElement = exclude as HTMLElement;
             return excludeElement.contains(char);

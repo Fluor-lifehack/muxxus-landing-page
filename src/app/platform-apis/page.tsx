@@ -119,18 +119,6 @@ const PlatformAPIsPage = () => {
     ]
   };
 
-  // Données pour AiAbout
-  const about = {
-    title: "AI-Powered API Intelligence",
-    description: [
-      "Leverage advanced AI algorithms to optimize API performance, reduce fraud, and increase efficiency with intelligent routing and risk assessment.",
-      "Our AI systems provide real-time fraud detection, smart API routing, predictive analytics for usage patterns, automated compliance monitoring, machine learning optimization, and intelligent error handling."
-    ],
-    action_btn: {
-      label: "Learn More",
-      link: "/ai-services"
-    }
-  };
 
   // Données pour MuxxusFAQ
   const faqData = {

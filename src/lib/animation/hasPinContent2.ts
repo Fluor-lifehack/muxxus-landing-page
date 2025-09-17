@@ -4,13 +4,13 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function hasPinContent2(
-  element: any,
-  area: any,
+  element: Element | string,
+  area: Element | string,
   start?: string,
   dWidth: number = 991
 ) {
-  let device_width = window.innerWidth;
-  let startFrom = start || "top top";
+  const device_width = window.innerWidth;
+  const startFrom = start || "top top";
 
   if (element && device_width > dWidth) {
     return gsap.to(element, {

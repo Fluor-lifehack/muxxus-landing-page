@@ -13,7 +13,7 @@ const workImages = [
 ];
 
 const MuxxusWorkCard = ({ data, slug }: TWorkType) => {
-  const { title, icon, tags } = data;
+  const { } = data;
   
   // Sélectionner une image basée sur l'index pour éviter les doublons
   const imageIndex = Math.abs(slug.split('').reduce((a, b) => a + b.charCodeAt(0), 0)) % workImages.length;

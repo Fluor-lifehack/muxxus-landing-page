@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import SeoService from "@/components/service/seo/SeoService";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 

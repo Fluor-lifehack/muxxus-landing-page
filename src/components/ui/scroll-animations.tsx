@@ -430,7 +430,7 @@ export const ScrollAnimationProvider = ({ children }: { children: React.ReactNod
   return <>{children}</>;
 };
 
-export default {
+const scrollAnimations = {
   useRevealAnimation,
   useStaggerAnimation,
   useMorphingAnimation,
@@ -447,3 +447,5 @@ export default {
   ParticlesOnScroll,
   ScrollAnimationProvider,
 };
+
+export default scrollAnimations;

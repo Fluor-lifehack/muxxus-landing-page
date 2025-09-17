@@ -18,11 +18,11 @@ const MuxxusScrollImageTest: React.FC = () => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [testImages.length]);
 
   return (
     <div className="p-8 bg-gray-100 rounded-lg">
-      <h3 className="text-lg font-semibold mb-4">Test de changement d'image</h3>
+      <h3 className="text-lg font-semibold mb-4">Test de changement d&apos;image</h3>
       <div className="mb-4">
         <p>Image actuelle: {currentImageIndex + 1} / {testImages.length}</p>
         <p>Chemin: {testImages[currentImageIndex]}</p>

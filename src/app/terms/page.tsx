@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaFileAlt, FaShieldAlt, FaUser, FaGlobe, FaLock, FaGavel, FaEye, FaDownload } from "react-icons/fa";
+import { FaFileAlt, FaShieldAlt, FaUser, FaGlobe, FaLock, FaGavel, FaEye } from "react-icons/fa";
 
 const TermsPage = () => {
   const legalDocuments = [

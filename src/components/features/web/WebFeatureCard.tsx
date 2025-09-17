@@ -1,4 +1,4 @@
-import ImageComponent from "@/components/tools/ImageComponent";
+
 import { convertWithBr } from "@/lib/helper/converter";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   icon: string;
 };
 
-const WebFeatureCard = ({ title, description, icon }: Props) => {
+const WebFeatureCard = ({ title, description }: Props) => {
   // Fonction pour obtenir le SVG approprié selon le titre
   const getSecurityIcon = (title: string) => {
     const lowerTitle = title.toLowerCase();

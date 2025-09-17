@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import DetailHero from "@/components/hero/DetailHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
-import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
 import FeatureSection from "@/components/muxxus/FeatureSection";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";

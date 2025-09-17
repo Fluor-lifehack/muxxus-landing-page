@@ -68,7 +68,7 @@ const MuxxusService = ({
           </div>
 
           <div className="space-y-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div key={service.id} className="has_fade_anim first:border-t border-b border-gray-200 dark:border-gray-700">
                 <Link href={`/service/${service.slug}`}>
                   <div className="py-8 grid gap-y-5 gap-x-[60px] grid-cols-[auto] sm:grid-cols-[100px,1fr,100px] xl:grid-cols-[160px,1fr,100px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">

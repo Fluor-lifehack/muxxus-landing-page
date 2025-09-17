@@ -1,5 +1,4 @@
 import { convertWithBr } from "@/lib/helper/converter";
-import { cn } from "@/lib/utils";
 import ImageComponent from "@/components/tools/ImageComponent";
 
 type Props = {
@@ -18,7 +17,6 @@ const WebServiceProcess = ({
   icon,
   serial_no,
   feature_list,
-  className,
 }: Props) => {
   return (
     <div className="has_fade_anim" data-fade-from="left" data-delay="0.15">

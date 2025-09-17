@@ -1,9 +1,8 @@
-import Image from "next/image";
+import Link from "next/link";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaCode, FaBook, FaCog, FaUsers, FaShieldAlt, FaGlobe, FaCreditCard, FaChartLine, FaHandshake } from "react-icons/fa";
-import Link from "next/link";
 
 const DevelopersPage = () => {
   const developerTools = [

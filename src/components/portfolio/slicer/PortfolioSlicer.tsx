@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import type { SwiperModule } from "swiper/types";
 import { EffectSlicer } from "@/lib/plugins";
 import SliderNav from "@/components/portfolio/SliderNav";
 import SlicerCard from "@/components/portfolio/slicer/SlicerCard";
@@ -45,7 +46,7 @@ const PortfolioSlicer = ({ data }: Props) => {
             )}
             spaceBetween={50}
             slidesPerView={1}
-            modules={[EffectSlicer, Navigation, Pagination, Autoplay]}
+            modules={[EffectSlicer as unknown as SwiperModule, Navigation, Pagination, Autoplay]}
             dir="ltr"
             effect="slicer"
             direction="vertical"
@@ -58,7 +59,7 @@ const PortfolioSlicer = ({ data }: Props) => {
               nextEl: ".portfolio-button-next",
               prevEl: ".portfolio-button-prev",
             }}
-            onInit={(swiper) => {
+            onInit={() => {
               setIsLoading(false);
             }}
           >

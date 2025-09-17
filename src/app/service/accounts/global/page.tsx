@@ -1,5 +1,3 @@
-import { notFound } from "next/navigation";
-import MDXContent from "@/components/tools/MDXContent";
 import ServiceDetails from "@/components/service/ServiceDetails";
 import ClientArea from "@/components/clients/ClientArea";
 import PricingArea from "@/components/pricing/PricingArea";
@@ -298,7 +296,7 @@ All accounts are built with enterprise-grade security and compliance features:
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Multi-Currency" className="w-8 h-8" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Multi-Currency" className="w-8 h-8" width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-semibold mb-3">Multi-Currency Support</h4>
                 <p className="text-gray-600">Hold and transact in 50+ currencies with real-time exchange rates</p>
@@ -306,7 +304,7 @@ All accounts are built with enterprise-grade security and compliance features:
               
               <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Compliance" className="w-8 h-8" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Compliance" className="w-8 h-8" width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-semibold mb-3">Global Compliance</h4>
                 <p className="text-gray-600">Built-in compliance with international banking standards</p>
@@ -314,7 +312,7 @@ All accounts are built with enterprise-grade security and compliance features:
               
               <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Infrastructure" className="w-8 h-8" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Infrastructure" className="w-8 h-8" width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-semibold mb-3">Local Infrastructure</h4>
                 <p className="text-gray-600">Banking infrastructure in 200+ countries worldwide</p>
@@ -322,7 +320,7 @@ All accounts are built with enterprise-grade security and compliance features:
               
               <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Operations" className="w-8 h-8" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Operations" className="w-8 h-8" width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-semibold mb-3">Real-time Operations</h4>
                 <p className="text-gray-600">24/7 access to your global accounts and operations</p>
@@ -347,7 +345,7 @@ All accounts are built with enterprise-grade security and compliance features:
               {/* Standard Account */}
               <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-6">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Standard" className="w-12 h-12 mr-4" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Standard" className="w-12 h-12 mr-4" width={48} height={48} />
                   <div>
                     <h4 className="text-2xl font-bold text-gray-900">Standard Global Account</h4>
                     <p className="text-blue-600 font-semibold">$25/month</p>
@@ -388,7 +386,7 @@ All accounts are built with enterprise-grade security and compliance features:
                   </span>
                 </div>
                 <div className="flex items-center mb-6">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Premium" className="w-12 h-12 mr-4" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Premium" className="w-12 h-12 mr-4" width={48} height={48} />
                   <div>
                     <h4 className="text-2xl font-bold text-gray-900">Premium Global Account</h4>
                     <p className="text-blue-600 font-semibold">$99/month</p>
@@ -426,7 +424,7 @@ All accounts are built with enterprise-grade security and compliance features:
               {/* Enterprise Account */}
               <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-6">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Enterprise" className="w-12 h-12 mr-4" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Enterprise" className="w-12 h-12 mr-4" width={48} height={48} />
                   <div>
                     <h4 className="text-2xl font-bold text-gray-900">Enterprise Global Account</h4>
                     <p className="text-blue-600 font-semibold">Custom Pricing</p>
@@ -462,7 +460,7 @@ All accounts are built with enterprise-grade security and compliance features:
               {/* Instant Account */}
               <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-6">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Instant" className="w-12 h-12 mr-4" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Instant" className="w-12 h-12 mr-4" width={48} height={48} />
                   <div>
                     <h4 className="text-2xl font-bold text-gray-900">Instant Global Account</h4>
                     <p className="text-blue-600 font-semibold">$49/month</p>
@@ -565,7 +563,7 @@ All accounts are built with enterprise-grade security and compliance features:
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center p-6">
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Encryption" className="w-8 h-8" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Encryption" className="w-8 h-8" width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-semibold mb-3">256-bit Encryption</h4>
                 <p className="text-gray-600">Military-grade encryption for all transactions and data</p>
@@ -573,7 +571,7 @@ All accounts are built with enterprise-grade security and compliance features:
               
               <div className="text-center p-6">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Authentication" className="w-8 h-8" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Authentication" className="w-8 h-8" width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-semibold mb-3">Multi-Factor Auth</h4>
                 <p className="text-gray-600">Multiple layers of authentication for account security</p>
@@ -581,7 +579,7 @@ All accounts are built with enterprise-grade security and compliance features:
               
               <div className="text-center p-6">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <img src="/assets/imgs/icon/icon-s-3-light.png" alt="Monitoring" className="w-8 h-8" />
+                  <Image src="/assets/imgs/icon/icon-s-3-light.png" alt="Monitoring" className="w-8 h-8" width={32} height={32} />
                 </div>
                 <h4 className="text-xl font-semibold mb-3">Real-time Monitoring</h4>
                 <p className="text-gray-600">24/7 fraud detection and security monitoring</p>

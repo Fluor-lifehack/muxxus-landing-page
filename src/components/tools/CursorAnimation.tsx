@@ -20,7 +20,7 @@ const CursorAnimation = ({ cursor1, cursor2 }: Props) => {
 
       function mousemoveHandler(e: MouseEvent) {
         try {
-          let tl = gsap.timeline({
+          const tl = gsap.timeline({
             defaults: {
               x: e.clientX,
               y: e.clientY,

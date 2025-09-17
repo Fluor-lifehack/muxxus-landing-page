@@ -4,7 +4,6 @@ import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import Footer3 from "@/components/footer/Footer3";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
-import AiHeader from "@/components/headers/AiHeader";
 
 const Layout = ({
   children,

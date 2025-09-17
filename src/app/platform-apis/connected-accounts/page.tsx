@@ -1,16 +1,11 @@
 import { Metadata } from "next";
 import DetailHero from "@/components/hero/DetailHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
-import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
-import FeatureSection from "@/components/muxxus/FeatureSection";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import SectionDivider from "@/components/ui/SectionDivider";
-import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
-import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
 import MuxxusListers from "@/components/muxxus/MuxxusListers";
-import MuxxusAiSection from "@/components/muxxus/MuxxusAiSection";
 import MuxxusStepperRecord from "@/components/muxxus/MuxxusStepperRecord";
 import MuxxusCardSection from "@/components/muxxus/MuxxusCardSection";
 

@@ -2,7 +2,6 @@ import React from "react";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
-import VideoProductionHeader from "@/components/headers/VideoProductionHeader";
 import Footer5 from "@/components/footer/Footer5";
 import navigation from "@/config/navigation.json";
 

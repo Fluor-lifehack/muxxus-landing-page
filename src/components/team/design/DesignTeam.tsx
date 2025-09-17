@@ -34,7 +34,7 @@ const DesignTeam = ({ title, sub_title, teamMembers }: Props) => {
               <DesignSectionTitle title={title} />
               <div className="mt-[45px] xl:mt-[55px] 2xl:mt-[85px]">
                 <div className="grid gap-y-[68px] gap-x-[30px] lg:gap-x-[60px] justify-center sm:justify-between grid-cols-[repeat(1,210px)] sm:grid-cols-[repeat(2,210px)] md:grid-cols-[repeat(3,210px)]">
-                  {teamMembers.map((member, index) => (
+                  {teamMembers.map((member) => (
                     <DesignTeamCard {...member} key={member.data.id} />
                   ))}
                 </div>

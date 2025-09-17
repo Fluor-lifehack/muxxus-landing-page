@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import ImageComponent from "../tools/ImageComponent";
 import { FaPlay } from "react-icons/fa6";
 import { useRef, useState } from "react";

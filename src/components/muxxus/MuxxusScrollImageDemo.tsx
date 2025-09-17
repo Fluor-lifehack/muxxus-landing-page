@@ -1,8 +1,7 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Check } from 'lucide-react';
 import Image from 'next/image';
-import MuxxusScrollImage from './MuxxusScrollImage';
 
 interface SectionData {
   id: string;
@@ -23,7 +22,6 @@ const MuxxusScrollImageDemo: React.FC<MuxxusScrollImageDemoProps> = ({
   className = ''
 }) => {
   const [activeSection, setActiveSection] = useState<number>(0);
-  const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,11 +76,12 @@ const MuxxusScrollImageDemo: React.FC<MuxxusScrollImageDemoProps> = ({
 
   // Intersection Observer pour détecter la section active
   useEffect(() => {
+    const currentRefs = sectionRefs.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = sectionRefs.current.findIndex(ref => ref === entry.target);
+            const index = currentRefs.findIndex(ref => ref === entry.target);
             if (index !== -1) {
               setActiveSection(index);
             }
@@ -95,12 +94,12 @@ const MuxxusScrollImageDemo: React.FC<MuxxusScrollImageDemoProps> = ({
       }
     );
 
-    sectionRefs.current.forEach((ref) => {
+    currentRefs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      sectionRefs.current.forEach((ref) => {
+      currentRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
@@ -121,7 +120,6 @@ const MuxxusScrollImageDemo: React.FC<MuxxusScrollImageDemoProps> = ({
         (windowHeight - elementTop) / (windowHeight + elementHeight)
       ));
       
-      setScrollProgress(progress);
       setIsVisible(progress > 0.1);
 
     };
@@ -132,16 +130,7 @@ const MuxxusScrollImageDemo: React.FC<MuxxusScrollImageDemoProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
 
-  const scrollToSection = useCallback((index: number) => {
-    sectionRefs.current[index]?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'center'
-    });
-  }, []);
 
   return (
     <>

@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import VideoService from "@/components/service/video/VideoService";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 

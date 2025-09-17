@@ -7,7 +7,6 @@ import SeoData from "@/components/tools/SeoData";
 
 export default function Error({
   error,
-  reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;

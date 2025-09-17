@@ -44,17 +44,17 @@ const Switcher = ({ cursor1, cursor2 }: SwitcherType) => {
 
   const openSwitcher = () => {
     setOpen(true);
-    switcherIcon.current.style[switcherDir as any] = "270px";
-    switcherItems.current.style[switcherDir as any] = "-10px";
+    (switcherIcon.current.style as unknown as Record<string, string>)[switcherDir] = "270px";
+    (switcherItems.current.style as unknown as Record<string, string>)[switcherDir] = "-10px";
   };
   const closeSwitcher = () => {
     setOpen(false);
-    switcherIcon.current.style[switcherDir as any] = "0";
-    switcherItems.current.style[switcherDir as any] = "-280px";
+    (switcherIcon.current.style as unknown as Record<string, string>)[switcherDir] = "0";
+    (switcherItems.current.style as unknown as Record<string, string>)[switcherDir] = "-280px";
   };
 
   useEffect(() => {
-    let cursor_val = selectedCursor;
+    const cursor_val = selectedCursor;
     if (cursor_val == "1" && cursor1.current && cursor2.current) {
       cursor1.current.style.display = "none";
       cursor2.current.style.display = "none";
@@ -62,7 +62,7 @@ const Switcher = ({ cursor1, cursor2 }: SwitcherType) => {
       cursor1.current.style.display = "";
       cursor2.current.style.display = "";
     }
-  }, [selectedCursor]);
+  }, [selectedCursor, cursor1, cursor2]);
 
   return (
     <div className="relative hidden md:block">

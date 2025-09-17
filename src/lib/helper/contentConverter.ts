@@ -9,7 +9,7 @@ const readFile = (filePath: string) => {
   return fs.readFileSync(filePath, "utf-8");
 };
 
-const parseFrontmatter = (frontmatter: any) => {
+const parseFrontmatter = (frontmatter: Record<string, unknown>) => {
   const frontmatterString = JSON.stringify(frontmatter);
   return JSON.parse(frontmatterString);
 };

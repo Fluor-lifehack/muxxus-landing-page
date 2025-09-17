@@ -251,7 +251,6 @@ export const textRevealAnimation = (
   } = {}
 ) => {
   const {
-    type = "words",
     direction = "up",
     distance = 50,
     duration = 1,
@@ -498,7 +497,7 @@ export const setupDefaultAnimations = () => {
   });
 };
 
-export default {
+const enhancedScrollAnimations = {
   revealWithParallax,
   staggerReveal,
   morphingAnimation,
@@ -509,3 +508,5 @@ export default {
   cleanupAnimations,
   setupDefaultAnimations,
 };
+
+export default enhancedScrollAnimations;

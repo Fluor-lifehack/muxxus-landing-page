@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaTimes, FaEnvelope, FaPhone, FaQrcode, FaDownload, FaMobile } from "react-icons/fa";
+import { FaTimes, FaEnvelope, FaPhone, FaQrcode, FaMobile } from "react-icons/fa";
 
 type Props = {
   isOpen: boolean;

@@ -42,10 +42,9 @@ const MuxxusFeature = ({ title, description, features }: Props) => {
           {/* Grille des fonctionnalités */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <MuxxusFeatureCard 
+                <MuxxusFeatureCard 
                 key={index} 
                 {...feature} 
-                index={index}
               />
             ))}
           </div>

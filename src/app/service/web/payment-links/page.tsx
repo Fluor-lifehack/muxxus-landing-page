@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import WebServiceDetails from "@/components/service/web/WebServiceDetails";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 
@@ -6,6 +5,7 @@ export default function PaymentLinksServicePage() {
   // Real data structure for WebServiceDetails component
   const serviceData = {
     slug: "payment-links",
+    content: "Payment Links service content",
     data: {
       draft: false,
       id: 1,
@@ -31,6 +31,17 @@ export default function PaymentLinksServicePage() {
         "Webhook integration",
         "RESTful API",
         "Mobile SDK"
+      ],
+      faq_title: "Frequently Asked Questions",
+      faqs: [
+        {
+          question: "How do payment links work?",
+          answer: "Payment links are secure URLs that allow you to collect payments without a website. Simply create a link and share it with your customers."
+        },
+        {
+          question: "Are payment links secure?",
+          answer: "Yes, all payment links use industry-standard encryption and security measures to protect your customers' data."
+        }
       ]
     }
   };

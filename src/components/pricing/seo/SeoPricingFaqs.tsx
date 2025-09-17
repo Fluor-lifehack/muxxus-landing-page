@@ -34,7 +34,6 @@ const SeoPricingFaqs = ({ faqs }: Props) => {
           >
             <AccordionTrigger
               className=" leading-[1] text-[20px] py-[18px] px-0 font-spacegrotesk text-start font-medium"
-              customIcon={true}
             >
               {item.question}
             </AccordionTrigger>

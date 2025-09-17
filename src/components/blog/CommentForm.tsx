@@ -32,7 +32,7 @@ const CommentForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // console.log(values)
+    console.log(values)
   }
 
   const containerRef = useRef<HTMLDivElement>(null!);

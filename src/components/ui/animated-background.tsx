@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -21,7 +21,6 @@ const AnimatedBackground = ({
   intensity = "medium",
   className = "",
   children,
-  autoPlay = true,
   scrollReactive = true,
 }: AnimatedBackgroundProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -100,7 +99,7 @@ const AnimatedBackground = ({
 
     // Animation réactive au scroll
     if (scrollReactive) {
-      shapes.forEach((shape, index) => {
+      shapes.forEach((shape) => {
         gsap.to(shape, {
           y: -50 * intensity,
           duration: 1,

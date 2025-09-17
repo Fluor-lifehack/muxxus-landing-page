@@ -5,7 +5,7 @@ import ServiceInnerCard from "./ServiceInnerCard";
 import { useGSAP } from "@gsap/react";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
-import { convertWithBr } from "@/lib/helper/converter";
+import Image from "next/image";
 import { TServiceType } from "@/types";
 
 type Props = {
@@ -49,10 +49,12 @@ const ServiceInnerArea = ({ title, description, services }: Props) => {
             {/* Image LBS alignée avec les colonnes */}
             <div className="has_fade_anim" data-delay={0.6}>
               <div className="px-[30px] xl:px-[70px] flex items-center justify-center">
-                <img
+                <Image
                   src="/assets/imgs/muxxus/lbs-business-accounts.png"
                   alt="LBS Business Accounts Services"
                   className="w-[200px] h-[300px] object-cover rounded-2xl shadow-2xl"
+                  width={200}
+                  height={300}
                 />
               </div>
             </div>

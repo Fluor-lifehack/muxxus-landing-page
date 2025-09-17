@@ -63,7 +63,7 @@ const PortfolioMaterial = ({ data }: Props) => {
               1201: { slidesPerView: 2 },
               1367: { slidesPerView: 2 },
             }}
-            onInit={(swiper) => {
+            onInit={() => {
               setIsLoading(false);
             }}
           >

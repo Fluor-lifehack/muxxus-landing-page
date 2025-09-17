@@ -5,6 +5,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
@@ -19,7 +20,7 @@ type Props = {
 };
 
 const AboutBoldTestimonial = ({ testimonials }: Props) => {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   // Debug: Log des données reçues
@@ -30,7 +31,7 @@ const AboutBoldTestimonial = ({ testimonials }: Props) => {
     if (!api) return;
 
     const handleSelect = () => {
-      setCurrent(api.selectedScrollSnap());
+      setCurrent(api.selectedScrollSnap() || 0);
     };
 
     api.on("select", handleSelect);

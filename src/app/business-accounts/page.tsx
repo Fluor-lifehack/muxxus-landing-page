@@ -120,18 +120,18 @@ const BusinessAccountsPage = () => {
     ]
   };
 
-  // Données pour AiAbout
-  const about = {
-    title: "AI-Powered Business Intelligence",
-    description: [
-      "Leverage advanced AI algorithms to gain deep insights into your business operations, identify trends, and make data-driven decisions that drive growth and efficiency.",
-      "Our AI systems provide real-time data processing and analysis, predictive analytics and forecasting, automated reporting and insights, machine learning optimization, natural language processing for queries, and intelligent risk assessment."
-    ],
-    action_btn: {
-      label: "Learn More",
-      link: "/ai-services"
-    }
-  };
+  // // Données pour AiAbout
+  // const about = {
+  //   title: "AI-Powered Business Intelligence",
+  //   description: [
+  //     "Leverage advanced AI algorithms to gain deep insights into your business operations, identify trends, and make data-driven decisions that drive growth and efficiency.",
+  //     "Our AI systems provide real-time data processing and analysis, predictive analytics and forecasting, automated reporting and insights, machine learning optimization, natural language processing for queries, and intelligent risk assessment."
+  //   ],
+  //   action_btn: {
+  //     label: "Learn More",
+  //     link: "/ai-services"
+  //   }
+  // };
 
 
   // Données pour MuxxusFAQ

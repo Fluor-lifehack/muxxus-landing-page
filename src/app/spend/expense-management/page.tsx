@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import MDXContent from "@/components/tools/MDXContent";
 import ServiceDetails from "@/components/service/ServiceDetails";
 import ClientArea from "@/components/clients/ClientArea";

@@ -1,11 +1,10 @@
+import Link from "next/link";
 import type { Metadata } from 'next';
 import React from "react";
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaCreditCard, FaCode, FaLink, FaGlobe, FaShieldAlt, FaChartLine } from "react-icons/fa";
-import Link from "next/link";
 
 // Métadonnées Next.js
 export const metadata: Metadata = {
@@ -100,7 +99,7 @@ const CheckoutPage = () => {
               Higher conversions, lower fees with a low-code checkout solution
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Embed Muxxus's Checkout solution into your website, boosting conversion potential with multiple payment methods and currencies - while saving on processing fees.
+              Embed Muxxus&apos;s Checkout solution into your website, boosting conversion potential with multiple payment methods and currencies - while saving on processing fees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CircleFillButton 

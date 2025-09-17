@@ -1,9 +1,8 @@
-import Image from "next/image";
+import Link from "next/link";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
 import { FaUsers, FaHandshake, FaNewspaper, FaQuestionCircle, FaHeadset, FaGlobe } from "react-icons/fa";
-import Link from "next/link";
 
 const CompanyPage = () => {
   const companySections = [
@@ -80,7 +79,7 @@ const CompanyPage = () => {
               About Muxxus
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              We're building the future of global financial services, making it easier for businesses to operate internationally with confidence and efficiency.
+              We&apos;re building the future of global financial services, making it easier for businesses to operate internationally with confidence and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CircleFillButton 

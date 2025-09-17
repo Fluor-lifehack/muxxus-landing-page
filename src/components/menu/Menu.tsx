@@ -88,7 +88,7 @@ const Menu = ({ textColor, className }: Props) => {
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Colonne principale */}
                         <div className="space-y-8">
-                          {menu.children.map((childMenu: MenuItem, j) => (
+                          {menu.children.map((childMenu: MenuItem) => (
                             <div
                               key={childMenu.id}
                               className={clsx(

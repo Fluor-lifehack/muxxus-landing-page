@@ -6,7 +6,7 @@ import hasFadeAnim from "@/lib/animation/hasFadeAnim";
 import hasCountAnim from "@/lib/animation/hasCountAnim";
 import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 import SeoSectionTitle from "@/components/sectionTitle/SeoSectionTitle";
-import { FaUsers, FaTrophy, FaProjectDiagram, FaAward } from "react-icons/fa";
+
 
 type Props = {
   title: string;

@@ -1,10 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import ImageComponent from "@/components/tools/ImageComponent";
 import { ActionBtnType } from "@/types";
-import { convertWithBr } from "@/lib/helper/converter";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { useRef, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import hasCharAnim from "@/lib/animation/hasCharAnim";
@@ -14,7 +11,6 @@ import hasWordAnim from "@/lib/animation/hasWordAnim";
 type Props = {
   title: string;
   description: string;
-  address: string;
   bg_video: string;
   action_btn: ActionBtnType;
 };
@@ -22,9 +18,7 @@ type Props = {
 const DesignHero = ({
   title,
   description,
-  address,
   bg_video,
-  action_btn,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
 

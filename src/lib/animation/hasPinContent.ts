@@ -4,11 +4,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const hasPinContent = (
-  element?: any,
+  element?: Element | string,
   start?: string,
   dWidth: number = 1023
 ) => {
-  let device_width = window.innerWidth;
+  const device_width = window.innerWidth;
 
   if (element && device_width > dWidth) {
     return gsap.to(element, {

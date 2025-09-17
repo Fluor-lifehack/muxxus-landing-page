@@ -1,5 +1,4 @@
 import React from "react";
-import BrandingHeader from "@/components/headers/BrandingHeader";
 import Footer1 from "@/components/footer/Footer1";
 import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";

@@ -1,30 +1,22 @@
-import ServicesHero from "@/components/service/ServicesHero";
-import { getAllPages, getMainPage } from "@/lib/helper/contentConverter";
+import { getMainPage } from "@/lib/helper/contentConverter";
 import ClientArea from "@/components/clients/ClientArea";
 import ClientSlider from "@/components/clients/ClientSlider";
 import ServiceInnerArea from "@/components/service/ServiceInnerArea";
-import PricingArea from "@/components/pricing/PricingArea";
 import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
 import AboutBanner from "@/components/banner/AboutBanner";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 import ButtonFlip from "@/components/elements/button/ButtonFlip";
-import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import ImageComponent from "@/components/tools/ImageComponent";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import Image from "next/image";
 
 const BusinessAccountsServicePage = () => {
   // Récupération des données depuis les fichiers MDX
-  const { data: hero } = getMainPage("/services/main/_index.mdx");
   const { data: brands } = getMainPage("/brands/brands1.mdx");
   const { data: clients } = getMainPage("/brands/brands3.mdx");
-  const services = getAllPages("services/main");
-  const { data: aboutBanner } = getMainPage("/banner/about-banner.mdx");
-  const { data: pricingData } = getMainPage("/pricings/main-pricing.mdx");
   const { data: contactBanner } = getMainPage("/banner/contact-banner.mdx");
 
-  const { title, title2, description2, meta } = hero || {};
+  const { data: aboutBanner } = getMainPage("/banner/about-banner.mdx");
 
   // Données pour le breadcrumb
   const breadcrumbItems = [
@@ -197,7 +189,7 @@ const BusinessAccountsServicePage = () => {
        
 
         {/* Image Section */}
-        <section className="py-20 bg-white">
+       
           <div className="container2">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -217,8 +209,7 @@ const BusinessAccountsServicePage = () => {
               />
             </div>
           </div>
-        </section>
-
+              
         {/* Service Inner Area avec les features */}
         <ServiceInnerArea
           title="Everything You Need for<br/>Global Business"

@@ -30,7 +30,7 @@ const SeoClients = ({ brands }: Props) => {
             <div className="flex justify-center relative z-[1]">
               <div className="inline-block absolute w-full h-[1px] bg-border top-1 -z-10"></div>
               <h2 className="text-[14px] font-medium uppercase text-center inline-block px-[22px] mt-0 text-text-3 z-[10] bg-background">
-                We worked with the world's best companies
+                We worked with the world&apos;s best companies
               </h2>
               <div className="inline-block absolute w-full h-[1px] bg-border top-2 -z-10"></div>
             </div>

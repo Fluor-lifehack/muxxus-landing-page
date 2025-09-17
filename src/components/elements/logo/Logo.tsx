@@ -30,7 +30,7 @@ const Logo = ({
 }: Props) => {
   const {
     logo,
-    logo_light,
+    // logo_light,
     logo_width,
     logo_height,
     logo_text = "Logo",

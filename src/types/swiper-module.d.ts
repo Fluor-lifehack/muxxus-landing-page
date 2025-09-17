@@ -1,13 +1,13 @@
 
 declare module "@/lib/swiper-modules/effect-carousel.min.js" {
-  const EffectCarousel: any;
+  const EffectCarousel: unknown;
   export default EffectCarousel;
 }
 declare module "@/lib/swiper-modules/effect-material.js" {
-  const EffectMaterial: any;
+  const EffectMaterial: unknown;
   export default EffectMaterial;
 }
 declare module "@/lib/swiper-modules/effect-slicer.min.js" {
-  const EffectSlicer: any;
+  const EffectSlicer: unknown;
   export default EffectSlicer;
 }

@@ -72,7 +72,6 @@ const AboutFaq = ({ title, subtitle, description, faqs, className }: Props) => {
                   >
                     <AccordionTrigger
                       className="text-gray-900 text-lg xl:text-xl py-4 text-start font-medium hover:text-blue-600 transition-colors duration-200"
-                      customIcon={true}
                     >
                       {item.question}
                     </AccordionTrigger>

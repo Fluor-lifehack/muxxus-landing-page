@@ -1,6 +1,5 @@
 import errorData from "@/config/errorData.json";
 import ErrorPage from "@/components/error/ErrorPage ";
-import BrandingHeader from "@/components/headers/BrandingHeader";
 import SeoData from "@/components/tools/SeoData";
 
 export default function NotFound() {

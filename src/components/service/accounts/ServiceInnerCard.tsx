@@ -1,5 +1,5 @@
 import { TServiceType } from "@/types";
-import ImageComponent from "../tools/ImageComponent";
+import ImageComponent from "@/components/tools/ImageComponent";
 import Link from "next/link";
 
 type Props = {

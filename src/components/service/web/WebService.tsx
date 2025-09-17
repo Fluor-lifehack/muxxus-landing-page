@@ -51,7 +51,7 @@ const WebService = ({ title, description, img_icon, services }: Props) => {
           </div>
           <div className="mt-[33px] xl:mt-[53px] 2xl:mt-[73px]">
             <div>
-              {services.map((service, i) => (
+              {services.map((service) => (
                 <WebServiceCard key={service.data.id} {...service} />
               ))}
             </div>

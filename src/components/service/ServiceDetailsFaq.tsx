@@ -62,7 +62,6 @@ const ServiceDetailsFaq = ({ faqs, faqTitle }: Props) => {
                 <AccordionItem value={`item-${index}`} key={index}>
                   <AccordionTrigger
                     className=" leading-[1] text-[18px] py-[18px] px-0 font-beatricetrial text-start font-medium"
-                    customIcon={true}
                   >
                     {item.question}
                   </AccordionTrigger>

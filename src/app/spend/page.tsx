@@ -120,18 +120,6 @@ const SpendManagementPage = () => {
     ]
   };
 
-  // Données pour AiAbout
-  const about = {
-    title: "AI-Powered Spend Intelligence",
-    description: [
-      "Leverage advanced AI algorithms to optimize spending patterns, reduce fraud, and increase cost efficiency with intelligent expense routing and risk assessment.",
-      "Our AI systems provide real-time fraud detection, smart spending controls, predictive analytics for expense trends, automated compliance monitoring, machine learning optimization, and intelligent expense categorization."
-    ],
-    action_btn: {
-      label: "Learn More",
-      link: "/ai-services"
-    }
-  };
 
   // Données pour MuxxusFAQ
   const faqData = {

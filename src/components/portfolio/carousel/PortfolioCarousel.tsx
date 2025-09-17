@@ -7,6 +7,7 @@ import { CarouselSkeletonCard } from "@/components/portfolio/carousel/CarouselSk
 import SliderNav from "@/components/portfolio/SliderNav";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { SwiperModule } from "swiper/types";
 import { EffectCarousel } from "@/lib/plugins";
 
 import "@/styles/swiper-slider.css";
@@ -45,7 +46,7 @@ const PortfolioCarousel = ({ data }: Props) => {
               "swiper-carousel !max-w-[1400px] relative !mx-auto !overflow-hidden opacity-100",
               isLoading && "opacity-0"
             )}
-            modules={[EffectCarousel, Navigation, Pagination, Autoplay]}
+            modules={[EffectCarousel as unknown as SwiperModule, Navigation, Pagination, Autoplay]}
             dir="ltr"
             effect="carousel"
             grabCursor={true}
@@ -63,7 +64,7 @@ const PortfolioCarousel = ({ data }: Props) => {
             autoplay={{
               delay: 3000,
             }}
-            onInit={(swiper) => {
+            onInit={() => {
               setIsLoading(false);
             }}
           >

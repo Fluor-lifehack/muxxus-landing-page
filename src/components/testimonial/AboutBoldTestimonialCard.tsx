@@ -34,7 +34,7 @@ const AboutBoldTestimonialCard = ({
         {/* Citation */}
         <div className="mb-10">
           <p className="text-[18px] md:text-[22px] xl:text-[24px] 2xl:text-[30px] font-light leading-[1.38] text-text max-w-4xl mx-auto">
-            "{quote}"
+            &ldquo;{quote}&rdquo;
           </p>
         </div>
         

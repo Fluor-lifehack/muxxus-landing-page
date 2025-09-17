@@ -4,7 +4,7 @@ type Props = {
   className?: string;
 }
 
-const Service = ({ title, className }: Props) => {
+const Service = ({ title }: Props) => {
   return (
     <div className="text-[18px] leading-[1.66]">
       <span className="me-[10px]">+</span>

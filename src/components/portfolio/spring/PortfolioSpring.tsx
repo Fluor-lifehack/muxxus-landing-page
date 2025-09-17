@@ -25,8 +25,8 @@ import { cn } from "@/lib/utils";
 const PortfolioSpring = ({ data }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const resetDelay = (swiper: any) => {
-    swiper.slides.forEach((slideEl: any) => {
+  const resetDelay = (swiper: { slides: HTMLElement[] }) => {
+    swiper.slides.forEach((slideEl: HTMLElement) => {
       slideEl.style.transitionDelay = "0ms";
     });
   };

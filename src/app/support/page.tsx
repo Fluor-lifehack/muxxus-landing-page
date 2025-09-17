@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaHeadset, FaBook, FaUsers, FaEnvelope, FaPhone, FaComments } from "react-icons/fa";
+import { FaHeadset, FaBook, FaEnvelope, FaPhone, FaComments } from "react-icons/fa";
 import Link from "next/link";
 
 const SupportPage = () => {
@@ -81,11 +80,11 @@ const SupportPage = () => {
               ]} 
             />
             <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
-              We're Here to Help
+              We&apos;re Here to Help
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Our support team is available 24/7 to help you succeed with Muxxus. 
-              From quick questions to complex integrations, we've got you covered.
+              From quick questions to complex integrations, we&apos;ve got you covered.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CircleFillButton 

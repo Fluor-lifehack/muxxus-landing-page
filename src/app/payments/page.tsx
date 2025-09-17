@@ -120,18 +120,6 @@ const PaymentsPage = () => {
     ]
   };
 
-  // Données pour AiAbout
-  const about = {
-    title: "AI-Powered Payment Intelligence",
-    description: [
-      "Leverage advanced AI algorithms to optimize payment flows, reduce fraud, and increase conversion rates with intelligent payment routing and risk assessment.",
-      "Our AI systems provide real-time fraud detection, smart payment routing, predictive analytics for payment trends, automated compliance monitoring, machine learning optimization, and intelligent dispute resolution."
-    ],
-    action_btn: {
-      label: "Learn More",
-      link: "/ai-services"
-    }
-  };
 
   // Données pour MuxxusFAQ
   const faqData = {

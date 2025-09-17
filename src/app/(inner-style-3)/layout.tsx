@@ -1,7 +1,6 @@
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
-import InnerHeader1 from "@/components/headers/InnerHeader1";
 import Footer4 from "@/components/footer/Footer4";
 import BindBtnMoveEffect from "@/components/tools/BindBtnMoveEffect";
 import navigation from "@/config/navigation.json";

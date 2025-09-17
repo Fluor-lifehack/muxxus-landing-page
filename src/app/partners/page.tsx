@@ -1,9 +1,7 @@
 import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
-import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaHandshake, FaGlobe, FaUsers, FaRocket, FaChartLine, FaShieldAlt, FaBuilding, FaExternalLinkAlt } from "react-icons/fa";
-import Link from "next/link";
+import {FaGlobe, FaUsers, FaRocket, FaChartLine, FaShieldAlt, FaBuilding } from "react-icons/fa";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 const PartnersPage = () => {
@@ -154,7 +152,7 @@ const PartnersPage = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Join our global network of technology partners, financial institutions, and consulting firms. 
-              Together, we're building the future of global business banking.
+              Together, we&apos;re building the future of global business banking.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CircleFillButton 

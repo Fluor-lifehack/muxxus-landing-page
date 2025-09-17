@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -23,7 +23,6 @@ type Props = {
 };
 
 const SimpleBusinessFaq = ({ title, subtitle, description, faqs, className }: Props) => {
-  const [openItem, setOpenItem] = useState<string>("item-1");
   const containerRef = useRef<HTMLDivElement>(null!);
 
   useGSAP(
@@ -65,7 +64,6 @@ const SimpleBusinessFaq = ({ title, subtitle, description, faqs, className }: Pr
                 <AccordionItem value={`item-${index}`} className="border-0">
                   <AccordionTrigger
                     className="px-6 py-5 text-left hover:bg-gray-100 transition-colors duration-200"
-                    customIcon={true}
                   >
                     <span className="text-lg font-semibold text-gray-900 pr-4">
                       {item.question}

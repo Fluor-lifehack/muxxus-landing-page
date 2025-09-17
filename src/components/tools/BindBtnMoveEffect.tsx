@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import gsap, { Power2 } from "gsap";
+import gsap from "gsap";
 
 export default function BindBtnMoveEffect() {
   useEffect(() => {

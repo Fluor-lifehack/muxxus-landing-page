@@ -1,8 +1,7 @@
-import Image from "next/image";
 import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
 import CircleFillButton from "@/components/elements/button/CircleFillButton";
 import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaCheck, FaStar, FaRocket, FaBuilding, FaGlobe, FaShieldAlt, FaChartLine, FaUsers } from "react-icons/fa";
+import { FaCheck, FaGlobe, FaShieldAlt, FaChartLine, FaUsers } from "react-icons/fa";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
 
 const PricingPage = () => {

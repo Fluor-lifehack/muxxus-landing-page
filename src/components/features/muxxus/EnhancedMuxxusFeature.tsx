@@ -41,7 +41,7 @@ const FloatingParticle = ({ delay, duration, x, y, size, color }: {
         y: -100,
         x: Math.random() * 200 - 100,
         rotation: 360,
-        opacity: [0, 1, 0],
+        opacity: 0,
         duration: duration,
         delay: delay,
         repeat: -1,
@@ -69,7 +69,7 @@ const FloatingParticle = ({ delay, duration, x, y, size, color }: {
   );
 };
 
-const EnhancedMuxxusFeature = ({ title, img_icon, description, features }: Props) => {
+const EnhancedMuxxusFeature = ({ title, description, features }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const titleRef = useRef<HTMLDivElement>(null!);
   const descriptionRef = useRef<HTMLDivElement>(null!);
@@ -329,7 +329,6 @@ const EnhancedMuxxusFeature = ({ title, img_icon, description, features }: Props
                 <MuxxusFeatureCard 
                   key={index} 
                   {...feature} 
-                  index={index}
                 />
               ))}
             </div>

@@ -1,13 +1,12 @@
 let previousProgress = 0;
-let isTouched = false;
-export const SpringSLiderEffect = (swiper: any) => {
+export const SpringSLiderEffect = (swiper: { progress: number; params: { speed?: number }; slides: HTMLElement[]; animating?: boolean }) => {
 
   const direction = swiper.progress > previousProgress ? "next" : "prev";
   previousProgress = swiper.progress;
   const delay = (swiper.params.speed ?? 0) / 16;
 
   const visibleSlides = swiper.slides.filter(
-    (slide: any) => slide.style.display !== "none"
+    (slide: HTMLElement) => slide.style.display !== "none"
   );
   const firstIndex = swiper.slides.indexOf(visibleSlides[0]);
   const lastIndex = swiper.slides.indexOf(
@@ -27,7 +26,7 @@ export const SpringSLiderEffect = (swiper: any) => {
     }
   };
 
-  swiper.slides.forEach((slide: any, index: any) => {
+  swiper.slides.forEach((slide: HTMLElement, index: number) => {
     if (swiper.animating) {
       slide.style.transitionDelay = "0ms";
       requestAnimationFrame(() => {
