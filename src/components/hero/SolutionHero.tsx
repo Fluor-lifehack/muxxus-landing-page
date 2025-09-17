@@ -23,18 +23,19 @@ const SolutionHero = ({
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
 
-  useGSAP(
-    () => {
-      hasFadeAnim();
-      hasCharAnim();
-      hasWordAnim();
-    },
-    { scope: containerRef }
-  );
+  // Temporairement désactivé pour diagnostiquer
+  // useGSAP(
+  //   () => {
+  //     hasFadeAnim();
+  //     hasCharAnim();
+  //     hasWordAnim();
+  //   },
+  //   { scope: containerRef }
+  // );
 
   return (
     <section
-      className="bg-background-fixed relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="bg-background-fixed relative h-screen w-full flex items-center justify-center overflow-hidden"
       ref={containerRef}
       style={{ marginTop: 0, paddingTop: 0 }}
     >
@@ -52,17 +53,12 @@ const SolutionHero = ({
         {/* Contenu centré */}
         <div className="flex flex-col items-center justify-center text-center py-16 max-w-4xl">
           <h1
-            className="has_char_anim text-white text-xl sm:text-3xl md:text-4xl xl:text-5xl leading-tight mb-6"
-            data-translatex="150"
-            data-delay=".45"
+            className="text-white text-xl sm:text-3xl md:text-4xl xl:text-5xl leading-tight mb-6"
           >
             {title}
           </h1>
           <p
-            className="has_word_anim text-white font-beatricetrial text-base sm:text-lg md:text-lg max-w-2xl mb-8"
-            data-duration="1"
-            data-translatex="50"
-            data-delay=".30"
+            className="text-white font-beatricetrial text-base sm:text-lg md:text-lg max-w-2xl mb-8"
           >
             {description}
           </p>

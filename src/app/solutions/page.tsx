@@ -1,43 +1,16 @@
-import type { Metadata } from 'next';
+"use client";
+
 import React from "react";
+import ReactFullpage from '@fullpage/react-fullpage';
 
 // Composants
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
 import SolutionHero from "../../components/hero/SolutionHero";
-import { Separator } from "@/components/ui/separator";
 
 
-// Métadonnées Next.js
-export const metadata: Metadata = {
-  title: "Global Multi-Currency Business Accounts | Muxxus",
-  description: "Open a global multi-currency account for international business payments in minutes. Support for 50+ currencies and 13+ countries with no hidden fees.",
-  keywords: ["global accounts", "multi-currency", "international banking", "FX trading", "business accounts", "global payments"],
-  openGraph: {
-    title: "Global Multi-Currency Business Accounts | Muxxus",
-    description: "Open a global multi-currency account for international business payments in minutes. Support for 50+ currencies and 13+ countries.",
-    type: "website",
-    locale: "fr_FR",
-    siteName: "Muxxus",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Global Multi-Currency Business Accounts | Muxxus",
-    description: "Open a global multi-currency account for international business payments in minutes.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+// Métadonnées Next.js (supprimées car "use client")
 
 // Données pour les différents secteurs
 const heroDataEcomerce = {
@@ -105,22 +78,50 @@ const faqData = {
 // Composant principal de la page
 export default function SolutionsPage() {
   return (
-    <>
-      {/* Hero Section */}
-      <SolutionHero {...heroDataEcomerce} />
-      <Separator />
-      <SolutionHero {...heroDataTravel} />
-      <Separator />
-      <SolutionHero {...heroDataSoftware} />
-      <Separator />
-      <SolutionHero {...heroDataWholesale} />
-      {/* FAQ et Footer */}
-      <ServiceDetailsFaq 
-        faqs={faqData.faqs} 
-        faqTitle={faqData.faq_title} 
-      />
-      <MuxxusNewsletter />
-      <MuxxusFooter />
-    </>
+    <ReactFullpage
+      // Configuration
+      scrollingSpeed={1000}
+      easingcss3="ease-in-out"
+      scrollBar={false}
+      autoScrolling={true}
+      fitToSection={false}
+      fitToSectionDelay={0}
+      scrollOverflow={false}
+      normalScrollElements={'.normal-scroll'}
+      credits={{ enabled: false }}
+      responsiveWidth={0}
+      responsiveHeight={0}
+      paddingTop="0px"
+      paddingBottom="0px"
+      
+      // Callbacks
+      onLeave={(origin, destination) => {
+        console.log('Leaving section:', origin.index, 'Going to:', destination.index);
+      }}
+      
+      afterLoad={(origin, destination) => {
+        console.log('Loaded section:', destination.index);
+      }}
+      
+      render={() => {
+        return (
+          <ReactFullpage.Wrapper>
+            {/* Hero Sections */}
+            <div className="section">
+              <SolutionHero {...heroDataEcomerce} />
+            </div>
+            <div className="section">
+              <SolutionHero {...heroDataTravel} />
+            </div>
+            <div className="section">
+              <SolutionHero {...heroDataSoftware} />
+            </div>
+            <div className="section">
+              <SolutionHero {...heroDataWholesale} />
+            </div>
+          </ReactFullpage.Wrapper>
+        );
+      }}
+    />
   );
 }
