@@ -3,6 +3,7 @@ import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
+import MuxxusHeader from "@/components/headers/MuxxusHeader";
 
 const Layout = ({
   children,
@@ -14,9 +15,9 @@ const Layout = ({
       <ScrollSmootherComponent />
       <ToolsComponent />
       <ScrollTop />
+      <MuxxusHeader />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          
           <div>{children}</div>
           <Footer2 data={navigation.footer2} />
         </div>
