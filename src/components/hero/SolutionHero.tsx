@@ -69,7 +69,7 @@ const SolutionHero = ({
           {/* Bouton d'action */}
           <Link
             href={action_btn.link}
-            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 transition-all duration-500 whitespace-nowrap border border-white/40 shadow-[0_0_8px_rgba(255,255,255,0.2)] hover:border-white/80 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-500 whitespace-nowrap border border-white/40 shadow-[0_0_8px_rgba(255,255,255,0.2)] hover:border-white/80 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
           >
             {action_btn.label}
           </Link>
