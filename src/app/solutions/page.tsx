@@ -5,7 +5,8 @@ import React from "react";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
-import DetailHero from "@/components/hero/DetailHero";
+import SubHero from "@/components/hero/SubHero";
+import { Separator } from "@/components/ui/separator";
 
 
 // Métadonnées Next.js
@@ -38,31 +39,46 @@ export const metadata: Metadata = {
   },
 };
 
-// Données pour le composant DetailHero
-const heroData = {
-  title: "AI-Powered Global Banking",
-  shape: {
-    light: "/assets/imgs/shape/img-s-29.png",
-    dark: "/assets/imgs/shape/img-s-29-light.png"
-  },
-  client_img: {
-    light: "/assets/imgs/muxxus/image/img1.jpg",
-    dark: "/assets/imgs/muxxus/image/img1.jpg"
-  },
-  customers: "50+ Currencies",
-  info: {
-    thumb: {
-      light: "/assets/imgs/muxxus/image/img1.jpg",
-      dark: "/assets/imgs/muxxus/image/img1.jpg"
-    },
-    description: "Open a global multi-currency account for international business payments in minutes.",
-    action_btn: {
-      label: "Get Started",
-      link: "#"
-    }
-  },
-  image: "/assets/imgs/muxxus/image/img1.jpg",
-  feature_text: "Global Banking Solutions"
+// Données pour les différents secteurs
+const heroDataEcomerce = {
+  title: "E-commerce Global Banking",
+  description: "Streamline your online business with multi-currency accounts designed for e-commerce platforms.",
+  bg_video: "/assets/videos/ecommerce-hero.mp4",
+  action_btn: {
+    label: "See more",
+    link: "#"
+  }
+
+};
+
+const heroDataTravel = {
+  title: "Travel & Tourism Banking",
+  description: "Manage international payments and currency exchanges for your travel business with ease.",
+  bg_video: "/assets/videos/travel-hero.mp4",
+  action_btn: {
+    label: "See more",
+    link: "#"
+  }
+};
+
+const heroDataSoftware = {
+  title: "Software & Tech Banking",
+  description: "Scale your software business globally with our AI-powered banking solutions.",
+  bg_video: "/assets/videos/software-hero.mp4",
+  action_btn: {
+    label: "See more",
+    link: "#"
+  }
+};
+
+const heroDataWholesale = {
+  title: "Wholesale & Distribution",
+  description: "Optimize your wholesale operations with our comprehensive global banking platform.",
+  bg_video: "/assets/videos/wholesale-hero.mp4",
+  action_btn: {
+    label: "See more",
+    link: "#"
+  }
 };
 
 
@@ -91,9 +107,13 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
-      <DetailHero {...heroData} />
-      <DetailHero {...heroData} />
+      <SubHero {...heroDataEcomerce} />
+      <Separator />
+      <SubHero {...heroDataTravel} />
+      <Separator />
+      <SubHero {...heroDataSoftware} />
+      <Separator />
+      <SubHero {...heroDataWholesale} />
       {/* FAQ et Footer */}
       <ServiceDetailsFaq 
         faqs={faqData.faqs} 
