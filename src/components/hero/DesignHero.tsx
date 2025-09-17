@@ -77,7 +77,7 @@ const DesignHero = ({
         {/* Texte à gauche */}
         <div className="flex-1 flex flex-col items-start justify-center text-left py-16">
           <h1
-            className="has_char_anim text-white text-xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight mb-6 max-w-3xl"
+            className="has_char_anim text-white text-xl sm:text-3xl md:text-4xl xl:text-5xl leading-tight mb-6 max-w-3xl"
             data-translatex="150"
             data-delay=".45"
           >

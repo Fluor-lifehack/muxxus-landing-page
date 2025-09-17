@@ -50,7 +50,7 @@ export default function HomePage() {
         
         <SeoData
           title="Design Studio - Muxxus"
-          description="Découvrez notre studio de design créatif. Nous créons des expériences visuelles uniques et mémorables pour votre marque."
+          description="Discover our creative design studio. We create unique and memorable visual experiences for your brand."
         />
 
         {/* Section Héro avec animation de révélation - Pas de décalage avec la navigation */}
