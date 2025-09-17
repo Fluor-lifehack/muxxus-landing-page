@@ -10,6 +10,8 @@ import { getAllPages, getMainPage } from "@/lib/helper/contentConverter";
 import SeoData from "@/components/tools/SeoData";
 import ContactBanner from "@/components/banner/ContactBanner";
 import AboutBanner from "@/components/banner/AboutBanner";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 
 const About = () => {
   const { data: about } = getMainPage("/about/branding-about.mdx");
@@ -46,6 +48,8 @@ const About = () => {
       <PricingArea {...pricingData.pricing} />
       <ContactBanner {...contactBanner} />
       <ClientArea brands={brands.brands} /> 
+      <MuxxusNewsletter />
+      <MuxxusFooter />
     </main>
   );
 };
