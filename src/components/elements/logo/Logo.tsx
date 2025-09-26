@@ -41,7 +41,7 @@ const Logo = ({
 
   return (
     <>
-      <Link href={"/design"}>
+      <Link href={"/"}>
         {path ? (
           <Image
             width={customWidth || logo_width}

@@ -8,7 +8,7 @@ const hasTextMovAnim = () => {
   const textMoveArray = gsap.utils.toArray<Element>(".has_text_mov_anim");
   textMoveArray.forEach((item) => {
     try {
-      if (item) {
+      if (item && SplitText) {
         const delayValue = item.getAttribute("data-delay") ?? 0.1;
 
         const tl = gsap.timeline({
@@ -34,9 +34,34 @@ const hasTextMovAnim = () => {
           transformOrigin: "top center -50",
           stagger: 0.1,
         });
+      } else if (item && !SplitText) {
+        // Fallback animation si SplitText n'est pas disponible
+        gsap.from(item, {
+          duration: 1,
+          opacity: 0,
+          y: 30,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+          },
+        });
       }
     } catch (error) {
-      console.error("Error in hasImageReveal:", error);
+      console.error("Error in hasTextMovAnim:", error);
+      // Fallback animation en cas d'erreur
+      if (item) {
+        gsap.from(item, {
+          duration: 1,
+          opacity: 0,
+          y: 30,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+          },
+        });
+      }
     }
   });
 };
