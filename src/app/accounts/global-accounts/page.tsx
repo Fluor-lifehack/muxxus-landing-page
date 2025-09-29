@@ -12,6 +12,8 @@ import MuxxusAiSection2 from "@/components/muxxus/MuxxusAiSection2";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
+import ServicesHero from "@/components/service/ServicesHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 
 // Configuration des styles uniformes
 const pageStyles = {
@@ -315,8 +317,15 @@ export default function GlobalAccountsPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
 
+      <SolutionHero
+        title="Global Accounts"
+        description="Open a global multi-currency account for international business payments in minutes."
+        bg_video=""
+        bg_image="/assets/images/about/img-1.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
+ 
       {/* Key Benefits Section avec vidéo */}
       <MuxxusSection2 
         {...componentData.keyBenefitsSection2} 

@@ -2,16 +2,15 @@
 
 import { ActionBtnType } from "@/types";
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-import hasCharAnim from "@/lib/animation/hasCharAnim";
-import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import hasWordAnim from "@/lib/animation/hasWordAnim";
+import Image from "next/image";
+
 
 type Props = {
   title: string;
   description: string;
   bg_video: string;
+  bg_image?: string;
   action_btn: ActionBtnType;
 };
 
@@ -19,19 +18,10 @@ const SolutionHero = ({
   title,
   description,
   bg_video,
+  bg_image,
   action_btn,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
-
-  // Temporairement désactivé pour diagnostiquer
-  // useGSAP(
-  //   () => {
-  //     hasFadeAnim();
-  //     hasCharAnim();
-  //     hasWordAnim();
-  //   },
-  //   { scope: containerRef }
-  // );
 
   return (
     <section
@@ -40,13 +30,25 @@ const SolutionHero = ({
       style={{ marginTop: 0, paddingTop: 0 }}
     >
       <div className="absolute w-full h-full top-0 left-0 z-0">
-        <video
-          className="w-full h-full object-cover"
-          src={bg_video}
-          autoPlay
-          loop
-          muted
-        ></video>
+        {bg_video ? (
+          <video
+            className="w-full h-full object-cover"
+            src={bg_video}
+            autoPlay
+            loop
+            muted
+          ></video>
+        ) : (
+          bg_image && (
+            <Image
+              src={bg_image}
+              alt="Background"
+              className="w-full h-full object-cover"
+              width={1920}
+              height={1080}
+            />
+          )
+        )}
         <div className="absolute w-full h-full bg-black top-0 left-0 opacity-80 mix-blend-multiply"></div>
       </div>
       <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 max-w-7xl mx-auto">

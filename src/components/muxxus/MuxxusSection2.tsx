@@ -127,7 +127,7 @@ const MuxxusSection2 = ({
   );
 
   return (
-    <section ref={containerRef} className={`relative overflow-hidden mt-16 min-h-[600px] ${backgroundVideo ? 'bg-transparent' : backgroundColor || 'bg-gray-900'}`}>
+    <section ref={containerRef} className={`relative overflow-hidden min-h-[600px] ${backgroundVideo ? 'bg-transparent' : backgroundColor || 'bg-gray-900'}`}>
       <style dangerouslySetInnerHTML={{ __html: floatingStyles }} />
       
       {/* Vidéo en arrière-plan de TOUTE LA SECTION */}
