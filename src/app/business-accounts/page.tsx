@@ -201,8 +201,8 @@ const BusinessAccountsPage = () => {
                 "Access to 50+ currencies and markets worldwide with our comprehensive global account platform.",
                 "Streamlined cross-border transactions, real-time FX rates, and multi-currency management tools designed for international businesses."
               ]}
-              action_btn={{ label: "Learn More", link: "/business-accounts/global" }}
-              shape_img="/assets/imgs/brand/img-s-1.png"
+              action_btn={{ label: "Learn More", link: "/accounts/global-accounts" }}
+              shape_img="/assets/images/about/img-2.jpg"
               small_shape={{ light: "/assets/imgs/shape/img-s-1.png", dark: "/assets/imgs/shape/img-s-1-light.png" }}
               imagePosition="left" 
             />
@@ -215,7 +215,7 @@ const BusinessAccountsPage = () => {
                 "Hedge against currency risks, execute trades 24/7, and access institutional-grade liquidity across major and emerging market currencies."
               ]}
               action_btn={{ label: "Learn More", link: "/business-accounts/fx-trading" }}
-              shape_img="/assets/imgs/brand/img-s-2.png"
+              shape_img="/assets/images/about/img-1.jpg"
               small_shape={{ light: "/assets/imgs/shape/img-s-2.png", dark: "/assets/imgs/shape/img-s-2-light.png" }}
               imagePosition="right" 
             />

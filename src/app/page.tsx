@@ -40,7 +40,7 @@ export default function HomePage() {
   const { data: counterArea } = getMainPage("/team/design/counter-area.mdx");
 
   // Récupération des collections
-  const services = getAllPages("/services/design");
+  const services = getAllPages("/services/home");
   const works = getAllPages("/works/design");
 
   return (

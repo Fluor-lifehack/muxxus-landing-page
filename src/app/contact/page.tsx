@@ -1,7 +1,6 @@
 "use client";
 
 import ContactHero from "@/components/contact/ContactHero";
-import ContactBanner from "@/components/banner/ContactBanner";
 import ContactArea from "@/components/contact/ContactArea";
 import SeoData from "@/components/tools/SeoData";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
@@ -16,9 +15,9 @@ const ContactPage = () => {
       link: "mailto:hello@muxxus.com"
     },
     images: [
-      "/assets/imgs/contact/img-1.jpg",
-      "/assets/imgs/contact/img-2.jpg", 
-      "/assets/imgs/contact/img-3.jpg"
+      "/assets/images/contact/img-1.jpg",
+      "/assets/images/contact/img-2.jpg", 
+      "/assets/images/contact/img-3.jpg"
     ]
   };
 
@@ -39,10 +38,7 @@ const ContactPage = () => {
   };
 
   // Données pour ContactBanner
-  const contactBannerData = {
-    contactTitle: "Start your experience with Muxxus",
-    btn_text: "Let's get in touch"
-  };
+
 
   return (
     <main>
@@ -55,8 +51,6 @@ const ContactPage = () => {
 
       <ContactHero {...heroData} />
 
-      {/* Contact Banner */}
-      <ContactBanner {...contactBannerData} />
 
       {/* Contact Area with Form */}
       <ContactArea {...contactData} />

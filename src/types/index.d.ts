@@ -49,6 +49,7 @@ export type TServiceType = {
       question: string;
       answer: string;
     }[];
+    link?: string; // Lien personnalisé optionnel
     meta?: {
       meta_title: string;
       meta_description: string;

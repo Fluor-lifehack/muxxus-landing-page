@@ -153,13 +153,12 @@ const MuxxusAiSection = ({
             <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2' : 'order-1'}`}>
               {/* 4. Image principale avec effet */}
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
                 <ImageComponent
                   src={shape_img}
-                  width={280}
-                  height={220}
+                  width={400}
+                  height={300}
                   alt="AI Decorative"
-                  className="relative w-full max-w-xs rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
+                  className="relative w-full max-w-md rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
                 />
                 
                 {/* Small shape flottant */}
@@ -167,8 +166,8 @@ const MuxxusAiSection = ({
                   <ImageComponent
                     src={small_shape.light}
                     darkSrc={small_shape.dark}
-                    width={70}
-                    height={140}
+                    width={90}
+                    height={180}
                     alt="small shape"
                     className="drop-shadow-lg"
                   />
