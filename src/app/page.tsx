@@ -59,38 +59,38 @@ export default function HomePage() {
 
 
         {/* Slider de texte avec animation de stagger */}
-        <StaggerOnScroll direction="left" distance={80} stagger={0.15}>
+        <StaggerOnScroll direction="left" distance={40} stagger={0.3}>
           <DesignTextSlider sliderItems={sliderData} />
         </StaggerOnScroll>
 
         {/* Statistiques Muxxus avec animation de révélation */}
-        <RevealOnScroll direction="up" distance={100} duration={1.3} delay={0.3}>
+        <RevealOnScroll direction="up" distance={50} duration={2.0} delay={0.5}>
           <StatMuxxus {...statFact} />
         </RevealOnScroll>
 
         {/* Section À propos avec animation de texte */}
-        <TextRevealOnScroll type="words" direction="up" distance={60} stagger={0.1}>
+        <TextRevealOnScroll type="words" direction="up" distance={30} stagger={0.2}>
           <DesignAbout {...about} />
         </TextRevealOnScroll>
 
         {/* Section Image avec animation de morphing */}
-        <MorphOnScroll morphTo="scale(1.02)" duration={1.8}>
+        <MorphOnScroll morphTo="scale(1.01)" duration={2.5}>
           <DesignImage2 {...image} />
         </MorphOnScroll>
 
         {/* Services de design avec animation de stagger */}
-        <StaggerOnScroll direction="up" distance={70} stagger={0.12}>
+        <StaggerOnScroll direction="up" distance={35} stagger={0.25}>
           <DesignService {...service} services={services} />
         </StaggerOnScroll>
 
 
         {/* Statistiques de l'équipe avec animation de révélation */}
-        <RevealOnScroll direction="right" distance={90} duration={1.4} delay={0.2}>
+        <RevealOnScroll direction="right" distance={45} duration={2.2} delay={0.4}>
           <TeamCounterArea {...counterArea} />
         </RevealOnScroll>
 
         {/* Compétences de design avec animation de carte 3D */}
-        <CardFlipOnScroll direction="y" angle={12} duration={1.6}>
+        <CardFlipOnScroll direction="y" angle={8} duration={2.3}>
           <DesignSkill {...skill} />
         </CardFlipOnScroll>
 
@@ -109,13 +109,13 @@ export default function HomePage() {
         </RevealOnScroll> */}
 
 
-        {/* Fonctionnalités Muxxus avec animation de particules - ACCÉLÉRÉES */}
-        <ParticlesOnScroll> {/* Réduit de 4 à 2.5 */}
+        {/* Fonctionnalités Muxxus avec animation de particules */}
+        <ParticlesOnScroll>
           <MuxxusFeature {...feature} />
         </ParticlesOnScroll>
 
         {/* Portfolio de travaux avec animation de stagger */}
-        <StaggerOnScroll direction="up" distance={85} stagger={0.18}>
+        <StaggerOnScroll direction="up" distance={42} stagger={0.35}>
           <MuxxusWork works={works} />
         </StaggerOnScroll>
 
