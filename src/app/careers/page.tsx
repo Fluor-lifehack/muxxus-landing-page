@@ -100,7 +100,6 @@ export default function CareersPage() {
       <SolutionHero
         title="Careers at Muxxus"
         description="Join our mission to democratize global finance. We're looking for talented individuals to help build the future of financial infrastructure."
-        bg_video=""
         bg_image="/assets/images/about/img-2.jpg"
         action_btn={{ label: "View Open Positions", link: "#" }}
       />
@@ -113,7 +112,7 @@ export default function CareersPage() {
 
       {/* Culture Section */}
       <FeatureSection
-        title="Our Culture",
+        title="Our Culture"
         subtitle="What it's like to work at Muxxus"
         description="We foster a culture of innovation, collaboration, and continuous learning. Our team is diverse, inclusive, and passionate about solving complex problems in global finance. We value transparency, ownership, and making a meaningful impact."
         buttonText="Learn About Our Culture"
@@ -128,7 +127,7 @@ export default function CareersPage() {
 
       {/* Open Positions Section */}
       <FeatureSection
-        title="Open Positions",
+        title="Open Positions"
         subtitle="Current opportunities"
         description="We're always looking for exceptional talent to join our team. Browse our current openings and find the perfect role to advance your career while making a global impact in fintech."
         buttonText="View All Positions"

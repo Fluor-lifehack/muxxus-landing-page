@@ -100,7 +100,6 @@ export default function AboutPage() {
       <SolutionHero
         title="About Muxxus"
         description="Building the future of global finance. We're creating a world where every business can operate seamlessly across borders, currencies, and markets."
-        bg_video=""
         bg_image="/assets/images/about/img-1.jpg"
         action_btn={{ label: "Join Our Mission", link: "/careers" }}
       />
@@ -113,7 +112,7 @@ export default function AboutPage() {
 
       {/* Mission Section */}
       <FeatureSection
-        title="Our Mission & Vision",
+        title="Our Mission & Vision"
         subtitle="Empowering businesses worldwide"
         description="Our mission is to democratize access to global financial services by providing businesses with the infrastructure they need to operate seamlessly across borders. We envision a world where financial barriers no longer limit business growth and innovation."
         buttonText="Learn More"
@@ -128,7 +127,7 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <FeatureSection
-        title="Our Values",
+        title="Our Values"
         subtitle="What drives us forward"
         description="We are committed to transparency, security, and innovation. Our values guide everything we do, from building secure financial infrastructure to providing exceptional customer support and maintaining the highest standards of compliance."
         buttonText="View Our Values"

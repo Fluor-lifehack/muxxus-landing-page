@@ -100,7 +100,6 @@ export default function BlogPage() {
       <SolutionHero
         title="Blog & Insights"
         description="Stay updated with the latest insights, trends, and news in fintech and global finance. Expert analysis, product updates, and industry insights from the Muxxus team."
-        bg_video=""
         bg_image="/assets/images/blog/img-1.jpg"
         action_btn={{ label: "Subscribe to Newsletter", link: "#newsletter" }}
       />
@@ -113,7 +112,7 @@ export default function BlogPage() {
 
       {/* Latest Posts Section */}
       <FeatureSection
-        title="Latest Posts",
+        title="Latest Posts"
         subtitle="Recent insights from our team"
         description="Discover our latest blog posts covering fintech trends, product updates, market analysis, and best practices for global financial operations."
         buttonText="View All Posts"
@@ -128,7 +127,7 @@ export default function BlogPage() {
 
       {/* Categories Section */}
       <FeatureSection
-        title="Content Categories",
+        title="Content Categories"
         subtitle="Explore topics that matter to you"
         description="Our blog covers a wide range of topics including industry trends, product updates, market insights, and best practices. Find content relevant to your business needs and interests."
         buttonText="Browse Categories"

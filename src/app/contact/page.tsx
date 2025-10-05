@@ -100,7 +100,6 @@ export default function ContactPage() {
       <SolutionHero
         title="Contact Us"
         description="Ready to transform your business with global financial services? Our team is here to help you succeed. Get in touch for sales inquiries, support, or partnership opportunities."
-        bg_video=""
         bg_image="/assets/images/contact/img-1.jpg"
         action_btn={{ label: "Send Message", link: "mailto:hello@muxxus.com" }}
       />
@@ -113,7 +112,7 @@ export default function ContactPage() {
 
       {/* Contact Methods Section */}
       <FeatureSection
-        title="Multiple Ways to Reach Us",
+        title="Multiple Ways to Reach Us"
         subtitle="Choose your preferred contact method"
         description="We offer multiple ways to get in touch with our team. Whether you prefer email, phone, or scheduling a call, we're here to help you with your global financial needs."
         buttonText="Contact Us Now"
@@ -128,7 +127,7 @@ export default function ContactPage() {
 
       {/* Support Section */}
       <FeatureSection
-        title="24/7 Support",
+        title="24/7 Support"
         subtitle="We're here when you need us"
         description="Our dedicated support team is available around the clock to help you with any questions or issues. From technical support to account management, we ensure your success with Muxxus."
         buttonText="Get Support"

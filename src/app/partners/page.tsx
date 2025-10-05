@@ -100,7 +100,6 @@ export default function PartnersPage() {
       <SolutionHero
         title="Partners"
         description="Join our global partner network and help businesses access world-class financial infrastructure. Explore partnership opportunities that drive mutual growth."
-        bg_video=""
         bg_image="/assets/images/about/img-4.jpg"
         action_btn={{ label: "Become a Partner", link: "mailto:partners@muxxus.com" }}
       />
@@ -113,7 +112,7 @@ export default function PartnersPage() {
 
       {/* Partnership Types Section */}
       <FeatureSection
-        title="Partnership Types",
+        title="Partnership Types"
         subtitle="Choose the right partnership for your business"
         description="We offer flexible partnership models designed to meet the needs of different organizations. From technology integrations to reseller programs, find the partnership that aligns with your business goals."
         buttonText="Learn More"
@@ -128,7 +127,7 @@ export default function PartnersPage() {
 
       {/* Partner Benefits Section */}
       <FeatureSection
-        title="Partner Benefits",
+        title="Partner Benefits"
         subtitle="Why partner with Muxxus"
         description="Our partners enjoy comprehensive support, competitive revenue sharing, and access to cutting-edge financial technology. Join a network of successful partners helping businesses thrive in the global economy."
         buttonText="View Benefits"
