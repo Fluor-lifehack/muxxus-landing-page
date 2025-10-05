@@ -1,310 +1,153 @@
-import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
-import CircleFillButton from "@/components/elements/button/CircleFillButton";
-import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaShieldAlt, FaEye, FaLock, FaUser, FaGlobe, FaDatabase, FaCog, FaHandshake } from "react-icons/fa";
+import type { Metadata } from 'next';
+import React from "react";
+import SolutionHero from "@/components/hero/SolutionHero";
+import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
+import FeatureSection from "@/components/muxxus/FeatureSection";
+import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
+import MuxxusFooter from "@/components/footer/MuxxusFooter";
+import SectionDivider from "@/components/ui/SectionDivider";
 
-const PrivacyPage = () => {
-  const privacyPrinciples = [
-    {
-      title: "Transparency",
-      description: "We are clear about what data we collect and how we use it",
-      icon: FaEye,
-      color: "from-blue-50 to-blue-100"
+// Métadonnées Next.js
+export const metadata: Metadata = {
+  title: "Privacy Policy | Muxxus Data Protection & Privacy | Muxxus",
+  description: "Learn about Muxxus's privacy policy, data protection practices, and how we safeguard your personal information. Transparent, secure, and compliant with global regulations.",
+  keywords: ["privacy policy", "data protection", "privacy", "GDPR", "data security", "personal information", "muxxus privacy"],
+  openGraph: {
+    title: "Privacy Policy | Muxxus Data Protection & Privacy | Muxxus",
+    description: "Learn about Muxxus's privacy policy, data protection practices, and how we safeguard your personal information.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Muxxus",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Muxxus Data Protection & Privacy | Muxxus",
+    description: "Learn about Muxxus's privacy policy, data protection practices, and how we safeguard your personal information.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    {
-      title: "Security",
-      description: "Your data is protected with industry-leading security measures",
-      icon: FaShieldAlt,
-      color: "from-green-50 to-green-100"
-    },
-    {
-      title: "Control",
-      description: "You have full control over your personal information",
-      icon: FaUser,
-      color: "from-purple-50 to-purple-100"
-    },
-    {
-      title: "Compliance",
-      description: "We adhere to global privacy regulations and standards",
-      icon: FaGlobe,
-      color: "from-orange-50 to-orange-100"
-    }
-  ];
-
-  const dataCategories = [
-    {
-      category: "Account Information",
-      examples: ["Name, email, phone number", "Company details", "Account credentials"],
-      purpose: "To provide and manage your account",
-      retention: "As long as your account is active"
-    },
-    {
-      category: "Financial Data",
-      examples: ["Transaction history", "Payment information", "Account balances"],
-      purpose: "To process transactions and provide financial services",
-      retention: "7 years (regulatory requirement)"
-    },
-    {
-      category: "Usage Data",
-      examples: ["Login times", "Feature usage", "Device information"],
-      purpose: "To improve our services and security",
-      retention: "2 years"
-    },
-    {
-      category: "Communication Data",
-      examples: ["Support tickets", "Email correspondence", "Chat logs"],
-      purpose: "To provide customer support",
-      retention: "3 years"
-    }
-  ];
-
-  const yourRights = [
-    {
-      right: "Access",
-      description: "Request a copy of your personal data",
-      icon: FaEye
-    },
-    {
-      right: "Rectification",
-      description: "Correct inaccurate or incomplete data",
-      icon: FaCog
-    },
-    {
-      right: "Erasure",
-      description: "Request deletion of your personal data",
-      icon: FaDatabase
-    },
-    {
-      right: "Portability",
-      description: "Receive your data in a portable format",
-      icon: FaHandshake
-    },
-    {
-      right: "Restriction",
-      description: "Limit how we process your data",
-      icon: FaLock
-    },
-    {
-      right: "Objection",
-      description: "Object to certain types of processing",
-      icon: FaUser
-    }
-  ];
-
-  const securityMeasures = [
-    {
-      measure: "Encryption",
-      description: "All data is encrypted in transit and at rest using AES-256 encryption",
-      icon: FaLock
-    },
-    {
-      measure: "Access Controls",
-      description: "Multi-factor authentication and role-based access controls",
-      icon: FaShieldAlt
-    },
-    {
-      measure: "Regular Audits",
-      description: "Third-party security audits and penetration testing",
-      icon: FaEye
-    },
-    {
-      measure: "Data Centers",
-      description: "SOC 2 Type II certified data centers with 99.9% uptime",
-      icon: FaDatabase
-    }
-  ];
-
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-indigo-50 to-purple-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <BreadcrumbNav 
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Privacy", href: "/privacy", isActive: true }
-              ]} 
-            />
-            <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
-              Privacy Policy
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              We are committed to protecting your privacy and ensuring the security 
-              of your personal information. Learn how we collect, use, and protect your data.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CircleFillButton 
-                text="Read Policy" 
-                href="#privacy-policy"
-                className="bg-indigo-600 hover:bg-indigo-700"
-              />
-              <CircleFillButton 
-                text="Contact DPO" 
-                href="/contact"
-                className="border-indigo-600 text-indigo-600 hover:bg-indigo-50"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Privacy Principles */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <DesignSectionTitle 
-            title="Our Privacy Principles"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-            {privacyPrinciples.map((principle, index) => (
-              <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-                <div className={`w-16 h-16 bg-gradient-to-br ${principle.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
-                  <principle.icon className="w-8 h-8 text-gray-700" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{principle.title}</h3>
-                <p className="text-gray-600">{principle.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Data We Collect */}
-      <section id="privacy-policy" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Data We Collect</h2>
-            <p className="text-lg text-gray-600">Understanding what information we collect and why</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {dataCategories.map((data, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{data.category}</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-medium text-gray-900 mb-2">Examples:</h4>
-                    <ul className="space-y-1 text-sm text-gray-600">
-                      {data.examples.map((example, exampleIndex) => (
-                        <li key={exampleIndex} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
-                          {example}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900 mb-2">Purpose:</h4>
-                    <p className="text-sm text-gray-600">{data.purpose}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900 mb-2">Retention:</h4>
-                    <p className="text-sm text-gray-600">{data.retention}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Your Rights */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Privacy Rights</h2>
-            <p className="text-lg text-gray-600">You have control over your personal information</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {yourRights.map((right, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <right.icon className="w-6 h-6 text-indigo-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{right.right}</h3>
-                <p className="text-gray-600">{right.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Security Measures */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">How We Protect Your Data</h2>
-            <p className="text-lg text-gray-600">Industry-leading security measures to keep your information safe</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {securityMeasures.map((measure, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <measure.icon className="w-6 h-6 text-indigo-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{measure.measure}</h3>
-                </div>
-                <p className="text-gray-600">{measure.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Data Sharing */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Data Sharing & Third Parties</h2>
-            <p className="text-lg text-gray-600">We are transparent about when and how we share your data</p>
-          </div>
-          <div className="bg-gray-50 rounded-xl p-8">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">We DO NOT sell your personal data</h3>
-                <p className="text-gray-600">Your personal information is never sold to third parties for marketing purposes.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Limited sharing for essential services</h3>
-                <p className="text-gray-600">We only share data with trusted partners when necessary to provide our services, such as banking partners and regulatory authorities.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Your consent is required</h3>
-                <p className="text-gray-600">Any additional data sharing beyond essential services requires your explicit consent.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Information */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Questions About Privacy?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Our Data Protection Officer is here to help with any privacy-related questions 
-            or to exercise your data rights
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CircleFillButton 
-              text="Contact DPO" 
-              href="/contact"
-              className="bg-indigo-600 hover:bg-indigo-700"
-            />
-            <CircleFillButton 
-              text="Exercise Your Rights" 
-              href="/contact"
-              className="border-indigo-600 text-indigo-600 hover:bg-indigo-50"
-            />
-          </div>
-          <div className="mt-8 text-sm text-gray-500">
-            <p>Last updated: December 1, 2024</p>
-            <p>Version: v4.1</p>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+  },
 };
 
-export default PrivacyPage;
+// Données pour les composants
+const componentData = {
+  keyBenefitsSection2: {
+    title: "Your Privacy Matters",
+    description: [
+      "We are committed to protecting your privacy and personal information with industry-leading security measures.",
+      "Our privacy policy is transparent, comprehensive, and designed to give you full control over your data."
+    ],
+    leftImage: "/assets/images/privacy/img-1.jpg",
+    items: [
+      {
+        title: "Transparency",
+        description: "We are clear about what data we collect, how we use it, and who we share it with."
+      },
+      {
+        title: "Security",
+        description: "Your data is protected with bank-grade security measures and encryption protocols."
+      },
+      {
+        title: "Control",
+        description: "You have full control over your personal information and can manage your preferences anytime."
+      },
+      {
+        title: "Compliance",
+        description: "We adhere to global privacy regulations including GDPR, CCPA, and other data protection laws."
+      }
+    ]
+  }
+};
+
+// Données pour les sections FAQ
+const faqData = {
+  faq_title: "Privacy Policy FAQ",
+  faq_description: "Common questions about our privacy practices",
+  faqs: [
+    {
+      question: "What personal information does Muxxus collect?",
+      answer: "We collect information necessary to provide our services, including contact details, business information, transaction data, and usage analytics. We never collect more information than necessary for our legitimate business purposes."
+    },
+    {
+      question: "How does Muxxus protect my personal information?",
+      answer: "We use industry-standard encryption, secure data centers, access controls, and regular security audits to protect your information. All data is encrypted in transit and at rest."
+    },
+    {
+      question: "Can I control how my data is used?",
+      answer: "Yes, you have full control over your personal information. You can access, update, delete, or restrict the use of your data through your account settings or by contacting our privacy team."
+    },
+    {
+      question: "Does Muxxus share my data with third parties?",
+      answer: "We only share your data with third parties when necessary to provide our services, comply with legal obligations, or with your explicit consent. We never sell your personal information."
+    }
+  ]
+};
+
+// Composant principal de la page
+export default function PrivacyPage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <SolutionHero
+        title="Privacy Policy"
+        description="We are committed to protecting your privacy and personal information with industry-leading security measures. Learn about our transparent data practices and your rights."
+        bg_video=""
+        bg_image="/assets/images/privacy/img-1.jpg"
+        action_btn={{ label: "Contact Privacy Team", link: "mailto:privacy@muxxus.com" }}
+      />
+
+      {/* Key Benefits Section */}
+      <MuxxusSection2 
+        {...componentData.keyBenefitsSection2} 
+        fullWidthHeader={true} 
+      />
+
+      {/* Data Protection Section */}
+      <FeatureSection
+        title="Data Protection & Security"
+        subtitle="How we safeguard your information"
+        description="We implement comprehensive data protection measures including encryption, access controls, regular audits, and compliance with global privacy regulations. Your information is protected with bank-grade security."
+        buttonText="Learn More About Security"
+        buttonLink="/security"
+        imageSrc="/assets/images/privacy/img-2.jpg"
+        imageAlt="Data Protection"
+        imageFirst={true}
+        className="bg-gray-50"
+      />
+
+      <SectionDivider variant="gradient" size="lg" color="primary" />
+
+      {/* Your Rights Section */}
+      <FeatureSection
+        title="Your Privacy Rights"
+        subtitle="Full control over your data"
+        description="You have comprehensive rights over your personal information including access, correction, deletion, and portability. We make it easy to exercise these rights through our platform and support team."
+        buttonText="Manage Your Data"
+        buttonLink="#"
+        imageSrc="/assets/images/privacy/img-3.jpg"
+        imageAlt="Privacy Rights"
+        imageFirst={false}
+        className="bg-white"
+      />
+
+      {/* FAQ Section */}
+      <ServiceDetailsFaq 
+        faqs={faqData.faqs} 
+        faqTitle={faqData.faq_title} 
+      />
+
+      {/* Newsletter et Footer */}
+      <MuxxusNewsletter />
+      <MuxxusFooter />
+    </>
+  );
+}
