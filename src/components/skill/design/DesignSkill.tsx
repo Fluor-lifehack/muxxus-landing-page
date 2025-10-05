@@ -53,6 +53,24 @@ const DesignSkill = ({ title, description, skills }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null!);
 
+  // Fonction pour mapper les titres vers les URLs des pages
+  const getPagePath = (cardTitle: string): string => {
+    const pathMap: { [key: string]: string } = {
+      "Global Accounts": "accounts/global-accounts",
+      "FX & Transfers": "accounts/fx-transfers",
+      "Corporate Cards": "spend/corporate-cards",
+      "Expense Management": "spend/expense-management",
+      "Bill Pay": "spend/bill-pay",
+      "Checkout": "payments/checkout",
+      "Payment Plugins": "payments/plugins",
+      "Payment Links": "payments/links",
+      "Connected Accounts": "platform-apis/connected-accounts",
+      "Accounts": "platform-apis/accounts",
+      "Payments": "platform-apis/payments"
+    };
+    return pathMap[cardTitle] || "#";
+  };
+
   // Données des cartes pour chaque service avec images
   const cardsData = {
     0: { // Business Accounts
@@ -245,10 +263,13 @@ const DesignSkill = ({ title, description, skills }: Props) => {
                         <p className="text-gray-600 mb-6 leading-relaxed">{card.description}</p>
                         
                         {/* Bouton d'action */}
-                        <button className="text-gray-900 hover:text-gray-800 font-medium transition-colors duration-200 flex items-center gap-2 group">
+                        <a 
+                          href={`/${getPagePath(card.title)}`}
+                          className="text-gray-900 hover:text-gray-800 font-medium transition-colors duration-200 flex items-center gap-2 group"
+                        >
                           <span>Learn more</span>
                           <span className="transform transition-transform duration-200 group-hover:translate-x-1">→</span>
-                        </button>
+                        </a>
                       </div>
                     ))
                   )}
