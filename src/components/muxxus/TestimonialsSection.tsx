@@ -35,10 +35,6 @@ const TestimonialsSection = ({
   testimonials,
   className = ""
 }: Props) => {
-  // Debug: Log des données reçues
-  console.log('TestimonialsSection props:', { title, description, testimonials });
-  console.log('Testimonials array length:', testimonials?.length);
-
   return (
     <section className={`py-20 bg-background ${className}`}>
       <div className="container2">

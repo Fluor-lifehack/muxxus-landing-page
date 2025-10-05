@@ -100,7 +100,6 @@ export default function SecurityPage() {
       <SolutionHero
         title="Security"
         description="Your financial data and transactions are protected with industry-leading security measures and bank-grade infrastructure. Learn about our comprehensive security framework."
-        bg_video=""
         bg_image="/assets/images/security/img-1.jpg"
         action_btn={{ label: "Security Report", link: "#" }}
       />
@@ -113,7 +112,7 @@ export default function SecurityPage() {
 
       {/* Security Infrastructure Section */}
       <FeatureSection
-        title="Security Infrastructure",
+        title="Security Infrastructure"
         subtitle="Multiple layers of protection"
         description="Our security infrastructure includes advanced encryption, secure data centers, access controls, and continuous monitoring. We invest heavily in security technology and expertise to protect your business."
         buttonText="Learn About Our Infrastructure"
@@ -128,7 +127,7 @@ export default function SecurityPage() {
 
       {/* Compliance Section */}
       <FeatureSection
-        title="Compliance & Certifications",
+        title="Compliance & Certifications"
         subtitle="Meeting the highest standards"
         description="We maintain compliance with global security standards including SOC 2, PCI DSS, and ISO 27001. Our certifications demonstrate our commitment to security excellence and regulatory compliance."
         buttonText="View Certifications"
@@ -150,4 +149,4 @@ export default function SecurityPage() {
       <MuxxusFooter />
     </>
   );
-};
+}

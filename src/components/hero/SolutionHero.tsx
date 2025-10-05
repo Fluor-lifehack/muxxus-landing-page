@@ -9,7 +9,7 @@ import Image from "next/image";
 type Props = {
   title: string;
   description: string;
-  bg_video: string;
+  bg_video?: string;
   bg_image?: string;
   action_btn: ActionBtnType;
 };

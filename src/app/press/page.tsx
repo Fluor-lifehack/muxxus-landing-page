@@ -100,7 +100,6 @@ export default function PressPage() {
       <SolutionHero
         title="Press & Media"
         description="Stay updated with the latest news, press releases, and media resources from Muxxus. Access our press kit and connect with our communications team."
-        bg_video=""
         bg_image="/assets/images/about/img-3.jpg"
         action_btn={{ label: "Contact Press Team", link: "mailto:press@muxxus.com" }}
       />
@@ -113,7 +112,7 @@ export default function PressPage() {
 
       {/* Latest News Section */}
       <FeatureSection
-        title="Latest News & Updates",
+        title="Latest News & Updates"
         subtitle="Stay informed about Muxxus"
         description="Read our latest press releases, company announcements, and industry insights. We regularly share updates about our product development, partnerships, and thought leadership in fintech."
         buttonText="View All News"
@@ -128,7 +127,7 @@ export default function PressPage() {
 
       {/* Media Resources Section */}
       <FeatureSection
-        title="Media Resources",
+        title="Media Resources"
         subtitle="Everything you need for coverage"
         description="Access our comprehensive media kit including logos, brand guidelines, product screenshots, and executive headshots. All assets are available in high resolution for print and digital use."
         buttonText="Download Media Kit"
@@ -150,4 +149,4 @@ export default function PressPage() {
       <MuxxusFooter />
     </>
   );
-};
+}
