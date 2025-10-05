@@ -5,7 +5,7 @@ import React from "react";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
 import MuxxusSteps from "@/components/muxxus/MuxxusSteps";
 import MuxxusListers from "@/components/muxxus/MuxxusListers";
@@ -289,7 +289,13 @@ export default function PaymentLinksPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="Payment Links"
+        description="Create secure payment links instantly. Share payment requests via email, SMS, or social media with customizable branding and automated follow-ups."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img1.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
       <MuxxusColumns data={columnsData} />
 

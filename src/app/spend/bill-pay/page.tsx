@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
 import FeatureSection from "@/components/muxxus/FeatureSection";
@@ -288,7 +288,13 @@ export default function BillPayPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="Bill Pay"
+        description="Streamline your business bill payments with automated invoice processing, multi-layer approvals, and global payment capabilities."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img4.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
       {/* Key Benefits Section */}
       <MuxxusSection2 

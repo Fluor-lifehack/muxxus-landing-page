@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
 import FeatureSection from "@/components/muxxus/FeatureSection";
@@ -421,7 +421,13 @@ export default function PaymentsPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="Payments API"
+        description="Accept payments globally with our Payments API. Process transactions in 50+ currencies with advanced fraud protection and real-time settlement."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img1.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
       {/* Key Benefits Section */}
       <MuxxusSection2 

@@ -26,7 +26,7 @@ type Props = {
   leftImage: string;
   // Items à droite
   items: {
-    icon: string;
+    icon?: string;
     title: string;
     description: string;
   }[];
@@ -198,7 +198,7 @@ const MuxxusSection2 = ({
                 </div>
                 
                 {/* Colonne avec Items (position dynamique) */}
-                <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
+                <div className={`space-y-4 ${imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
                   {/* Items avec icône, titre et description */}
                   <div className="space-y-6">
                     {items?.map((item, index) => (
@@ -208,13 +208,15 @@ const MuxxusSection2 = ({
                         data-delay={index * 0.1}
                       >
                         {/* Icône */}
-                        <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                          <span className="text-2xl">{item.icon}</span>
-                        </div>
+                        {item.icon && (
+                          <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                            <span className="text-2xl">{item.icon}</span>
+                          </div>
+                        )}
                         
                         {/* Contenu */}
                         <div className="flex-1">
-                          <h3 className={`text-xl font-semibold mb-2 group-hover:text-primary transition-colors ${textColor || 'text-white'}`}>
+                          <h3 className={`text-xl font-bold mb-2 group-hover:text-primary transition-colors ${textColor || 'text-white'}`}>
                             {item.title}
                           </h3>
                           <p className={`leading-relaxed ${textColor || 'text-white'}`}>
@@ -259,14 +261,14 @@ const MuxxusSection2 = ({
                </div>
               
               {/* Colonne avec Titre, Description et Items (position dynamique) */}
-              <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-1 lg:order-1'}`}>
+              <div className={`space-y-4 ${imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-1 lg:order-1'}`}>
                 {/* 1. Titre */}
                 <h1 className={`text-[32px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[52px] leading-[1.1] font-medium has_text_mov_anim ${textColor || 'text-white'}`}>
                   {title}
                 </h1>
                 
                 {/* 2. Description */}
-                <div className="space-y-6">
+                <div className="space-y-3">
                   {description?.map((para, index) => (
                     <p
                       key={`para-${index}`}
@@ -287,13 +289,15 @@ const MuxxusSection2 = ({
                       data-delay={index * 0.1}
                     >
                       {/* Icône */}
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                        <span className="text-2xl">{item.icon}</span>
-                      </div>
+                      {item.icon && (
+                        <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                          <span className="text-2xl">{item.icon}</span>
+                        </div>
+                      )}
                       
                       {/* Contenu */}
                       <div className="flex-1">
-                        <h3 className={`text-xl font-semibold mb-2 group-hover:text-primary transition-colors ${textColor || 'text-white'}`}>
+                        <h3 className={`text-xl font-bold mb-2 group-hover:text-primary transition-colors ${textColor || 'text-white'}`}>
                           {item.title}
                         </h3>
                         <p className={`leading-relaxed ${textColor || 'text-white'}`}>

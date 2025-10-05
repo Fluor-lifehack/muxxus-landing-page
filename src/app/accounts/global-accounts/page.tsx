@@ -7,12 +7,10 @@ import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
 import FeatureSection from "@/components/muxxus/FeatureSection";
 import SectionDivider from "@/components/ui/SectionDivider";
-import DetailHero from "@/components/hero/DetailHero";
 import MuxxusAiSection2 from "@/components/muxxus/MuxxusAiSection2";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
-import ServicesHero from "@/components/service/ServicesHero";
 import SolutionHero from "@/components/hero/SolutionHero";
 
 // Configuration des styles uniformes
@@ -67,32 +65,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Données pour le composant DetailHero
-const heroData = {
-  title: "AI-Powered Global Banking",
-  shape: {
-    light: "/assets/imgs/shape/img-s-29.png",
-    dark: "/assets/imgs/shape/img-s-29-light.png"
-  },
-  client_img: {
-    light: "/assets/imgs/muxxus/image/img1.jpg",
-    dark: "/assets/imgs/muxxus/image/img1.jpg"
-  },
-  customers: "50+ Currencies",
-  info: {
-    thumb: {
-      light: "/assets/imgs/muxxus/image/img1.jpg",
-      dark: "/assets/imgs/muxxus/image/img1.jpg"
-    },
-    description: "Open a global multi-currency account for international business payments in minutes.",
-    action_btn: {
-      label: "Get Started",
-      link: "#"
-    }
-  },
-  image: "/assets/imgs/muxxus/image/img1.jpg",
-  feature_text: "Global Banking Solutions"
-};
 
 // Données pour les composants
 const componentData = {
@@ -106,7 +78,7 @@ const componentData = {
       label: "Discover Our AI Solutions",
       link: "#"
     },
-    shape_img: "/assets/imgs/shape/img-s-29.png",
+    shape_img: "/assets/imgs/shape/img-s-30.png",
     small_shape: {
       light: "/assets/imgs/shape/img-s-30.png",
       dark: "/assets/imgs/shape/img-s-30-light.png"
@@ -119,33 +91,33 @@ const componentData = {
       "Experience seamless international banking with our innovative platform that connects you to financial markets worldwide.",
       "From multi-currency accounts to real-time FX trading, we provide everything you need to succeed in global commerce."
     ],
-    leftImage: "/assets/imgs/muxxus/image/img2.jpg",
+    leftImage: "/assets/images/about/img-1.jpg",
     items: [
       {
-        icon: "🌍",
+        // icon: "/assets/imgs/shape/icon-s-18.png",
         title: "Global Coverage",
         description: "Access banking services in 13+ countries with local account details and instant setup."
       },
       {
-        icon: "💱",
+        // icon: "/assets/imgs/shape/icon-s-19.png",
         title: "Multi-Currency",
         description: "Hold and manage 50+ currencies in a single platform with competitive exchange rates."
       },
       {
-        icon: "⚡",
+        // icon: "/assets/imgs/shape/icon-s-20.png",
         title: "Instant Access",
         description: "Open accounts in minutes, not days. Start trading and receiving payments immediately."
       },
       {
-        icon: "🔒",
+        // icon: "/assets/imgs/shape/icon-s-21.png",
         title: "Bank-Grade Security",
         description: "Enterprise-level security with end-to-end encryption and regulatory compliance."
       }
     ],
-    action_btn: {
-      label: "Get Started Today",
-      link: "#"
-    }
+    // action_btn: {
+    //   label: "Get Started Today",
+    //   link: "#"
+    // }
   },
   
   keyBenefitsSection2: {
@@ -154,89 +126,31 @@ const componentData = {
       "Avoid the queues and tedious paperwork typically involved in creating local currency accounts worldwide.",
       "Open an online multi-currency business account and collect international payments from global customers in their preferred currency."
     ],
-    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    leftImage: "/assets/images/about/img-2.jpg",
     items: [
       {
-        icon: "💰",
         title: "Save on unnecessary banking fees",
         description: "No account opening fees, monthly maintenance fees, or minimum transaction requirements."
       },
       {
-        icon: "🌍",
         title: "Simplify your global cash management",
         description: "Convert balances held in different currencies with a few clicks and review your global transactions in a single view."
       },
       {
-        icon: "🔒",
         title: "Know that your funds are safe and secure",
         description: "Rest easy knowing that your money is secured and protected with end-to-end encryption and bank-level security."
       },
       {
-        icon: "💱",
         title: "Avoid costly conversion fees",
         description: "Eliminate unnecessary conversion fees by receiving payments in the same currencies your customers pay in."
       }
     ]
   },
   
-  supportedCountries: {
-    title: "Supported Countries",
-    description: "Our global accounts work like local currency accounts in your name that come with local bank and branch codes and dedicated account numbers.",
+  supportedCurrencies: {
+    title: "Supported Currencies",
+    description: "Hold and manage 50+ currencies in a single platform with competitive exchange rates and instant conversion capabilities.",
     countries: [
-      {
-        name: 'Ivory Coast',
-        currency: 'XOF',
-        currencyName: 'West African CFA Franc',
-        exchangeRate: '1 USD = 610 XOF',
-        bankCode: 'CI001',
-        accountFormat: 'XX-XXXX-XXXX-XXXX',
-        features: ['Local transfers', 'Mobile money', 'No monthly fees']
-      },
-      {
-        name: 'France',
-        currency: 'EUR',
-        currencyName: 'Euro',
-        exchangeRate: '1 USD = 0.92 EUR',
-        bankCode: 'FR001',
-        accountFormat: 'FR76-XXXX-XXXX-XXXX-XXXX-XXXX-XXX',
-        features: ['SEPA transfers', 'Direct debits', 'Online banking']
-      },
-      {
-        name: 'Luxembourg',
-        currency: 'EUR',
-        currencyName: 'Euro',
-        exchangeRate: '1 USD = 0.92 EUR',
-        bankCode: 'LU001',
-        accountFormat: 'LU28-XXXX-XXXX-XXXX-XXXX',
-        features: ['SEPA transfers', 'Investment accounts', 'Private banking']
-      },
-      {
-        name: 'Ethiopia',
-        currency: 'ETB',
-        currencyName: 'Ethiopian Birr',
-        exchangeRate: '1 USD = 55.5 ETB',
-        bankCode: 'ET001',
-        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Local transfers', 'Mobile banking', 'SMS notifications']
-      },
-      {
-        name: 'Canada',
-        currency: 'CAD',
-        currencyName: 'Canadian Dollar',
-        exchangeRate: '1 USD = 1.35 CAD',
-        bankCode: 'CA001',
-        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['Interac transfers', 'Direct deposits', 'Bill payments']
-      },
-      {
-        name: 'United Kingdom',
-        currency: 'GBP',
-        currencyName: 'British Pound',
-        exchangeRate: '1 USD = 0.79 GBP',
-        bankCode: 'GB001',
-        accountFormat: 'XX-XX-XX-XXXX-XXXX-XX',
-        features: ['BACS transfers', 'CHAPS payments', 'Faster payments']
-      },
       {
         name: 'United States',
         currency: 'USD',
@@ -244,23 +158,27 @@ const componentData = {
         exchangeRate: '1 USD = 1.00 USD',
         bankCode: 'US001',
         accountFormat: 'XXXX-XXXX-XXXX-XXXX',
-        features: ['ACH transfers', 'Wire transfers', 'Online banking']
+        features: ['ACH transfers', 'Wire transfers', 'Online banking', 'Real-time conversion']
+      },
+      {
+        name: 'European Union',
+        currency: 'EUR',
+        currencyName: 'Euro',
+        exchangeRate: '1 USD = 0.92 EUR',
+        bankCode: 'EU001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['SEPA transfers', 'Direct debits', 'Online banking', 'Instant conversion']
+      },
+      {
+        name: 'West Africa',
+        currency: 'XOF',
+        currencyName: 'West African CFA Franc',
+        exchangeRate: '1 USD = 610 XOF',
+        bankCode: 'WA001',
+        accountFormat: 'XXXX-XXXX-XXXX-XXXX',
+        features: ['Local transfers', 'Mobile money', 'No monthly fees', 'Competitive rates']
       }
-    ],
-    accountExample: {
-      title: "Global Multi-Currency Account",
-      description: "Access local banking infrastructure in multiple countries with dedicated account numbers and local transfer capabilities.",
-      capabilities: [
-        "Create accounts instantly",
-        "Create accounts in your company's name",
-        "Payment via Direct Debit",
-        "No transaction limits"
-      ],
-      depositMethods: {
-        title: "Multiple deposit methods",
-        description: "Local transfers, international wires, mobile money"
-      }
-    }
+    ]
   },
   
   testimonials: {
@@ -330,14 +248,14 @@ export default function GlobalAccountsPage() {
       <MuxxusSection2 
         {...componentData.keyBenefitsSection2} 
         fullWidthHeader={true} 
-        backgroundVideo="/assets/videos/world-globe.mp4" 
+        // backgroundVideo="/assets/videos/world-globe.mp4" 
       />
 
       {/* Customer Testimonials Section */}
       <TestimonialsSection {...componentData.testimonials} />
 
-      {/* Supported Countries Section */}
-      <SupportedCountriesSection {...componentData.supportedCountries} />
+      {/* Supported Currencies Section */}
+      <SupportedCountriesSection {...componentData.supportedCurrencies} />
 
       {/* API Solutions Section */}
       <FeatureSection
@@ -368,12 +286,9 @@ export default function GlobalAccountsPage() {
         className={pageStyles.colors.dark}
           // backgroundColor="bg-background-3"
       />
-
       <MuxxusAiSection2 {...componentData.muxxusAiSection} />
-
       {/* Section MuxxusSection2 */}
       <MuxxusSection2 {...componentData.muxxusSection2} />
-
       {/* FAQ et Footer */}
       <ServiceDetailsFaq 
         faqs={faqData.faqs} 

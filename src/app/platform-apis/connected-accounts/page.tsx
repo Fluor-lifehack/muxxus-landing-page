@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
@@ -499,7 +499,13 @@ const pageData = {
 export default function ConnectedAccountsPage() {
   return (
     <>
-      <DetailHero {...pageData.hero} />
+      <SolutionHero
+        title="Connected Accounts"
+        description="Enable your customers to manage money globally with connected accounts. Streamline onboarding, compliance, and explore multiple monetization models."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img3.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
       <div className="py-12">
         <MuxxusSection2 

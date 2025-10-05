@@ -7,7 +7,7 @@ import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
 import FeatureSection from "@/components/muxxus/FeatureSection";
 import SectionDivider from "@/components/ui/SectionDivider";
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
@@ -64,32 +64,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Données pour le composant DetailHero
-const heroData = {
-  title: "Fast, cost-effective international money transfer services",
-  shape: {
-    light: "/assets/imgs/shape/img-s-29.png",
-    dark: "/assets/imgs/shape/img-s-29-light.png"
-  },
-  client_img: {
-    light: "/assets/imgs/muxxus/image/img6.jpg",
-    dark: "/assets/imgs/muxxus/image/img6.jpg"
-  },
-  customers: "200+ countries and regions, 60+ currencies",
-  info: {
-    thumb: {
-      light: "/assets/imgs/muxxus/image/img6.jpg",
-      dark: "/assets/imgs/muxxus/image/img6.jpg"
-    },
-    description: "Streamline sending payments abroad to suppliers and employees around the world, and access market-leading international FX rates no matter the transaction size.",
-    action_btn: {
-      label: "Get Started",
-      link: "#"
-    }
-  },
-  image: "/assets/imgs/muxxus/image/img6.jpg",
-  feature_text: "Global Transfer Solutions"
-};
+
 
 // Données pour les composants
 const componentData = {
@@ -151,7 +126,7 @@ const componentData = {
       "Pay your global suppliers and employees without the expense and hassle of the traditional banking system.",
       "Have payments received in as little as one business day with the full amount on delivery guaranteed."
     ],
-    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    leftImage: "/assets/images/about/img-2.jpg",
     items: [
       {
         icon: "🌍",
@@ -327,7 +302,14 @@ export default function FXTransfersPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="FX & Transfers"
+        description="Exchange currencies at interbank rates with fast, secure, and cost-effective international money transfers for businesses."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img6.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
+
 
       {/* Key Benefits Section */}
       <MuxxusSection2 
@@ -386,3 +368,4 @@ export default function FXTransfersPage() {
     </>
   );
 }
+

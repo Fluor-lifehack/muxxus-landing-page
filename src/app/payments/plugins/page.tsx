@@ -6,7 +6,7 @@ import React from "react";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
 import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusColumns from "@/components/muxxus/MuxxusColumns";
 import MuxxusSteps from "@/components/muxxus/MuxxusSteps";
 import { MuxxusAiSection } from '@/components/muxxus';
@@ -247,7 +247,13 @@ export default function PaymentPluginsPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="Payment Plugins"
+        description="Integrate payment processing seamlessly with our plugins for popular platforms. Accept payments with minimal setup and maximum security."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img1.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
       <MuxxusColumns data={columnsData} />
 

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import FeatureSection from "@/components/muxxus/FeatureSection";
 import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
@@ -339,7 +339,13 @@ export default function AccountsPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="Accounts API"
+        description="Manage multi-currency accounts at scale with our Accounts API. Create, monitor, and control business accounts programmatically across 50+ currencies."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img2.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
       {/* Key Benefits Section */}
       <MuxxusSection2 
