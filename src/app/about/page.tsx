@@ -46,7 +46,7 @@ const componentData = {
       "Muxxus is revolutionizing how businesses manage their global finances with innovative technology and deep financial expertise.",
       "We're creating a world where every business can operate seamlessly across borders, currencies, and markets."
     ],
-    leftImage: "/assets/images/about/img-1.jpg",
+    leftImage: "/assets/images/about/img-2.jpg",
     items: [
       {
         title: "Global Reach",
@@ -117,7 +117,7 @@ export default function AboutPage() {
         description="Our mission is to democratize access to global financial services by providing businesses with the infrastructure they need to operate seamlessly across borders. We envision a world where financial barriers no longer limit business growth and innovation."
         buttonText="Learn More"
         buttonLink="#"
-        imageSrc="/assets/imgs/muxxus/image/img2.jpg"
+        imageSrc="/assets/images/about/img-3.jpg"
         imageAlt="Our Mission"
         imageFirst={true}
         className="bg-gray-50"
@@ -132,7 +132,7 @@ export default function AboutPage() {
         description="We are committed to transparency, security, and innovation. Our values guide everything we do, from building secure financial infrastructure to providing exceptional customer support and maintaining the highest standards of compliance."
         buttonText="View Our Values"
         buttonLink="#"
-        imageSrc="/assets/imgs/muxxus/image/img3.jpg"
+        imageSrc="/assets/images/carrers/img-2.jpg"
         imageAlt="Our Values"
         imageFirst={false}
         className="bg-white"
