@@ -78,11 +78,7 @@ const componentData = {
       label: "Discover Our AI Solutions",
       link: "#"
     },
-    shape_img: "/assets/imgs/shape/img-s-30.png",
-    small_shape: {
-      light: "/assets/imgs/shape/img-s-30.png",
-      dark: "/assets/imgs/shape/img-s-30-light.png"
-    }
+    shape_img: "/assets/images/accounts/it-expert.jpg",
   },
   
   muxxusSection2: {
@@ -255,7 +251,7 @@ export default function GlobalAccountsPage() {
       <TestimonialsSection {...componentData.testimonials} />
 
       {/* Supported Currencies Section */}
-      <SupportedCountriesSection {...componentData.supportedCurrencies} />
+      {/* <SupportedCountriesSection {...componentData.supportedCurrencies} /> */}
 
       {/* API Solutions Section */}
       <FeatureSection
@@ -263,8 +259,8 @@ export default function GlobalAccountsPage() {
         subtitle="Manage global accounts at scale with our platform API"
         description="Companies rely on our API to manage their most complex requirements. Programmatically create global accounts, authorize direct debit deductions for one-time or recurring purchases, generate account statements, and more."
         buttonText="View Documentation"
-        buttonLink="#"
-        imageSrc="/assets/imgs/muxxus/image/img5.jpg"
+        buttonLink="/developers"
+        imageSrc="/assets/images/accounts/api.jpg"
         imageAlt="API Solutions"
         badgeColor="white"
         imageFirst={false}
@@ -279,7 +275,7 @@ export default function GlobalAccountsPage() {
         subtitle="End-to-end global money management"
         description="When a payment is sent to one of your global accounts, those funds are instantly visible in your Muxxus wallet. Easily convert currencies at interbank rates and use Muxxus FX & Transfers to make fast and cost-effective domestic and international transfers."
         buttonText="Learn More"
-        buttonLink="#"
+        buttonLink="/accounts/fx-transfers"
         imageSrc="/assets/imgs/muxxus/image/img6.jpg"
         imageAlt="FX & Transfers"
         imageFirst={true}

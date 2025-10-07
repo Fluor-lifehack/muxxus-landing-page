@@ -186,14 +186,14 @@ const MuxxusSection2 = ({
               {/* Contenu en 2 colonnes - SÉPARÉ du header */}
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 {/* Colonne avec Image (position dynamique) */}
-                <div className={`space-y-10 ${imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
-                  {/* Image principale sans effet */}
+                <div className={`flex items-center justify-center ${imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
+                  {/* Image principale bien disposée */}
                   <ImageComponent
                     src={leftImage}
-                    width={400}
-                    height={300}
+                    width={500}
+                    height={400}
                     alt="Section Image"
-                    className="w-full max-w-md"
+                    className="w-full max-w-lg rounded-2xl shadow-lg"
                   />
                 </div>
                 
@@ -249,14 +249,14 @@ const MuxxusSection2 = ({
                          /* Layout original en 2 colonnes */
              <div className="grid lg:grid-cols-2 gap-16 items-center">
                {/* Colonne avec Image (position dynamique) */}
-               <div className={`space-y-10 ${imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
-                 {/* Image principale sans effet */}
+               <div className={`flex items-center justify-center ${imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
+                 {/* Image principale bien disposée */}
                  <ImageComponent
                    src={leftImage}
-                   width={400}
-                   height={300}
+                   width={500}
+                   height={400}
                    alt="Section Image"
-                   className="w-full max-w-md"
+                   className="w-full max-w-lg rounded-2xl shadow-lg"
                  />
                </div>
               
