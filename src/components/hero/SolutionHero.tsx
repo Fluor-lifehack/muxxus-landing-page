@@ -25,9 +25,8 @@ const SolutionHero = ({
 
   return (
     <section
-      className="bg-background-fixed relative h-screen w-full flex items-center justify-center overflow-hidden"
+      className="bg-background-fixed relative h-screen w-full flex items-center justify-center overflow-hidden -mt-20 lg:-mt-24"
       ref={containerRef}
-      style={{ marginTop: 0, paddingTop: 0 }}
     >
       <div className="absolute w-full h-full top-0 left-0 z-0">
         {bg_video ? (
