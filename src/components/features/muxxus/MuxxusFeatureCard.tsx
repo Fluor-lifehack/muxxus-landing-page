@@ -36,10 +36,11 @@ const MuxxusFeatureCard = ({ title, description, icon }: Props) => {
              src={icon} 
              height={32} 
              width={32} 
-             className="w-8 h-8 object-contain dark:invert flex-shrink-0"
+             className="w-8 h-8 object-contain flex-shrink-0"
+             style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(0.8) contrast(1.2)' }}
            />
            <h3
-             className="text-xl font-bold text-gray-900 dark:text-white"
+             className="text-xl font-bold text-blue-600 dark:text-blue-400"
              dangerouslySetInnerHTML={convertWithBr(title)}
            />
          </div>

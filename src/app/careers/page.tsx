@@ -46,7 +46,7 @@ const componentData = {
       "We're building the future of global finance and looking for exceptional talent to join our journey.",
       "At Muxxus, you'll work with cutting-edge technology, solve complex problems, and make a real impact on businesses worldwide."
     ],
-    leftImage: "/assets/images/about/img-2.jpg",
+    leftImage: "/assets/images/carrers/img-1.jpg",
     items: [
       {
         title: "Remote-First Culture",
@@ -117,7 +117,7 @@ export default function CareersPage() {
         description="We foster a culture of innovation, collaboration, and continuous learning. Our team is diverse, inclusive, and passionate about solving complex problems in global finance. We value transparency, ownership, and making a meaningful impact."
         buttonText="Learn About Our Culture"
         buttonLink="#"
-        imageSrc="/assets/imgs/muxxus/image/img4.jpg"
+        imageSrc="/assets/images/about/img-3.jpg"
         imageAlt="Our Culture"
         imageFirst={true}
         className="bg-gray-50"
@@ -132,7 +132,7 @@ export default function CareersPage() {
         description="We're always looking for exceptional talent to join our team. Browse our current openings and find the perfect role to advance your career while making a global impact in fintech."
         buttonText="View All Positions"
         buttonLink="#"
-        imageSrc="/assets/imgs/muxxus/image/img5.jpg"
+        imageSrc="/assets/images/carrers/img-2.jpg"
         imageAlt="Open Positions"
         imageFirst={false}
         className="bg-white"

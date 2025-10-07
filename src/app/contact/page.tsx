@@ -46,7 +46,7 @@ const componentData = {
       "Ready to transform your business with global financial services? Our team is here to help you succeed.",
       "Whether you need sales support, technical assistance, or partnership information, we're just a message away."
     ],
-    leftImage: "/assets/images/contact/img-1.jpg",
+    leftImage: "/assets/images/contact/img-5.jpg",
     items: [
       {
         title: "Sales Inquiries",
@@ -100,7 +100,7 @@ export default function ContactPage() {
       <SolutionHero
         title="Contact Us"
         description="Ready to transform your business with global financial services? Our team is here to help you succeed. Get in touch for sales inquiries, support, or partnership opportunities."
-        bg_image="/assets/images/contact/img-1.jpg"
+        bg_image="/assets/images/contact/img-4.jpg"
         action_btn={{ label: "Send Message", link: "mailto:hello@muxxus.com" }}
       />
 
