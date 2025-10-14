@@ -114,9 +114,12 @@ const DesignService = ({
 
               const colors = colorSchemes[index % colorSchemes.length];
 
+              // Prioriser le lien personnalisé s'il existe, sinon utiliser le slug
+              const serviceLink = service.data.link || `/${service.slug}`;
+
               return (
                 <Link
-                  href={`/service/design/${service.slug}`}
+                  href={serviceLink}
                   key={service.data.id}
                   className={`group ${colors.bg} rounded-2xl p-8 ${colors.shadow} transition-all duration-300 border ${colors.border} ${colors.hoverBorder} transform hover:scale-105`}
                 >

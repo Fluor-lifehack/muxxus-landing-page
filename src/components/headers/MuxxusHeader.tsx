@@ -209,14 +209,6 @@ export default function MuxxusHeader({ breadcrumb, navigationConfig = defaultNav
                 <span>EN</span>
               </button>
 
-              {/* Login Link */}
-              <a
-                href="/login"
-                className="hidden lg:inline-flex px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200"
-              >
-                Log in
-              </a>
-
               {/* Get Started Button */}
               <button
                 onClick={handleModalOpen}

@@ -48,31 +48,7 @@ type Props = {
  * Structure : Titre → Description → Bouton d'action | Image
  * 
  * @example
- * // Image à gauche (par défaut) avec fond transparent
- * <MuxxusAiSection2 
- *   title="AI Solutions"
- *   description={["Description 1", "Description 2"]}
- *   action_btn={{ label: "Learn More", link: "/ai" }}
- *   shape_img="/path/to/image.jpg"
- *   small_shape={{ light: "/light.jpg", dark: "/dark.jpg" }}
- *   imagePosition="left" // ou omettre pour la valeur par défaut
- * />
  * 
- * // Image à droite avec fond personnalisé
- * <MuxxusAiSection2 
- *   {...props}
- *   imagePosition="right"
- *   backgroundColor="bg-gray-900"
- *   textColor="text-white"
- * />
- * 
- * // Avec classe CSS personnalisée
- * <MuxxusAiSection2 
- *   {...props}
- *   backgroundColor="bg-primary"
- *   textColor="text-white"
- *   className="shadow-lg rounded-lg"
- * />
  * 
  * @param imagePosition - Position de l'image : 'left' (par défaut) ou 'right'
  * @param title - Titre principal de la section
@@ -134,7 +110,7 @@ const MuxxusAiSection2 = ({
               </div>
               
               {/* 3. Bouton d'action */}
-              <div
+              {/* <div
                 className="has_fade_anim"
                 data-fade-from="top"
                 data-fade-offset="70"
@@ -145,35 +121,20 @@ const MuxxusAiSection2 = ({
                   link={action_btn.link}
                   className="border-primary text-primary hover:bg-primary hover:text-white text-lg py-5 px-10"
                 />
-              </div>
+              </div> */}
             </div>
             
             {/* Colonne avec Image (position dynamique) */}
             <div className={`space-y-10 ${imagePosition === 'left' ? 'order-2' : 'order-1'}`}>
-              {/* 4. Image principale avec effet */}
+              {/* Image principale propre */}
               <div className="relative group">
-                <div className="absolute inset-0 bg-white rounded-2xl"></div>
                 <ImageComponent
                   src={shape_img}
-                  width={280}
-                  height={220}
+                  width={400}
+                  height={300}
                   alt="AI Decorative"
-                  className="relative w-full max-w-xs rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full max-w-md rounded-2xl shadow-lg transform group-hover:scale-105 transition-transform duration-500"
                 />
-                
-                {/* Small shape flottant */}
-                {small_shape && (
-                  <div className="absolute -top-3 -right-3 animate-float">
-                    <ImageComponent
-                      src={small_shape.light}
-                      darkSrc={small_shape.dark}
-                      width={70}
-                      height={140}
-                      alt="small shape"
-                      className="drop-shadow-lg"
-                    />
-                  </div>
-                )}
               </div>
             </div>
           </div>

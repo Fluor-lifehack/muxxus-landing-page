@@ -23,10 +23,6 @@ const AboutBoldTestimonial = ({ testimonials }: Props) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
-  // Debug: Log des données reçues
-  console.log('AboutBoldTestimonial testimonials:', testimonials);
-  console.log('Testimonials length:', testimonials?.length);
-
   useEffect(() => {
     if (!api) return;
 

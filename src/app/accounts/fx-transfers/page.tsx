@@ -7,7 +7,7 @@ import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";  
 import FeatureSection from "@/components/muxxus/FeatureSection";
 import SectionDivider from "@/components/ui/SectionDivider";
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import SupportedCountriesSection from "@/components/muxxus/SupportedCountriesSection";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
@@ -64,32 +64,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Données pour le composant DetailHero
-const heroData = {
-  title: "Fast, cost-effective international money transfer services",
-  shape: {
-    light: "/assets/imgs/shape/img-s-29.png",
-    dark: "/assets/imgs/shape/img-s-29-light.png"
-  },
-  client_img: {
-    light: "/assets/imgs/muxxus/image/img6.jpg",
-    dark: "/assets/imgs/muxxus/image/img6.jpg"
-  },
-  customers: "200+ countries and regions, 60+ currencies",
-  info: {
-    thumb: {
-      light: "/assets/imgs/muxxus/image/img6.jpg",
-      dark: "/assets/imgs/muxxus/image/img6.jpg"
-    },
-    description: "Streamline sending payments abroad to suppliers and employees around the world, and access market-leading international FX rates no matter the transaction size.",
-    action_btn: {
-      label: "Get Started",
-      link: "#"
-    }
-  },
-  image: "/assets/imgs/muxxus/image/img6.jpg",
-  feature_text: "Global Transfer Solutions"
-};
+
 
 // Données pour les composants
 const componentData = {
@@ -116,25 +91,25 @@ const componentData = {
       "Experience seamless currency exchange with our innovative platform that connects you to global FX markets.",
       "From real-time rates to instant transfers, we provide everything you need to succeed in international currency trading."
     ],
-    leftImage: "/assets/imgs/muxxus/image/img2.jpg",
+    leftImage: "/assets/images/accounts/trading-sec.jpg",
     items: [
       {
-        icon: "💱",
+        // icon: "💱",
         title: "Interbank Rates",
         description: "Access the best currency exchange rates available in the market."
       },
       {
-        icon: "⚡",
+        // icon: "⚡",
         title: "Instant Transfers",
         description: "Send money globally in seconds with our real-time transfer system."
       },
       {
-        icon: "🌍",
+        // icon: "🌍",
         title: "Global Coverage",
         description: "Transfer to 150+ countries with 50+ supported currencies."
       },
       {
-        icon: "🔒",
+        // icon: "🔒",
         title: "Bank-Grade Security",
         description: "Enterprise-level security with end-to-end encryption and compliance."
       }
@@ -151,25 +126,25 @@ const componentData = {
       "Pay your global suppliers and employees without the expense and hassle of the traditional banking system.",
       "Have payments received in as little as one business day with the full amount on delivery guaranteed."
     ],
-    leftImage: "/assets/imgs/muxxus/image/img4.jpg",
+    leftImage: "/assets/images/about/img-2.jpg",
     items: [
       {
-        icon: "🌍",
+        // icon: "🌍",
         title: "200+ countries and regions, 60+ currencies",
         description: "Have payments received in as little as one business day with the full amount on delivery guaranteed."
       },
       {
-        icon: "💱",
+        // icon: "💱",
         title: "Access interbank exchange rates",
         description: "Enjoy access to bank-beating rates no matter the transaction size and avoid hidden transaction fees."
       },
       {
-        icon: "⚡",
+        // icon: "⚡",
         title: "Work smarter, not harder",
         description: "Use batch transfers to send funds in one go to multiple recipients around the world, each with a specified amount."
       },
       {
-        icon: "📊",
+        // icon: "📊",
         title: "Simplify your bookkeeping",
         description: "Connect Muxxus to your favourite accounting software in just a few clicks to automatically reconcile transfers."
       }
@@ -327,19 +302,31 @@ export default function FXTransfersPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="FX & Transfers"
+        description="Exchange currencies at interbank rates with fast, secure, and cost-effective international money transfers for businesses."
+        bg_video=""
+        bg_image="/assets/images/accounts/transfert.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
+<FeatureSection
+        title="Multi-Currency Accounts"
+        subtitle="Hold and manage multiple currencies in one place"
+        description="Open accounts in different currencies to avoid conversion fees, hold funds in local currencies, and optimize your international cash management strategy."
+        buttonText="Learn More"
+        buttonLink="/accounts/global-accounts"
+        imageSrc="/assets/images/accounts/currency.png"
+        imageAlt="Multi-Currency Accounts"
+        imageFirst={true}
+        className={pageStyles.colors.light}
+      />
       {/* Key Benefits Section */}
       <MuxxusSection2 
         {...componentData.keyBenefitsSection2} 
         fullWidthHeader={true} 
       />
-
-      {/* Customer Testimonials Section */}
-      <TestimonialsSection {...componentData.testimonials} />
-
-      {/* Supported Countries Section */}
-      <SupportedCountriesSection {...componentData.supportedCountries} />
+      <MuxxusSection2 {...componentData.muxxusSection2} />
 
       {/* API Solutions Section */}
       <FeatureSection
@@ -347,8 +334,8 @@ export default function FXTransfersPage() {
         subtitle="Integrate real-time FX trading into your applications"
         description="Developers can access our FX platform through APIs to build custom trading applications, automate currency exchanges, and integrate real-time rates into their systems."
         buttonText="View API Documentation"
-        buttonLink="#"
-        imageSrc="/assets/imgs/muxxus/image/img5.jpg"
+        buttonLink="/developers"
+        imageSrc="/assets/images/accounts/trading.jpg"
         imageAlt="FX Trading APIs"
         badgeColor="white"
         imageFirst={false}
@@ -358,23 +345,11 @@ export default function FXTransfersPage() {
       <SectionDivider variant="gradient" size="lg" color="primary" />
 
       {/* Multi-Currency Accounts Section */}
-      <FeatureSection
-        title="Multi-Currency Accounts"
-        subtitle="Hold and manage multiple currencies in one place"
-        description="Open accounts in different currencies to avoid conversion fees, hold funds in local currencies, and optimize your international cash management strategy."
-        buttonText="Learn More"
-        buttonLink="#"
-        imageSrc="/assets/imgs/muxxus/image/img6.jpg"
-        imageAlt="Multi-Currency Accounts"
-        imageFirst={true}
-        className={pageStyles.colors.light}
-      />
+      
 
-      <SectionDivider variant="gradient" size="lg" color="primary" />
 
     
       {/* Section MuxxusSection2 */}
-      <MuxxusSection2 {...componentData.muxxusSection2} />
 
       {/* FAQ et Footer */}
       <ServiceDetailsFaq 
@@ -386,3 +361,4 @@ export default function FXTransfersPage() {
     </>
   );
 }
+

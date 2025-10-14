@@ -140,12 +140,6 @@ const SideNavModal = () => {
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <div className="flex gap-4">
                   <Link
-                    href="/login"
-                    className="flex-1 text-center py-2 text-gray-700 hover:text-gray-900 font-medium text-sm"
-                  >
-                    Log in
-                  </Link>
-                  <Link
                     href="/demo"
                     className="flex-1 text-center py-2 bg-purple-600 text-white rounded-md font-medium text-sm hover:bg-purple-700"
                   >

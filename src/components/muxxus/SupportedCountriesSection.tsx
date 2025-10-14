@@ -8,11 +8,6 @@ import hasTextMovAnim from "@/lib/animation/hasTextMovAnim";
 type CountryData = {
   name: string;
   currency: string;
-  currencyName: string;
-  exchangeRate: string;
-  bankCode: string;
-  accountFormat: string;
-  features: string[];
 };
 
 type Props = {
@@ -22,20 +17,6 @@ type Props = {
   className?: string;
 };
 
-/**
- * SupportedCountriesSection - Composant de section des pays supportés
- * 
- * Structure : Titre + Description + Grille de pays avec drapeaux et devises
- * 
- * @example
- * <SupportedCountriesSection 
- *   title="Supported Countries"
- *   description="Description of supported countries"
- *   countries={[
- *     { name: "France", currency: "EUR", currencyName: "Euro", ... }
- *   ]}
- * />
- */
 const SupportedCountriesSection = ({ 
   title, 
   description, 
@@ -44,12 +25,6 @@ const SupportedCountriesSection = ({
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
 
-  // Debug: Log des données reçues
-  console.log('SupportedCountriesSection props:', { title, description, countries });
-  console.log('Countries array length:', countries?.length);
-  console.log('Countries data:', countries);
-
-  // Fonction pour obtenir le drapeau du pays
   const getCountryFlag = (countryName: string): string => {
     const flagMap: { [key: string]: string } = {
       'Ivory Coast': '🇨🇮',
@@ -58,47 +33,42 @@ const SupportedCountriesSection = ({
       'Ethiopia': '🇪🇹',
       'Canada': '🇨🇦',
       'United Kingdom': '🇬🇧',
-      'United States': '🇺🇸'
+      'United States': '🇺🇸',
+      'European Union': '🇪🇺',
+      'West Africa': '🌍'
     };
     return flagMap[countryName] || '🌍';
   };
 
-  useGSAP(
-    () => {
-      hasFadeAnim();
-      hasTextMovAnim();
-    },
-    { scope: containerRef }
-  );
-
-
+  useGSAP(() => {
+    hasFadeAnim();
+    hasTextMovAnim();
+  }, { scope: containerRef });
 
   return (
-    <section className={`py-20 bg-gray-900 text-white ${className}`} ref={containerRef}>
+    <section className={`py-16 bg-gray-900 text-white ${className}`} ref={containerRef}>
       <div className="container2">
-        <div className="text-center mb-16">
-          <h2 className="has_text_mov_anim text-[40px] md:text-[50px] lg:text-[60px] font-bold mb-6">
+        <div className="text-center mb-10">
+          <h2 className="has_text_mov_anim text-3xl md:text-5xl font-bold mb-4">
             {title}
           </h2>
-          <p className="has_fade_anim text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="has_fade_anim text-lg text-gray-300 max-w-2xl mx-auto">
             {description}
           </p>
         </div>
-        
-        {/* Grille des pays avec drapeaux et devises */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-12">
+
+        <div className="flex justify-center">
+          <div className="grid grid-cols-3 gap-8 max-w-md">
           {countries && countries.length > 0 ? (
             countries.map((country, index) => (
               <div 
-                key={index} 
-                className="has_fade_anim bg-gray-800 p-4 rounded-[16px] text-center border border-gray-700 hover:shadow-md transition-shadow hover:border-gray-600"
+                key={index}
+                className="has_fade_anim flex flex-col items-center bg-gray-800 p-4 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors"
                 data-delay={index * 0.05}
               >
-                <div className="text-3xl mb-4">
-                  {getCountryFlag(country.name)}
-                </div>
-                <div className="text-xl font-bold text-white mb-3">{country.name}</div>
-                <div className="text-sm text-gray-400 font-medium">{country.currency}</div>
+                <div className="text-3xl mb-2">{getCountryFlag(country.name)}</div>
+                <div className="text-sm text-gray-400">{country.currency}</div>
+                <div className="font-semibold">{country.name}</div>
               </div>
             ))
           ) : (
@@ -106,11 +76,8 @@ const SupportedCountriesSection = ({
               Aucun pays disponible pour le moment
             </div>
           )}
+          </div>
         </div>
-
-
-
-
       </div>
     </section>
   );

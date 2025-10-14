@@ -1,313 +1,152 @@
-import Image from "next/image";
-import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
-import CircleFillButton from "@/components/elements/button/CircleFillButton";
-import {FaGlobe, FaUsers, FaRocket, FaChartLine, FaShieldAlt, FaBuilding } from "react-icons/fa";
+import type { Metadata } from 'next';
+import React from "react";
+import SolutionHero from "@/components/hero/SolutionHero";
+import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
+import FeatureSection from "@/components/muxxus/FeatureSection";
+import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
+import SectionDivider from "@/components/ui/SectionDivider";
 
-const PartnersPage = () => {
-  const partnerCategories = [
-    {
-      title: "Technology Partners",
-      description: "Integrate with leading platforms and tools",
-      icon: FaRocket,
-      count: 45,
-      color: "from-blue-50 to-blue-100",
-      iconColor: "bg-blue-100 text-blue-600"
+// Métadonnées Next.js
+export const metadata: Metadata = {
+  title: "Partners | Muxxus Partner Network | Muxxus",
+  description: "Join the Muxxus partner network and help businesses access global financial infrastructure. Explore partnership opportunities for technology, financial institutions, and consulting firms.",
+  keywords: ["partners", "partnership", "muxxus partners", "fintech partners", "integration partners", "reseller program"],
+  openGraph: {
+    title: "Partners | Muxxus Partner Network | Muxxus",
+    description: "Join the Muxxus partner network and help businesses access global financial infrastructure.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Muxxus",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Partners | Muxxus Partner Network | Muxxus",
+    description: "Join the Muxxus partner network and help businesses access global financial infrastructure.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    {
-      title: "Financial Institutions",
-      description: "Global banking and payment networks",
-      icon: FaBuilding,
-      count: 28,
-      color: "from-green-50 to-green-100",
-      iconColor: "bg-green-100 text-green-600"
-    },
-    {
-      title: "Consulting Firms",
-      description: "Expert guidance for global expansion",
-      icon: FaUsers,
-      count: 32,
-      color: "from-purple-50 to-purple-100",
-      iconColor: "bg-purple-100 text-purple-600"
-    },
-    {
-      title: "Regulatory Partners",
-      description: "Compliance and legal expertise",
-      icon: FaShieldAlt,
-      count: 18,
-      color: "from-orange-50 to-orange-100",
-      iconColor: "bg-orange-100 text-orange-600"
-    }
-  ];
-
-  const featuredPartners = [
-    {
-      name: "Stripe",
-      logo: "/assets/imgs/client/client-1.png",
-      category: "Payment Processing",
-      description: "Leading payment platform for internet businesses",
-      partnership: "Payment Gateway Integration",
-      year: "2022"
-    },
-    {
-      name: "Shopify",
-      logo: "/assets/imgs/client/client-2.png",
-      category: "E-commerce Platform",
-      description: "Complete commerce solution for online stores",
-      partnership: "Multi-currency Checkout",
-      year: "2021"
-    },
-    {
-      name: "Salesforce",
-      logo: "/assets/imgs/client/client-3.png",
-      category: "CRM Platform",
-      description: "Customer relationship management software",
-      partnership: "Financial Data Integration",
-      year: "2023"
-    },
-    {
-      name: "Deloitte",
-      logo: "/assets/imgs/client/client-4.png",
-      category: "Consulting",
-      description: "Global professional services network",
-      partnership: "Regulatory Compliance",
-      year: "2022"
-    },
-    {
-      name: "AWS",
-      logo: "/assets/imgs/client/client-5.png",
-      category: "Cloud Infrastructure",
-      description: "Cloud computing platform",
-      partnership: "Infrastructure & Security",
-      year: "2021"
-    },
-    {
-      name: "PwC",
-      logo: "/assets/imgs/client/client-6.png",
-      category: "Professional Services",
-      description: "Global network of firms",
-      partnership: "Tax & Advisory Services",
-      year: "2023"
-    }
-  ];
-
-  const partnershipBenefits = [
-    {
-      icon: FaGlobe,
-      title: "Global Reach",
-      description: "Access to 150+ countries through our partner network"
-    },
-    {
-      icon: FaChartLine,
-      title: "Revenue Growth",
-      description: "Average 40% increase in customer acquisition through partnerships"
-    },
-    {
-      icon: FaShieldAlt,
-      title: "Risk Mitigation",
-      description: "Shared compliance and regulatory expertise"
-    },
-    {
-      icon: FaUsers,
-      title: "Customer Access",
-      description: "Direct access to our combined customer base"
-    }
-  ];
-
-  const successStories = [
-    {
-      partner: "TechFlow Solutions",
-      industry: "SaaS",
-      result: "Expanded to 12 new markets in 8 months",
-      metrics: "300% revenue increase, 50% faster market entry"
-    },
-    {
-      partner: "Global Retail Corp",
-      industry: "E-commerce",
-      result: "Launched operations in 8 European countries",
-      metrics: "2.5x customer base growth, 60% cost reduction"
-    },
-    {
-      partner: "FinTech Innovations",
-      industry: "Financial Services",
-      result: "Secured regulatory approval in 5 jurisdictions",
-      metrics: "90% faster compliance process, 40% cost savings"
-    }
-  ];
-
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-indigo-50 to-purple-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <BreadcrumbNav 
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Partners", href: "/partners", isActive: true }
-              ]} 
-            />
-            <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
-              Partner with Muxxus
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Join our global network of technology partners, financial institutions, and consulting firms. 
-              Together, we&apos;re building the future of global business banking.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CircleFillButton 
-                text="Become a Partner" 
-                href="#partnership"
-                className="bg-indigo-600 hover:bg-indigo-700"
-              />
-              <CircleFillButton 
-                text="View Partners" 
-                href="#featured"
-                className="border-indigo-600 text-indigo-600 hover:bg-indigo-50"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Categories */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Partnership Categories</h2>
-            <p className="text-lg text-gray-600">Choose the partnership model that fits your business</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {partnerCategories.map((category, index) => (
-              <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-                <div className={`w-16 h-16 ${category.iconColor} rounded-xl flex items-center justify-center mx-auto mb-6`}>
-                  <category.icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{category.title}</h3>
-                <p className="text-gray-600 mb-4">{category.description}</p>
-                <div className="text-indigo-600 font-semibold">{category.count} partners</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Partners */}
-      <section id="featured" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Partners</h2>
-            <p className="text-lg text-gray-600">Leading companies trust Muxxus for global business solutions</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredPartners.map((partner, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <Image 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      width={48}
-                      height={48}
-                      className="w-12 h-12 object-contain"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{partner.name}</h3>
-                    <span className="text-sm text-gray-500">{partner.category}</span>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-4">{partner.description}</p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Partnership:</span>
-                    <span className="font-medium">{partner.partnership}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Since:</span>
-                    <span className="font-medium">{partner.year}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership Benefits */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Partner with Us?</h2>
-            <p className="text-lg text-gray-600">Discover the advantages of joining our partner ecosystem</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {partnershipBenefits.map((benefit, index) => (
-              <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-8 h-8 text-indigo-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Partnership Success Stories</h2>
-            <p className="text-lg text-gray-600">Real results from our collaborative partnerships</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl border border-gray-200">
-                <div className="mb-4">
-                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">
-                    {story.industry}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{story.partner}</h3>
-                <p className="text-gray-600 mb-4">{story.result}</p>
-                <div className="text-sm text-gray-500">
-                  <strong>Key Metrics:</strong> {story.metrics}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership CTA */}
-      <section id="partnership" className="py-20 bg-indigo-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Partner with Us?</h2>
-          <p className="text-indigo-100 text-lg mb-8">
-            Join our network of successful partners and help businesses go global
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CircleFillButton 
-              text="Apply for Partnership" 
-              href="/contact"
-              className="bg-white text-indigo-600 hover:bg-gray-100"
-            />
-            <CircleFillButton 
-              text="Schedule a Call" 
-              href="/contact"
-              className="border-white text-white hover:bg-white hover:text-indigo-600"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <MuxxusFooter />
-    </main>
-  );
+  },
 };
 
-export default PartnersPage;
+// Données pour les composants
+const componentData = {
+  keyBenefitsSection2: {
+    title: "Partner with Muxxus",
+    description: [
+      "Join our global partner network and help businesses access world-class financial infrastructure.",
+      "Whether you're a technology provider, financial institution, or consulting firm, we have partnership opportunities that can drive mutual growth."
+    ],
+    leftImage: "/assets/images/about/img-4.jpg",
+    items: [
+      {
+        title: "Technology Partners",
+        description: "Integrate Muxxus APIs into your platform and offer comprehensive financial services to your customers."
+      },
+      {
+        title: "Financial Institutions",
+        description: "Partner with us to expand your reach and offer innovative financial products to businesses worldwide."
+      },
+      {
+        title: "Consulting Partners",
+        description: "Help your clients implement global financial solutions with our comprehensive partner program."
+      },
+      {
+        title: "Reseller Program",
+        description: "Earn recurring revenue by reselling Muxxus solutions to businesses in your network."
+      }
+    ]
+  }
+};
 
+// Données pour les sections FAQ
+const faqData = {
+  faq_title: "Partnership FAQ",
+  faq_description: "Common questions about partnering with Muxxus",
+  faqs: [
+    {
+      question: "What types of partnerships does Muxxus offer?",
+      answer: "We offer several partnership types including technology integrations, financial institution partnerships, consulting partnerships, and reseller programs. Each partnership type has specific benefits and requirements."
+    },
+    {
+      question: "How do I become a Muxxus partner?",
+      answer: "To become a partner, please contact our partnerships team at partners@muxxus.com. We'll review your application and guide you through our onboarding process."
+    },
+    {
+      question: "What support do partners receive?",
+      answer: "Partners receive comprehensive support including technical documentation, dedicated account management, marketing resources, and co-marketing opportunities."
+    },
+    {
+      question: "Are there revenue sharing opportunities?",
+      answer: "Yes, we offer competitive revenue sharing programs for qualified partners, with rates varying based on partnership type and volume commitments."
+    }
+  ]
+};
+
+// Composant principal de la page
+export default function PartnersPage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <SolutionHero
+        title="Partners"
+        description="Join our global partner network and help businesses access world-class financial infrastructure. Explore partnership opportunities that drive mutual growth."
+        bg_image="/assets/images/about/img-4.jpg"
+        action_btn={{ label: "Become a Partner", link: "mailto:partners@muxxus.com" }}
+      />
+
+      {/* Key Benefits Section */}
+      <MuxxusSection2 
+        {...componentData.keyBenefitsSection2} 
+        fullWidthHeader={true} 
+      />
+
+      {/* Partnership Types Section */}
+      <FeatureSection
+        title="Partnership Types"
+        subtitle="Choose the right partnership for your business"
+        description="We offer flexible partnership models designed to meet the needs of different organizations. From technology integrations to reseller programs, find the partnership that aligns with your business goals."
+        buttonText="Learn More"
+        buttonLink="#"
+        imageSrc="/assets/imgs/muxxus/image/img7.jpg"
+        imageAlt="Partnership Types"
+        imageFirst={true}
+        className="bg-gray-50"
+      />
+
+      <SectionDivider variant="gradient" size="lg" color="primary" />
+
+      {/* Partner Benefits Section */}
+      <FeatureSection
+        title="Partner Benefits"
+        subtitle="Why partner with Muxxus"
+        description="Our partners enjoy comprehensive support, competitive revenue sharing, and access to cutting-edge financial technology. Join a network of successful partners helping businesses thrive in the global economy."
+        buttonText="View Benefits"
+        buttonLink="#"
+        imageSrc="/assets/imgs/muxxus/image/img8.jpg"
+        imageAlt="Partner Benefits"
+        imageFirst={false}
+        className="bg-white"
+      />
+
+      {/* FAQ Section */}
+      <ServiceDetailsFaq 
+        faqs={faqData.faqs} 
+        faqTitle={faqData.faq_title} 
+      />
+
+      {/* Newsletter et Footer */}
+      <MuxxusNewsletter />
+      <MuxxusFooter />
+    </>
+  );
+}

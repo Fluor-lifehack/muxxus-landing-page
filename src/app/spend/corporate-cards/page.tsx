@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DetailHero from "@/components/hero/DetailHero";
+import SolutionHero from "@/components/hero/SolutionHero";
 import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
 import TestimonialsSection from "@/components/muxxus/TestimonialsSection";
 import FeatureSection from "@/components/muxxus/FeatureSection";
@@ -283,7 +283,13 @@ export default function CorporateCardsPage() {
   return (
     <>
       {/* Hero Section */}
-      <DetailHero {...heroData} />
+      <SolutionHero
+        title="Corporate Cards"
+        description="Streamline your business spending with multi-currency corporate cards. Manage expenses, control budgets, and provide employees with flexible payment solutions worldwide."
+        bg_video=""
+        bg_image="/assets/imgs/muxxus/image/img6.jpg"
+        action_btn={{ label: "Get Started", link: "#" }}
+      />
 
       {/* Key Benefits Section */}
       <MuxxusSection2 

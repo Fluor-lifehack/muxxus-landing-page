@@ -1,275 +1,152 @@
-import BreadcrumbNav from "@/components/navigation/BreadcrumbNav";
-import CircleFillButton from "@/components/elements/button/CircleFillButton";
-import DesignSectionTitle from "@/components/sectionTitle/DesignSectionTitle";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaHeadset } from "react-icons/fa";
+import type { Metadata } from 'next';
+import React from "react";
+import SolutionHero from "@/components/hero/SolutionHero";
+import MuxxusSection2 from "@/components/muxxus/MuxxusSection2";
+import FeatureSection from "@/components/muxxus/FeatureSection";
+import ServiceDetailsFaq from "@/components/service/accounts/ServiceDetailsFaq";
+import MuxxusNewsletter from "@/components/newsletter/MuxxusNewsletter";
 import MuxxusFooter from "@/components/footer/MuxxusFooter";
+import SectionDivider from "@/components/ui/SectionDivider";
 
-const ContactPage = () => {
-  const contactMethods = [
-    {
-      icon: FaPhone,
-      title: "Phone Support",
-      description: "Speak directly with our team",
-      contact: "+1 (555) 123-4567",
-      availability: "Mon-Fri, 9AM-6PM EST",
-      color: "from-blue-50 to-blue-100",
-      iconColor: "bg-blue-100 text-blue-600"
+// Métadonnées Next.js
+export const metadata: Metadata = {
+  title: "Contact Us | Get in Touch with Muxxus | Muxxus",
+  description: "Get in touch with the Muxxus team. We're here to help you implement global financial solutions. Contact us for sales inquiries, support, or partnership opportunities.",
+  keywords: ["contact", "contact us", "get in touch", "sales", "support", "partnership", "muxxus contact"],
+  openGraph: {
+    title: "Contact Us | Get in Touch with Muxxus | Muxxus",
+    description: "Get in touch with the Muxxus team. We're here to help you implement global financial solutions.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Muxxus",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Get in Touch with Muxxus | Muxxus",
+    description: "Get in touch with the Muxxus team. We're here to help you implement global financial solutions.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    {
-      icon: FaEnvelope,
-      title: "Email Support",
-      description: "Send us a detailed message",
-      contact: "hello@muxxus.com",
-      availability: "Response within 4 hours",
-      color: "from-green-50 to-green-100",
-      iconColor: "bg-green-100 text-green-600"
-    },
-    {
-      icon: FaHeadset,
-      title: "Live Chat",
-      description: "Get instant help online",
-      contact: "Available on website",
-      availability: "24/7 availability",
-      color: "from-purple-50 to-purple-100",
-      iconColor: "bg-purple-100 text-purple-600"
-    }
-  ];
-
-  const officeLocations = [
-    {
-      city: "New York",
-      country: "United States",
-      address: "123 Business Ave, Suite 100",
-      zipCode: "NY 10001",
-      phone: "+1 (555) 123-4567",
-      email: "nyc@muxxus.com"
-    },
-    {
-      city: "London",
-      country: "United Kingdom",
-      address: "456 Finance Street, Floor 3",
-      zipCode: "EC2A 1BR",
-      phone: "+44 20 1234 5678",
-      email: "london@muxxus.com"
-    },
-    {
-      city: "Singapore",
-      country: "Singapore",
-      address: "789 Tech Boulevard, Level 5",
-      zipCode: "018956",
-      phone: "+65 6123 4567",
-      email: "singapore@muxxus.com"
-    }
-  ];
-
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-50 to-teal-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <BreadcrumbNav 
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Contact", href: "/contact", isActive: true }
-              ]} 
-            />
-            <h1 className="text-5xl font-bold text-gray-900 mt-8 mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Ready to transform your business with global financial services? 
-              Our team is here to help you succeed.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CircleFillButton 
-                text="Schedule a Call" 
-                href="#contact-form"
-                className="bg-emerald-600 hover:bg-emerald-700"
-              />
-              <CircleFillButton 
-                text="View Office Locations" 
-                href="#locations"
-                className="border-emerald-600 text-emerald-600 hover:bg-emerald-50"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Methods */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <DesignSectionTitle 
-            title="How to Reach Us"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            {contactMethods.map((method, index) => (
-              <div key={index} className="text-center p-8 rounded-xl hover:shadow-lg transition-shadow">
-                <div className={`w-16 h-16 ${method.iconColor} rounded-xl flex items-center justify-center mx-auto mb-6`}>
-                  <method.icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{method.title}</h3>
-                <p className="text-gray-600 mb-4">{method.description}</p>
-                <div className="text-emerald-600 font-semibold mb-2">{method.contact}</div>
-                <div className="text-sm text-gray-500">{method.availability}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
-            <p className="text-lg text-gray-600">Tell us about your business needs and we&apos;ll get back to you quickly</p>
-          </div>
-          <form className="bg-white p-8 rounded-xl shadow-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                  First Name *
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                  Last Name *
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                />
-              </div>
-            </div>
-            <div className="mb-6">
-              <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                Company Name *
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                How can we help? *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                placeholder="Tell us about your business needs, challenges, or questions..."
-              ></textarea>
-            </div>
-            <div className="text-center">
-              <CircleFillButton 
-                text="Send Message" 
-                href="#"
-                className="bg-emerald-600 hover:bg-emerald-700"
-              />
-            </div>
-          </form>
-        </div>
-      </section>
-
-      {/* Office Locations */}
-      <section id="locations" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Global Offices</h2>
-            <p className="text-lg text-gray-600">Find us around the world</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {officeLocations.map((office, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <FaMapMarkerAlt className="w-5 h-5 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">{office.city}</h3>
-                    <p className="text-sm text-gray-600">{office.country}</p>
-                  </div>
-                </div>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <p>{office.address}</p>
-                  <p>{office.zipCode}</p>
-                  <p className="flex items-center gap-2">
-                    <FaPhone className="w-3 h-3" />
-                    {office.phone}
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <FaEnvelope className="w-3 h-3" />
-                    {office.email}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Let&apos;s discuss how Muxxus can help your business go global
-          </p>
-          <CircleFillButton 
-            text="Schedule a Consultation" 
-            href="#contact-form"
-            className="bg-emerald-600 hover:bg-emerald-700"
-          />
-        </div>
-      </section>
-
-      {/* Footer */}
-      <MuxxusFooter />
-    </main>
-  );
+  },
 };
 
-export default ContactPage; 
+// Données pour les composants
+const componentData = {
+  keyBenefitsSection2: {
+    title: "Get in Touch",
+    description: [
+      "Ready to transform your business with global financial services? Our team is here to help you succeed.",
+      "Whether you need sales support, technical assistance, or partnership information, we're just a message away."
+    ],
+    leftImage: "/assets/images/contact/img-5.jpg",
+    items: [
+      {
+        title: "Sales Inquiries",
+        description: "Contact our sales team to discuss your business needs and explore Muxxus solutions."
+      },
+      {
+        title: "Technical Support",
+        description: "Get help with implementation, API integration, or technical questions from our support team."
+      },
+      {
+        title: "Partnership Opportunities",
+        description: "Interested in partnering with Muxxus? Reach out to our partnerships team."
+      },
+      {
+        title: "General Questions",
+        description: "Have questions about our services, pricing, or capabilities? We're here to help."
+      }
+    ]
+  }
+};
+
+// Données pour les sections FAQ
+const faqData = {
+  faq_title: "Contact FAQ",
+  faq_description: "Common questions about contacting Muxxus",
+  faqs: [
+    {
+      question: "How can I contact Muxxus?",
+      answer: "You can reach us via email at hello@muxxus.com, through our contact form, or by scheduling a call with our sales team. We typically respond within 24 hours."
+    },
+    {
+      question: "What information should I include in my inquiry?",
+      answer: "Please include your company name, business requirements, expected transaction volumes, and any specific questions you have about our services. This helps us provide more targeted assistance."
+    },
+    {
+      question: "Do you offer phone support?",
+      answer: "Yes, we offer phone support for enterprise customers and can schedule calls for sales inquiries. Contact us to arrange a call with the appropriate team member."
+    },
+    {
+      question: "How quickly can I get started with Muxxus?",
+      answer: "Our onboarding process typically takes 1-2 weeks depending on your requirements. We'll work with you to ensure a smooth implementation and go-live process."
+    }
+  ]
+};
+
+// Composant principal de la page
+export default function ContactPage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <SolutionHero
+        title="Contact Us"
+        description="Ready to transform your business with global financial services? Our team is here to help you succeed. Get in touch for sales inquiries, support, or partnership opportunities."
+        bg_image="/assets/images/contact/img-4.jpg"
+        action_btn={{ label: "Send Message", link: "mailto:hello@muxxus.com" }}
+      />
+
+      {/* Key Benefits Section */}
+      <MuxxusSection2 
+        {...componentData.keyBenefitsSection2} 
+        fullWidthHeader={true} 
+      />
+
+      {/* Contact Methods Section */}
+      <FeatureSection
+        title="Multiple Ways to Reach Us"
+        subtitle="Choose your preferred contact method"
+        description="We offer multiple ways to get in touch with our team. Whether you prefer email, phone, or scheduling a call, we're here to help you with your global financial needs."
+        buttonText="Contact Us Now"
+        buttonLink="mailto:hello@muxxus.com"
+        imageSrc="/assets/images/contact/img-2.jpg"
+        imageAlt="Contact Methods"
+        imageFirst={true}
+        className="bg-gray-50"
+      />
+
+      <SectionDivider variant="gradient" size="lg" color="primary" />
+
+      {/* Support Section */}
+      <FeatureSection
+        title="24/7 Support"
+        subtitle="We're here when you need us"
+        description="Our dedicated support team is available around the clock to help you with any questions or issues. From technical support to account management, we ensure your success with Muxxus."
+        buttonText="Get Support"
+        buttonLink="mailto:support@muxxus.com"
+        imageSrc="/assets/images/contact/img-3.jpg"
+        imageAlt="24/7 Support"
+        imageFirst={false}
+        className="bg-white"
+      />
+
+      {/* FAQ Section */}
+      <ServiceDetailsFaq 
+        faqs={faqData.faqs} 
+        faqTitle={faqData.faq_title} 
+      />
+
+      {/* Newsletter et Footer */}
+      <MuxxusNewsletter />
+      <MuxxusFooter />
+    </>
+  );
+}

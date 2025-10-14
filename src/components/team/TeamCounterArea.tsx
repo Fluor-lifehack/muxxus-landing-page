@@ -27,14 +27,14 @@ const TeamCounterArea = ({
   return (
     <div className="counter_area">
       <div className="counter_area_inner grid gap-[10px] xl:grid-cols-[1fr_670px] 2xl:grid-cols-[1fr_870px]">
-        <div className="thumb">
+        <div className="thumb flex items-stretch h-full">
           <Image
             src={thumb1}
             alt="thumb_1"
             width={1040}
             height={870}
-            className="h-full w-full max-w-full"
-            style={{ objectFit: "cover" }}
+            className="w-full max-w-full object-cover"
+            style={{ height: "100%" }}
           />
         </div>
         <div className="counter_wrapper_box">

@@ -26,56 +26,50 @@ const MuxxusFooter = () => {
     {
       title: "Products",
       links: [
-        { name: "Business Accounts", href: "/business-accounts" },
-        { name: "Spend Management", href: "/spend" },
+        { name: "Global Accounts", href: "/accounts/global-accounts" },
         { name: "FX & Transfers", href: "/accounts/fx-transfers" },
         { name: "Corporate Cards", href: "/spend/corporate-cards" },
+        { name: "Expense Management", href: "/spend/expense-management" },
         { name: "Bill Pay", href: "/spend/bill-pay" },
-        { name: "Platform APIs", href: "/platform-apis" },
+        { name: "Checkout", href: "/payments/checkout" },
       ]
     },
     {
-      title: "Solutions",
+      title: "Payments",
       links: [
-        { name: "E-commerce", href: "/solutions/ecommerce" },
-        { name: "Marketplaces", href: "/solutions/marketplaces" },
-        { name: "Travel", href: "/solutions/travel" },
-        { name: "SaaS", href: "/solutions/saas" },
-        { name: "Fintech", href: "/solutions/fintech" },
-        { name: "Enterprise", href: "/solutions/enterprise" },
+        { name: "Payment Plugins", href: "/payments/plugins" },
+        { name: "Payment Links", href: "/payments/links" },
+        { name: "Payments API", href: "/platform-apis/payments" },
       ]
     },
     {
-      title: "Developers",
+      title: "Platform APIs",
       links: [
-        { name: "Documentation", href: "/developers/docs" },
-        { name: "API Reference", href: "/developers/api" },
-        { name: "SDKs", href: "/developers/sdks" },
-        { name: "Webhooks", href: "/developers/webhooks" },
-        { name: "Status", href: "/status" },
-        { name: "Support", href: "/support" },
+        { name: "Connected Accounts", href: "/platform-apis/connected-accounts" },
+        { name: "Accounts API", href: "/platform-apis/accounts" },
+        { name: "Payments API", href: "/platform-apis/payments" },
       ]
     },
     {
       title: "Company",
       links: [
         { name: "About", href: "/about" },
-        { name: "Careers", href: "/careers" },
-        { name: "Press", href: "/press" },
-        { name: "Partners", href: "/partners" },
+        // { name: "Careers", href: "/careers" },
+        // { name: "Press", href: "/press" },
+        // { name: "Partners", href: "/partners" },
         { name: "Contact", href: "/contact" },
-        { name: "Blog", href: "/blog" },
+        // { name: "Blog", href: "/blog" },
       ]
     },
     {
       title: "Support",
       links: [
-        { name: "Help Center", href: "/help" },
-        { name: "Contact Support", href: "/support" },
-        { name: "Status", href: "/status" },
-        { name: "Security", href: "/security" },
-        { name: "Compliance", href: "/compliance" },
-        { name: "Trust Center", href: "/trust" },
+      //   { name: "Help Center", href: "/help" },
+      //   { name: "Contact Support", href: "/support" },
+      //   { name: "Status", href: "/status" },
+      //   { name: "Security", href: "/security" },
+      //   { name: "Compliance", href: "/compliance" },
+      //   { name: "Trust Center", href: "/trust" },
       ]
     }
   ], []);
@@ -186,7 +180,7 @@ const MuxxusFooter = () => {
                       className="text-gray-400 hover:text-white transition-colors duration-200"
                       aria-label={`Follow us on ${item.name || 'social media'}`}
                     >
-                      {getSocialIcon(item.name)}
+                      {/* {getSocialIcon(item.name)} */}
                     </Link>
                   );
                 })}

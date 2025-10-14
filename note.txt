@@ -1,0 +1,36 @@
+Images existantes dans le projet Muxxus
+
+IMAGES JPG (185 fichiers):
+- /public/assets/images/about/img-1.jpg à img-6.jpg (6 images)
+- /public/assets/images/contact/img-1.jpg à img-3.jpg (3 images)
+- /public/assets/imgs/muxxus/image/img1.jpg (1 image)
+- /public/assets/imgs/muxxus/about/img.jpg (1 image)
+- /public/assets/imgs/works/img-s-7.jpg à img-s-36.jpg (30 images)
+- /public/assets/imgs/team/img-s-1.jpg à img-s-34.jpg (34 images)
+- /public/assets/imgs/project/img-s-1.jpg à img-s-20.jpg (20 images)
+- /public/assets/imgs/gallery/img-s-3.jpg à img-s-98.jpg (96 images)
+- /public/assets/imgs/hero/branding/img-s-32.jpg à img-s-33.jpg (2 images)
+- /public/assets/imgs/images/accueil/131820.jpg (1 image)
+
+IMAGES PNG (380 fichiers):
+- /public/assets/imgs/shape/ (formes et éléments graphiques)
+- /public/assets/imgs/team/img-s-34.png (1 image)
+
+IMAGES WEBP (1 fichier):
+- /public/assets/imgs/icon/cross.webp
+
+IMAGES SVG (2 fichiers):
+- /public/assets/imgs/shape/header-bg.svg
+- /public/assets/imgs/shape/header-bg-dark.svg
+
+TOTAL: 568 images existantes
+
+IMAGES MANQUANTES pour les nouvelles pages:
+- /assets/images/blog/ (3 images)
+- /assets/images/privacy/ (3 images)
+- /assets/images/terms/ (3 images)
+- /assets/images/security/ (3 images)
+- /assets/images/compliance/ (3 images)
+- /assets/images/trust/ (3 images)
+
+Total images manquantes: 18 images
